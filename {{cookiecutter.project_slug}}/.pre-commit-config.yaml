@@ -87,14 +87,6 @@ repos:
         args: [-w]
         types: [shell]
 
-  - repo: https://github.com/prettier/prettier
-    rev: 2.1.1
-    hooks:
-      - id: prettier
-        name: toml-prettier
-        args: [--write]
-        types: [toml]
-
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.24.2
     hooks:
