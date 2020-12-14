@@ -105,12 +105,12 @@ jobs:
 
   # Install Verification ----------------------
 
-  install-dev:
+  verify-user-install:
     strategy:
       matrix:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
 
-    name: "Verify package"
+    name: "Verify package install as user"
     runs-on: {{ "${{ matrix.os }}" }}
 
     steps:
@@ -120,7 +120,7 @@ jobs:
           python-version: "3.8"
       - name: "Install package"
         run: |
-          pip install poetry
-          poetry --version
-          poetry config virtualenvs.in-project true
-          poetry install -vv
+          pip install {{cookiecutter.project_slug}} \
+             --no-deps --index-url https://test.pypi.org/simple/
+          pip install --upgrade {{cookiecutter.project_slug}}
+        shell: bash
