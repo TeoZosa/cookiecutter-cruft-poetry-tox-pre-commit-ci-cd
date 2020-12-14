@@ -123,4 +123,5 @@ jobs:
           pip install {{cookiecutter.project_slug}} \
              --no-deps --index-url https://test.pypi.org/simple/
           pip install --upgrade {{cookiecutter.project_slug}}
+          pip list -v
         shell: bash
