@@ -12,8 +12,8 @@ jobs:
 
   # Quality jobs ----------------------
 
-  static-analysis:
-    name: Static Analysis
+  code-quality:
+    name: Code Quality
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
