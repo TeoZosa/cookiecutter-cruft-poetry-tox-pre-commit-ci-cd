@@ -55,6 +55,8 @@ jobs:
         run: |
           make pre-commit
 
+  # Security jobs ----------------------
+
   dependency-security-vulnerability-analysis:
     name: Dependency Security Vulnerability Analysis
     runs-on: "ubuntu-latest"
