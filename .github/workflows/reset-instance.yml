@@ -1,0 +1,78 @@
+---
+name: Reset Instance
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - master
+env:
+  COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
+  META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
+  # yamllint disable-line rule:line-length
+  COOKIECUTTER_PROJECT_INSTANCE: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance
+  # yamllint disable-line rule:line-length
+  PROJECT_INSTANCE_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance
+  PIP_CONSTRAINTS_FILE: .github/workflows/constraints.txt
+
+jobs:
+  instance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ${{ env.COOKIECUTTER_META_PROJECT }}
+        uses: actions/checkout@v2.3.4
+        with:
+          path: ${{ env.COOKIECUTTER_META_PROJECT }}
+      - name: Check out ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
+        uses: actions/checkout@v2.3.4
+        with:
+          repository: ${{ env.PROJECT_INSTANCE_REPO }}
+          path: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
+          token: ${{ secrets.X_GITHUB_TOKEN }}
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2.2.0
+        with:
+          python-version: "3.9"
+      - name: Install cookiecutter
+        working-directory: ${{ env.COOKIECUTTER_META_PROJECT }}
+        run: |
+          pip install --constraint=${PIP_CONSTRAINTS_FILE} pip
+          pip install --constraint=${PIP_CONSTRAINTS_FILE} cookiecutter
+      - name: Remove working tree
+        run: |
+          mv ${COOKIECUTTER_PROJECT_INSTANCE}/.git tmp.git
+          rm -rf ${COOKIECUTTER_PROJECT_INSTANCE}
+          mkdir ${COOKIECUTTER_PROJECT_INSTANCE}
+          mv tmp.git ${COOKIECUTTER_PROJECT_INSTANCE}/.git
+      - name: Invoke cookiecutter
+        run: >-
+          cookiecutter
+          https://github.com/${META_PROJECT_REPO}
+          --overwrite-if-exists
+          --no-input
+          --checkout=${GITHUB_REF##*/}
+          project_name=${COOKIECUTTER_PROJECT_INSTANCE}
+      - name: Create commit
+        run: |
+          cd ${COOKIECUTTER_META_PROJECT}
+          author="$(git show --no-patch --format='%an <%ae>')"
+          date="$(git show --no-patch --format=%ad)"
+          message="$(git show --no-patch --format=%B | sed 's/ *(#[0-9]\+)//g')
+
+          Original-Commit: ${META_PROJECT_REPO}@${GITHUB_SHA::7}"
+
+          cd ../${COOKIECUTTER_PROJECT_INSTANCE}
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git add .
+          git commit \
+            --allow-empty \
+            --author="$author" \
+            --date="$date" \
+            --message="$message"
+      - name: Push to instance
+        run: >-
+          git
+          -C ${COOKIECUTTER_PROJECT_INSTANCE}
+          push
+          "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${PROJECT_INSTANCE_REPO}.git"
+          HEAD:${GITHUB_REF##*/}
