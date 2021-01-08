@@ -1,0 +1,125 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.friendly_name}}"
+authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
+homepage = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.urls]
+Changelog = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/releases"
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+click = "^7.1.2"
+python-dotenv = "^0.15.0"
+structlog-sentry-logger = "^0.5.6"
+
+[tool.poetry.dev-dependencies]
+# Testing
+pytest = "^6.2.1"
+pytest-cov = "^2.10.1"
+pytest-emoji = "^0.2.0"
+pytest-mock = "^3.5.0"
+pytest-sugar = "^0.9.4"
+pytest-xdist = "^2.2.0"
+tox = "^3.20.0"
+tox-gh-actions = "^2.3.0"
+# Code formatter
+# see: https://black.readthedocs.io/en/stable/editor_integration.html
+black = "^20.8b1"
+# Linters
+flakehell = "^0.7.1"
+pylint = "^2.6.0"
+# Static type checker
+mypy = "^0.790"
+# Linting & formatting orchestrator
+pre-commit = "^2.9.3"
+# Project boilerplate synchronizer
+cruft = "^2.6.0"
+
+[tool.poetry.scripts]
+"{{cookiecutter.project_slug}}" = "{{cookiecutter.package_name}}.__main__:main"
+
+#################################################################################
+# Tooling configs                                                               #
+#################################################################################
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ["{{cookiecutter.package_name}}"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.flakehell]
+# specify any flake8 options
+exclude = [".*"] # Ignore dotfiles
+# make output nice
+format = "grouped"
+# show line of source code in output
+show_source = true
+
+# list of plugins and rules for them
+[tool.flakehell.plugins]
+# cyclomatic complexity (https://github.com/PyCQA/mccabe)
+mccabe = ["+*"]
+# include everything in pyflakes except F401
+pyflakes = ["+*", "-F401"]
+# include everything in pycodestyle except what Black covers
+pycodestyle = ["+*",
+    "-E203", # Whitespace before ":"
+    "-E501", # Line too long (82 > 78 characters)
+    "-W503"  # Line break occurred before a binary operator <- this is now considered best practice by PEP 8
+]
+
+[tool.isort]
+profile = "black"
+atomic = "true"
+combine_as_imports = true
+
+[tool.pylint.basic]
+good-names-rgxs = ["^Test_.*$"]
+
+[tool.pylint.messages_control]
+disable = [
+  # Explicitly document only as needed
+  "missing-module-docstring",
+  "missing-class-docstring",
+  "missing-function-docstring",
+  # Black & Flake8 purview
+  "line-too-long",
+  "bad-continuation",
+  "c-extension-no-member",
+]
+
+[tool.pylint.similarities]
+# Ignore imports when computing similarities.
+ignore-imports = "yes"
+
+[tool.pytest.ini_options]
+addopts = ["-rfsxX", "-l", "--tb=short", "--strict", "-vv", "--emoji",]
+xfail_strict = "true"
+testpaths = ["tests",]
+norecursedirs = [".*", "*.egg", "build", "dist",]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

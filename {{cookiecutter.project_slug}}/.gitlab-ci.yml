@@ -1,0 +1,28 @@
+---
+
+include:
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/globals.yml'
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/pull_docker_image/jobs/pull.yml'
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/sast/jobs/scan-dependencies.yml'
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/sast_and_code_quality/jobs/semgrep-python.yml'
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/code_quality/jobs/pre-commit-hooks.yml'
+  - project: 'CorSAIR/ci-cd/pipeline-templates'
+    ref: master
+    file: '/.gitlab/ci/stages/test/jobs/python/all.yml'
+
+stages:
+  - Pull Docker Image
+  - SAST
+  - SAST & Code Quality
+  - Code Quality
+  - Test
