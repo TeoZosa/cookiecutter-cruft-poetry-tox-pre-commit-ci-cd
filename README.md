@@ -87,6 +87,10 @@ Features
 - Coverage reporting with [Codecov](https://codecov.io/)
 ### Type Checking
 - Static type-checking with [mypy](http://mypy-lang.org/)
+- Run-time type-checking with [typeguard](https://github.com/agronholm/typeguard)
+    - Note: the package-under-test is automatically instrumented via the
+      [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
+        - For more advanced use-cases, see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
 ### Security
 - Static application security testing (SAST) with [Bandit](https://github.com/PyCQA/bandit) and [Safety](https://github.com/pyupio/safety)
 ### Linting
