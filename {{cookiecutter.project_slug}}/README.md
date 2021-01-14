@@ -56,16 +56,20 @@ import {{cookiecutter.package_name}}
 Development
 ==============================
 
-For convenience, many of the below processes are abstracted away and encapsulated in
-single [`make`](https://www.gnu.org/software/make/) targets.
+> 📝 **Note**  
+>  For convenience, many of the below processes are abstracted away
+>  and encapsulated in single [Make](https://www.gnu.org/software/make/) targets.
 
-Tip: invoking `make` without any arguments will display auto-generated
-documentation on available commands.
+
+> 🔥 **Tip**  
+>  Invoking `make` without any arguments will display
+>  auto-generated documentation on available commands.
 
 Package and Dependencies Installation
 ------------
 
-**Note**: `poetry` is a required dependency.
+Make sure you have Python 3.6+ and [`poetry`](https://python-poetry.org/)
+installed and configured.
 
 To install the package and all dev dependencies, run:
 ```shell script
@@ -94,8 +98,10 @@ auto-formatting over all version-controlled files, run:
 make lint
 ```
 
-**Note**: CI will fail if either testing or code quality fail, so it is recommended to automatically
-  run the above locally prior to every commit that is pushed.
+> 🚨 **Danger**  
+>  CI will fail if either testing or code quality fail,
+>  so it is recommended to automatically run the above locally
+>  prior to every commit that is pushed.
 
 ### Automate via Git Pre-Commit Hooks
 
@@ -106,9 +112,11 @@ files), run:
 make install-pre-commit-hooks
 ```
 
-**Note**: This will prevent commits if any single pre-commit hook fails (unless it
-is allowed to fail) or a file is modified by an auto-formatting job; in the
-latter case, you may simply repeat the commit and it should pass.
+> ⚠️ Warning  
+>  This will prevent commits if any single pre-commit hook fails
+>  (unless it is allowed to fail)
+>  or a file is modified by an auto-formatting job;
+>  in the latter case, you may simply repeat the commit and it should pass.
 
 Summary
 ==============================
