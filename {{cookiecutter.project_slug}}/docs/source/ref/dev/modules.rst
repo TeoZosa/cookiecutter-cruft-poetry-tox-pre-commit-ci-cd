@@ -6,3 +6,9 @@ TODO: Document developer-facing modules here
    :maxdepth: 4
 
    _DEVELOPER_ONLY_MODULE
+
+.. autosummary::
+   :template: custom-module-template.rst
+   :recursive:
+
+   {{cookiecutter.package_name}}._DEVELOPER_ONLY_MODULE
