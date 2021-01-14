@@ -119,6 +119,15 @@ Features
 - Project issue labels management with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 ### Documentation
 - Automated README table of contents generation with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+- Project documentation:
+    - Documentation building with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
+    - CLI reference with [sphinx-click](https://sphinx-click.readthedocs.io)
+    - Automatic documentation from docstrings with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+      - Support for NumPy and Google style docstrings with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
+      - Python 3 type annotation extraction with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
+      - Docstring summaries with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
+    - Documentation links to/from source code with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
+    - Publishing to [Confluence](https://www.atlassian.com/software/confluence) with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
 ---
 
