@@ -29,14 +29,14 @@ Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
-    + [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
-    + [Testing](#testing)
-    + [Code Coverage](#code-coverage)
-    + [Type Checking](#type-checking)
-    + [Security](#security)
-    + [Linting](#linting)
-    + [CI/CD](#cicd)
-    + [Documentation](#documentation)
+  * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
+  * [Testing](#testing)
+  * [Code Coverage](#code-coverage)
+  * [Type Checking](#type-checking)
+  * [Security](#security)
+  * [Linting](#linting)
+  * [CI/CD](#cicd)
+  * [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
 
@@ -75,25 +75,36 @@ cruft update
 Features
 ==============================
 
-### Standardized Developer Workflow Orchestration
+Standardized Developer Workflow Orchestration
+---------------------------------------------
 - Packaging and dependency management with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration with [Make](https://www.gnu.org/software/make/) via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
 - Command-line interface with [Click](https://click.palletsprojects.com/)
-### Testing
+
+Testing
+--------------
 - Test automation with [Tox](https://tox.readthedocs.io/en/latest/)
 - Testing with [pytest](https://docs.pytest.org/en/latest/)
-### Code Coverage
+
+Code Coverage
+--------------
 - Code coverage with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting with [Codecov](https://codecov.io/)
-### Type Checking
+
+Type Checking
+--------------
 - Static type-checking with [mypy](http://mypy-lang.org/)
 - Run-time type-checking with [typeguard](https://github.com/agronholm/typeguard)
     - Note: the package-under-test is automatically instrumented via the
       [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
         - For more advanced use-cases, see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
-### Security
+
+Security
+--------------
 - Static application security testing (SAST) with [Bandit](https://github.com/PyCQA/bandit) and [Safety](https://github.com/pyupio/safety)
-### Linting
+
+Linting
+--------------
 - Automation and management with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
@@ -111,13 +122,17 @@ Features
   - Debugger imports and py37+ `breakpoint()` calls with [debug-statements](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
   - Large files with [check-added-large-files](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
   - Invalid Python files with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
-### CI/CD
+
+CI/CD
+--------------
 - Continuous integration with [`GitHub Actions`](https://github.com/features/actions)
 - Automated uploads to [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org/)
 - Automated release notes with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates with [`Dependabot`](https://dependabot.com/)
 - Project issue labels management with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
-### Documentation
+
+Documentation
+--------------
 - Automated README table of contents generation with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Project documentation:
     - Documentation building with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
