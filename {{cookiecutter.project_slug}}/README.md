@@ -76,6 +76,10 @@ To install the package and all dev dependencies, run:
 make provision_environment
 ```
 
+> 🔥 **Tip**  
+>  Invoking the above without `poetry` installed will emit a
+>  helpful error message letting you know how you can install poetry.
+
 Testing
 ------------
 
