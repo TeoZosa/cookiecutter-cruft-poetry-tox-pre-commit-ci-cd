@@ -136,7 +136,7 @@ generate-requirements:
 .PHONY: clean-requirements
 ## clean generated project requirements files
 clean-requirements:
-	find . -type f -name "requirements*.txt" -delete
+	find . -type f -name "requirements*.txt" -delete -maxdepth 0
 
 #################################################################################
 # Self Documenting Commands                                                     #
