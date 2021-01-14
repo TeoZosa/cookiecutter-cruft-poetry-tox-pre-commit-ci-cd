@@ -76,8 +76,8 @@ Testing
 ------------
 
 We use [`tox`](https://tox.readthedocs.io/en/latest/) for our automation framework
-  and [`pytest`](https://docs.pytest.org/en/stable/) for our testing framework.
-  To invoke the tests, run:
+and [`pytest`](https://docs.pytest.org/en/stable/) for our testing framework.
+To invoke the tests, run:
 
 ```shell script
 make test
