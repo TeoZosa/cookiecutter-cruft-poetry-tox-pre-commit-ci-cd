@@ -2,7 +2,7 @@
 ==============================
 {% if 'github' in cookiecutter.remote_vcs_host %}
 ![CI]({{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg?token=3HF21UWY82)](undefined)
+![codecov](https://codecov.io/gh/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg?token=3HF21UWY82)
 ![License](https://img.shields.io/github/license/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_slug}}?color=informational&style=plastic)
