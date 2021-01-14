@@ -7,5 +7,6 @@
   "email": "teo@sonosim.com",
   "remote_vcs_host": "https://github.com",
   "remote_vcs_username": "TeoZosa",
+  "documentation_url": "https://{{ cookiecutter.project_slug }}.readthedocs.io",
   "version": "0.0.0"
 }
