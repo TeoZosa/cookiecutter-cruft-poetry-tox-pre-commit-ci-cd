@@ -31,25 +31,26 @@ jobs:
         uses: actions/setup-python@v2.2.0
         with:
           python-version: "3.9"
-      - name: Install cookiecutter
+      - name: Install cruft
         working-directory: ${{ env.COOKIECUTTER_META_PROJECT }}
         run: |
           pip install --constraint=${PIP_CONSTRAINTS_FILE} pip
-          pip install --constraint=${PIP_CONSTRAINTS_FILE} cookiecutter
+          pip install --constraint=${PIP_CONSTRAINTS_FILE} cruft
       - name: Remove working tree
         run: |
           mv ${COOKIECUTTER_PROJECT_INSTANCE}/.git tmp.git
           rm -rf ${COOKIECUTTER_PROJECT_INSTANCE}
           mkdir ${COOKIECUTTER_PROJECT_INSTANCE}
           mv tmp.git ${COOKIECUTTER_PROJECT_INSTANCE}/.git
-      - name: Invoke cookiecutter
+      - name: Invoke cruft
         run: >-
-          cookiecutter
+          cruft
+          create
           https://github.com/${META_PROJECT_REPO}
           --overwrite-if-exists
           --no-input
           --checkout=${GITHUB_REF##*/}
-          project_name=${COOKIECUTTER_PROJECT_INSTANCE}
+          --extra-context='{"project_name":"'"${COOKIECUTTER_PROJECT_INSTANCE}"'"}'
       - name: Create commit
         run: |
           cd ${COOKIECUTTER_META_PROJECT}
