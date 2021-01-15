@@ -31,35 +31,41 @@ jobs:
         uses: actions/setup-python@v2.2.0
         with:
           python-version: "3.9"
-      - name: Install cookiecutter
+      - name: Install cruft
         working-directory: ${{ env.COOKIECUTTER_META_PROJECT }}
         run: |
-          pip install --constraint=${PIP_CONSTRAINTS_FILE} pip
-          pip install --constraint=${PIP_CONSTRAINTS_FILE} cookiecutter
+          pip install --constraint="${PIP_CONSTRAINTS_FILE}" pip
+          pip install --constraint="${PIP_CONSTRAINTS_FILE}" cruft
       - name: Remove working tree
         run: |
-          mv ${COOKIECUTTER_PROJECT_INSTANCE}/.git tmp.git
-          rm -rf ${COOKIECUTTER_PROJECT_INSTANCE}
-          mkdir ${COOKIECUTTER_PROJECT_INSTANCE}
-          mv tmp.git ${COOKIECUTTER_PROJECT_INSTANCE}/.git
-      - name: Invoke cookiecutter
+          mv "${COOKIECUTTER_PROJECT_INSTANCE}/.git" tmp.git
+          rm -rf "${COOKIECUTTER_PROJECT_INSTANCE}"
+          mkdir "${COOKIECUTTER_PROJECT_INSTANCE}"
+          mv tmp.git "${COOKIECUTTER_PROJECT_INSTANCE}/.git"
+      - name: Invoke cruft
         run: >-
-          cookiecutter
-          https://github.com/${META_PROJECT_REPO}
+          cruft
+          create
+          https://github.com/"${META_PROJECT_REPO}"
           --overwrite-if-exists
           --no-input
-          --checkout=${GITHUB_REF##*/}
-          project_name=${COOKIECUTTER_PROJECT_INSTANCE}
+          --checkout="${GITHUB_REF##*/}"
+          --extra-context="${extra_context}"
+        env:
+          extra_context: |
+            {
+              "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}"
+            }
       - name: Create commit
         run: |
-          cd ${COOKIECUTTER_META_PROJECT}
+          cd "${COOKIECUTTER_META_PROJECT}"
           author="$(git show --no-patch --format='%an <%ae>')"
           date="$(git show --no-patch --format=%ad)"
           message="$(git show --no-patch --format=%B | sed 's/ *(#[0-9]\+)//g')
 
           Original-Commit: ${META_PROJECT_REPO}@${GITHUB_SHA::7}"
 
-          cd ../${COOKIECUTTER_PROJECT_INSTANCE}
+          cd "../${COOKIECUTTER_PROJECT_INSTANCE}"
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git add .
@@ -71,7 +77,7 @@ jobs:
       - name: Push to instance
         run: >-
           git
-          -C ${COOKIECUTTER_PROJECT_INSTANCE}
+          -C "${COOKIECUTTER_PROJECT_INSTANCE}"
           push
           "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${PROJECT_INSTANCE_REPO}.git"
-          HEAD:${GITHUB_REF##*/}
+          HEAD:"${GITHUB_REF##*/}"
