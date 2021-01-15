@@ -3,8 +3,7 @@ name: Reset Instance
 
 on:  # yamllint disable-line rule:truthy
   push:
-    branches:
-      - master
+    branches: ["master"]
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
   META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
