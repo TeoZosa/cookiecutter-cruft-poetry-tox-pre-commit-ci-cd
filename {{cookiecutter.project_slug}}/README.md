@@ -2,7 +2,7 @@
 ==============================
 {% if 'github' in cookiecutter.remote_vcs_host %}
 ![CI]({{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg?token=3HF21UWY82)](undefined)
+![codecov](https://codecov.io/gh/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg?token=3HF21UWY82)
 ![License](https://img.shields.io/github/license/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_slug}}?color=informational&style=plastic)
@@ -56,28 +56,36 @@ import {{cookiecutter.package_name}}
 Development
 ==============================
 
-For convenience, many of the below processes are abstracted away and encapsulated in
-single [`make`](https://www.gnu.org/software/make/) targets.
+> 📝 **Note**  
+>  For convenience, many of the below processes are abstracted away
+>  and encapsulated in single [Make](https://www.gnu.org/software/make/) targets.
 
-Tip: invoking `make` without any arguments will display auto-generated
-documentation on available commands.
+
+> 🔥 **Tip**  
+>  Invoking `make` without any arguments will display
+>  auto-generated documentation on available commands.
 
 Package and Dependencies Installation
 ------------
 
-**Note**: `poetry` is a required dependency.
+Make sure you have Python 3.6+ and [`poetry`](https://python-poetry.org/)
+installed and configured.
 
 To install the package and all dev dependencies, run:
 ```shell script
 make provision_environment
 ```
 
+> 🔥 **Tip**  
+>  Invoking the above without `poetry` installed will emit a
+>  helpful error message letting you know how you can install poetry.
+
 Testing
 ------------
 
-We use [`tox`](https://tox.readthedocs.io/en/latest/) for our automation framework
-  and [`pytest`](https://docs.pytest.org/en/stable/) for our testing framework.
-  To invoke the tests, run:
+We use [`tox`](https://tox.readthedocs.io/en/latest/) for our test automation framework
+and [`pytest`](https://pytest.readthedocs.io/) for our testing framework.
+To invoke the tests, run:
 
 ```shell script
 make test
@@ -94,8 +102,10 @@ auto-formatting over all version-controlled files, run:
 make lint
 ```
 
-**Note**: CI will fail if either testing or code quality fail, so it is recommended to automatically
-  run the above locally prior to every commit that is pushed.
+> 🚨 **Danger**  
+>  CI will fail if either testing or code quality fail,
+>  so it is recommended to automatically run the above locally
+>  prior to every commit that is pushed.
 
 ### Automate via Git Pre-Commit Hooks
 
@@ -106,9 +116,11 @@ files), run:
 make install-pre-commit-hooks
 ```
 
-**Note**: This will prevent commits if any single pre-commit hook fails (unless it
-is allowed to fail) or a file is modified by an auto-formatting job; in the
-latter case, you may simply repeat the commit and it should pass.
+> ⚠️ Warning  
+>  This will prevent commits if any single pre-commit hook fails
+>  (unless it is allowed to fail)
+>  or a file is modified by an auto-formatting job;
+>  in the latter case, you may simply repeat the commit and it should pass.
 
 Summary
 ==============================

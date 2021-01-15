@@ -40,7 +40,8 @@ repos:
     hooks:
       - id: markdown-toc
         args: [--maxdepth=3, -i]
-        exclude: ^{{cookiecutter\.project_slug}}/README\.md$
+        # yamllint disable-line rule:line-length
+        exclude: ^(docs/source/.*)|({{cookiecutter\.project_slug}}/(README\.md|docs/source/.*))$
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.790
