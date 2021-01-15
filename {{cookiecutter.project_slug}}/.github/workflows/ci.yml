@@ -51,9 +51,13 @@ jobs:
           export GOARCH=amd64 &&
           export PATH="${PATH}:/usr/local/go/bin"
 
-      - name: "Run static analysis"
+      - name: Run static analysis
         run: |
+        {%- if cookiecutter.project_slug == 'cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance' %}
+          make pre-commit || true
+        {%- else %}
           make pre-commit
+        {%- endif %}
 
   # Security jobs ----------------------
 
