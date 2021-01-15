@@ -141,6 +141,7 @@ Documentation
       - Support for NumPy and Google style docstrings with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
       - Python 3 type annotation extraction with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
       - Docstring summaries with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
+    - Docstring coverage with [interrogate](https://interrogate.readthedocs.io/)
     - Documentation links to/from source code with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
     - Publishing to [Confluence](https://www.atlassian.com/software/confluence) with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
