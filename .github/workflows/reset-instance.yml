@@ -50,7 +50,12 @@ jobs:
           --overwrite-if-exists
           --no-input
           --checkout=${GITHUB_REF##*/}
-          --extra-context='{"project_name":"'"${COOKIECUTTER_PROJECT_INSTANCE}"'"}'
+          --extra-context="${extra_context}"
+        env:
+          extra_context: |
+            {
+              "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}"
+            }
       - name: Create commit
         run: |
           cd ${COOKIECUTTER_META_PROJECT}
