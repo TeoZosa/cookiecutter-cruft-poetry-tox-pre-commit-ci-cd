@@ -118,7 +118,7 @@ Linting
     - [pretty-format-json](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [trailing-whitespace](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
     - [end-of-file-fixer](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
-  - Unsanitary commits:
+- Unsanitary commits:
   - Secrets with [detect-secrets](https://github.com/Yelp/detect-secrets)
   - Debugger imports and py37+ `breakpoint()` calls with [debug-statements](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
   - Large files with [check-added-large-files](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
