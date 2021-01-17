@@ -7,6 +7,7 @@ license = "Apache-2.0"
 readme = "README.md"
 repository = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
 homepage = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
+include = ["{{cookiecutter.package_name}}/py.typed"]
 classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
