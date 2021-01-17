@@ -12,6 +12,7 @@ def get_version_number():
     prog = "make"
     args = [
         "get-project-version-number",
+        "--no-print-directory",
         "-C",
         _project_directory,
     ]
@@ -23,4 +24,4 @@ def get_version_number():
         check=True,
     )
 
-    return completion_info.stdout
+    return completion_info.stdout.strip()
