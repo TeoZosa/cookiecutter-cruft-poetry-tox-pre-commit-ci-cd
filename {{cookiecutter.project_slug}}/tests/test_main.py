@@ -3,6 +3,8 @@ from typer.testing import CliRunner
 
 from {{cookiecutter.package_name}}.__main__ import app
 
+from . import utils
+
 runner = CliRunner()
 
 
@@ -11,7 +13,8 @@ def test_main_succeeds() -> None:
     result = runner.invoke(app)
     assert result.exit_code == 0
 
+
 def test_version_option() -> None:
     """It returns the package version."""
     result = runner.invoke(app, ["--version"])
-    assert "0.0.0" in result.output
+    assert utils.get_version_number() in result.output
