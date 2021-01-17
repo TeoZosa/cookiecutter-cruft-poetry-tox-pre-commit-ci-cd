@@ -79,7 +79,7 @@ Standardized Developer Workflow Orchestration
 ---------------------------------------------
 - Packaging and dependency management with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration with [Make](https://www.gnu.org/software/make/) via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
-- Command-line interface with [Click](https://click.palletsprojects.com/)
+- Command-line interface with [Typer](https://typer.tiangolo.com/)
 
 Testing
 --------------
