@@ -1,17 +1,24 @@
 """Test cases for the __main__ module."""
-import pytest
-from click.testing import CliRunner
+from typer.testing import CliRunner
 
-from {{cookiecutter.package_name}} import __main__
+from {{cookiecutter.package_name}}.__main__ import __version__, app
 
+from . import utils
 
-@pytest.fixture
-def runner() -> CliRunner:
-    """Fixture for invoking command-line interfaces."""
-    return CliRunner()
+runner = CliRunner()
 
 
-def test_main_succeeds(runner: CliRunner) -> None:
+def test_main_succeeds() -> None:
     """It exits with a status code of zero."""
-    result = runner.invoke(__main__.main)
+    result = runner.invoke(app)
     assert result.exit_code == 0
+
+
+def test_version_option() -> None:
+    """It returns the package version."""
+    result = runner.invoke(app, ["--version"])
+    assert utils.get_version_number() in result.output
+
+def test_version_determination_logic() -> None:
+    """Validates the installed package version against the project-specified version."""
+    assert __version__ == utils.get_version_number()
