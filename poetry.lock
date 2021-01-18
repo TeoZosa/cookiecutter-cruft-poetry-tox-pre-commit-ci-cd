@@ -852,7 +852,7 @@ test = ["pytest"]
 
 [[package]]
 name = "sphinxcontrib-confluencebuilder"
-version = "1.3.0"
+version = "1.4.0"
 description = "Sphinx extension to output Atlassian Confluence Storage Markup documents and publish to Confluence instances."
 category = "dev"
 optional = false
@@ -1078,7 +1078,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "2ed6c289f527de6b727d47805570e0e66877107f189f7af1b058096c677629b2"
+content-hash = "2fba382afca34093ceb273f9585885b8d260ee221c1d81fda998b0cc148db765"
 
 [metadata.files]
 alabaster = [
@@ -1502,8 +1502,8 @@ sphinxcontrib-applehelp = [
     {file = "sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl", hash = "sha256:806111e5e962be97c29ec4c1e7fe277bfd19e9652fb1a4392105b43e01af885a"},
 ]
 sphinxcontrib-confluencebuilder = [
-    {file = "sphinxcontrib-confluencebuilder-1.3.0.tar.gz", hash = "sha256:e0cf1f439ec5d303bfb69e64a351522a8554ed1b3ab6cb423ef47de3cf851c88"},
-    {file = "sphinxcontrib_confluencebuilder-1.3.0-py2.py3-none-any.whl", hash = "sha256:00dbdab683c1a8dda0cc68b3b5e45ac22817ea91abb524287e71333eaa080684"},
+    {file = "sphinxcontrib-confluencebuilder-1.4.0.tar.gz", hash = "sha256:6a54b99144a8b0769bde4a75bc5d9e7dc4ebfe016584d26be60b084ab1906042"},
+    {file = "sphinxcontrib_confluencebuilder-1.4.0-py2.py3-none-any.whl", hash = "sha256:aece2599cd48db61f68c50bc1750f8d9120ec921b755f9a44501582203bee847"},
 ]
 sphinxcontrib-devhelp = [
     {file = "sphinxcontrib-devhelp-1.0.2.tar.gz", hash = "sha256:ff7f1afa7b9642e7060379360a67e9c41e8f3121f2ce9164266f61b9f4b338e4"},
