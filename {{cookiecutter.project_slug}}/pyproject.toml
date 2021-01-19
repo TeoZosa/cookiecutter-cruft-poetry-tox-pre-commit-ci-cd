@@ -102,6 +102,15 @@ source = ["{{cookiecutter.package_name}}"]
 show_missing = true
 fail_under = 100
 
+[tool.cruft]
+skip = [
+    ".env",
+    "README.md",
+    "{{cookiecutter.package_name}}/__init__.py",
+    "docs/source/.env",
+    "docs/source/ref/dev/"
+]
+
 [tool.flakehell]
 # specify any flake8 options
 exclude = [".*"] # Ignore dotfiles
