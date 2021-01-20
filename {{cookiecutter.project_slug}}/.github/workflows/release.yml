@@ -72,6 +72,21 @@ jobs:
           password: {{ "${{ secrets.TEST_PYPI_TOKEN }}" }}
           repository_url: https://test.pypi.org/legacy/
 
+      - name: Validate published package is reachable
+        run: |
+          PYPI_PACKAGE="{{cookiecutter.project_slug}}==$(make get-project-version-number)"
+          TEST_PYPI_PACKAGE="${PYPI_PACKAGE} --index-url https://test.pypi.org/simple/"
+          function install_test_pypi() { pip install ${TEST_PYPI_PACKAGE} --no-deps && install_pypi; }
+          function install_pypi() { pip install --upgrade ${PYPI_PACKAGE}; }
+
+          until (install_test_pypi || install_pypi) &> /dev/null
+          do
+             echo "Waiting for Python Package Index to serve current package-under-test"
+             sleep 10
+          done
+          pip list -v
+        shell: bash
+
       - name: Publish the release notes
         uses: release-drafter/release-drafter@v5.13.0
         with:
