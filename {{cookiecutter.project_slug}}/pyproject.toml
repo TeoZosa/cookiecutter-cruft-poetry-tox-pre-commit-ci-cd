@@ -88,7 +88,7 @@ docs = [
 
 
 [tool.poetry.scripts]
-"{{cookiecutter.project_slug}}" = "{{cookiecutter.package_name}}.__main__:main"
+"{{cookiecutter.project_slug}}" = "{{cookiecutter.package_name}}.__main__:app"
 
 #################################################################################
 # Tooling configs                                                               #
