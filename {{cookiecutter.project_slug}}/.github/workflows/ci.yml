@@ -168,3 +168,9 @@ jobs:
           pip install --upgrade {{cookiecutter.project_slug}}
           pip list -v
         shell: bash
+
+      - name: Run basic commands
+        run: |
+          {{cookiecutter.project_slug}} --help
+          {{cookiecutter.project_slug}} --version
+        shell: bash
