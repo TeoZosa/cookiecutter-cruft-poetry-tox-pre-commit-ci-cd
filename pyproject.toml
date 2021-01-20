@@ -38,7 +38,7 @@ cruft = "^2.6.0"
 
 # Project cookiecutter dependencies
 python-dotenv = "^0.15.0"
-structlog-sentry-logger = "^0.5.6"
+structlog-sentry-logger = "^0.6.0"
 pytest = "^6.2.1"
 typer = {extras = ["all"], version = "^0.3.2"}
 
