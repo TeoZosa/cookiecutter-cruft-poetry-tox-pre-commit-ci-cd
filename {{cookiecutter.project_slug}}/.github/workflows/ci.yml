@@ -169,29 +169,32 @@ jobs:
         uses: rlespinasse/github-slug-action@v3.x
 
       - name: Check Release workflow status
-        id: check
+        id: release-workflow-status
         run: |
-          output=null
-          while [ "${output}" == null ]; do
+          RELEASE_WORKFLOW_STATUS=null
+          until [ "${RELEASE_WORKFLOW_STATUS}" != null ]; do
+            echo "Release workflow status unavailable; retrying"
             sleep 10
-            output=$( \
-            curl -sSL -X GET -G \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d "branch=${GITHUB_REF_SLUG}" \
-            -d "event=push" \
-            "${WORKFLOW_API_ENDPOINT}" | jq -r '.workflow_runs[0] | "\(.conclusion)"' \
-            )
+            RELEASE_WORKFLOW_STATUS=$( \
+              curl -sSL -X GET -G \
+                -H "Accept: application/vnd.github.v3+json" \
+                -d "branch=${GITHUB_REF_SLUG}" \
+                -d "event=push" \
+                "${WORKFLOW_API_ENDPOINT}" \
+              | jq -r '.workflow_runs[0].conclusion' \
+              )
           done
-          echo "::set-output name=status::$output"
+          echo "::set-output name=status::${RELEASE_WORKFLOW_STATUS}"
         env:
           # yamllint disable-line rule:line-length
           WORKFLOW_API_ENDPOINT: https://api.github.com/repos/{{ "${{ github.repository }}" }}/actions/workflows/release.yml/runs
         shell: bash
 
       - name: Abort if Release workflow not successful
-        if: "steps.check.outputs.status != 'success'"
+        if: "steps.release-workflow-status.outputs.status != 'success'"
         run: |
-          echo {{ "${{ steps.check.outputs.status }}" }}
+          echo "ERROR:"
+          echo "Release Workflow status: {{ "${{ steps.release-workflow-status.outputs.status }}" }}"
           exit 1
 
       - name: Install package
