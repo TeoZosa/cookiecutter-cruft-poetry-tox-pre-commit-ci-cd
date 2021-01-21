@@ -76,10 +76,14 @@ jobs:
             --author="$author" \
             --date="$date" \
             --message="$message"
+
       - name: Push to instance
-        run: >-
-          git
-          -C "${COOKIECUTTER_PROJECT_INSTANCE}"
-          push
-          "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${PROJECT_INSTANCE_REPO}.git"
-          HEAD:"${GITHUB_REF##*/}"
+        run: |
+          git \
+            -C "${COOKIECUTTER_PROJECT_INSTANCE}" \
+            push \
+            "${COOKIECUTTER_PROJECT_INSTANCE_GIT_URL}" \
+            HEAD:"${GITHUB_REF##*/}"
+        env:
+          # yamllint disable-line rule:line-length
+          COOKIECUTTER_PROJECT_INSTANCE_GIT_URL: "https://${{ env.GITHUB_ACTOR }}:${{ env.GITHUB_TOKEN }}@github.com/${{ env.PROJECT_INSTANCE_REPO }}.git"
