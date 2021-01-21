@@ -194,7 +194,8 @@ jobs:
         if: "steps.release-workflow-status.outputs.status != 'success'"
         run: |
           echo "ERROR:"
-          echo "Release Workflow status: {{ "${{ steps.release-workflow-status.outputs.status }}" }}"
+          echo "Release Workflow status: \
+            {{ "${{ steps.release-workflow-status.outputs.status }}" }}"
           exit 1
 
       - name: Install package
