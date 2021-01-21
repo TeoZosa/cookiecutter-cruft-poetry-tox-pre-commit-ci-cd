@@ -43,7 +43,7 @@ Table of Contents
 <!-- tocstop -->
 
 Installation
-==============================
+============
 
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
 ```shell script
@@ -57,7 +57,7 @@ cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 Note: **_Cookiecutter_** uses `gh:` as short-hand for `https://github.com/`
 
 Usage
-==============================
+=====
 If the project was originally installed via
 [`cookiecutter`](https://github.com/audreyr/cookiecutter), you must first use
 [`cruft`](https://cruft.github.io/cruft/) to link the project with the original
@@ -73,7 +73,7 @@ cruft update
 ```
 
 Features
-==============================
+========
 
 Standardized Developer Workflow Orchestration
 ---------------------------------------------
@@ -82,18 +82,18 @@ Standardized Developer Workflow Orchestration
 - Command-line interface with [Typer](https://typer.tiangolo.com/)
 
 Testing
---------------
+-------
 - Test automation with [Tox](https://tox.readthedocs.io/en/latest/)
 - Testing with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests with [xdoctest](https://xdoctest.readthedocs.io/)
 
 Code Coverage
---------------
+-------------
 - Code coverage with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting with [Codecov](https://codecov.io/)
 
 Type Checking
---------------
+-------------
 - Static type-checking with [mypy](http://mypy-lang.org/)
 - Run-time type-checking with [typeguard](https://github.com/agronholm/typeguard)
     - Note: the package-under-test is automatically instrumented via the
@@ -101,11 +101,11 @@ Type Checking
         - For more advanced use-cases, see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
 
 Security
---------------
+--------
 - Static application security testing (SAST) with [Bandit](https://github.com/PyCQA/bandit) and [Safety](https://github.com/pyupio/safety)
 
 Linting
---------------
+-------
 - Automation and management with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
@@ -125,7 +125,7 @@ Linting
   - Invalid Python files with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
 CI/CD
---------------
+-----
 - Continuous integration with [`GitHub Actions`](https://github.com/features/actions)
 - Automated uploads to [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org/)
 - Automated release notes with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
@@ -149,7 +149,7 @@ Documentation
 ---
 
 Legal
-==============================
+=====
 
 License
 -------

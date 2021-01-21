@@ -17,11 +17,11 @@
 {% endif %}
 
 Overview
-------------------------------
+--------
 - TODO
 
 Features
-------------
+--------
 - TODO
 
 Requirements
@@ -34,14 +34,14 @@ Table of Contents
 <!-- toc -->
 
 Installation
-==============================
+============
 You can install {{cookiecutter.friendly_name}} via [pip](https://pip.pypa.io/):
  ```shell script
 pip install {{cookiecutter.project_slug}}
 ```
 
 Usage
-==============================
+=====
 - TODO
     - High-level usage overview
 ------------
@@ -54,7 +54,7 @@ import {{cookiecutter.package_name}}
 ```
 
 Development
-==============================
+===========
 
 > 📝 **Note**  
 >  For convenience, many of the below processes are abstracted away
@@ -66,7 +66,7 @@ Development
 >  auto-generated documentation on available commands.
 
 Package and Dependencies Installation
-------------
+--------------------------------------
 
 Make sure you have Python 3.6+ and [`poetry`](https://python-poetry.org/)
 installed and configured.
@@ -123,17 +123,17 @@ make install-pre-commit-hooks
 >  in the latter case, you may simply repeat the commit and it should pass.
 
 Summary
-==============================
+=======
 - TODO
 
 Further Reading
-==============================
+===============
 - TODO
 
 ---
 
 Legal
-==============================
+=====
 
 License
 -------
