@@ -6,6 +6,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main  # forward-compatibility with new GitHub default branch naming
       - master  # backward-compatibility with old GitHub default branch naming
+      - run-markdown-toc-on-test-instance-prior-to-commit
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
   META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
@@ -58,6 +59,14 @@ jobs:
             {
               "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}"
             }
+
+      # yamllint disable-line rule:line-length
+      - name: Run README ToC generator pre-commit hook on ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
+        working-directory: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
+        run: |
+          pip install --constraint="${PIP_CONSTRAINTS_FILE}" pre-commit
+          pre-commit run markdown-toc -vv --all-files --color always || true
+
       - name: Create commit
         run: |
           cd "${COOKIECUTTER_META_PROJECT}"
