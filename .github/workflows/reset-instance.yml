@@ -51,14 +51,14 @@ jobs:
           mv tmp.git "${COOKIECUTTER_PROJECT_INSTANCE}/.git"
 
       - name: Invoke cruft
-        run: >-
-          cruft
-          create
-          https://github.com/"${META_PROJECT_REPO}"
-          --overwrite-if-exists
-          --no-input
-          --checkout="${GITHUB_REF##*/}"
-          --extra-context="${extra_context}"
+        run: |
+          cruft \
+            create \
+            https://github.com/"${META_PROJECT_REPO}" \
+            --overwrite-if-exists \
+            --no-input \
+            --checkout="${GITHUB_REF##*/}" \
+            --extra-context="${extra_context}"
         env:
           extra_context: |
             {
