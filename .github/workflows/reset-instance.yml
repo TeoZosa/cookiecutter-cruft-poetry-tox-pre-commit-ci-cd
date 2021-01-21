@@ -3,7 +3,9 @@ name: Reset Instance
 
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: ["master"]
+    branches:
+      - main  # forward-compatibility with new GitHub default branch naming
+      - master  # backward-compatibility with old GitHub default branch naming
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
   META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
