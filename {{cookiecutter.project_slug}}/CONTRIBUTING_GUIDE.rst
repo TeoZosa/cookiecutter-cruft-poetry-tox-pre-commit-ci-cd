@@ -18,7 +18,7 @@ Here is a list of important resources for contributors:
 .. _Issue Tracker: {{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/issues
 
 How to report a bug
--------------------
+====================
 
 Report bugs on the `Issue Tracker`_.
 
@@ -35,13 +35,13 @@ and/or steps to reproduce the issue.
 
 
 How to request a feature
-------------------------
+========================
 
 Request features on the `Issue Tracker`_.
 
 
 How to set up your development environment
-------------------------------------------
+==========================================
 
 .. note::
    For convenience, many of the below processes are abstracted away
@@ -54,6 +54,7 @@ How to set up your development environment
 Make sure you have Python 3.6+ and Poetry_ installed and configured.
 
 Install the package with development requirements:
+--------------------------------------------------
 
 .. highlight:: bash
 .. code-block:: bash
@@ -68,12 +69,13 @@ Install the package with development requirements:
 
 
 How to test the project
------------------------
+=======================
 
 We use tox_ for our test automation framework
 and pytest_ for our testing framework.
 
 Run the full test suite:
+------------------------
 
 .. highlight:: bash
 .. code-block:: bash
@@ -81,6 +83,7 @@ Run the full test suite:
    $ make test
 
 Lint the code:
+--------------
 
 .. highlight:: bash
 .. code-block:: bash
@@ -108,7 +111,7 @@ and are written using the pytest_ testing framework.
 
 
 How to submit changes
----------------------
+=====================
 
 Open a `pull request`_ to submit changes to this project.
 
