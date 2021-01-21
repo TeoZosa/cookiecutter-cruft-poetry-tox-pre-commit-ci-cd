@@ -84,6 +84,18 @@ Lint the code:
    so it is recommended to automatically run the above locally
    prior to every commit that is pushed.
 
+Build the documentation:
+------------------------
+
+.. highlight:: bash
+.. code-block:: bash
+
+   $ make docs-clean docs-html
+
+.. note::
+   For faster feedback loops, this will attempt to automatically open the newly
+   built documentation static HTML in your browser.
+
 
 How to submit changes
 =====================

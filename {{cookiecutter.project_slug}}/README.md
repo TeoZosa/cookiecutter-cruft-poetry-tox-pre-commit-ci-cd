@@ -122,6 +122,17 @@ make install-pre-commit-hooks
 >  or a file is modified by an auto-formatting job;
 >  in the latter case, you may simply repeat the commit and it should pass.
 
+Documentation
+--------------
+
+```shell script
+make docs-clean docs-html
+```
+
+> 📝 **Note**  
+>  For faster feedback loops, this will attempt to automatically open the newly
+>  built documentation static HTML in your browser.
+
 Summary
 =======
 - TODO

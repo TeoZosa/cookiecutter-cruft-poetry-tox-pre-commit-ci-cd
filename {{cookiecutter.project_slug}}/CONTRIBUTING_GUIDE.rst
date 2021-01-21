@@ -106,6 +106,18 @@ For example, invoke the Python3.7 unit test suite like this:
 Unit tests are located in the ``tests`` directory,
 and are written using the pytest_ testing framework.
 
+Build the documentation:
+------------------------
+
+.. highlight:: bash
+.. code-block:: bash
+
+   $ make docs-clean docs-html
+
+.. note::
+   For faster feedback loops, this will attempt to automatically open the newly
+   built documentation static HTML in your browser.
+
 .. _pytest: https://pytest.readthedocs.io/
 .. _tox: https://tox.readthedocs.io/
 
