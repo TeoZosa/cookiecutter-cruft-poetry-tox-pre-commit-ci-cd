@@ -106,12 +106,11 @@ lint:
 
 .PHONY: pre-commit
 ## Lint using pre-commit hooks (see `.pre-commit-config.yaml`)
-pre-commit: clean update-dependencies generate-requirements
+pre-commit:
 	# Note: Running through `tox` since some hooks rely on finding their executables
 	# in the `.tox/precommit/bin` directory and to provide an extra layer of isolation
 	# for reproducibility.
-	poetry run tox -e precommit -- $(PRECOMMIT_HOOK_ID)
-	$(MAKE) clean-requirements
+	$(MAKE) tox-precommit POSARGS=$(PRECOMMIT_HOOK_ID)
 
 .PHONY: pre-commit-%
 ## Lint using a single specific pre-commit hook (see `.pre-commit-config.yaml`)
@@ -119,11 +118,16 @@ pre-commit-%: export SKIP= # Reset `SKIP` env var to force single hooks to alway
 pre-commit-%:
 	$(MAKE) pre-commit PRECOMMIT_HOOK_ID=$*
 
+.PHONY: tox-%
+## Scan dependencies for security vulnerabilities
+tox-%: clean update-dependencies generate-requirements
+	poetry run tox -e $* -- $(POSARGS)
+	$(MAKE) clean-requirements
+
 .PHONY: scan-dependencies
 ## Scan dependencies for security vulnerabilities
-scan-dependencies: clean update-dependencies generate-requirements
-	poetry run tox -e security
-	$(MAKE) clean-requirements
+scan-dependencies:
+	$(MAKE) tox-security
 
 .PHONY: clean
 ## Delete all compiled Python files
