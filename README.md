@@ -86,6 +86,7 @@ Testing
 - Test automation with [Tox](https://tox.readthedocs.io/en/latest/)
 - Testing with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests with [xdoctest](https://xdoctest.readthedocs.io/)
+- Property-based testing with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
 - Mutation testing with [mutmut](https://github.com/boxed/mutmut)
 
 Code Coverage
