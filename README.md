@@ -88,7 +88,8 @@ Testing
 - Doctests with [xdoctest](https://xdoctest.readthedocs.io/)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
   with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
-- Mutation testing with [mutmut](https://github.com/boxed/mutmut)
+- [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
+  with [mutmut](https://github.com/boxed/mutmut)
 
 > 📝 **Note**  
 >  For a good overview of how property-based testing and mutation testing
