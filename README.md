@@ -86,7 +86,17 @@ Testing
 - Test automation with [Tox](https://tox.readthedocs.io/en/latest/)
 - Testing with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests with [xdoctest](https://xdoctest.readthedocs.io/)
-- Mutation testing with [mutmut](https://github.com/boxed/mutmut)
+- [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
+  with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
+- [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
+  with [mutmut](https://github.com/boxed/mutmut)
+
+> 📝 **Note**  
+>  For a good overview of how property-based testing and mutation testing
+>  work together to improve the value and quality of your tests, see
+>  [this stackoverflow post](https://stackoverflow.com/a/38704078/6470891)
+>  and the
+>  [follow-up by the `mutmut` author](https://stackoverflow.com/a/61849772/6470891).
 
 Code Coverage
 -------------
