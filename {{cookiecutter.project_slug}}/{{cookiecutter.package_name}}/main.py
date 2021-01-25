@@ -25,7 +25,13 @@ def version_callback(value: Optional[bool]):  # pylint: disable=unsubscriptable-
 def main(
     version: Optional[  # pylint: disable=unsubscriptable-object,unused-argument
         bool
-    ] = typer.Option(None, "--version", callback=version_callback, is_eager=True),
+    ] = typer.Option(
+        None,
+        "--version",
+        callback=version_callback,
+        is_eager=True,
+        help="Show the version and exit.",
+    ),
 ) -> None:
     """{{cookiecutter.friendly_name}}."""
     LOGGER.info(
