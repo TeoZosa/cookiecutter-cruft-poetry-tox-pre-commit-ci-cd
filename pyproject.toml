@@ -29,9 +29,13 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python",
 ]
+# Dummy package for `pip install .` compatibility
+packages = [
+    { include = "{{cookiecutter.package_name}}", from = "{{cookiecutter.project_slug}}" },
+]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 # Project boilerplate synchronizer
 cruft = "^2.6.0"
 
