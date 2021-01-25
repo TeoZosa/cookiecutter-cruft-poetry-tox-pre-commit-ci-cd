@@ -148,7 +148,6 @@ Documentation
 - Automated README table of contents generation with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Project documentation:
     - Documentation building with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-    - CLI reference with [sphinx-click](https://sphinx-click.readthedocs.io)
     - Automatic documentation from docstrings with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
       - Support for NumPy and Google style docstrings with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
       - Python 3 type annotation extraction with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
