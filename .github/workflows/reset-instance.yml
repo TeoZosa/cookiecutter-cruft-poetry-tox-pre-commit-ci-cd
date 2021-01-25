@@ -6,7 +6,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main  # forward-compatibility with new GitHub default branch naming
       - master  # backward-compatibility with old GitHub default branch naming
-      - run-markdown-toc-on-test-instance-prior-to-commit
+
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
   META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
