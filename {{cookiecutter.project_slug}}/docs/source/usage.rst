@@ -1,6 +1,6 @@
 Usage
 =====
 
-.. click:: {{cookiecutter.package_name}}.__main__:main
+.. click:: {{cookiecutter.package_name}}.main:main
    :prog: {{cookiecutter.project_slug}}
    :nested: full
