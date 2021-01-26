@@ -77,15 +77,22 @@ Features
 
 Standardized Developer Workflow Orchestration
 ---------------------------------------------
-- Packaging and dependency management with [Poetry](https://python-poetry.org/)
-- Project workflow orchestration with [Make](https://www.gnu.org/software/make/) via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
-- Command-line interface with [Typer](https://typer.tiangolo.com/)
+- Packaging and dependency management
+  with [Poetry](https://python-poetry.org/)
+- Project workflow orchestration
+  with [Make](https://www.gnu.org/software/make/)
+  via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+- Command-line interface
+  with [Typer](https://typer.tiangolo.com/)
 
 Testing
 -------
-- Test automation with [Tox](https://tox.readthedocs.io/en/latest/)
-- Testing with [pytest](https://docs.pytest.org/en/latest/)
-- Doctests with [xdoctest](https://xdoctest.readthedocs.io/)
+- Test automation
+  with [Tox](https://tox.readthedocs.io/en/latest/)
+- Testing
+  with [pytest](https://docs.pytest.org/en/latest/)
+- Doctests
+  with [xdoctest](https://xdoctest.readthedocs.io/)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
   with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
 - [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
@@ -100,24 +107,32 @@ Testing
 
 Code Coverage
 -------------
-- Code coverage with [Coverage.py](https://coverage.readthedocs.io/)
-- Coverage reporting with [Codecov](https://codecov.io/)
+- Code coverage
+  with [Coverage.py](https://coverage.readthedocs.io/)
+- Coverage reporting
+  with [Codecov](https://codecov.io/)
 
 Type Checking
 -------------
-- Static type-checking with [mypy](http://mypy-lang.org/)
-- Run-time type-checking with [typeguard](https://github.com/agronholm/typeguard)
+- Static type-checking
+  with [mypy](http://mypy-lang.org/)
+- Run-time type-checking
+  with [typeguard](https://github.com/agronholm/typeguard)
     - Note: the package-under-test is automatically instrumented via the
       [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
-        - For more advanced use-cases, see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
+        - For more advanced use-cases,
+          see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
 
 Security
 --------
-- Static application security testing (SAST) with [Bandit](https://github.com/PyCQA/bandit) and [Safety](https://github.com/pyupio/safety)
+- Static application security testing (SAST)
+  with [Bandit](https://github.com/PyCQA/bandit)
+  and [Safety](https://github.com/pyupio/safety)
 
 Linting
 -------
-- Automation and management with [pre-commit](https://pre-commit.com/)
+- Automation and management
+  with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
     - [Pylint](https://www.pylint.org/)
@@ -130,32 +145,55 @@ Linting
     - (trim) [trailing-whitespace](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
     - [end-of-file-fixer](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
 - Unsanitary commits:
-  - Secrets with [detect-secrets](https://github.com/Yelp/detect-secrets)
-  - Debugger imports and py37+ `breakpoint()` calls with [debug-statements](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
-  - Large files with [check-added-large-files](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
-  - Invalid Python files with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
+  - Secrets
+    with [detect-secrets](https://github.com/Yelp/detect-secrets)
+  - Debugger imports and py37+ `breakpoint()` calls
+    with [debug-statements](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
+  - Large files
+    with [check-added-large-files](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
+  - Invalid Python files
+    with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
 CI/CD
 -----
-- Continuous integration with [`GitHub Actions`](https://github.com/features/actions)
-- Automated uploads to [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org/)
-- Automated release notes with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
-- Automated dependency updates with [`Dependabot`](https://dependabot.com/)
-- Project issue labels management with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
+- Continuous integration
+  with [`GitHub Actions`](https://github.com/features/actions)
+- Automated uploads
+  to [PyPI](https://pypi.org/)
+  and [TestPyPI](https://test.pypi.org/)
+- Automated release notes
+  with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
+- Automated dependency updates
+  with [`Dependabot`](https://dependabot.com/)
+- Project issue labels management
+  with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 
 Documentation
 --------------
-- Automated README table of contents generation with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+- Automated README table of contents generation
+  with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+- [Architecture Decision Record (ADR)](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+  documentation management
+  with [Log4brains](https://github.com/thomvaill/log4brains)
 - Project documentation:
-    - Documentation building with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-    - CLI reference with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
-    - Automatic documentation from docstrings with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-      - Support for NumPy and Google style docstrings with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
-      - Python 3 type annotation extraction with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
-      - Docstring summaries with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
-    - Docstring coverage with [interrogate](https://interrogate.readthedocs.io/)
-    - Documentation links to/from source code with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
-    - Publishing to [Confluence](https://www.atlassian.com/software/confluence) with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
+    - Documentation building
+      with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
+    - CLI reference
+      with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
+    - Automatic documentation from docstrings
+      with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+      - Support for NumPy and Google style docstrings
+        with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
+      - Python 3 type annotation extraction
+        with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
+      - Docstring summaries
+        with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
+    - Docstring coverage
+      with [interrogate](https://interrogate.readthedocs.io/)
+    - Documentation links to/from source code
+      with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
+    - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
+      with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
 ---
 

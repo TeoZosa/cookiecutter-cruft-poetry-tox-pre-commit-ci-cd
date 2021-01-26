@@ -5,8 +5,8 @@ description = "{{cookiecutter.friendly_name}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
-homepage = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
+repository = "{{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
+homepage = "{{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}"
 include = ["{{cookiecutter.package_name}}/py.typed"]
 keywords = []
 classifiers = [
@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-Changelog = "{{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/releases"
+Changelog = "{{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/releases"
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -73,6 +73,7 @@ cruft = "^2.6.0"
 
 # Documentation
 darglint = "^1.5.8"
+nodeenv = "^1.5.0" # ADR documentation Node dependency
 
 [tool.poetry.extras]
 docs = [

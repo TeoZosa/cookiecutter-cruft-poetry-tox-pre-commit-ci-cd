@@ -1,0 +1,6 @@
+---
+project:
+  name: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
+  tz: America/Los_Angeles
+  adrFolder: docs/source/adr
+  packages: []
