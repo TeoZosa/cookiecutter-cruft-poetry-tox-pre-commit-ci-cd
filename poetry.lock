@@ -987,11 +987,11 @@ sentry-sdk = "*"
 
 [[package]]
 name = "structlog-sentry-logger"
-version = "0.6.0"
+version = "0.6.1"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
-python-versions = ">=3.6.1,<4.0.0"
+python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 colorama = ">=0.4.3,<0.5.0"
@@ -1003,7 +1003,7 @@ structlog = ">=20.1.0,<21.0.0"
 structlog-sentry = ">=1.2.2,<2.0.0"
 
 [package.extras]
-docs = ["Pygments (>=2.7.3,<3.0.0)", "Sphinx (>=3.4.3,<4.0.0)", "importlib-metadata (>=3.4.0,<4.0.0)", "myst-parser (>=0.13.1,<0.14.0)", "sphinx-autodoc-typehints (>=1.11.1,<2.0.0)", "sphinx-click (>=2.5.0,<3.0.0)", "sphinx-rtd-theme (>=0.5.1,<0.6.0)", "sphinxcontrib-apidoc (>=0.3.0,<0.4.0)", "sphinxcontrib-confluencebuilder (>=1.3.0,<2.0.0)"]
+docs = ["importlib-metadata (>=3.4.0,<4.0.0)", "myst-parser (>=0.13.1,<0.14.0)", "pygments (>=2.7.3,<3.0.0)", "sphinx (>=3.4.3,<4.0.0)", "sphinx-autodoc-typehints (>=1.11.1,<2.0.0)", "sphinx-rtd-theme (>=0.5.1,<0.6.0)", "sphinxcontrib-apidoc (>=0.3.0,<0.4.0)", "sphinxcontrib-confluencebuilder (>=1.3.0,<2.0.0)"]
 
 [[package]]
 name = "text-unidecode"
@@ -1135,7 +1135,7 @@ docs = ["importlib-metadata", "myst-parser", "pygments", "sphinx", "sphinx-autod
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "48eace50df3555a67973345336fc57859e278953414fd6317c9ce29684ca137c"
+content-hash = "831a8432ab45fba95fb410c8f0130549b1ac8b6175699483fbd63b15082fa078"
 
 [metadata.files]
 alabaster = [
@@ -1617,8 +1617,8 @@ structlog-sentry = [
     {file = "structlog_sentry-1.2.2-py3-none-any.whl", hash = "sha256:5afe21bf7bfa27284345198415ac6c88941d4aef345a523ae990c94a4f6890aa"},
 ]
 structlog-sentry-logger = [
-    {file = "structlog-sentry-logger-0.6.0.tar.gz", hash = "sha256:45dc0650562911e912994cc845b9f055e7a89e023c5b69dd327aa375a9114284"},
-    {file = "structlog_sentry_logger-0.6.0-py3-none-any.whl", hash = "sha256:ec453a2c6603d021a057c056711d5c89a3cf2528cea9e4ef03f56bdc469437d0"},
+    {file = "structlog-sentry-logger-0.6.1.tar.gz", hash = "sha256:8a7d84fd29d763c7fb23170f9b6a50ac4e039080a8908675f05ee82f2934a984"},
+    {file = "structlog_sentry_logger-0.6.1-py3-none-any.whl", hash = "sha256:42d40369803c909195308a5c0cd92cb9ce3213bff80b6a48f62a62bc1fcfdd1f"},
 ]
 text-unidecode = [
     {file = "text-unidecode-1.3.tar.gz", hash = "sha256:bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"},
