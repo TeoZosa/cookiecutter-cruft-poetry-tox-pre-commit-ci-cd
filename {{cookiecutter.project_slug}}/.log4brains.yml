@@ -1,0 +1,6 @@
+---
+project:
+  name: {{cookiecutter.project_slug}}
+  tz: America/Los_Angeles
+  adrFolder: docs/source/adr
+  packages: []

@@ -44,6 +44,9 @@ ifeq ($(shell command -v poetry),)
 else
 	poetry update --lock -vv
 	poetry install --extras docs -vv
+	# Install node ADR management library
+	poetry run nodeenv --python-virtualenv --jobs=8
+	poetry run npm install -g --no-package-lock --no-save log4brains
 endif
 
 .PHONY: install-pre-commit-hooks
@@ -127,6 +130,11 @@ pre-commit-%:
 ## `make docs-clean` cleans the docs build directory
 docs-%:
 	$(MAKE) $* -C docs
+
+.PHONY: docs-adr-preview
+## Launch live preview of ADR documentation
+docs-adr-preview:
+	poetry run log4brains preview
 
 .PHONY: test-docs
 ## Test documentation format/syntax

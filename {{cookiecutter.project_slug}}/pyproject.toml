@@ -73,6 +73,7 @@ cruft = "^2.6.0"
 
 # Documentation
 darglint = "^1.5.8"
+nodeenv = "^1.5.0" # ADR documentation Node dependency
 
 [tool.poetry.extras]
 docs = [

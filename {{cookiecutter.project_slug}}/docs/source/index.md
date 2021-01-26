@@ -14,6 +14,7 @@
    Code of Conduct <codeofconduct>
    License <license>
    Changelog <changelog>
+   Architecture Decision Records <adr>
 ```
 
 ```{eval-rst}
