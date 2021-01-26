@@ -55,3 +55,9 @@ def test_version_callback_user_defined_strategy(value) -> None:
 def test_version_determination_logic() -> None:
     """Validates the installed package version against the project-specified version."""
     assert __version__ == utils.get_version_number()
+
+
+def test_typeguard_enabled() -> None:
+    "Validates runtime type-checking support"
+    with pytest.raises(TypeError):
+        version_callback("True")
