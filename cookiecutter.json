@@ -9,6 +9,7 @@
   "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
   "remote_vcs_username": "TeoZosa",
   "documentation_url": "https://{{ cookiecutter.project_slug }}.readthedocs.io",
+  "adr_documentation_url": "https://{{ cookiecutter.remote_vcs_username }}.{{ cookiecutter.remote_vcs_host }}.io/{{ cookiecutter.project_slug }}/adr/",
   "version": "0.0.0",
   "_copy_without_render": [
     "docs/source/_templates/*"
