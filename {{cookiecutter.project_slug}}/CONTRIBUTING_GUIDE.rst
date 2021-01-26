@@ -13,9 +13,9 @@ Here is a list of important resources for contributors:
 - `Code of Conduct`_
 
 .. _Apache license: https://opensource.org/licenses/Apache-2.0
-.. _Source Code: {{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}
+.. _Source Code: {{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}
 .. _Documentation: {{cookiecutter.documentation_url}}
-.. _Issue Tracker: {{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/issues
+.. _Issue Tracker: {{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/issues
 
 How to report a bug
 ====================
@@ -167,6 +167,6 @@ To run linting and code formatting checks before commiting your change, you can 
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-.. _pull request: {{cookiecutter.remote_vcs_host}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/pulls
+.. _pull request: {{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/pulls
 .. github-only
 .. _Code of Conduct: CODE_OF_CONDUCT.rst
