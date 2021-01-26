@@ -3,6 +3,8 @@
 from functools import partial
 from typing import Optional
 
+import icontract
+import icontract_hypothesis
 import pytest
 from hypothesis import given, infer, strategies as st
 from typer.testing import CliRunner
@@ -46,7 +48,11 @@ def _test_version_callback(value: Optional[bool]) -> None:
             version_callback(value)
         assert excinfo.value.exit_code == 0  # type: ignore[attr-defined]
     else:
-        assert version_callback(value) is None
+        if value is False:  # as opposed to None
+            with pytest.raises(icontract.errors.ViolationError):
+                version_callback(value)
+        else:
+            assert version_callback(value) is None
 
 
 class TestVersionCallbackPropertyBasedTesting:
@@ -63,6 +69,28 @@ class TestVersionCallbackPropertyBasedTesting:
         _test_version_callback(value)
 
 
+class TestVersionCallbackDesignByContract:
+    @staticmethod
+    @given(value=st.none() | st.booleans())
+    def test_version_callback_user_defined_strategy_icontract_constrained(
+        value,
+    ) -> None:
+        assume_version_callback_precondition = (
+            icontract_hypothesis.make_assume_preconditions(version_callback)
+        )
+
+        # Reject input values that that do not satisfy contract preconditions
+        # under the assumption that preconditions will be satisfied at run-time,
+        # i.e. either implicitly or explicitly via contract enforcement by
+        # `icontract` or other input validation scheme.
+        assume_version_callback_precondition(value)
+        assert value is not False
+        _test_version_callback(value)
+
+    @staticmethod
+    def test_version_callback_icontract_contract_enforcement() -> None:
+        with pytest.raises(icontract.errors.ViolationError):
+            version_callback(False)
 
 
 class TestRuntimeTypechecking:
