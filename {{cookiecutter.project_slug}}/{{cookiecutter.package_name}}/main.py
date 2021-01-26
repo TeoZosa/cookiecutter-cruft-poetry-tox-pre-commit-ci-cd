@@ -3,6 +3,7 @@ from typing import Optional
 
 import importlib_metadata
 import structlog_sentry_logger
+import typeguard
 import typer
 from dotenv import find_dotenv, load_dotenv
 
@@ -14,6 +15,7 @@ load_dotenv(find_dotenv())
 LOGGER = structlog_sentry_logger.get_logger()
 
 
+@typeguard.typechecked()
 def version_callback(value: Optional[bool]):  # pylint: disable=unsubscriptable-object
     """Provides a version option for the CLI"""
     if value:
@@ -21,6 +23,7 @@ def version_callback(value: Optional[bool]):  # pylint: disable=unsubscriptable-
         raise typer.Exit()
 
 
+@typeguard.typechecked()
 @app.command()
 def main(
     version: Optional[  # pylint: disable=unsubscriptable-object,unused-argument
