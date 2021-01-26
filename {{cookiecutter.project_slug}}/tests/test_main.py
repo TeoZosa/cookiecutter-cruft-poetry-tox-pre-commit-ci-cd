@@ -49,13 +49,18 @@ def _test_version_callback(value: Optional[bool]) -> None:
         assert version_callback(value) is None
 
 
-@given(value=infer)
-def test_version_callback_inferred_from_type_annotation(value: Optional[bool]) -> None:
-    _test_version_callback(value)
+class TestVersionCallbackPropertyBasedTesting:
+    @staticmethod
+    @given(value=infer)
+    def test_version_callback_inferred_from_type_annotation(
+        value: Optional[bool],
+    ) -> None:
+        _test_version_callback(value)
 
-@given(value=st.booleans())
-def test_version_callback_user_defined_strategy(value) -> None:
-    _test_version_callback(value)
+    @staticmethod
+    @given(value=st.none() | st.booleans())
+    def test_version_callback_user_defined_strategy(value) -> None:
+        _test_version_callback(value)
 
 
 
