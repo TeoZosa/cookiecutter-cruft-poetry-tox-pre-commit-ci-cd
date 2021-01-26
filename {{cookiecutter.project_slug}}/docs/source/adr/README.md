@@ -2,7 +2,7 @@
 
 ADRs are automatically published to our Log4brains architecture knowledge base:
 
-🔗 **<https://{{cookiecutter.remote_vcs_username}}.github.io/{{cookiecutter.project_slug}}/adr/>**
+🔗 **<https://{{cookiecutter.remote_vcs_username}}.{{ cookiecutter.remote_vcs_host }}.io/{{cookiecutter.project_slug}}/adr/>**
 
 Please use this link to browse them.
 
