@@ -34,6 +34,11 @@ def test_version_option(cruft_runner: partial) -> None:
     assert utils.get_version_number() in result.output
 
 
+def test_version_determination_logic() -> None:
+    """Validates the installed package version against the project-specified version."""
+    assert __version__ == utils.get_version_number()
+
+
 def _test_version_callback(value: Optional[bool]) -> None:
     """It exits cleanly if true or is not executed"""
     if value:
@@ -52,9 +57,6 @@ def test_version_callback_inferred_from_type_annotation(value: Optional[bool]) -
 def test_version_callback_user_defined_strategy(value) -> None:
     _test_version_callback(value)
 
-def test_version_determination_logic() -> None:
-    """Validates the installed package version against the project-specified version."""
-    assert __version__ == utils.get_version_number()
 
 
 
