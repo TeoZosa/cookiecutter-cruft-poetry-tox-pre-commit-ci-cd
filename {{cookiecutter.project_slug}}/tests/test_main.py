@@ -57,7 +57,10 @@ def test_version_determination_logic() -> None:
     assert __version__ == utils.get_version_number()
 
 
-def test_typeguard_enabled() -> None:
-    "Validates runtime type-checking support"
-    with pytest.raises(TypeError):
-        version_callback("True")
+
+class TestRuntimeTypechecking:
+    @staticmethod
+    def test_typeguard_enabled() -> None:
+        "Validates runtime type-checking support"
+        with pytest.raises(TypeError):
+            version_callback("True")
