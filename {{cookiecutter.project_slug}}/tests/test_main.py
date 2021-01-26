@@ -16,7 +16,7 @@ from {{cookiecutter.package_name}}.main import (
 from . import utils
 
 
-@pytest.fixture
+@pytest.fixture(scope="function")
 def cruft_runner():
     runner = CliRunner()
     yield partial(runner.invoke, app)
