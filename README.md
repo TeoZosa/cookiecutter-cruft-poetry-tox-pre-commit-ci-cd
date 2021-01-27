@@ -30,6 +30,7 @@ Table of Contents
 - [Usage](#usage)
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
+  * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
   * [Type Checking](#type-checking)
@@ -82,6 +83,9 @@ Standardized Developer Workflow Orchestration
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+
+Fully-Functional Python Package Boilerplate
+---------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
 
