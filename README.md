@@ -30,9 +30,10 @@ Table of Contents
 - [Usage](#usage)
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
+  * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
-  * [Type Checking](#type-checking)
+  * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
@@ -82,6 +83,9 @@ Standardized Developer Workflow Orchestration
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+
+Fully-Functional Python Package Boilerplate
+---------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
 
@@ -112,7 +116,7 @@ Code Coverage
 - Coverage reporting
   with [Codecov](https://codecov.io/)
 
-Type Checking
+Type Checking and Data Validation
 -------------
 - Static type-checking
   with [mypy](http://mypy-lang.org/)
@@ -122,6 +126,9 @@ Type Checking
       [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
         - For more advanced use-cases,
           see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
+- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
+  (precondition, postcondition, and invariant enforcement)
+  with [icontract](https://github.com/Parquery/icontract)
 
 Security
 --------
