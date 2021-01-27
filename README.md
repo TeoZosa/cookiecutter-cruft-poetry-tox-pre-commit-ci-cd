@@ -126,6 +126,9 @@ Type Checking and Data Validation
       [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
         - For more advanced use-cases,
           see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
+- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
+  (precondition, postcondition, and invariant enforcement)
+  with [icontract](https://github.com/Parquery/icontract)
 
 Security
 --------
