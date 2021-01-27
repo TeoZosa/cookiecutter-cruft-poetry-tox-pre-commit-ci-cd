@@ -18,7 +18,7 @@ Here is a list of important resources for contributors:
 .. _Issue Tracker: https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/issues
 
 How to report a bug
-====================
+--------------------
 
 Report bugs on the `Issue Tracker`_.
 
@@ -35,13 +35,13 @@ and/or steps to reproduce the issue.
 
 
 How to request a feature
-========================
+------------------------
 
 Request features on the `Issue Tracker`_.
 
 
 How to set up your development environment
-==========================================
+------------------------------------------
 
 .. note::
    For convenience, many of the below processes are abstracted away
@@ -54,7 +54,7 @@ How to set up your development environment
 Make sure you have Python 3.6+ and Poetry_ installed and configured.
 
 Install the package with development requirements:
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. highlight:: bash
 .. code-block:: bash
@@ -69,10 +69,10 @@ Install the package with development requirements:
 
 
 How to test the project
-=======================
+-----------------------
 
 Lint the code:
---------------
+^^^^^^^^^^^^^^
 
 .. highlight:: bash
 .. code-block:: bash
@@ -85,7 +85,7 @@ Lint the code:
    prior to every commit that is pushed.
 
 Build the documentation:
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. highlight:: bash
 .. code-block:: bash
@@ -98,7 +98,7 @@ Build the documentation:
 
 
 How to submit changes
-=====================
+---------------------
 
 Open a `pull request`_ to submit changes to this project.
 
