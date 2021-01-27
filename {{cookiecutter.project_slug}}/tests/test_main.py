@@ -96,6 +96,6 @@ class TestVersionCallbackDesignByContract:
 class TestRuntimeTypechecking:
     @staticmethod
     def test_typeguard_enabled() -> None:
-        "Validates runtime type-checking support"
+        """Validates runtime type-checking support"""
         with pytest.raises(TypeError):
             version_callback("True")
