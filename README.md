@@ -33,7 +33,7 @@ Table of Contents
   * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
-  * [Type Checking](#type-checking)
+  * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
@@ -116,7 +116,7 @@ Code Coverage
 - Coverage reporting
   with [Codecov](https://codecov.io/)
 
-Type Checking
+Type Checking and Data Validation
 -------------
 - Static type-checking
   with [mypy](http://mypy-lang.org/)
