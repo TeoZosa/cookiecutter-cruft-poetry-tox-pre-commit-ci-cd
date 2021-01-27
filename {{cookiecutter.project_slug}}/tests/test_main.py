@@ -58,21 +58,21 @@ def _test_version_callback(value: Optional[bool]) -> None:
 class TestVersionCallbackPropertyBasedTesting:
     @staticmethod
     @given(value=infer)
-    def test_version_callback_inferred_from_type_annotation(
+    def test_input_value_inferred_from_type_annotation(
         value: Optional[bool],
     ) -> None:
         _test_version_callback(value)
 
     @staticmethod
     @given(value=st.none() | st.booleans())
-    def test_version_callback_user_defined_strategy(value) -> None:
+    def test_input_value_generated_from_user_defined_strategy(value) -> None:
         _test_version_callback(value)
 
 
 class TestVersionCallbackDesignByContract:
     @staticmethod
     @given(value=st.none() | st.booleans())
-    def test_version_callback_user_defined_strategy_icontract_constrained(
+    def test_input_value_generated_from_user_defined_strategy_is_constrained_by_icontract_preconditions(
         value,
     ) -> None:
         assume_version_callback_precondition = (
@@ -88,7 +88,7 @@ class TestVersionCallbackDesignByContract:
         _test_version_callback(value)
 
     @staticmethod
-    def test_version_callback_icontract_contract_enforcement() -> None:
+    def test_icontract_contract_enforcement() -> None:
         with pytest.raises(icontract.errors.ViolationError):
             version_callback(False)
 
