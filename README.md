@@ -179,9 +179,9 @@ Documentation
 --------------
 - Automated README table of contents generation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
-- [Architecture Decision Record (ADR)](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
-  documentation management
+- Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
+    - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record).
 - Project documentation:
     - Documentation building
       with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
