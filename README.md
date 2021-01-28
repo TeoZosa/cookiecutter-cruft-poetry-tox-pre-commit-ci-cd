@@ -13,12 +13,16 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 
 ---
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) template for SonoSim **Core Sonosim AI Repositories (CorSAIR)** Python packages, with automated template synchronization via [`cruft`](https://cruft.github.io/cruft/).
+[Cookiecutter](https://github.com/audreyr/cookiecutter) template for
+SonoSim **Core Sonosim AI Repositories (CorSAIR)** Python packages,
+with automated template synchronization
+via [`cruft`](https://cruft.github.io/cruft/).
 
 VERY heavily influenced by (and, in many places, derivative of) the amazing
 [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
-from [@cjolowicz](https://github.com/cjolowicz) based on the
-fantastic [`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) article series.
+from [@cjolowicz](https://github.com/cjolowicz)
+based on the fantastic
+[`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) article series.
 
 ---
 
