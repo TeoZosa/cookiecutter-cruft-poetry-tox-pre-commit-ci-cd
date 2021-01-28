@@ -88,7 +88,7 @@ Standardized Developer Workflow Orchestration
   with [Make](https://www.gnu.org/software/make/)
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
 - Automated Cookiecutter template synchronization
-  with [`cruft`](https://cruft.github.io/cruft/)
+  with [cruft](https://cruft.github.io/cruft/)
 
 Fully-Functional Python Package Boilerplate
 -------------------------------------------
@@ -189,7 +189,7 @@ Documentation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
-    - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record).
+    - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
 - Project documentation:
     - Documentation building
       with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
