@@ -85,7 +85,7 @@ Standardized Developer Workflow Orchestration
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
 
 Fully-Functional Python Package Boilerplate
----------------------------------------------
+-------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
 
@@ -178,7 +178,7 @@ CI/CD
   with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 
 Documentation
---------------
+-------------
 - Automated README table of contents generation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
