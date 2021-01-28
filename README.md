@@ -83,6 +83,8 @@ Standardized Developer Workflow Orchestration
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+- Automated Cookiecutter template synchronization
+  with [`cruft`](https://cruft.github.io/cruft/)
 
 Fully-Functional Python Package Boilerplate
 -------------------------------------------
