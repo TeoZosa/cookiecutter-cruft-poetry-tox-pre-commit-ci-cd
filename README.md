@@ -112,9 +112,9 @@ Testing
   with [xdoctest](https://xdoctest.readthedocs.io/)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
   with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
-    - [Design-by-contract](#type-checking-and-data-validation) support
+    - [Design-by-contract](#type-checking-and-data-validation) integration
       (i.e. to intelligently constrain the input space defined by the search strategy)
-      with [icontract-hypothesis](https://github.com/mristin/icontract-hypothesis)
+      via [icontract-hypothesis](https://github.com/mristin/icontract-hypothesis)
 - [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
   with [mutmut](https://github.com/boxed/mutmut)
 
