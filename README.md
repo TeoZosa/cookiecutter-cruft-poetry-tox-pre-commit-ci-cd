@@ -95,10 +95,9 @@ Type Checking and Data Validation
   with [mypy](http://mypy-lang.org/)
 - Run-time type-checking
   with [typeguard](https://github.com/agronholm/typeguard)
-    - Note: the package-under-test is automatically instrumented via the
-      [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
-        - For more advanced use-cases,
-          see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
+    - See the
+      [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
+      for usage overview
 - [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
   (precondition, postcondition, and invariant enforcement)
   with [icontract](https://github.com/Parquery/icontract)
