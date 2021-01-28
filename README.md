@@ -31,9 +31,9 @@ Table of Contents
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
   * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
+  * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
-  * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
@@ -89,6 +89,20 @@ Fully-Functional Python Package Boilerplate
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
 
+Type Checking and Data Validation
+---------------------------------
+- Static type-checking
+  with [mypy](http://mypy-lang.org/)
+- Run-time type-checking
+  with [typeguard](https://github.com/agronholm/typeguard)
+    - Note: the package-under-test is automatically instrumented via the
+      [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
+        - For more advanced use-cases,
+          see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
+- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
+  (precondition, postcondition, and invariant enforcement)
+  with [icontract](https://github.com/Parquery/icontract)
+
 Testing
 -------
 - Test automation
@@ -118,20 +132,6 @@ Code Coverage
   with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting
   with [Codecov](https://codecov.io/)
-
-Type Checking and Data Validation
----------------------------------
-- Static type-checking
-  with [mypy](http://mypy-lang.org/)
-- Run-time type-checking
-  with [typeguard](https://github.com/agronholm/typeguard)
-    - Note: the package-under-test is automatically instrumented via the
-      [typeguard pytest plugin](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#using-the-pytest-plugin)
-        - For more advanced use-cases,
-          see the [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=pytest#user-guide).
-- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
-  (precondition, postcondition, and invariant enforcement)
-  with [icontract](https://github.com/Parquery/icontract)
 
 Security
 --------
