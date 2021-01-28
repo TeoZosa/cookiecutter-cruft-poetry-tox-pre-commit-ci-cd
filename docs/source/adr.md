@@ -3,8 +3,8 @@
 :relative-images:
 ```
 
-ADR Repository
+Architecture Decision Log (ADL)
 ----
 ```{note}
-Find the ADR Repository [here](https://TeoZosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/adr/)
+Find the ADL [here](https://TeoZosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/adr/)
 ```
