@@ -28,18 +28,23 @@ Moreover, maintaining this documentation aims at:
 
 ## Usage
 
-This website is automatically updated
-after a change on the `master` branch of the project's Git repository.
-In fact, the developers manage this documentation directly
-with markdown files located next to their code,
-so it is more convenient for them to keep it up-to-date.
-You can browse the ADRs by using the left menu or the search bar of the ADL.
-
 The typical workflow of an ADR:
 
 ![ADR workflow](./l4b-static/adr-workflow.png)
 
 The decision process is entirely collaborative and backed by pull requests.
+
+> 📝 **Note**  
+>  The architecture knowledge base is updated automatically
+>  on each push to the project's `master` branch;
+>  the developers manage this documentation directly
+>  with in-project markdown files for seamless integration,
+>  reducing documentation and source code drift
+>  throughout the software development lifecycle
+>  and downstream CI/CD pipelines.
+
+> 🔥 **Tip**  
+>  You can browse the ADRs via the left menu or the search bar of the ADL.
 
 ## More information
 
