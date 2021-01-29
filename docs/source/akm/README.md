@@ -2,7 +2,7 @@
 
 ADRs are automatically published to our Log4brains architecture knowledge base:
 
-🔗 **<https://TeoZosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/adr/>**
+🔗 **<https://TeoZosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/adl/>**
 
 Please use this link to browse them.
 

@@ -1,4 +1,4 @@
-```{include} adr/index.md
+```{include} akm/index.md
 :relative-docs: docs/
 :relative-images:
 ```
