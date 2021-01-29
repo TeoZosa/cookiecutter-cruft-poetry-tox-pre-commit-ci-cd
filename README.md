@@ -13,6 +13,12 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 
 ---
 
+**Documentation**: [https://cookiecutter-cruft-poetry-tox-pre-commit-ci-cd.readthedocs.io](https://cookiecutter-cruft-poetry-tox-pre-commit-ci-cd.readthedocs.io)
+
+**Source Code**: [https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd](https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd)
+
+---
+
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for
 SonoSim **Core Sonosim AI Repositories (CorSAIR)** Python packages,
 with automated template synchronization

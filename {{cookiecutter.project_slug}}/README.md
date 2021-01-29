@@ -16,6 +16,14 @@
 [![Dependabot](https://api.dependabot.com/badges/status?host=github&repo={{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}})](https://dependabot.com/)
 {% endif %}
 
+---
+
+**Documentation**: [{{cookiecutter.documentation_url}}]({{cookiecutter.documentation_url}})
+
+**Source Code**: [{{ cookiecutter.project_repository_url }}]({{ cookiecutter.project_repository_url }})
+
+---
+
 Overview
 --------
 - TODO
