@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-ADRs are automatically published to our Log4brains architecture knowledge base:
+ADRs are automatically published to our architecture knowledge base:
 
 🔗 **<https://TeoZosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/adl/>**
 

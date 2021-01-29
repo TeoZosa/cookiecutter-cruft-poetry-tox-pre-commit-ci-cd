@@ -6,5 +6,5 @@
 Architecture Decision Log (ADL)
 ----
 ```{note}
-Find the ADL [here]({{ cookiecutter.adr_documentation_url }})
+Find the ADL [here]({{ cookiecutter.adr_documentation_url }}).
 ```
