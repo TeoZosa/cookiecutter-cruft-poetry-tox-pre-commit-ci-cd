@@ -8,12 +8,14 @@ Here you will find the Architecture Decision Records (ADRs) of the project.
 
 ## Definition and purpose
 
-> An Architecture Decision (AD) is a software design choice that addresses an
+> An **Architecture Decision (AD)** is a software design choice that addresses an
 > architecturally significant functional or non-functional requirement.
-> An Architecture Decision Record (ADR) captures a single AD
-> along with its context and consequences;
-> the collection of ADRs created and maintained for a project or organization
-> constitutes its Architecture Decision Log (ADL).
+
+> An **Architecture Decision Record (ADR)** captures a single AD
+> along with its context and consequence.
+
+> An **Architecture Decision Log (ADL)** is the collection of ADRs
+> created and maintained for a project or organization.
 
 An ADR is immutable: only its status can change
 (i.e., become deprecated or superseded).
