@@ -1,4 +1,4 @@
-```{include} adr/index.md
+```{include} akm/index.md
 :relative-docs: docs/
 :relative-images:
 ```
@@ -6,5 +6,5 @@
 Architecture Decision Log (ADL)
 ----
 ```{note}
-Find the ADL [here]({{ cookiecutter.adr_documentation_url }})
+Find the ADL [here]({{ cookiecutter.adr_documentation_url }}).
 ```

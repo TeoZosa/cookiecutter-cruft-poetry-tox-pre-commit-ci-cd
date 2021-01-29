@@ -131,9 +131,9 @@ pre-commit-%:
 docs-%:
 	$(MAKE) $* -C docs
 
-.PHONY: docs-adr-preview
+.PHONY: docs-adl-preview
 ## Launch live preview of ADR documentation
-docs-adr-preview:
+docs-adl-preview:
 	poetry run log4brains preview
 
 .PHONY: test-docs

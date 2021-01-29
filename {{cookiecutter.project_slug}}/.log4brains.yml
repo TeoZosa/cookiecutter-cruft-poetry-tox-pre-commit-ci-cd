@@ -2,5 +2,5 @@
 project:
   name: {{cookiecutter.project_slug}}
   tz: America/Los_Angeles
-  adrFolder: docs/source/adr
+  adrFolder: docs/source/akm
   packages: []
