@@ -19,7 +19,8 @@ An ADR is immutable: only its status can change
 (i.e., become deprecated or superseded).
 That way, you can become familiar with the whole project history
 just by reading its decision log in chronological order.
-Moreover, maintaining this documentation aims at:
+
+Maintaining this documentation aims at:
 
 - 🚀 Improving and accelerating the onboarding of a new team member
 - 🔭 Avoiding blind acceptance or reversal of a past decision
