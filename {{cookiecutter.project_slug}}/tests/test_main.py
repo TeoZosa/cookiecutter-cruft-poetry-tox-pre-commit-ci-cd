@@ -19,9 +19,9 @@ from . import utils
 
 
 @pytest.fixture(scope="function")
-def cruft_runner():
+def cruft_runner(benchmark):
     runner = CliRunner()
-    yield partial(runner.invoke, app)
+    yield partial(benchmark, runner.invoke, app)
 
 
 def test_main_succeeds(cruft_runner: partial) -> None:
@@ -39,6 +39,11 @@ def test_version_option(cruft_runner: partial) -> None:
 def test_version_determination_logic() -> None:
     """Validates the installed package version against the project-specified version."""
     assert __version__ == utils.get_version_number()
+
+
+def test_version_callback(benchmark) -> None:
+    """It exits cleanly if true or is not executed"""
+    benchmark(_test_version_callback, value=True)
 
 
 def _test_version_callback(value: Optional[bool]) -> None:

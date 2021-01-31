@@ -109,6 +109,10 @@ test: clean update-dependencies generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
 
+.PHONY: test-%-benchmark
+test-%-benchmark:
+	$(MAKE) tox-$*-benchmark
+
 .PHONY: test-%
 test-%:
 	$(MAKE) tox-$*,coverage
