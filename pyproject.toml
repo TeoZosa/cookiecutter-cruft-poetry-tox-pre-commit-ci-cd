@@ -42,12 +42,11 @@ cruft = "^2.6.0"
 # Project cookiecutter dependencies
 hypothesis = "^6.1.0"
 python-dotenv = "^0.15.0"
-pytest = "^6.2.2"
+importlib-metadata = "^2.1.1"
 structlog-sentry-logger = "^0.6.1"
 typer = {extras = ["all"], version = "^0.3.2"}
 
 # Documentation
-importlib-metadata = { version = "^3.4.0", optional = true}
 myst-parser = { version = "^0.13.3", optional = true}
 pygments = { version = "^2.7.3", optional = true}
 sphinx = { version = "^3.4.3", optional = true}
@@ -74,7 +73,6 @@ darglint = "^1.5.8"
 
 [tool.poetry.extras]
 docs = [
-    "importlib-metadata",
     "myst-parser",
     "pygments",
     "sphinx",
