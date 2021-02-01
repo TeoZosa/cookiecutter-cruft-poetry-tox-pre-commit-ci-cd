@@ -1,0 +1,71 @@
+---
+name: Publish Performance Testing Benchmarks
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-publish-benchmarks:
+    name: icontract benchmarks for Python ${{ matrix.python-version }}
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2.3.3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+
+      - name: Configure Poetry
+        run: |
+          poetry config cache-dir "${GITHUB_WORKSPACE}/.cache/pypoetry"
+          poetry config virtualenvs.in-project true
+          poetry config --list
+
+      - name: Install dependencies
+        run: |
+          make provision_environment
+
+      # yamllint disable rule:line-length
+      - name: Run benchmarks for ${{ matrix.python-version }}
+        id: performance-testing
+        run: |
+          TOX_COMPATIBLE_VERSION=$(\
+            echo "${{ matrix.python-version }}" \
+            | tr -d '.')
+          envname="py${TOX_COMPATIBLE_VERSION}-benchmark" && \
+          make "test-${envname}" && \
+          BENCHMARK_FILE_TAG=$(make strong-version-tag) && \
+          BENCHMARK_FILE_PREFIX=".benchmarks/${envname}/${BENCHMARK_FILE_TAG}" && \
+          echo "::set-output name=tox_envname::${envname}" && \
+          echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE_PREFIX}.json"
+      # yamllint enable rule:line-length
+
+      - name: Reset Poetry lockfile for Checkout
+        run: |
+          git checkout poetry.lock || echo "Skipping step"
+
+      # yamllint disable rule:line-length
+      - name: Store benchmark result
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          tool: 'pytest'
+          benchmark-data-dir-path: dev/${{ steps.performance-testing.outputs.tox_envname }}
+          output-file-path: ${{ steps.performance-testing.outputs.benchmark_file_path }}
+          # Personal access token to deploy GitHub Pages branch
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Push and deploy GitHub pages branch automatically
+          auto-push: true
+      # yamllint enable rule:line-length
