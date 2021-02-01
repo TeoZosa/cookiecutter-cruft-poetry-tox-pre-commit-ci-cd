@@ -175,7 +175,7 @@ examples = ["examples (>=1.0.2,<2.0.0)"]
 
 [[package]]
 name = "darglint"
-version = "1.5.8"
+version = "1.6.0"
 description = "A utility for ensuring Google-style docstrings stay up to date with the source code."
 category = "dev"
 optional = false
@@ -1098,7 +1098,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "5901d9dcad2cd4eeecad1988a9ec0c76e8f8be0c092d20d03cd0c39b280a354e"
+content-hash = "8b454b6bbedc4a09222366e26c1bffdf3136159f1b15bc69b164b3dd9d310ed4"
 
 [metadata.files]
 alabaster = [
@@ -1161,8 +1161,8 @@ cruft = [
     {file = "cruft-2.6.0.tar.gz", hash = "sha256:bbeea9fb69812afd74a8140cca5ae7fdab761d4df50b137f2437fab9e72c4580"},
 ]
 darglint = [
-    {file = "darglint-1.5.8-py3-none-any.whl", hash = "sha256:2e1012945a09d19a15cc87f9d15e7b14c18473ec9cf7769c641951b348de1353"},
-    {file = "darglint-1.5.8.tar.gz", hash = "sha256:529f4969029d5ff5f74bfec48adc14b6f003409141f722b6cc4b787dddc8a4dd"},
+    {file = "darglint-1.6.0-py3-none-any.whl", hash = "sha256:c80849fd83a06d0bec3c93240360214cf56979691c6d18e2abb293aa404bf443"},
+    {file = "darglint-1.6.0.tar.gz", hash = "sha256:9c91a1dd93f6cdbdd626ecea8ae2849fafe6588bb6d6dbbf7066f9ae69fca771"},
 ]
 distlib = [
     {file = "distlib-0.3.1-py2.py3-none-any.whl", hash = "sha256:8c09de2c67b3e7deef7184574fc060ab8a793e7adbb183d942c389c8b13c52fb"},
