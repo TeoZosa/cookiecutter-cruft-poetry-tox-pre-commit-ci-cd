@@ -122,6 +122,8 @@ Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
   with [xdoctest](https://xdoctest.readthedocs.io/)
+- [Performance testing](https://en.wikipedia.org/wiki/Software_performance_testing)
+  with [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
   with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
     - [Design-by-contract](#type-checking-and-data-validation) integration
