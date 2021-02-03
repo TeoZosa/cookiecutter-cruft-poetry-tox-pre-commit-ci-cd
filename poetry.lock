@@ -1179,7 +1179,7 @@ sentry-sdk = "*"
 
 [[package]]
 name = "structlog-sentry-logger"
-version = "0.6.1"
+version = "0.7.1"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
@@ -1353,7 +1353,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "aa3ceb600666dce14db13aea4aab145b4b07c427d6ca3144c126fc7ff20d3792"
+content-hash = "b2a15e711bd3fe8bc1fc6737d288516cdbd2cc7b74b41286df6b77837f1cc560"
 
 [metadata.files]
 alabaster = [
@@ -1958,8 +1958,8 @@ structlog-sentry = [
     {file = "structlog_sentry-1.2.2-py3-none-any.whl", hash = "sha256:5afe21bf7bfa27284345198415ac6c88941d4aef345a523ae990c94a4f6890aa"},
 ]
 structlog-sentry-logger = [
-    {file = "structlog-sentry-logger-0.6.1.tar.gz", hash = "sha256:8a7d84fd29d763c7fb23170f9b6a50ac4e039080a8908675f05ee82f2934a984"},
-    {file = "structlog_sentry_logger-0.6.1-py3-none-any.whl", hash = "sha256:42d40369803c909195308a5c0cd92cb9ce3213bff80b6a48f62a62bc1fcfdd1f"},
+    {file = "structlog-sentry-logger-0.7.1.tar.gz", hash = "sha256:9202f264e04c2c1e90f6366afc45c75acb77935808ffb9bfba74b64d3b048113"},
+    {file = "structlog_sentry_logger-0.7.1-py3-none-any.whl", hash = "sha256:a0ce9f33320c6519e479234588149cbc0589d6654b8cd60e8a44801ddea50566"},
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
