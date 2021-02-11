@@ -19,20 +19,20 @@ from . import utils
 
 
 @pytest.fixture(scope="function")
-def cruft_runner(benchmark):
+def test_runner(benchmark):
     runner = CliRunner()
     yield partial(benchmark, runner.invoke, app)
 
 
-def test_main_succeeds(cruft_runner: partial) -> None:
+def test_main_succeeds(test_runner: partial) -> None:
     """It exits with a status code of zero."""
-    result = cruft_runner()
+    result = test_runner()
     assert result.exit_code == 0
 
 
-def test_version_option(cruft_runner: partial) -> None:
+def test_version_option(test_runner: partial) -> None:
     """It returns the package version."""
-    result = cruft_runner(["--version"])
+    result = test_runner(["--version"])
     assert utils.get_version_number() in result.output
 
 
