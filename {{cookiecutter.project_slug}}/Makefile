@@ -60,8 +60,8 @@ ifeq ($(shell command -v poetry),)
 	@echo "- https://python-poetry.org/docs/managing-environments/"
 	false
 else
-	poetry update --lock -vv
-	poetry install --extras docs -vv
+	poetry update --lock -v
+	poetry install --extras docs -v
 	# Install node ADR management library
 	poetry run nodeenv --python-virtualenv --jobs=8
 	poetry run npm install -g --no-package-lock --no-save log4brains
