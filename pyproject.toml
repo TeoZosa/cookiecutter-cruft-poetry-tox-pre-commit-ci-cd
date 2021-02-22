@@ -79,7 +79,7 @@ mypy = "^0.800"
 pre-commit = "^2.10.1"
 
 # Documentation
-darglint = "^1.5.8"
+darglint = "^1.7.0"
 
 [tool.poetry.extras]
 docs = [
