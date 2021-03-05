@@ -198,7 +198,7 @@ toml = ["toml"]
 
 [[package]]
 name = "cruft"
-version = "2.6.1"
+version = "2.7.0"
 description = "Allows you to maintain all the necessary cruft for packaging and building projects separate from the code you intentionally write. Built on-top of CookieCutter."
 category = "main"
 optional = false
@@ -1353,7 +1353,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "818f1bded9d342d6c9182a0a047472b04123d531b1ad19b5e030875c91b5e191"
+content-hash = "50f7b5458f5662535704352439885bf60219bfd103f7f2e8df331f0d88ed554c"
 
 [metadata.files]
 alabaster = [
@@ -1475,8 +1475,8 @@ coverage = [
     {file = "coverage-5.4.tar.gz", hash = "sha256:6d2e262e5e8da6fa56e774fb8e2643417351427604c2b177f8e8c5f75fc928ca"},
 ]
 cruft = [
-    {file = "cruft-2.6.1-py3-none-any.whl", hash = "sha256:e1d3ec520bd2cf883cd0212243963d695e80e9ace1219c549e8ca2248c73a458"},
-    {file = "cruft-2.6.1.tar.gz", hash = "sha256:664efd82ba5870f0343d511426c667cd45ae44322c470ee04e5802f861d341ce"},
+    {file = "cruft-2.7.0-py3-none-any.whl", hash = "sha256:f4b8d93276a07fedd4b6bc7880c9f7ec72ce35fca61effe049bd1e951c601776"},
+    {file = "cruft-2.7.0.tar.gz", hash = "sha256:a47b84387f3133181da9f82f4711246147363eff78f13bd2b031400a33ee24d1"},
 ]
 darglint = [
     {file = "darglint-1.6.0-py3-none-any.whl", hash = "sha256:c80849fd83a06d0bec3c93240360214cf56979691c6d18e2abb293aa404bf443"},
