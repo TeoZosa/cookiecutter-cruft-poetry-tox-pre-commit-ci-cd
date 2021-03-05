@@ -43,6 +43,36 @@ strong-version-tag:
 .PHONY: strong-version-tag-dateless
 strong-version-tag-dateless:
 	@echo $(GIT_VERSION)
+
+.PHONY: update-dependencies
+## Install Python dependencies,
+## updating packages in `poetry.lock` with any newer versions specified in
+## `pyproject.toml`, and install auto_assessment source code
+update-dependencies:
+	poetry update --lock
+ifneq (${CI}, true)
+	poetry install --extras docs
+endif
+
+.PHONY: generate-requirements
+## Generate project requirements files from `pyproject.toml`
+generate-requirements:
+	poetry export -f requirements.txt --without-hashes > requirements.txt # subset
+	poetry export --dev -f requirements.txt --without-hashes > requirements-dev.txt # superset w/o docs
+	poetry export --extras docs --dev -f requirements.txt --without-hashes > requirements-all.txt # superset
+
+.PHONY: clean-requirements
+## Clean generated project requirements files
+clean-requirements:
+	find . -type f -name "requirements*.txt" -delete -maxdepth 0
+
+.PHONY: clean
+## Delete all compiled Python files
+clean:
+	find . -type f -name "*.py[co]" -delete
+	find . -type d -name "__pycache__" -delete
+
+
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
@@ -169,34 +199,6 @@ docs-adl-preview:
 ## Test documentation format/syntax
 test-docs:
 	poetry run tox -e docs
-
-.PHONY: update-dependencies
-## Install Python dependencies,
-## updating packages in `poetry.lock` with any newer versions specified in
-## `pyproject.toml`, and install {{cookiecutter.project_slug}} source code
-update-dependencies:
-	poetry update --lock
-ifneq (${CI}, true)
-	poetry install --extras docs
-endif
-
-.PHONY: generate-requirements
-## Generate project requirements files from `pyproject.toml`
-generate-requirements:
-	poetry export -f requirements.txt --without-hashes > requirements.txt # subset
-	poetry export --dev -f requirements.txt --without-hashes > requirements-dev.txt # superset w/o docs
-	poetry export --extras docs --dev -f requirements.txt --without-hashes > requirements-all.txt # superset
-
-.PHONY: clean-requirements
-## clean generated project requirements files
-clean-requirements:
-	find . -type f -name "requirements*.txt" -delete -maxdepth 0
-
-.PHONY: clean
-## Delete all compiled Python files
-clean:
-	find . -type f -name "*.py[co]" -delete
-	find . -type d -name "__pycache__" -delete
 
 #################################################################################
 # Self Documenting Commands                                                     #
