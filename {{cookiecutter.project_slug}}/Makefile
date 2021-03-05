@@ -32,6 +32,10 @@ GIT_VERSION := $(shell git describe --tags --long --always --dirty)-$(diff_check
 endif
 TAG := $(shell date +v%Y%m%d)-$(GIT_VERSION)
 
+#################################################################################
+# HELPER TARGETS                                                                #
+#################################################################################
+
 .PHONY: strong-version-tag
 strong-version-tag:
 	@echo $(TAG)
