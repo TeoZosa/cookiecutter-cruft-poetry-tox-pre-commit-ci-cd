@@ -100,6 +100,7 @@ docs = [
 #################################################################################
 [tool.coverage.run]
 branch = true
+concurrency = ["multiprocessing"]
 parallel = true
 source = ["{{cookiecutter.package_name}}"]
 
