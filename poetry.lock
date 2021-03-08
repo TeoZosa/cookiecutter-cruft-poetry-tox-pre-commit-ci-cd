@@ -332,7 +332,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.4.3"
+version = "6.6.0"
 description = "A library for property-based testing"
 category = "main"
 optional = false
@@ -1355,7 +1355,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "26ca18f97fa0762e5c88f1090b8ebdf9eedfdbf16349cf36d89caf1d227e658b"
+content-hash = "d5e362cdc026247423c6de1e9131793f8f9640182cab30df3211b6951657092d"
 
 [metadata.files]
 alabaster = [
@@ -1527,8 +1527,8 @@ gitpython = [
     {file = "GitPython-3.1.14.tar.gz", hash = "sha256:be27633e7509e58391f10207cd32b2a6cf5b908f92d9cd30da2e514e1137af61"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.4.3-py3-none-any.whl", hash = "sha256:79d11348164bcf83172f19e59e20f40043d8e6ba4dda1f2a9aa66d1d5f3e6328"},
-    {file = "hypothesis-6.4.3.tar.gz", hash = "sha256:88dec763ef7e5dc04a4dc56cec466cd43be44e09641eccc99978bdd163998ed5"},
+    {file = "hypothesis-6.6.0-py3-none-any.whl", hash = "sha256:6a23d0c342d01a88f3b30b54ad459246beb01b0ce28d865cf06623a9209aac03"},
+    {file = "hypothesis-6.6.0.tar.gz", hash = "sha256:0f6b970178b7676267029eb5d352ea7ff4fda4533d2d2eaa3adbda660db54b65"},
 ]
 icontract = [
     {file = "icontract-2.5.0.tar.gz", hash = "sha256:d58e5e5062a4a33e8dc2bfe4651399b6a52af28fcbb43a79d3aa98dab0bd1c19"},
