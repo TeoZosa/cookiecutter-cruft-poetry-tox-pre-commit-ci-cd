@@ -42,7 +42,7 @@ cruft = "^2.6.1"
 # Project cookiecutter dependencies
 hypothesis = "^6.2.0"
 python-dotenv = "^0.15.0"
-importlib-metadata = "^2.1.1"
+importlib-metadata = "^3.7.3"
 structlog-sentry-logger = "^0.7.3"
 typer = {extras = ["all"], version = "^0.3.2"}
 
