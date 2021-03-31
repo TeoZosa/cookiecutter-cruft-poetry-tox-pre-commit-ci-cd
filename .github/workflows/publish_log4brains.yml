@@ -27,11 +27,11 @@ jobs:
           npm install -g log4brains
           log4brains build \
             --basePath "/${GITHUB_REPOSITORY#*/}/adl" \
-            --out "${BUILD_DIR}/adl"
-          touch "${BUILD_DIR}/.nojekyll"
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: ${{ env.BUILD_DIR }}
+            --out "${BUILD_DIR}/adl" && \
+          touch "${BUILD_DIR}/.nojekyll" || true
+#      - name: Deploy
+#        uses: JamesIves/github-pages-deploy-action@4.1.0
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          BRANCH: gh-pages
+#          FOLDER: ${{ env.BUILD_DIR }}
