@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1617296641666,
+  "lastUpdate": 1617296648734,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -1122,6 +1122,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000001041460528090838",
             "extra": "mean: 411.0324259071524 nsec\nrounds: 56498"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "TeoZosa@users.noreply.github.com",
+            "name": "Teofilo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a025a2b5c14d2d008d9177f761deb00d5cf1ffae",
+          "message": "Merge pull request #115 from TeoZosa/dependabot/github_actions/release-drafter/release-drafter-v5.15.0\n\n⬆️ Bump release-drafter/release-drafter from v5.14.0 to v5.15.0",
+          "timestamp": "2021-04-01T10:00:06-07:00",
+          "tree_id": "ed89520603fa76c4cfce45b2ece672a76d122b55",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/a025a2b5c14d2d008d9177f761deb00d5cf1ffae"
+        },
+        "date": 1617296647530,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 14340.616324793233,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000045977621679915335",
+            "extra": "mean: 69.73200993259391 usec\nrounds: 12887"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 4532523.047116747,
+            "unit": "iter/sec",
+            "range": "stddev: 3.2825818365266284e-7",
+            "extra": "mean: 220.62767019720008 nsec\nrounds: 192308"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 12737.686620762674,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00006809393645981545",
+            "extra": "mean: 78.50719127992839 usec\nrounds: 9243"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 134328.70293010463,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000010542757742436988",
+            "extra": "mean: 7.4444253401324865 usec\nrounds: 3315"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 15537.118213942345,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00002010883420508733",
+            "extra": "mean: 64.36199984001169 usec\nrounds: 12516"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 4535210.359972053,
+            "unit": "iter/sec",
+            "range": "stddev: 1.6642002485514078e-7",
+            "extra": "mean: 220.49693853828225 nsec\nrounds: 196079"
           }
         ]
       }
