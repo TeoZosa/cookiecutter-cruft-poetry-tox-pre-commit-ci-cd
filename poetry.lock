@@ -629,7 +629,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pre-commit"
-version = "2.11.1"
+version = "2.12.0"
 description = "A framework for managing and maintaining multi-language pre-commit hooks."
 category = "dev"
 optional = false
@@ -1355,7 +1355,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "23066da10f27e8728d59017570b6fab20a089009ff80ed1b2fbb712c83889dba"
+content-hash = "785a7b33c9add615d9803d6b200e82a4a124ba4cdc187825b26986da707dc531"
 
 [metadata.files]
 alabaster = [
@@ -1735,8 +1735,8 @@ poyo = [
     {file = "poyo-0.5.0.tar.gz", hash = "sha256:e26956aa780c45f011ca9886f044590e2d8fd8b61db7b1c1cf4e0869f48ed4dd"},
 ]
 pre-commit = [
-    {file = "pre_commit-2.11.1-py2.py3-none-any.whl", hash = "sha256:94c82f1bf5899d56edb1d926732f4e75a7df29a0c8c092559c77420c9d62428b"},
-    {file = "pre_commit-2.11.1.tar.gz", hash = "sha256:de55c5c72ce80d79106e48beb1b54104d16495ce7f95b0c7b13d4784193a00af"},
+    {file = "pre_commit-2.12.0-py2.py3-none-any.whl", hash = "sha256:029d53cb83c241fe7d66eeee1e24db426f42c858f15a38d20bcefd8d8e05c9da"},
+    {file = "pre_commit-2.12.0.tar.gz", hash = "sha256:46b6ffbab37986c47d0a35e40906ae029376deed89a0eb2e446fb6e67b220427"},
 ]
 py = [
     {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
