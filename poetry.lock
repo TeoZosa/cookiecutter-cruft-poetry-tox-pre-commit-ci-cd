@@ -401,7 +401,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "importlib-metadata"
-version = "3.10.1"
+version = "4.0.0"
 description = "Read metadata from Python packages"
 category = "main"
 optional = false
@@ -1356,7 +1356,7 @@ docs = ["myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints", "sphinx
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7f7f2f41ed556acfd68aff6c512a8f648bec16cc68898750c72e2fe12aef6c15"
+content-hash = "a7077198526ed20a87d79c0203d13d1edde56b7b501837111d67d0145a437094"
 
 [metadata.files]
 alabaster = [
@@ -1547,8 +1547,8 @@ imagesize = [
     {file = "imagesize-1.2.0.tar.gz", hash = "sha256:b1f6b5a4eab1f73479a50fb79fcf729514a900c341d8503d62a62dbc4127a2b1"},
 ]
 importlib-metadata = [
-    {file = "importlib_metadata-3.10.1-py3-none-any.whl", hash = "sha256:2ec0faae539743ae6aaa84b49a169670a465f7f5d64e6add98388cc29fd1f2f6"},
-    {file = "importlib_metadata-3.10.1.tar.gz", hash = "sha256:c9356b657de65c53744046fa8f7358afe0714a1af7d570c00c3835c2d724a7c1"},
+    {file = "importlib_metadata-4.0.0-py3-none-any.whl", hash = "sha256:19192b88d959336bfa6bdaaaef99aeafec179eca19c47c804e555703ee5f07ef"},
+    {file = "importlib_metadata-4.0.0.tar.gz", hash = "sha256:2e881981c9748d7282b374b68e759c87745c25427b67ecf0cc67fb6637a1bff9"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
