@@ -72,7 +72,7 @@ tox = "^3.21.4"
 black = "^21.4b0"
 # Linters
 flakehell = "^0.9.0"
-pylint = "^2.8.1"
+pylint = "^2.8.2"
 # Static type checker
 mypy = "^0.812"
 # Linting & formatting orchestrator
