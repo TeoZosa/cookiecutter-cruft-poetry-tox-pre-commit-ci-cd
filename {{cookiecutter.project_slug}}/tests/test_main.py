@@ -99,6 +99,7 @@ class TestVersionCallbackDesignByContract:
 
 
 class TestRuntimeTypechecking:
+    # pylint: disable=too-few-public-methods
     @staticmethod
     def test_typeguard_enabled() -> None:
         """Validates runtime type-checking support"""
