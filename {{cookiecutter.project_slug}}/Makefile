@@ -64,7 +64,7 @@ generate-requirements:
 .PHONY: clean-requirements
 ## Clean generated project requirements files
 clean-requirements:
-	find . -type f -name "requirements*.txt" -delete -maxdepth 0
+	find . -type f -name "requirements*.txt" -delete -maxdepth 1
 
 .PHONY: clean
 ## Delete all compiled Python files
