@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1619996221312,
+  "lastUpdate": 1620000105030,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -2376,6 +2376,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 2.3253103983771136e-7",
             "extra": "mean: 257.97394006467897 nsec\nrounds: 67568"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "distinct": true,
+          "id": "2e9cc6548a05cb4f88b819f2cca6f64be41aecce",
+          "message": ":green_heart: Fix `mypy` error\n\ni.e.,\n```\nmypy.................................................................................Failed\n- hook id: mypy\n- duration: 9.74s\n- exit code: 1\n\ntests/test_main.py: note: In member \"test_typeguard_enabled\" of class \"TestRuntimeTypechecking\":\ntests/test_main.py:102:30: error: Argument 1 to \"version_callback\" has\nincompatible type \"str\"; expected \"Optional[bool]\"  [arg-type]\n                version_callback(\"True\")\n                                 ^\nFound 1 error in 1 file (checked 4 source files)\nSuccess: no issues found in 3 source files\n```",
+          "timestamp": "2021-05-02T16:57:10-07:00",
+          "tree_id": "98e6fc20e3297a860a543661d8275df7e0a7679f",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/2e9cc6548a05cb4f88b819f2cca6f64be41aecce"
+        },
+        "date": 1620000103818,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 14827.429015132268,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000046577673796733934",
+            "extra": "mean: 67.44257544443079 usec\nrounds: 10246"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 4329909.200558676,
+            "unit": "iter/sec",
+            "range": "stddev: 2.9727665597328656e-7",
+            "extra": "mean: 230.95172523957822 nsec\nrounds: 196079"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 11468.647601386452,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000143187281774173",
+            "extra": "mean: 87.19423900330753 usec\nrounds: 7343"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 122476.66795916531,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000019168423201142004",
+            "extra": "mean: 8.164820423865612 usec\nrounds: 45251"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 14735.892836034887,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00002939191264825725",
+            "extra": "mean: 67.86151413605683 usec\nrounds: 6473"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 4168973.9507430783,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000001251009207852824",
+            "extra": "mean: 239.86717398926223 nsec\nrounds: 196079"
           }
         ]
       }
