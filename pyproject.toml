@@ -69,7 +69,7 @@ xdoctest = "^0.15.0"
 tox = "^3.23.1"
 # Code formatter
 # see: https://black.readthedocs.io/en/stable/editor_integration.html
-black = "^21.4b2"
+black = "^21.5b0"
 # Linters
 flakehell = "^0.9.0"
 pylint = "^2.8.2"
