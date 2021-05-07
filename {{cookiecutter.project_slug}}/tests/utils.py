@@ -20,7 +20,7 @@ def get_version_number():
         [prog, *args],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        universal_newlines=True,
+        text=True,
         check=True,
     )
 
