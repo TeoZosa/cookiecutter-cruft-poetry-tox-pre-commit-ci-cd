@@ -51,8 +51,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",  # Allow reference sections using its title (https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html)
     "sphinx.ext.napoleon",  # Support for NumPy and Google style docstrings (https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
     "sphinx_autodoc_typehints",  # Python 3 type annotation extraction (as opposed to manually specifying them in your docstrings) (https://pypi.org/project/sphinx-autodoc-typehints/)
-    # TODO: enable below once [Fixed compatibility with `icontract` >=2.4.0 #24](https://github.com/Parquery/sphinx-icontract/pull/24) is integrated into a new release
-    # "sphinx_icontract",  # Include icontracts of classes and functions in the documentation
+    "sphinx_icontract",  # Include icontracts of classes and functions in the documentation
     "sphinx_rtd_theme",  # Sphinx theme used on Read The Docs (https://github.com/readthedocs/sphinx_rtd_theme)
     "sphinxcontrib.confluencebuilder",  # Build Confluence supported format files (e.g. storage format) and optionally publish them to a Confluence instance (https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 ]
