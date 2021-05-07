@@ -9,12 +9,12 @@ repos:
   # For IDE-integration outside of the pre-commit hook,
   # see: https://black.readthedocs.io/en/stable/editor_integration.html
   - repo: https://github.com/ambv/black
-    rev: 20.8b1
+    rev: 21.5b0
     hooks:
       - id: black
 
   - repo: https://github.com/cruft/cruft
-    rev: 2.6.0
+    rev: 2.8.0
     hooks:
       - id: cruft
         name: cruft
@@ -26,13 +26,13 @@ repos:
         entry: bash -c 'cruft check || true' --
 
   - repo: https://github.com/Yelp/detect-secrets
-    rev: v0.14.3
+    rev: v1.1.0
     hooks:
       - id: detect-secrets
         exclude: ^(poetry\.lock|\.cruft\.json)$
 
   - repo: https://github.com/life4/flakehell
-    rev: v.0.7.1
+    rev: v.0.8.0
     hooks:
       - id: flakehell
 
@@ -45,7 +45,7 @@ repos:
         args: [-vv, --fail-under=0]
 
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.7.0
+    rev: 5.8.0
     hooks:
       - id: isort
 
@@ -75,13 +75,13 @@ repos:
         types: [python]
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.4
+    rev: 2.1.5
     hooks:
       - id: script-must-have-extension
       - id: script-must-not-have-extension
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.7.4
+    rev: v2.14.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
@@ -98,7 +98,7 @@ repos:
         types: [shell]
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.25.0
+    rev: v1.26.1
     hooks:
       - id: yamllint
 
