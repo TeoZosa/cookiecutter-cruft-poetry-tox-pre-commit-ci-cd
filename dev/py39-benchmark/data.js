@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1620331703997,
+  "lastUpdate": 1620405450962,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -2772,6 +2772,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 7.93590606607229e-7",
             "extra": "mean: 254.0589935972714 nsec\nrounds: 196040"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "distinct": true,
+          "id": "f2bbcfeb5b235cd95049dcb39fec1a897440f049",
+          "message": ":construction_worker: Make `cruft` pre-commit hook always succeed\n\nThe previous behavior of failing downstream projects failing CI when\nthey got out of sync with the upstream template project was too\nrestrictive. Since not all template project updates are relevant (e.g.,\nmeta-project dependency updates) project maintainers should be\nresponsible not only for merging template updates themselves, but also\nwhen they choose to merge the updates. Therefore, this hook simply logs\nthe `cruft` pre-commit hook output for transparency and maintain\nauditability.",
+          "timestamp": "2021-05-07T09:32:53-07:00",
+          "tree_id": "ae14764c42b2bf0e419013895562dfa717966a66",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/f2bbcfeb5b235cd95049dcb39fec1a897440f049"
+        },
+        "date": 1620405449692,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 14829.928765181581,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00003277084296651204",
+            "extra": "mean: 67.43120724543519 usec\nrounds: 1877"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 3833288.266989525,
+            "unit": "iter/sec",
+            "range": "stddev: 6.142507785129795e-7",
+            "extra": "mean: 260.8726321503306 nsec\nrounds: 172414"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 11920.198232016868,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00010287927109223095",
+            "extra": "mean: 83.89122232162765 usec\nrounds: 8969"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 113599.3229078192,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000025999239697113364",
+            "extra": "mean: 8.802869369313544 usec\nrounds: 44844"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 13858.06878237279,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0001316923605535736",
+            "extra": "mean: 72.16012676109544 usec\nrounds: 13624"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 3838080.429049754,
+            "unit": "iter/sec",
+            "range": "stddev: 6.294900216491171e-7",
+            "extra": "mean: 260.54691101102935 nsec\nrounds: 185186"
           }
         ]
       }
