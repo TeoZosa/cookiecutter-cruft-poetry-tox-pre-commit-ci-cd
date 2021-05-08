@@ -36,7 +36,7 @@ typeguard = "^2.10.0" # Runtime type checker
 typer = {extras = ["all"], version = "^0.3.2"}
 
 # Documentation
-myst-parser = { version = "^0.13.7", optional = true}
+myst-parser = { version = "^0.14.0", optional = true}
 pygments = { version = "^2.8.1", optional = true}
 sphinx = { version = "^3.5.3", optional = true}
 sphinx-autodoc-typehints = { version = "^1.12.0", optional = true}
@@ -58,7 +58,7 @@ pytest-xdist = "^2.2.1"
 hypothesis = "^6.10.1"
 icontract-hypothesis = "^1.1.0"
 mutmut = "^2.1.0"
-xdoctest = "^0.15.0"
+xdoctest = {extras = ["all"], version = "^0.15.4"}
 tox = "^3.21.4"
 tox-gh-actions = "^2.3.0"
 # Code formatter
