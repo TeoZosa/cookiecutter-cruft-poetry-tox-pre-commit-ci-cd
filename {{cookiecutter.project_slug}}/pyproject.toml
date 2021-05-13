@@ -48,6 +48,7 @@ typer-cli = { version = "^0.0.11", optional = true}
 
 [tool.poetry.dev-dependencies]
 # Testing
+nbqa = "^0.8.0"
 pytest = "^6.2.1"
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
 pytest-cov = "^2.10.1"
