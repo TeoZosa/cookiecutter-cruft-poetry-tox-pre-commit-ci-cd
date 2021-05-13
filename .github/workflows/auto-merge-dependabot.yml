@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.4
         with:
           target: minor
           github-token: ${{ secrets.AUTO_MERGE_DEPENDABOT_TOKEN }}
