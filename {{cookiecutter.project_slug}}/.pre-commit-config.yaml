@@ -35,6 +35,7 @@ repos:
     rev: v.0.8.0
     hooks:
       - id: flakehell
+        exclude_types: [jupyter]
 
   # Docstring coverage tool
   - repo: https://github.com/econchick/interrogate
@@ -64,6 +65,59 @@ repos:
         entry: .tox/precommit/bin/mypy
         args: [--cache-dir=/dev/null, --config-file=tox.ini]
         types: [python]
+
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 0.8.0
+    hooks:
+      - id: nbqa-black
+        args: [--nbqa-mutate]
+        additional_dependencies: [black==21.5b0]
+      - id: nbqa-isort
+        args: [--nbqa-mutate]
+        additional_dependencies: [isort==5.8.0]
+      - id: nbqa-pyupgrade
+        args: [--nbqa-mutate]
+        additional_dependencies: [pyupgrade==v2.14.0]
+
+  - repo: local
+    hooks:
+      - id: nbqa-bandit
+        name: nbqa-bandit
+        description: "Run tox env `bandit` on a Jupyter Notebook"
+        entry: .tox/precommit/bin/nbqa bandit
+        language: system
+        types: [jupyter]
+
+  ## Override nbqa pre-packaged hooks to preempt spurious "Module not found"
+  ## errors
+
+  # See: https://mypy.readthedocs.io/en/latest/running_mypy.html#missing-imports
+  - repo: local
+    hooks:
+      - id: nbqa-mypy
+        name: nbqa-mypy
+        description: "Run tox env `mypy` on a Jupyter Notebook"
+        entry: .tox/precommit/bin/nbqa mypy
+        # yamllint disable-line rule:line-length
+        args: [--cache-dir=/dev/null, --config-file=tox.ini]
+        language: system
+        types: [jupyter]
+
+  # Note: submit docs for this to nbqa?
+  # ex. https://nbqa.readthedocs.io/en/latest/pre-commit.html
+  # referencing:
+  # yamllint disable-line rule:line-length
+  #   [Remove pylint config E0401 and make pylint a local pre-commit hook #229](https://github.com/nbQA-dev/nbQA/pull/229/files)
+
+  # E0401: import-error
+  - repo: local
+    hooks:
+      - id: nbqa-pylint
+        name: nbqa-pylint
+        description: "Run tox env `pylint` on a Jupyter Notebook"
+        entry: .tox/precommit/bin/nbqa pylint
+        language: system
+        types: [jupyter]
 
   - repo: local
     hooks:
