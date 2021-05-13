@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1620455530217,
+  "lastUpdate": 1620873981743,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -3168,6 +3168,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 7.347385454459898e-7",
             "extra": "mean: 266.97521036152835 nsec\nrounds: 188680"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "TeoZosa@users.noreply.github.com",
+            "name": "Teofilo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b546618988927965655ea7aaed42ee14fe75a34f",
+          "message": "Merge pull request #168 from TeoZosa/add-jupyter-notebook-tooling\n\n✨ Add Jupyter Notebook Tooling",
+          "timestamp": "2021-05-12T19:40:59-07:00",
+          "tree_id": "4e3fe163d1b0d43cde2e3c5c00cc61736a5293aa",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/b546618988927965655ea7aaed42ee14fe75a34f"
+        },
+        "date": 1620873980479,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 14694.560360893915,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000420619967086068",
+            "extra": "mean: 68.05239322853528 usec\nrounds: 7502"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 3748308.5488212877,
+            "unit": "iter/sec",
+            "range": "stddev: 7.791242107096251e-7",
+            "extra": "mean: 266.7870019170394 nsec\nrounds: 196040"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 12200.686013924422,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00004968616376014531",
+            "extra": "mean: 81.96260430427584 usec\nrounds: 8039"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 112346.68819563188,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000006338117601028613",
+            "extra": "mean: 8.901018944667749 usec\nrounds: 42017"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 14791.565996985302,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00006106225173082194",
+            "extra": "mean: 67.60609391891379 usec\nrounds: 9785"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 3771963.854065191,
+            "unit": "iter/sec",
+            "range": "stddev: 4.512606210258261e-7",
+            "extra": "mean: 265.11388727181503 nsec\nrounds: 188680"
           }
         ]
       }
