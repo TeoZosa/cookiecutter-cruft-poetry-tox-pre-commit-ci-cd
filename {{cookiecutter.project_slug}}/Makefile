@@ -41,6 +41,24 @@ LATEST_IMG := $(DOCKER_REPOSITORY):latest
 # HELPER TARGETS                                                                #
 #################################################################################
 
+# Check that given variables are set and all have non-empty values,
+# die with an error otherwise.
+#
+# Params:
+#   1. Variable name(s) to test.
+#   2. (optional) Error message to print.
+check_defined = \
+	$(strip $(foreach 1,$1, \
+		$(call __check_defined,$1,$(strip $(value 2)))))
+__check_defined = \
+	$(if $(value $1),, \
+	  $(error Undefined $1$(if $2, ($2))))
+
+.PHONY: validate_req_env_vars
+validate_req_env_vars:
+	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
+	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
+
 .PHONY: strong-version-tag
 strong-version-tag:
 	@echo $(TAG)
