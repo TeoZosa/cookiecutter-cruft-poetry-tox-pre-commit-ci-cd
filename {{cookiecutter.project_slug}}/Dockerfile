@@ -38,6 +38,9 @@ RUN poetry install \
         --no-dev \
         --no-interaction \
         --no-root
+{% if cookiecutter.project_type == 'package' %}
+COPY {{cookiecutter.package_name}} /app/{{cookiecutter.package_name}}
+{% endif %}
 {% if cookiecutter.jupyter_notebook_support == 'yes' %}
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["jupyter", "notebook","--ip='*'", "--port=8888", "--no-browser", "--allow-root"]

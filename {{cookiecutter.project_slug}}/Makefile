@@ -192,13 +192,21 @@ deploy-project-docker-container: pull-container deploy-container
 # This is where we validate the required env vars.
 #deploy-container: REQ_ENV_VARS := SOME_REQ_ENV_VAR_1 SOME_REQ_ENV_VAR_2 ... SOME_REQ_ENV_VAR_k
 #deploy-container: validate_req_env_vars stop-container
+
 deploy-container: stop-container
 	@echo "Launching $(PROJECT_NAME) container"
+#{-% if cookiecutter.project_type == 'package' %}
+	docker run \
+      --name $(PROJECT_NAME) \
+      $(LATEST_IMG)
+	$(MAKE) stop-container
+#{-% else %}
 	docker run \
       --name $(PROJECT_NAME) \
       -v $$(pwd)/:/app/ \
       $(LATEST_IMG)
 	$(MAKE) stop-container
+#{-% endif %}
 #{% endif %}
 
 .PHONY: pull-container
