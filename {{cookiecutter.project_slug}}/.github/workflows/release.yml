@@ -61,7 +61,7 @@ jobs:
           VERSION=$(make get-project-version-number) &&
           DEV_VERSION="${VERSION}.dev.$(date +%s)" &&
           poetry version "${DEV_VERSION}"
-
+      {%- if cookiecutter.project_type == 'package' %}
       - name: Build package
         run: |
           poetry build --ansi
@@ -97,6 +97,7 @@ jobs:
           pip list -v
         shell: bash
       # yamllint enable rule:line-length
+      {%- endif %}
 
       - name: Publish the release notes
         uses: release-drafter/release-drafter@v5.13.0
