@@ -24,6 +24,12 @@ ENV PATH="${POETRY_HOME}/bin:${PATH}"
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python && \
     poetry --version && \
     poetry config --list
+{% if cookiecutter.jupyter_notebook_support == 'yes' %}
+# Add Tini for Jupyter to prevent kernel crashes
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+{%- endif %}
 
 # Install project dependencies
 COPY pyproject.toml poetry.lock /app/
@@ -32,5 +38,9 @@ RUN poetry install \
         --no-dev \
         --no-interaction \
         --no-root
-
+{% if cookiecutter.jupyter_notebook_support == 'yes' %}
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["jupyter", "notebook","--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+{% else %}
 ENTRYPOINT ["/bin/bash", "--"]
+{% endif %}
