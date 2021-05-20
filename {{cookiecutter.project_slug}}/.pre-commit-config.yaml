@@ -66,6 +66,7 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=tox.ini]
         types: [python]
 
+  # {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 0.8.0
     hooks:
@@ -118,6 +119,7 @@ repos:
         entry: .tox/precommit/bin/nbqa pylint
         language: system
         types: [jupyter]
+  # {%- endif %}
 
   - repo: local
     hooks:
