@@ -30,6 +30,9 @@ repos:
     hooks:
       - id: detect-secrets
         exclude: ^(poetry\.lock|\.cruft\.json)$
+        # {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+        exclude_types: [jupyter]
+        # {%- endif %}
 
   - repo: https://github.com/flakehell/flakehell
     rev: v.0.8.0
@@ -66,6 +69,7 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=tox.ini]
         types: [python]
 
+  # {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 0.8.0
     hooks:
@@ -118,6 +122,7 @@ repos:
         entry: .tox/precommit/bin/nbqa pylint
         language: system
         types: [jupyter]
+  # {%- endif %}
 
   - repo: local
     hooks:
