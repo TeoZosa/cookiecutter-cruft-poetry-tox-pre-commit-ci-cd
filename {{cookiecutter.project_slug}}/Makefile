@@ -170,6 +170,35 @@ deploy-container: validate_req_env_vars stop-container
       -v $$(pwd)/:/app/ \
       $(LATEST_IMG)
 	$(MAKE) stop-container
+#{% else %}
+# If you want to validate that a set of pre-defined env vars are specified
+# prior to container launch, replace active code with commented code and fill
+# in the variables with your own values.
+.PHONY: deploy-project-docker-container-local
+## Deploy locally-built dockerized project environment with preloaded dependencies
+#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_1 := SOME_VALUE_1
+#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_2 := SOME_VALUE_2
+#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_k := SOME_VALUE_k
+deploy-project-docker-container-local: build-container deploy-container
+
+.PHONY: deploy-project-docker-container
+## Deploy downloaded dockerized project environment with preloaded dependencies
+#deploy-project-docker-container: SOME_REQ_ENV_VAR_1 := SOME_VALUE_1
+#deploy-project-docker-container: SOME_REQ_ENV_VAR_2 := SOME_VALUE_2
+#deploy-project-docker-container: SOME_REQ_ENV_VAR_k := SOME_VALUE_k
+deploy-project-docker-container: pull-container deploy-container
+
+.PHONY: deploy-container
+# This is where we validate the required env vars.
+#deploy-container: REQ_ENV_VARS := SOME_REQ_ENV_VAR_1 SOME_REQ_ENV_VAR_2 ... SOME_REQ_ENV_VAR_k
+#deploy-container: validate_req_env_vars stop-container
+deploy-container: stop-container
+	@echo "Launching $(PROJECT_NAME) container"
+	docker run \
+      --name $(PROJECT_NAME) \
+      -v $$(pwd)/:/app/ \
+      $(LATEST_IMG)
+	$(MAKE) stop-container
 #{% endif %}
 
 .PHONY: pull-container
