@@ -150,6 +150,28 @@ bump-commit-and-push-project-version-number-%:
 		git push \
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
 
+#{% if cookiecutter.jupyter_notebook_support == 'yes' %}
+.PHONY: deploy-jupyter-docker-container-local
+## Deploy locally-built dockerized notebook environment with preloaded dependencies
+deploy-jupyter-docker-container-local: PORT=8888
+deploy-jupyter-docker-container-local: build-container deploy-container
+
+.PHONY: deploy-jupyter-docker-container
+## Deploy downloaded dockerized notebook environment with preloaded dependencies
+deploy-jupyter-docker-container: PORT=8888
+deploy-jupyter-docker-container: pull-container deploy-container
+
+.PHONY: deploy-container
+deploy-container: REQ_ENV_VARS := PORT
+deploy-container: validate_req_env_vars stop-container
+	@echo "Launching Jupyter Notebook on port $(PORT)"
+	docker run -p $(PORT):8888 \
+      --name $(PROJECT_NAME) \
+      -v $$(pwd)/:/app/ \
+      $(LATEST_IMG)
+	$(MAKE) stop-container
+#{% endif %}
+
 .PHONY: pull-container
 pull-container:
 ## Pull {{cookiecutter.project_slug}} container
@@ -173,6 +195,12 @@ build-container:
 		docker tag $(IMG) $(LATEST_IMG) && \
 		echo Built $(LATEST_IMG); \
 	fi
+
+.PHONY: stop-container
+## Stop container forcefully (i.e., when keyboard interrupts are disabled)
+stop-container:
+	- docker stop $(PROJECT_NAME)
+	- docker rm $(PROJECT_NAME)
 
 ifeq (${CI}, true)
 export TOX_PARALLEL_NO_SPINNER=1
