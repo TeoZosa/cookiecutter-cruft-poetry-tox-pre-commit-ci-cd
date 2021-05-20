@@ -84,7 +84,7 @@ installed and configured.
 
 To install the package and all dev dependencies, run:
 ```shell script
-make provision_environment
+make provision-environment
 ```
 
 > 🔥 **Tip**  

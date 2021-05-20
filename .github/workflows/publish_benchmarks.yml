@@ -36,7 +36,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          make provision_environment
+          make provision-environment
 
       # yamllint disable rule:line-length
       - name: Run benchmarks for ${{ matrix.python-version }}

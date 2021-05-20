@@ -41,7 +41,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          make provision_environment
+          make provision-environment
 
       - name: Install Go for pre-commit hook (shfmt)
         run: |
@@ -86,7 +86,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          make provision_environment
+          make provision-environment
 
       - name: Run dependency security vulnerability analysis
         run: |
