@@ -150,6 +150,30 @@ bump-commit-and-push-project-version-number-%:
 		git push \
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
 
+.PHONY: pull-container
+pull-container:
+## Pull {{cookiecutter.project_slug}} container
+pull-container:
+	- docker pull $(LATEST_IMG)
+
+.PHONY: push-container
+push-container:
+## Push {{cookiecutter.project_slug}} container
+push-container: build-container
+	docker push $(IMG)
+	docker push $(LATEST_IMG)
+
+.PHONY: build-container
+build-container: export DOCKER_BUILDKIT=1
+## Build {{cookiecutter.project_slug}} container
+build-container:
+	docker build --tag $(IMG) .
+	@echo Built $(IMG)
+	@if ! [ "$(TAG)" = latest ]; then \
+		docker tag $(IMG) $(LATEST_IMG) && \
+		echo Built $(LATEST_IMG); \
+	fi
+
 ifeq (${CI}, true)
 export TOX_PARALLEL_NO_SPINNER=1
 endif
