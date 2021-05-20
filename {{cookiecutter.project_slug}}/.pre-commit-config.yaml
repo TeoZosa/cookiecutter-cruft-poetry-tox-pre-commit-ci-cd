@@ -30,6 +30,9 @@ repos:
     hooks:
       - id: detect-secrets
         exclude: ^(poetry\.lock|\.cruft\.json)$
+        # {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+        exclude_types: [jupyter]
+        # {%- endif %}
 
   - repo: https://github.com/flakehell/flakehell
     rev: v.0.8.0
