@@ -34,6 +34,9 @@ GIT_VERSION := $(shell git describe --tags --long --always --dirty)-$(diff_check
 endif
 TAG := $(shell date +v%Y%m%d)-$(GIT_VERSION)
 
+IMG := $(DOCKER_REPOSITORY):$(TAG)
+LATEST_IMG := $(DOCKER_REPOSITORY):latest
+
 #################################################################################
 # HELPER TARGETS                                                                #
 #################################################################################
