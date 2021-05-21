@@ -47,5 +47,5 @@ COPY {{cookiecutter.package_name}} /app/{{cookiecutter.package_name}}
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["jupyter", "notebook","--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
 {% else %}
-ENTRYPOINT ["/bin/bash", "--"]
+CMD ["/app/{{cookiecutter.package_name}}/entrypoint"]
 {% endif %}

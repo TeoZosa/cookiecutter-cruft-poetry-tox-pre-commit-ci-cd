@@ -1,0 +1,13 @@
+#! /bin/bash
+
+# Note the intentional lack of a file extension for the entrypoint script. This
+# allows us to abstract implementation details from the caller (in other words,
+# providing a non-leaky abstraction), thus eliminating
+# [connascence](https://en.wikipedia.org/wiki/Connascence) between callers of
+# this script and the script itself. Concretely, this provides us the ability
+# to not only freely modify entrypoint semantics (provided we are still
+# adhering to the project's functional requirements), but also implementation
+# details such as scripting language, specific interpreter directive, etc.
+#   See Also: https://google.github.io/styleguide/shellguide.html#file-extensions
+
+python main.py
