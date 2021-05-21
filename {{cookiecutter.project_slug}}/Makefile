@@ -150,53 +150,27 @@ bump-commit-and-push-project-version-number-%:
 		git push \
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
 
-#{% if cookiecutter.jupyter_notebook_support == 'yes' %}
-.PHONY: deploy-jupyter-docker-container-local
-## Deploy locally-built dockerized notebook environment with preloaded dependencies
-deploy-jupyter-docker-container-local: PORT=8888
-deploy-jupyter-docker-container-local: build-container deploy-container
+{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+.PHONY: deploy-{{ PROJECT_TYPE }}-docker-container-local
+## Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+deploy-{{ PROJECT_TYPE }}-docker-container-local: build-container deploy-container
 
-.PHONY: deploy-jupyter-docker-container
-## Deploy downloaded dockerized notebook environment with preloaded dependencies
-deploy-jupyter-docker-container: PORT=8888
-deploy-jupyter-docker-container: pull-container deploy-container
+.PHONY: deploy-{{ PROJECT_TYPE }}-docker-container
+## Deploy downloaded dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+deploy-{{ PROJECT_TYPE }}-docker-container: pull-container deploy-container
 
 .PHONY: deploy-container
-deploy-container: REQ_ENV_VARS := PORT
-deploy-container: validate_req_env_vars stop-container
-	@echo "Launching Jupyter Notebook on port $(PORT)"
-	docker run -p $(PORT):8888 \
-      --name $(PROJECT_NAME) \
-      -v $$(pwd)/:/app/ \
-      $(LATEST_IMG)
-	$(MAKE) stop-container
-#{% else %}
-# If you want to validate that a set of pre-defined env vars are specified
-# prior to container launch, replace active code with commented code and fill
-# in the variables with your own values.
-.PHONY: deploy-project-docker-container-local
-## Deploy locally-built dockerized project environment with preloaded dependencies
-#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_1 := SOME_VALUE_1
-#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_2 := SOME_VALUE_2
-#deploy-project-docker-container-local: SOME_REQ_ENV_VAR_k := SOME_VALUE_k
-deploy-project-docker-container-local: build-container deploy-container
-
-.PHONY: deploy-project-docker-container
-## Deploy downloaded dockerized project environment with preloaded dependencies
-#deploy-project-docker-container: SOME_REQ_ENV_VAR_1 := SOME_VALUE_1
-#deploy-project-docker-container: SOME_REQ_ENV_VAR_2 := SOME_VALUE_2
-#deploy-project-docker-container: SOME_REQ_ENV_VAR_k := SOME_VALUE_k
-deploy-project-docker-container: pull-container deploy-container
-
-.PHONY: deploy-container
-# This is where we validate the required env vars.
-#deploy-container: REQ_ENV_VARS := SOME_REQ_ENV_VAR_1 SOME_REQ_ENV_VAR_2 ... SOME_REQ_ENV_VAR_k
-#deploy-container: validate_req_env_vars stop-container
-
 deploy-container: BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER ?= false
 deploy-container: IS_INTERACTIVE_SESSION ?= false
-deploy-container: stop-container
+{% if PROJECT_TYPE == 'jupyter' -%} deploy-container: PORT?=8888 {%- endif %}
+# If you want to validate that a set of pre-defined env vars are specified
+# prior to container launch, list them in the REQ_ENV_VARS array
+deploy-container: REQ_ENV_VARS := BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER IS_INTERACTIVE_SESSION {% if PROJECT_TYPE == 'jupyter' -%} PORT {%- endif %}
+deploy-container: validate_req_env_vars stop-container
+	{%- if PROJECT_TYPE == 'jupyter' %}
+	@echo "Launching Jupyter Notebook on port $(PORT)" {% else %}
 	@echo "Launching $(PROJECT_NAME) container"
+	{%- endif %}
 	@if [ "$(IS_INTERACTIVE_SESSION)" != false ]; then \
 		export INTERACTIVE_SESSION_ARGS="--interactive --tty --entrypoint bash"; \
 	fi && \
@@ -204,13 +178,12 @@ deploy-container: stop-container
 		export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/{{cookiecutter.package_name}},target=/app/{{cookiecutter.package_name}}"; \
 	fi && \
 	docker run \
-      --name $(PROJECT_NAME) \
-      $${INTERACTIVE_SESSION_ARGS} \
-      $${BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS} \
-      -w /app/{{cookiecutter.package_name}} \
-      $(LATEST_IMG)
+ 	  --name $(PROJECT_NAME) {% if PROJECT_TYPE == 'jupyter'-%} --publish $(PORT):8888 {%- endif %} \
+ 	  $${INTERACTIVE_SESSION_ARGS} \
+ 	  $${BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS} \
+ 	  -w /app/{{cookiecutter.package_name}} \
+ 	  $(LATEST_IMG)
 	$(MAKE) stop-container
-#{% endif %}
 
 .PHONY: pull-container
 pull-container:
