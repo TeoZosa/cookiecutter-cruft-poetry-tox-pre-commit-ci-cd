@@ -193,20 +193,20 @@ deploy-project-docker-container: pull-container deploy-container
 #deploy-container: REQ_ENV_VARS := SOME_REQ_ENV_VAR_1 SOME_REQ_ENV_VAR_2 ... SOME_REQ_ENV_VAR_k
 #deploy-container: validate_req_env_vars stop-container
 
-deploy-container: BIND_MOUNT_PROJECT_DIR_ON_CONTAINER ?= false
+deploy-container: BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER ?= false
 deploy-container: IS_INTERACTIVE_SESSION ?= false
 deploy-container: stop-container
 	@echo "Launching $(PROJECT_NAME) container"
 	@if [ "$(IS_INTERACTIVE_SESSION)" != false ]; then \
 		export INTERACTIVE_SESSION_ARGS="--interactive --tty --entrypoint bash"; \
 	fi && \
-	if [ "$(BIND_MOUNT_PROJECT_DIR_ON_CONTAINER)" != false ]; then \
-		export BIND_MOUNT_PROJECT_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/{{cookiecutter.package_name}},target=/app/{{cookiecutter.package_name}}"; \
+	if [ "$(BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER)" != false ]; then \
+		export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/{{cookiecutter.package_name}},target=/app/{{cookiecutter.package_name}}"; \
 	fi && \
 	docker run \
       --name $(PROJECT_NAME) \
       $${INTERACTIVE_SESSION_ARGS} \
-      $${BIND_MOUNT_PROJECT_DIR_ON_CONTAINER_ARGS} \
+      $${BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS} \
       -w /app/{{cookiecutter.package_name}} \
       $(LATEST_IMG)
 	$(MAKE) stop-container
