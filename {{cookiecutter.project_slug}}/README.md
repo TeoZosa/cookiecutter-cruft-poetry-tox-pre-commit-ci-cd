@@ -64,6 +64,54 @@ import {{cookiecutter.package_name}}
 ```
 {%- endif %}
 
+> 📝 **Note**  
+>  All following commands are relative to the project root directory and assume
+> `make` is installed.
+
+{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+
+Running The {{ 'Notebook' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
+--------------------
+
+{%- if PROJECT_TYPE == 'jupyter' %}
+To facilitate your interacting with notebooks with the minimal amount of
+friction, here are two suggested options, in order of simplicity:
+{%- endif %}
+### 1. Docker Container {{ PROJECT_TYPE.title() }} Environment (recommended)
+
+Run:
+```shell script
+# Uncomment below to run with corresponding options.
+{% if PROJECT_TYPE == 'jupyter' -%} #export PORT=8888 # default value; change this value if you need to run the container on a different port {%- endif %}
+# Note: *any* value other than `false` will trigger an option
+#export IS_INTERACTIVE_SESSION=true
+#export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER=true
+make deploy-{{ PROJECT_TYPE }}-docker-container
+```
+
+which will fetch and run the project container image
+{%- if PROJECT_TYPE == 'jupyter' %}
+that launches a Jupyter notebook environment preloaded with all the production
+dependencies on `127.0.0.1:8888`.
+
+You can then navigate to the Jupyter notebook URL displayed on your console
+{%- endif %}.
+
+> 🔥 **Tip**  
+>  If you prefer to build and run the container locally, run:
+>  ```shell script
+>  make deploy-{{ PROJECT_TYPE }}-docker-container-local
+>  ```
+
+### 2. Locally via Poetry (development workflow)
+
+Run:
+ ```shell script
+make provision-environment # Note: installs ALL dependencies!
+poetry shell # Activate the project's virtual environment
+{% if PROJECT_TYPE == 'jupyter' -%} jupyter notebook # Launch the Jupyter server {%- endif %}
+```
+
 Development
 ===========
 
