@@ -66,11 +66,14 @@ jobs:
             }
 
       # yamllint disable-line rule:line-length
-      - name: Run README ToC generator pre-commit hook on ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
+      - name: Run README ToC generator and auto-formatting pre-commit hooks on ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
         working-directory: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
         run: |
           pip install --constraint="${PIP_CONSTRAINTS_FILE}" pre-commit
-          pre-commit run markdown-toc -vv --all-files --color always || true
+          for hook in markdown-toc black trailing-whitespace end-of-file-fixer
+          do
+            pre-commit run "${hook}" -vv --all-files --color always || true
+          done
 
       - name: Create commit
         run: |
