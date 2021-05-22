@@ -13,7 +13,7 @@ load_dotenv(find_dotenv())
 _project_directory = pathlib.Path(__file__).parent.parent.parent
 
 
-def get_version_number():
+def get_version_number() -> str:
     """
     >>> assert get_version_number()
     """

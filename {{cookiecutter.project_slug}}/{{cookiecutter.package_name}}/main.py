@@ -18,7 +18,9 @@ LOGGER = structlog_sentry_logger.get_logger()
 
 @typeguard.typechecked()
 @icontract.require(lambda value: value is None or value is True)
-def version_callback(value: Optional[bool]):  # pylint: disable=unsubscriptable-object
+def version_callback(
+    value: Optional[bool],
+) -> None:  # pylint: disable=unsubscriptable-object
     """Provides a version option for the CLI"""
     if value:
         typer.echo(f"{{cookiecutter.project_slug}} Version: {__version__}")
