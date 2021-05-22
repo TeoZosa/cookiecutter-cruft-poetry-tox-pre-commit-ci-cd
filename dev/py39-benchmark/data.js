@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1621706285783,
+  "lastUpdate": 1621708400925,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -4092,6 +4092,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.474928871372438e-8",
             "extra": "mean: 227.39312031720635 nsec\nrounds: 192308"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "teofilo@sonosim.com",
+            "name": "Teo Zosa",
+            "username": "TeoZosa"
+          },
+          "distinct": true,
+          "id": "a7f05ee965b63b413728081e8f7f557c93a2d4d1",
+          "message": ":memo: :cookie: Add new feature documentation\n\nSee Also:\n    - #168\n    - #172\n    - #173\n    - #175",
+          "timestamp": "2021-05-22T11:27:55-07:00",
+          "tree_id": "4369777d5add0c29daad00047f08a5a4e98ef3d6",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/a7f05ee965b63b413728081e8f7f557c93a2d4d1"
+        },
+        "date": 1621708399615,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 15911.509098917157,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000004862995771979253",
+            "extra": "mean: 62.847589991828876 usec\nrounds: 4356"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 2293589.6700374894,
+            "unit": "iter/sec",
+            "range": "stddev: 2.4601931272208184e-7",
+            "extra": "mean: 435.99777809587647 nsec\nrounds: 3601"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 13580.971585573645,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00003868093144158269",
+            "extra": "mean: 73.63243444690274 usec\nrounds: 9191"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 131070.30402340413,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000004801855636304241",
+            "extra": "mean: 7.629493251357977 usec\nrounds: 34599"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 15727.581436817178,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000057507272732575026",
+            "extra": "mean: 63.582566971109074 usec\nrounds: 13140"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 3862884.5745840007,
+            "unit": "iter/sec",
+            "range": "stddev: 2.8334889722168454e-7",
+            "extra": "mean: 258.87390127556847 nsec\nrounds: 121937"
           }
         ]
       }
