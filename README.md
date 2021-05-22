@@ -126,6 +126,8 @@ Monitoring and Observability
 ----------------------------
 - [Optional] Exception monitoring
   with [Sentry](https://sentry.io/welcome/)
+  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
+    a detailed activation guide
 - Structured logging
   with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
     - Granular control flow context logging (via call stack introspection):
