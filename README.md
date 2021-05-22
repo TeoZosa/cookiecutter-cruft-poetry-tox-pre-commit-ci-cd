@@ -39,7 +39,7 @@ Table of Contents
 - [Usage](#usage)
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
-  * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
+  * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing](#testing)
@@ -96,14 +96,15 @@ Standardized Developer Workflow Orchestration
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
 
-Fully-Functional Python Package Boilerplate
--------------------------------------------
+Conditionally Rendered Python Package/Project Boilerplate
+---------------------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
+- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
 Docker Image Build/Push/Deploy Orchestration
 --------------------------------------------
-- Project-specific Dockerfile<sup>[*](#conditional-rendering)</sup> that
+- Project-specific Dockerfile[*](#conditional-rendering) that
   installs production dependencies for a completely reproducible execution
   environment
 - `build`/`push`/`pull`/`deploy` logic abstracted into corresponding `make`
@@ -112,7 +113,7 @@ Docker Image Build/Push/Deploy Orchestration
 Type Checking and Data Validation
 ---------------------------------
 - Static type-checking
-  with [mypy](http://mypy-lang.org/)
+  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatbility-via-nbqa)
 - Run-time type-checking
   with [typeguard](https://github.com/agronholm/typeguard)
     - See the
@@ -131,7 +132,7 @@ Testing
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
-  with [xdoctest](https://xdoctest.readthedocs.io/)
+  with [xdoctest](https://xdoctest.readthedocs.io/)[†](#jupyter-compatbility-via-nbqa)
 - [Performance testing](https://en.wikipedia.org/wiki/Software_performance_testing)
   with [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
@@ -159,7 +160,7 @@ Code Coverage
 Security
 --------
 - Static application security testing (SAST)
-  with [Bandit](https://github.com/PyCQA/bandit)
+  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatbility-via-nbqa)
   and [Safety](https://github.com/pyupio/safety)
 
 Linting
@@ -168,11 +169,11 @@ Linting
   with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
-    - [Pylint](https://www.pylint.org/)
-    - [pyupgrade](https://github.com/asottile/pyupgrade)
+    - [Pylint](https://www.pylint.org/)[†](#jupyter-compatbility-via-nbqa)
+    - [pyupgrade](https://github.com/asottile/pyupgrade)[†](#jupyter-compatbility-via-nbqa)
 - Code formatting:
-    - [Black](https://github.com/psf/black)
-    - [isort](https://github.com/timothycrosley/isort)
+    - [Black](https://github.com/psf/black)[†](#jupyter-compatbility-via-nbqa)
+    - [isort](https://github.com/timothycrosley/isort)[†](#jupyter-compatbility-via-nbqa)
     - [shfmt](https://github.com/mvdan/sh)
     - [pretty-format-json](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [trailing-whitespace](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
@@ -193,7 +194,7 @@ CI/CD
   with [`GitHub Actions`](https://github.com/features/actions)
 - Automated uploads
   to [PyPI](https://pypi.org/)
-  and [TestPyPI](https://test.pypi.org/)
+  and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)
 - Automated release notes
   with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates
@@ -207,7 +208,8 @@ Documentation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
-    - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
+    - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+      for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
 - Project documentation:
     - Documentation building
       with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
@@ -228,9 +230,15 @@ Documentation
     - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
       with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
-<sup> <a name="conditional-rendering">* Conditionally rendered based on project configuration to avoid configuration bloat </a></sup>
-
----
+<sup>
+    <a name="conditional-rendering">
+        * Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
+    </a>
+    <br>
+    <a name="jupyter-compatbility-via-nbqa">
+        † Jupyter notebook compatibility via <a href="https://github.com/nbQA-dev/nbQA">nbQA</a>
+    </a>
+</sup>
 
 Legal
 =====
