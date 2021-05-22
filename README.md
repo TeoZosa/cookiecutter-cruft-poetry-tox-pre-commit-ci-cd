@@ -52,10 +52,10 @@ Table of Contents
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
+  * [Monitoring and Observability](#monitoring-and-observability)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
-  * [Monitoring and Observability](#monitoring-and-observability)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
@@ -122,6 +122,22 @@ Docker Image Build/Push/Deploy Orchestration
 - `build`/`push`/`pull`/`deploy` logic abstracted into corresponding `make`
   targets, providing full automation with minimal friction
 
+Monitoring and Observability
+----------------------------
+- Structured logging
+  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
+    - Granular control flow context logging (via call stack introspection):
+        - Namespaced module-specific loggers
+        - Function name logging
+    - Environment-dependent standard output stream log formatting:
+        - Production: JSON logs
+        - Development: Colorized human-readable logs, with JSON logs saved
+          locally for retrospective analysis
+    - [Optional] Exception monitoring
+      with [Sentry](https://sentry.io/welcome/)
+    - [Optional] Exception logging to Sentry with
+      [structlog-sentry](https://www.structlog.org/en/stable/)
+
 Type Checking and Data Validation
 ---------------------------------
 - Static type-checking
@@ -168,22 +184,6 @@ Code Coverage
   with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting
   with [Codecov](https://codecov.io/)
-
-Monitoring and Observability
-----------------------------
-- Structured logging
-  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
-    - Granular control flow context logging (via call stack introspection):
-      - Namespaced module-specific loggers
-      - Function name logging
-    - Environment-dependent standard output stream log formatting:
-        - Production: JSON logs
-        - Development: Colorized human-readable logs, with JSON logs saved
-          locally for retrospective analysis
-    - [Optional] Exception monitoring
-      with [Sentry](https://sentry.io/welcome/)
-    - [Optional] Exception logging to Sentry with
-      [structlog-sentry](https://www.structlog.org/en/stable/)
 
 Security
 --------
