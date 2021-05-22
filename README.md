@@ -18,16 +18,27 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 
 ---
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) template for
-SonoSim **Core Sonosim AI Repositories (CorSAIR)** Python packages,
-with automated template synchronization
-via [`cruft`](https://cruft.github.io/cruft/).
+A robust and extensible (nearly feature-complete), DevSecOps-centric
+[Cookiecutter](https://github.com/audreyr/cookiecutter) template for Python
+packages and/or projects with rich automated tooling for high-quality software
+development and maintenance, from testing and code quality to documentation
+and template synchronization.
 
-VERY heavily influenced by (and, in many places, derivative of) the amazing
-[`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
-from [@cjolowicz](https://github.com/cjolowicz)
-based on the fantastic
-[`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) article series.
+Pre-configured to seamlessly run both locally and via the GitHub Actions CI/CD
+system to not only provide powerful guardrails and out-of-the-box audit trails,
+but significant quality of life improvements such as automated dependency
+upgrades, PR-based release notes, and many other high-level features for agile,
+defect-free software development.
+
+Best of all, best practices are baked in order to provide you with the best
+foundation on which you can build your best work!
+
+> 📝 **Note**  
+> **_Very_** heavily influenced by the amazing
+> [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
+> from [@cjolowicz](https://github.com/cjolowicz)
+> based on the fantastic
+> [`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) article series.
 
 ---
 
