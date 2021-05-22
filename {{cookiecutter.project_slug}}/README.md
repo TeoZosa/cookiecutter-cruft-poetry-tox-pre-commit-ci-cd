@@ -139,6 +139,29 @@ make provision-environment
 >  Invoking the above without `poetry` installed will emit a
 >  helpful error message letting you know how you can install poetry.
 
+Docker Container Image Building/Deployment Orchestration
+--------------------------------------------------------
+
+The following set of `make` targets orchestrate the project's container image
+build and deploy steps:
+
+```shell
+build-container     Build {{cookiecutter.project_slug}} container
+deploy-{{ PROJECT_TYPE }}-docker-container Deploy downloaded dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+deploy-{{ PROJECT_TYPE }}-docker-container-local Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+pull-container      Pull {{cookiecutter.project_slug}} container
+push-container      Push {{cookiecutter.project_slug}} container
+stop-container      Stop container forcefully (i.e., when keyboard interrupts are disabled)
+```
+
+Note that the project's container image is oblivious to the application's
+underlying implementation details, with top-level application setup and
+execution logic falling under the purview of the project's entrypoint script.
+As such, Dockerfile modifications will generally only be necessary when
+updating non-Python environment dependencies (Python dependency updates are
+automatically reflected in new image builds via the
+`pyproject.toml` and `poetry.lock` files).
+
 Testing
 ------------
 
