@@ -154,13 +154,12 @@ push-container      Push {{cookiecutter.project_slug}} container
 stop-container      Stop container forcefully (i.e., when keyboard interrupts are disabled)
 ```
 
-Note that the project's container image is oblivious to the application's
-underlying implementation details, with top-level application setup and
-execution logic falling under the purview of the project's entrypoint script.
-As such, Dockerfile modifications will generally only be necessary when
-updating non-Python environment dependencies (Python dependency updates are
-automatically reflected in new image builds via the
-`pyproject.toml` and `poetry.lock` files).
+Note that the project's container image is insulated from the implementation
+details of the application's top-level setup and execution logic which falls
+under the purview of the project's entrypoint script. As such, Dockerfile
+modifications will generally only be necessary when updating non-Python
+environment dependencies (Python dependency updates are automatically reflected
+in new image builds via the `pyproject.toml` and `poetry.lock` files).
 
 Testing
 ------------
