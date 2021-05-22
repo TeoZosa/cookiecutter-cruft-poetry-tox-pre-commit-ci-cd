@@ -215,7 +215,7 @@ jobs:
         run: |
           make test-mutations
 
-  {% if cookiecutter.project_type == 'package' %}
+  {% if cookiecutter.project_type == 'package' -%}
   # Install Verification ----------------------
 
   verify-user-install:
@@ -282,4 +282,4 @@ jobs:
           {{cookiecutter.project_slug}} --help
           {{cookiecutter.project_slug}} --version
         shell: bash
-  {% endif %}
+  {%- endif %}
