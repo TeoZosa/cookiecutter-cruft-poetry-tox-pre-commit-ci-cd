@@ -57,11 +57,7 @@ jobs:
 
       - name: Run static analysis
         run: |
-        {%- if cookiecutter.project_slug == 'cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance' %}
-          make pre-commit || true
-        {%- else %}
           make pre-commit
-        {%- endif %}
 
   # Security jobs ----------------------
 
