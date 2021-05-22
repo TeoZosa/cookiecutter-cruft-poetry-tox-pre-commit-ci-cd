@@ -40,6 +40,7 @@ Table of Contents
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
   * [Fully-Functional Python Package Boilerplate](#fully-functional-python-package-boilerplate)
+  * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing](#testing)
   * [Code Coverage](#code-coverage)
@@ -99,6 +100,14 @@ Fully-Functional Python Package Boilerplate
 -------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
+
+Docker Image Build/Push/Deploy Orchestration
+--------------------------------------------
+- Project-specific Dockerfile<sup>[*](#conditional-rendering)</sup> that
+  installs production dependencies for a completely reproducible execution
+  environment
+- `build`/`push`/`pull`/`deploy` logic abstracted into corresponding `make`
+  targets, providing full automation with minimal friction
 
 Type Checking and Data Validation
 ---------------------------------
@@ -218,6 +227,8 @@ Documentation
       with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
     - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
       with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
+
+<sup> <a name="conditional-rendering">* Conditionally rendered based on project configuration to avoid configuration bloat </a></sup>
 
 ---
 

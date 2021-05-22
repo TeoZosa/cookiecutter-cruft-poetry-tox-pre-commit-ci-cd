@@ -64,6 +64,54 @@ import {{cookiecutter.package_name}}
 ```
 {%- endif %}
 
+> 📝 **Note**  
+>  All following commands are relative to the project root directory and assume
+> `make` is installed.
+
+{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+
+Running The {{ 'Notebook' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
+--------------------
+
+{%- if PROJECT_TYPE == 'jupyter' %}
+To facilitate your interacting with notebooks with the minimal amount of
+friction, here are two suggested options, in order of simplicity:
+{%- endif %}
+### 1. Docker Container {{ PROJECT_TYPE.title() }} Environment (recommended)
+
+Run:
+```shell script
+# Uncomment below to run with corresponding options.
+{% if PROJECT_TYPE == 'jupyter' -%} #export PORT=8888 # default value; change this value if you need to run the container on a different port {%- endif %}
+# Note: *any* value other than `false` will trigger an option
+#export IS_INTERACTIVE_SESSION=true
+#export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER=true
+make deploy-{{ PROJECT_TYPE }}-docker-container
+```
+
+which will fetch and run the project container image
+{%- if PROJECT_TYPE == 'jupyter' %}
+that launches a Jupyter notebook environment preloaded with all the production
+dependencies on `127.0.0.1:8888`.
+
+You can then navigate to the Jupyter notebook URL displayed on your console
+{%- endif %}.
+
+> 🔥 **Tip**  
+>  If you prefer to build and run the container locally, run:
+>  ```shell script
+>  make deploy-{{ PROJECT_TYPE }}-docker-container-local
+>  ```
+
+### 2. Locally via Poetry (development workflow)
+
+Run:
+ ```shell script
+make provision-environment # Note: installs ALL dependencies!
+poetry shell # Activate the project's virtual environment
+{% if PROJECT_TYPE == 'jupyter' -%} jupyter notebook # Launch the Jupyter server {%- endif %}
+```
+
 Development
 ===========
 
@@ -90,6 +138,29 @@ make provision-environment
 > 🔥 **Tip**  
 >  Invoking the above without `poetry` installed will emit a
 >  helpful error message letting you know how you can install poetry.
+
+Docker Container Image Building/Deployment Orchestration
+--------------------------------------------------------
+
+The following set of `make` targets orchestrate the project's container image
+build and deploy steps:
+
+```shell
+build-container     Build {{cookiecutter.project_slug}} container
+deploy-{{ PROJECT_TYPE }}-docker-container Deploy downloaded dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+deploy-{{ PROJECT_TYPE }}-docker-container-local Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
+pull-container      Pull {{cookiecutter.project_slug}} container
+push-container      Push {{cookiecutter.project_slug}} container
+stop-container      Stop container forcefully (i.e., when keyboard interrupts are disabled)
+```
+
+Note that the project's container image is oblivious to the application's
+underlying implementation details, with top-level application setup and
+execution logic falling under the purview of the project's entrypoint script.
+As such, Dockerfile modifications will generally only be necessary when
+updating non-Python environment dependencies (Python dependency updates are
+automatically reflected in new image builds via the
+`pyproject.toml` and `poetry.lock` files).
 
 Testing
 ------------
