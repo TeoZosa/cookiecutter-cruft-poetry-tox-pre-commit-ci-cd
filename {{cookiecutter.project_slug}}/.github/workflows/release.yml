@@ -133,7 +133,7 @@ jobs:
       - name: Get container image metadata
         id: container-image-metadata
         run: |
-          echo "::set-output name=tagged_images::$(make docker-repository-tagged-images | tr '\n' ',')"
+          echo "::set-output name=tagged_images::$(make get-make-var-IMG get-make-var-LATEST_IMG | tr '\n' ',')"
 
       - name: Build and push container image
         id: docker_build
