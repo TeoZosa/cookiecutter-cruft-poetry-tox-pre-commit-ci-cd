@@ -143,7 +143,7 @@ Monitoring and Observability
 Type Checking and Data Validation
 ---------------------------------
 - Static type-checking
-  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatbility-via-nbqa)
+  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
 - Run-time type-checking
   with [typeguard](https://github.com/agronholm/typeguard)
     - See the
@@ -162,7 +162,7 @@ Testing
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
-  with [xdoctest](https://xdoctest.readthedocs.io/)[†](#jupyter-compatbility-via-nbqa)
+  with [xdoctest](https://xdoctest.readthedocs.io/)[†](#jupyter-compatibility-via-nbqa)
 - [Performance testing](https://en.wikipedia.org/wiki/Software_performance_testing)
   with [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
@@ -190,7 +190,7 @@ Code Coverage
 Security
 --------
 - Static application security testing (SAST)
-  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatbility-via-nbqa)
+  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
   and [Safety](https://github.com/pyupio/safety)
 
 Linting
@@ -199,11 +199,11 @@ Linting
   with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
-    - [Pylint](https://www.pylint.org/)[†](#jupyter-compatbility-via-nbqa)
-    - [pyupgrade](https://github.com/asottile/pyupgrade)[†](#jupyter-compatbility-via-nbqa)
+    - [Pylint](https://www.pylint.org/)[†](#jupyter-compatibility-via-nbqa)
+    - [pyupgrade](https://github.com/asottile/pyupgrade)[†](#jupyter-compatibility-via-nbqa)
 - Code formatting:
-    - [Black](https://github.com/psf/black)[†](#jupyter-compatbility-via-nbqa)
-    - [isort](https://github.com/timothycrosley/isort)[†](#jupyter-compatbility-via-nbqa)
+    - [Black](https://github.com/psf/black)[†](#jupyter-compatibility-via-nbqa)
+    - [isort](https://github.com/timothycrosley/isort)[†](#jupyter-compatibility-via-nbqa)
     - [shfmt](https://github.com/mvdan/sh)
     - [pretty-format-json](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [trailing-whitespace](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
@@ -267,7 +267,7 @@ Documentation
         * Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
     </a>
     <br>
-    <a name="jupyter-compatbility-via-nbqa">
+    <a name="jupyter-compatibility-via-nbqa">
         † Jupyter notebook compatibility via <a href="https://github.com/nbQA-dev/nbQA">nbQA</a>
     </a>
 </sup>
