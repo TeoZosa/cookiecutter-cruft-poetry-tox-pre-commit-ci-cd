@@ -64,12 +64,10 @@ validate_req_env_vars:
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
 .PHONY: strong-version-tag
-strong-version-tag:
-	@echo $(TAG)
+strong-version-tag: get-make-var-TAG
 
 .PHONY: strong-version-tag-dateless
-strong-version-tag-dateless:
-	@echo $(GIT_VERSION)
+strong-version-tag-dateless: get-make-var-GIT_VERSION
 
 .PHONY: update-dependencies
 ## Install Python dependencies,
