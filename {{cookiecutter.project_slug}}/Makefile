@@ -59,6 +59,11 @@ validate_req_env_vars:
 	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
+.PHONY: docker-repository-tagged-images
+docker-repository-tagged-images:
+	@echo $(IMG)
+	@echo $(LATEST_IMG)
+
 .PHONY: strong-version-tag
 strong-version-tag:
 	@echo $(TAG)
