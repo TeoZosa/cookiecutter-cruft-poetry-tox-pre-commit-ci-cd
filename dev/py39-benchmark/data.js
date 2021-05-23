@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1621791599575,
+  "lastUpdate": 1621813692402,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -5412,6 +5412,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0000015218612416490732",
             "extra": "mean: 272.6131557772164 nsec\nrounds: 188680"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "TeoZosa@users.noreply.github.com",
+            "name": "Teofilo Zosa",
+            "username": "TeoZosa"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "840ccaf282a55feddcc8b527053717e10ad313e1",
+          "message": "Merge pull request #177 from TeoZosa/add-docker-container-ci-cd-build-push-feature\n\n✨ Add Automated Docker Image CI/CD Build/Push Feature",
+          "timestamp": "2021-05-23T16:43:24-07:00",
+          "tree_id": "0aeeb56299ac739cbb4a0c63568b4a705d08b00f",
+          "url": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/commit/840ccaf282a55feddcc8b527053717e10ad313e1"
+        },
+        "date": 1621813691169,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 15253.617173907413,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000012441809172271768",
+            "extra": "mean: 65.55822062393068 usec\nrounds: 9804"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 4383049.924742697,
+            "unit": "iter/sec",
+            "range": "stddev: 5.87974937312826e-7",
+            "extra": "mean: 228.15163349034876 nsec\nrounds: 192308"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 11883.942234510298,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000019587829346683987",
+            "extra": "mean: 84.147160956072 usec\nrounds: 6859"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 130269.8049971281,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000008792209670283527",
+            "extra": "mean: 7.676375964653097 usec\nrounds: 49752"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 14583.31628445257,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000013552832399134396",
+            "extra": "mean: 68.5715087360555 usec\nrounds: 7326"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 4366785.382203516,
+            "unit": "iter/sec",
+            "range": "stddev: 1.9943398969350311e-7",
+            "extra": "mean: 229.00140778055507 nsec\nrounds: 192308"
           }
         ]
       }
