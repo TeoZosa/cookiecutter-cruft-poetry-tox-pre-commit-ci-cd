@@ -41,6 +41,10 @@ LATEST_IMG := $(DOCKER_REPOSITORY):latest
 # HELPER TARGETS                                                                #
 #################################################################################
 
+.PHONY: get-make-var-%
+get-make-var-%:
+	@echo $($*)
+
 # Check that given variables are set and all have non-empty values,
 # die with an error otherwise.
 #
