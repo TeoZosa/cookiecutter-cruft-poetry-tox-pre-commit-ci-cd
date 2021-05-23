@@ -21,7 +21,7 @@ ENV POETRY_HOME=/opt/poetry \
     POETRY_VIRTUALENVS_CREATE=false
 ENV PATH="${POETRY_HOME}/bin:${PATH}"
 # Install `poetry` via `curl` and system `python`
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python && \
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python && \
     poetry --version && \
     poetry config --list
 {% if cookiecutter.jupyter_notebook_support == 'yes' %}

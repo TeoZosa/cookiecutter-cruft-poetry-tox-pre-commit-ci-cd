@@ -107,7 +107,7 @@ ifeq ($(shell command -v poetry),)
 	@echo "poetry could not be found!"
 	@echo "Please install poetry!"
 	@echo "Ex.: 'curl -sSL \
-	https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - \
+	https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py  | python - \
 	&& source $$HOME/.poetry/env'"
 	@echo "see:"
 	@echo "- https://python-poetry.org/docs/#installation"
