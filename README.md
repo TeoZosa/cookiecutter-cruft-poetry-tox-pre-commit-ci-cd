@@ -222,6 +222,8 @@ CI/CD
 -----
 - Continuous integration
   with [`GitHub Actions`](https://github.com/features/actions)
+- Automated Docker image builds and pushes
+  to [Docker Hub](https://hub.docker.com/)
 - Automated uploads
   to [PyPI](https://pypi.org/)
   and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)
