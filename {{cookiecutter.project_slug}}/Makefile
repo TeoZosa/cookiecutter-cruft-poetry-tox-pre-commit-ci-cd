@@ -108,7 +108,7 @@ ifeq ($(shell command -v poetry),)
 	@echo "Please install poetry!"
 	@echo "Ex.: 'curl -sSL \
 	https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py  | python - \
-	&& source $$HOME/.poetry/env'"
+	&& source $$HOME/.local/env'"
 	@echo "see:"
 	@echo "- https://python-poetry.org/docs/#installation"
 	@echo "Note: 'pyenv' recommended for Python version management"
