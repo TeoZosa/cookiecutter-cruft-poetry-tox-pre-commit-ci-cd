@@ -62,6 +62,7 @@ jobs:
           DEV_VERSION="${VERSION}.dev.$(date +%s)" &&
           poetry version "${DEV_VERSION}"
       {%- if cookiecutter.project_type == 'package' %}
+      # PyPI/TestPyPI package upload ----------------------
       - name: Build package
         run: |
           poetry build --ansi
