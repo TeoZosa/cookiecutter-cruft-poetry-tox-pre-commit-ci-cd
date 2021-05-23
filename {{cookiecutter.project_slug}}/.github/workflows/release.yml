@@ -43,7 +43,7 @@ jobs:
 
       - name: Detect and tag new version
         id: check-version
-        if: steps.check-parent-commit.outputs.sha
+        if: "steps.check-parent-commit.outputs.sha"
         run: |
           BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
           git checkout HEAD~
