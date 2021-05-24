@@ -34,7 +34,7 @@ Best of all, best practices are baked in order to provide you with the best
 foundation on which you can build your best work!
 
 > 📝 **Note**  
-> **_Very_** heavily influenced by the amazing
+> Inspired by the amazing
 > [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
 > from [@cjolowicz](https://github.com/cjolowicz)
 > based on the fantastic
