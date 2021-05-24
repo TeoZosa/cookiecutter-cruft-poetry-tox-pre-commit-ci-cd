@@ -223,16 +223,16 @@ CI/CD
 - Continuous integration
   with [`GitHub Actions`](https://github.com/features/actions)
 - Automated Docker image builds and pushes
-  to [Docker Hub](https://hub.docker.com/)
+  to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
 - Automated uploads
   to [PyPI](https://pypi.org/)
-  and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)
+  and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)[‡](#repo-secret-required)
 - Automated release notes
   with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates
   with [`Dependabot`](https://dependabot.com/)
   - Automated  [`Dependabot`](https://dependabot.com/) PR merging
-    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)
+    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[‡](#repo-secret-required)
 - Project issue labels management
   with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 
@@ -272,6 +272,16 @@ Documentation
     <a name="jupyter-compatibility-via-nbqa">
         † Jupyter notebook compatibility via <a href="https://github.com/nbQA-dev/nbQA">nbQA</a>
     </a>
+    <br>
+    <a name="repo-secret-required">
+        ‡ Requires definitions of one or more of the below repository secrets:
+
+    AUTO_MERGE_DEPENDABOT_TOKEN
+    DOCKERHUB_TOKEN
+    DOCKERHUB_USERNAME
+    PYPI_TOKEN
+    TEST_PYPI_TOKEN
+   </a>
 </sup>
 
 Legal
