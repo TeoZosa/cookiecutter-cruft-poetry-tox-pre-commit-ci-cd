@@ -5,7 +5,7 @@
   "friendly_name": "{{ cookiecutter.project_slug.replace('-', ' ').title() }}",
   "author": "Teo Zosa",
   "email": "teo@sonosim.com",
-  "project_type": ["package", "project"],
+  "project_type": ["project", "package"],
   "jupyter_notebook_support": ["yes", "no"],
   "remote_vcs_host": ["github", "gitlab"],
   "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
