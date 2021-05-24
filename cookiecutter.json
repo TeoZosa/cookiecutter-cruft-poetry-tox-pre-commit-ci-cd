@@ -10,7 +10,7 @@
   "remote_vcs_host": ["github", "gitlab"],
   "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
   "remote_vcs_username": "TeoZosa",
-  "container_registry_username": "teozosa",
+  "container_registry_namespace": "teozosa",
   "project_repository_url": "{{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}",
   "documentation_url": "https://{{ cookiecutter.project_slug }}.readthedocs.io",
   "adr_documentation_url": "https://{{ cookiecutter.remote_vcs_username }}.{{ cookiecutter.remote_vcs_host }}.io/{{ cookiecutter.project_slug }}/adl/",
