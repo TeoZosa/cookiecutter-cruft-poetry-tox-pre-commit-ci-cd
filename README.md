@@ -231,6 +231,8 @@ CI/CD
   with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates
   with [`Dependabot`](https://dependabot.com/)
+  - Automated  [`Dependabot`](https://dependabot.com/) PR merging
+    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)
 - Project issue labels management
   with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 
