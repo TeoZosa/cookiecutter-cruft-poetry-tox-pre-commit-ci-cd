@@ -235,6 +235,8 @@ CI/CD
     with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[‡](#repo-secret-required)
 - Project issue labels management
   with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
+- Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
+  with [`Semgrep`](https://semgrep.dev/)
 
 Documentation
 -------------
