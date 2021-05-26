@@ -12,6 +12,7 @@ updates:
       - "cookiecutter"
       - "dependencies"
       - "python"
+    open-pull-requests-limit: 99
   # Github Actions
   - package-ecosystem: github-actions
     directory: "/"
@@ -60,6 +61,7 @@ updates:
     labels:
       - "dependencies"
       - "python"
+    open-pull-requests-limit: 99
   # Github Actions
   - package-ecosystem: github-actions
     directory: "/{{cookiecutter.project_slug}}"
