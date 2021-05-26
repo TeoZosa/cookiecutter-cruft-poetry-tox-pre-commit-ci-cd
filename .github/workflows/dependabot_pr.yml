@@ -1,4 +1,7 @@
 ---
+# Needed because Dependabot-initiated pushes to master do not have access
+# to repository secrets on which downstream workflows rely.
+# see: dependabot/dependabot-core/issues/3253
 name: Dependabot PR Check
 
 on:  # yamllint disable-line rule:truthy
