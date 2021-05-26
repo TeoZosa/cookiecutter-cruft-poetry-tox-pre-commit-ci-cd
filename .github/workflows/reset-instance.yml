@@ -62,7 +62,9 @@ jobs:
         env:
           extra_context: |
             {
-              "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}"
+              "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}",
+              "project_type": "package",
+              "jupyter_notebook_support": "yes"
             }
 
       # yamllint disable-line rule:line-length
