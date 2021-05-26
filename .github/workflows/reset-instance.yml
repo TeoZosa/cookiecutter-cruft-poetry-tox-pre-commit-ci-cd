@@ -6,6 +6,11 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main  # forward-compatibility with new GitHub default branch naming
       - master  # backward-compatibility with old GitHub default branch naming
+  workflow_run:
+    workflows:
+      - Dependabot PR Check
+    types:
+      - completed
 
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
