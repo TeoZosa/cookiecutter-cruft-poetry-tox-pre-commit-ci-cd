@@ -46,8 +46,8 @@ Table of Contents
 
 <!-- toc -->
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Initializing a New Project](#initializing-a-new-project)
+- [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
@@ -65,8 +65,8 @@ Table of Contents
 
 <!-- tocstop -->
 
-Installation
-============
+Initializing a New Project
+===========================
 
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
 ```shell script
@@ -79,8 +79,8 @@ cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
 Note: **_Cookiecutter_** uses `gh:` as short-hand for `https://github.com/`
 
-Usage
-=====
+Linking an Existing Project
+===========================
 If the project was originally installed via
 [`cookiecutter`](https://github.com/audreyr/cookiecutter), you must first use
 [`cruft`](https://cruft.github.io/cruft/) to link the project with the original
