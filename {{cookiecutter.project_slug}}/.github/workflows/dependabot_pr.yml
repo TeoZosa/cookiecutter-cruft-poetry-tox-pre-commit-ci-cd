@@ -13,6 +13,7 @@ on:  # yamllint disable-line rule:truthy
 jobs:
   check_dependabot:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    # yamllint disable-line rule:braces
+    if: {{ "${{ github.actor == 'dependabot[bot]' }}" }}
     steps:
       - run: echo "PR created by Dependabot"
