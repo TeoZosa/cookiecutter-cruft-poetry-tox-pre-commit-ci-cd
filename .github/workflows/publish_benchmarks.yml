@@ -65,7 +65,7 @@ jobs:
 
       # yamllint disable rule:line-length
       - name: Store benchmark result
-        uses: rhysd/github-action-benchmark@v1
+        uses: TeoZosa/github-action-benchmark@v1.8.2
         with:
           tool: 'pytest'
           benchmark-data-dir-path: dev/${{ steps.performance-testing.outputs.tox_envname }}
