@@ -51,7 +51,6 @@ Table of Contents
 - [Features](#features)
   * [Developer Workflow Automation](#developer-workflow-automation)
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
   * [Monitoring and Observability](#monitoring-and-observability)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing](#testing)
@@ -123,15 +122,10 @@ Conditionally Rendered Python Package/Project Boilerplate
 ---------------------------------------------------------
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
-- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
-
-Docker Image Build/Push/Deploy Orchestration
---------------------------------------------
 - Project-specific Dockerfile[*](#conditional-rendering) that
   installs production dependencies for a completely reproducible execution
   environment
-- `build`/`push`/`pull`/`deploy` logic abstracted into corresponding `make`
-  targets, providing full automation with minimal friction
+- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
 Monitoring and Observability
 ----------------------------
