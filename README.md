@@ -56,6 +56,8 @@ Table of Contents
     + [Linting](#linting)
     + [CI/CD](#cicd)
   * [📉 Observability](#-observability)
+    + [Logging](#logging)
+    + [Error Tracking](#error-tracking)
   * [🔒 Security](#-security)
   * [📋 Accessibility](#-accessibility)
     + [Documentation](#documentation)
@@ -218,10 +220,8 @@ Features
 📉 Observability
 ----------------
 
-- [Optional] Exception monitoring
-  with [Sentry](https://sentry.io/welcome/)
-  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
-    a detailed activation guide
+### Logging
+
 - Structured logging
   with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
   - Granular control flow context logging (via call stack introspection):
@@ -233,6 +233,13 @@ Features
       locally for retrospective analysis
   - [Optional] Exception logging to Sentry with
     [structlog-sentry](https://www.structlog.org/en/stable/)
+
+### Error Tracking
+
+- [Optional] Exception monitoring
+  with [Sentry](https://sentry.io/welcome/)
+  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
+    a detailed activation guide
 
 🔒 Security
 -----------
