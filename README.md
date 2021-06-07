@@ -107,6 +107,12 @@ Standardized Developer Workflow Orchestration
   via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
+- Test automation
+  with [Tox](https://tox.readthedocs.io/en/latest/)
+- Code quality tooling automation and management
+  with [pre-commit](https://pre-commit.com/)
+- Continuous integration and deployment
+  with [`GitHub Actions`](https://github.com/features/actions)
 
 Conditionally Rendered Python Package/Project Boilerplate
 ---------------------------------------------------------
@@ -157,8 +163,6 @@ Type Checking and Data Validation
 
 Testing
 -------
-- Test automation
-  with [Tox](https://tox.readthedocs.io/en/latest/)
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
@@ -195,8 +199,6 @@ Security
 
 Linting
 -------
-- Automation and management
-  with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
     - [Pylint](https://www.pylint.org/)[†](#jupyter-compatibility-via-nbqa)
@@ -220,8 +222,6 @@ Linting
 
 CI/CD
 -----
-- Continuous integration
-  with [`GitHub Actions`](https://github.com/features/actions)
 - Automated Docker image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
 - Automated uploads
