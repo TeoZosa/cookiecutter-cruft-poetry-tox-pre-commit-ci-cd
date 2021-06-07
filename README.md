@@ -44,27 +44,23 @@ foundation on which you can build your best work!
 
 Table of Contents
 
-<!-- toc -->
-
 - [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
-  * [🚀 Project Standardization and Automation](#%F0%9F%9A%80-project-standardization-and-automation)
+  * [🚀 Project Standardization and Automation](#-project-standardization-and-automation)
     + [Developer Workflow Automation](#developer-workflow-automation)
     + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [🔧 Maintainability](#%F0%9F%94%A7-maintainability)
+  * [🔧 Maintainability](#-maintainability)
     + [Testing/Coverage](#testingcoverage)
     + [Type Checking and Data Validation](#type-checking-and-data-validation)
     + [Linting](#linting)
     + [CI/CD](#cicd)
-  * [📉 Observability](#%F0%9F%93%89-observability)
-  * [🔒 Security](#%F0%9F%94%92-security)
-  * [📋 Accessibility](#%F0%9F%93%8B-accessibility)
+  * [📉 Observability](#-observability)
+  * [🔒 Security](#-security)
+  * [📋 Accessibility](#-accessibility)
     + [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
-
-<!-- tocstop -->
 
 Creating a New Project
 ===========================
