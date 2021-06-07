@@ -51,8 +51,8 @@ Table of Contents
     + [Developer Workflow Automation](#developer-workflow-automation)
     + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [🔧 Maintainability](#-maintainability)
-    + [Testing/Coverage](#testingcoverage)
     + [Type Checking and Data Validation](#type-checking-and-data-validation)
+    + [Testing/Coverage](#testingcoverage)
     + [Linting](#linting)
     + [CI/CD](#cicd)
   * [📉 Observability](#-observability)
@@ -134,6 +134,21 @@ Features
 🔧 Maintainability
 ------------------
 
+### Type Checking and Data Validation
+
+- Static type-checking
+  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
+- Run-time type-checking
+  with [typeguard](https://github.com/agronholm/typeguard)
+  - See the
+    [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
+    for usage overview
+- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
+  (precondition, postcondition, and invariant enforcement)
+  with [icontract](https://github.com/Parquery/icontract)
+  - See [the test benchmarks](./tests/test_icontract_benchmark.py)
+    for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
+
 ### Testing/Coverage
 
 - Testing
@@ -161,21 +176,6 @@ Features
   with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting
   with [Codecov](https://codecov.io/)
-
-### Type Checking and Data Validation
-
-- Static type-checking
-  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
-- Run-time type-checking
-  with [typeguard](https://github.com/agronholm/typeguard)
-  - See the
-    [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
-    for usage overview
-- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
-  (precondition, postcondition, and invariant enforcement)
-  with [icontract](https://github.com/Parquery/icontract)
-  - See [the test benchmarks](./tests/test_icontract_benchmark.py)
-    for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
 ### Linting
 
