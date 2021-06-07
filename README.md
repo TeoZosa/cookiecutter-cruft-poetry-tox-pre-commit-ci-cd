@@ -53,10 +53,10 @@ Table of Contents
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [Testing/Coverage](#testingcoverage)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
-  * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
   * [Monitoring and Observability](#monitoring-and-observability)
+  * [Security](#security)
   * [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
@@ -169,12 +169,6 @@ Type Checking and Data Validation
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
-Security
---------
-- Static application security testing (SAST)
-  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
-  and [Safety](https://github.com/pyupio/safety)
-
 Linting
 -------
 - Code quality:
@@ -233,6 +227,12 @@ Monitoring and Observability
       locally for retrospective analysis
   - [Optional] Exception logging to Sentry with
     [structlog-sentry](https://www.structlog.org/en/stable/)
+
+Security
+--------
+- Static application security testing (SAST)
+  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
+  and [Safety](https://github.com/pyupio/safety)
 
 Documentation
 -------------
