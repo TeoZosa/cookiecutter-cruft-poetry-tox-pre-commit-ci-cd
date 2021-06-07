@@ -44,39 +44,41 @@ foundation on which you can build your best work!
 
 Table of Contents
 
-<!-- toc -->
-
-- [Initializing a New Project](#initializing-a-new-project)
+- [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
-  * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
-  * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
-  * [Monitoring and Observability](#monitoring-and-observability)
-  * [Type Checking and Data Validation](#type-checking-and-data-validation)
-  * [Testing](#testing)
-  * [Code Coverage](#code-coverage)
-  * [Security](#security)
-  * [Linting](#linting)
-  * [CI/CD](#cicd)
-  * [Documentation](#documentation)
+  * [🚀 Project Standardization and Automation](#-project-standardization-and-automation)
+    + [Developer Workflow Automation](#developer-workflow-automation)
+    + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
+  * [🔧 Maintainability](#-maintainability)
+    + [Type Checking and Data Validation](#type-checking-and-data-validation)
+    + [Testing/Coverage](#testingcoverage)
+    + [Linting](#linting)
+    + [CI/CD](#cicd)
+  * [📉 Observability](#-observability)
+    + [Logging](#logging)
+    + [Error Tracking](#error-tracking)
+  * [🔒 Security](#-security)
+    + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
+  * [📋 Accessibility](#-accessibility)
+    + [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
 
-<!-- tocstop -->
-
-Initializing a New Project
+Creating a New Project
 ===========================
-
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
+
 ```shell script
 cruft create https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
 
 Via [`cookiecutter`](https://github.com/audreyr/cookiecutter):
+
 ```shell script
 cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
+
 Note: **_Cookiecutter_** uses `gh:` as short-hand for `https://github.com/`
 
 Linking an Existing Project
@@ -91,6 +93,7 @@ cruft link https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-c
 ```
 
 Then/else:
+
 ```shell script
 cruft update
 ```
@@ -98,67 +101,56 @@ cruft update
 Features
 ========
 
-Standardized Developer Workflow Orchestration
----------------------------------------------
-- Packaging and dependency management
+🚀 Project Standardization and Automation
+-----------------------------------------
+
+### Developer Workflow Automation
+
+- Python packaging and dependency management
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
-  via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+    - Self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile); just type
+      `make` on the command line to display auto-generated documentation on available
+      targets
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
+- Test automation
+  with [Tox](https://tox.readthedocs.io/en/latest/)
+- Code quality tooling automation and management
+  with [pre-commit](https://pre-commit.com/)
+- Continuous integration and deployment
+  with [`GitHub Actions`](https://github.com/features/actions)
 
-Conditionally Rendered Python Package/Project Boilerplate
----------------------------------------------------------
+### Conditionally Rendered Python Package/Project Boilerplate
+
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
-- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
-
-Docker Image Build/Push/Deploy Orchestration
---------------------------------------------
 - Project-specific Dockerfile[*](#conditional-rendering) that
   installs production dependencies for a completely reproducible execution
   environment
-- `build`/`push`/`pull`/`deploy` logic abstracted into corresponding `make`
-  targets, providing full automation with minimal friction
+- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
-Monitoring and Observability
-----------------------------
-- [Optional] Exception monitoring
-  with [Sentry](https://sentry.io/welcome/)
-  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
-    a detailed activation guide
-- Structured logging
-  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
-    - Granular control flow context logging (via call stack introspection):
-        - Namespaced module-specific loggers
-        - Function name logging
-    - Environment-dependent standard output stream log formatting:
-        - Production: JSON logs
-        - Development: Colorized human-readable logs, with JSON logs saved
-          locally for retrospective analysis
-    - [Optional] Exception logging to Sentry with
-      [structlog-sentry](https://www.structlog.org/en/stable/)
+🔧 Maintainability
+------------------
 
-Type Checking and Data Validation
----------------------------------
+### Type Checking and Data Validation
+
 - Static type-checking
   with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
 - Run-time type-checking
   with [typeguard](https://github.com/agronholm/typeguard)
-    - See the
-      [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
-      for usage overview
+  - See the
+    [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
+    for usage overview
 - [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
   (precondition, postcondition, and invariant enforcement)
   with [icontract](https://github.com/Parquery/icontract)
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
-Testing
--------
-- Test automation
-  with [Tox](https://tox.readthedocs.io/en/latest/)
+### Testing/Coverage
+
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
@@ -180,23 +172,13 @@ Testing
 >  and the
 >  [follow-up by the `mutmut` author](https://stackoverflow.com/a/61849772/6470891).
 
-Code Coverage
--------------
 - Code coverage
   with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting
   with [Codecov](https://codecov.io/)
 
-Security
---------
-- Static application security testing (SAST)
-  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
-  and [Safety](https://github.com/pyupio/safety)
+### Linting
 
-Linting
--------
-- Automation and management
-  with [pre-commit](https://pre-commit.com/)
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
     - [Pylint](https://www.pylint.org/)[†](#jupyter-compatibility-via-nbqa)
@@ -218,10 +200,8 @@ Linting
   - Invalid Python files
     with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
-CI/CD
------
-- Continuous integration
-  with [`GitHub Actions`](https://github.com/features/actions)
+### CI/CD
+
 - Automated Docker image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
 - Automated uploads
@@ -238,8 +218,45 @@ CI/CD
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
   with [`Semgrep`](https://semgrep.dev/)
 
-Documentation
--------------
+📉 Observability
+----------------
+
+### Logging
+
+- Structured logging
+  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
+  - Granular control flow context logging (via call stack introspection):
+    - Namespaced module-specific loggers
+    - Function name logging
+  - Environment-dependent standard output stream log formatting:
+    - Production: JSON logs
+    - Development: Colorized human-readable logs, with JSON logs saved
+      locally for retrospective analysis
+  - [Optional] Exception logging to Sentry with
+    [structlog-sentry](https://www.structlog.org/en/stable/)
+
+### Error Tracking
+
+- [Optional] Exception monitoring
+  with [Sentry](https://sentry.io/welcome/)
+  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
+    a detailed activation guide
+
+🔒 Security
+-----------
+
+### Static Application Security Testing (SAST)
+
+- Code vulnerabilities
+  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
+- Python package dependencies vulnerabilities
+  with [Safety](https://github.com/pyupio/safety)
+
+📋 Accessibility
+----------------
+
+### Documentation
+
 - Automated README table of contents generation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
