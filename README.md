@@ -49,15 +49,18 @@ Table of Contents
 - [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
-  * [Developer Workflow Automation](#developer-workflow-automation)
-  * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [Testing/Coverage](#testingcoverage)
-  * [Type Checking and Data Validation](#type-checking-and-data-validation)
-  * [Linting](#linting)
-  * [CI/CD](#cicd)
-  * [Monitoring and Observability](#monitoring-and-observability)
-  * [Security](#security)
-  * [Documentation](#documentation)
+  * [🚀 Project Standardization and Automation](#%F0%9F%9A%80-project-standardization-and-automation)
+    + [Developer Workflow Automation](#developer-workflow-automation)
+    + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
+  * [🔧 Maintainability](#%F0%9F%94%A7-maintainability)
+    + [Testing/Coverage](#testingcoverage)
+    + [Type Checking and Data Validation](#type-checking-and-data-validation)
+    + [Linting](#linting)
+    + [CI/CD](#cicd)
+  * [📉 Observability](#%F0%9F%93%89-observability)
+  * [🔒 Security](#%F0%9F%94%92-security)
+  * [📋 Accessibility](#%F0%9F%93%8B-accessibility)
+    + [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
 
@@ -99,8 +102,11 @@ cruft update
 Features
 ========
 
-Developer Workflow Automation
------------------------------
+🚀 Project Standardization and Automation
+-----------------------------------------
+
+### Developer Workflow Automation
+
 - Python packaging and dependency management
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
@@ -117,8 +123,8 @@ Developer Workflow Automation
 - Continuous integration and deployment
   with [`GitHub Actions`](https://github.com/features/actions)
 
-Conditionally Rendered Python Package/Project Boilerplate
----------------------------------------------------------
+### Conditionally Rendered Python Package/Project Boilerplate
+
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
 - Project-specific Dockerfile[*](#conditional-rendering) that
@@ -126,8 +132,11 @@ Conditionally Rendered Python Package/Project Boilerplate
   environment
 - [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
-Testing/Coverage
-----------------
+🔧 Maintainability
+------------------
+
+### Testing/Coverage
+
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
@@ -154,8 +163,8 @@ Testing/Coverage
 - Coverage reporting
   with [Codecov](https://codecov.io/)
 
-Type Checking and Data Validation
----------------------------------
+### Type Checking and Data Validation
+
 - Static type-checking
   with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
 - Run-time type-checking
@@ -169,8 +178,8 @@ Type Checking and Data Validation
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
-Linting
--------
+### Linting
+
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
     - [Pylint](https://www.pylint.org/)[†](#jupyter-compatibility-via-nbqa)
@@ -192,8 +201,8 @@ Linting
   - Invalid Python files
     with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
-CI/CD
------
+### CI/CD
+
 - Automated Docker image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
 - Automated uploads
@@ -210,8 +219,9 @@ CI/CD
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
   with [`Semgrep`](https://semgrep.dev/)
 
-Monitoring and Observability
-----------------------------
+📉 Observability
+----------------
+
 - [Optional] Exception monitoring
   with [Sentry](https://sentry.io/welcome/)
   - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
@@ -228,14 +238,18 @@ Monitoring and Observability
   - [Optional] Exception logging to Sentry with
     [structlog-sentry](https://www.structlog.org/en/stable/)
 
-Security
---------
+🔒 Security
+-----------
+
 - Static application security testing (SAST)
   with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
   and [Safety](https://github.com/pyupio/safety)
 
-Documentation
--------------
+📋 Accessibility
+----------------
+
+### Documentation
+
 - Automated README table of contents generation
   with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
