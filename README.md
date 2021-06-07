@@ -51,12 +51,12 @@ Table of Contents
 - [Features](#features)
   * [Developer Workflow Automation](#developer-workflow-automation)
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [Monitoring and Observability](#monitoring-and-observability)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
   * [Testing/Coverage](#testingcoverage)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
+  * [Monitoring and Observability](#monitoring-and-observability)
   * [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
@@ -125,24 +125,6 @@ Conditionally Rendered Python Package/Project Boilerplate
   installs production dependencies for a completely reproducible execution
   environment
 - [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
-
-Monitoring and Observability
-----------------------------
-- [Optional] Exception monitoring
-  with [Sentry](https://sentry.io/welcome/)
-  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
-    a detailed activation guide
-- Structured logging
-  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
-    - Granular control flow context logging (via call stack introspection):
-        - Namespaced module-specific loggers
-        - Function name logging
-    - Environment-dependent standard output stream log formatting:
-        - Production: JSON logs
-        - Development: Colorized human-readable logs, with JSON logs saved
-          locally for retrospective analysis
-    - [Optional] Exception logging to Sentry with
-      [structlog-sentry](https://www.structlog.org/en/stable/)
 
 Type Checking and Data Validation
 ---------------------------------
@@ -233,6 +215,24 @@ CI/CD
   with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
   with [`Semgrep`](https://semgrep.dev/)
+
+Monitoring and Observability
+----------------------------
+- [Optional] Exception monitoring
+  with [Sentry](https://sentry.io/welcome/)
+  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
+    a detailed activation guide
+- Structured logging
+  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
+  - Granular control flow context logging (via call stack introspection):
+    - Namespaced module-specific loggers
+    - Function name logging
+  - Environment-dependent standard output stream log formatting:
+    - Production: JSON logs
+    - Development: Colorized human-readable logs, with JSON logs saved
+      locally for retrospective analysis
+  - [Optional] Exception logging to Sentry with
+    [structlog-sentry](https://www.structlog.org/en/stable/)
 
 Documentation
 -------------
