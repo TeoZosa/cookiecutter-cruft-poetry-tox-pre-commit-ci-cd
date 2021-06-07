@@ -103,7 +103,7 @@ Features
 
 Developer Workflow Automation
 -----------------------------
-- Packaging and dependency management
+- Python packaging and dependency management
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
