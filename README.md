@@ -107,7 +107,9 @@ Standardized Developer Workflow Orchestration
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
-  via self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile)
+    - Self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile); just type
+      `make` on the command line to display auto-generated documentation on available
+      targets
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
 - Test automation
