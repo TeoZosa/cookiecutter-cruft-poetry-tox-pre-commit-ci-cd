@@ -59,6 +59,7 @@ Table of Contents
     + [Logging](#logging)
     + [Error Tracking](#error-tracking)
   * [🔒 Security](#-security)
+    + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
   * [📋 Accessibility](#-accessibility)
     + [Documentation](#documentation)
 - [Legal](#legal)
@@ -244,9 +245,12 @@ Features
 🔒 Security
 -----------
 
-- Static application security testing (SAST)
+### Static Application Security Testing (SAST)
+
+- Code vulnerabilities
   with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
-  and [Safety](https://github.com/pyupio/safety)
+- Python package dependencies vulnerabilities
+  with [Safety](https://github.com/pyupio/safety)
 
 📋 Accessibility
 ----------------
