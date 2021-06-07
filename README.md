@@ -49,7 +49,7 @@ Table of Contents
 - [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
-  * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
+  * [Developer Workflow Automation](#developer-workflow-automation)
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [Docker Image Build/Push/Deploy Orchestration](#docker-image-buildpushdeploy-orchestration)
   * [Monitoring and Observability](#monitoring-and-observability)
@@ -101,8 +101,8 @@ cruft update
 Features
 ========
 
-Standardized Developer Workflow Orchestration
----------------------------------------------
+Developer Workflow Automation
+-----------------------------
 - Packaging and dependency management
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
