@@ -53,8 +53,7 @@ Table of Contents
   * [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
   * [Monitoring and Observability](#monitoring-and-observability)
   * [Type Checking and Data Validation](#type-checking-and-data-validation)
-  * [Testing](#testing)
-  * [Code Coverage](#code-coverage)
+  * [Testing/Coverage](#testingcoverage)
   * [Security](#security)
   * [Linting](#linting)
   * [CI/CD](#cicd)
@@ -160,8 +159,8 @@ Type Checking and Data Validation
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
-Testing
--------
+Testing/Coverage
+----------------
 - Testing
   with [pytest](https://docs.pytest.org/en/latest/)
 - Doctests
@@ -183,8 +182,6 @@ Testing
 >  and the
 >  [follow-up by the `mutmut` author](https://stackoverflow.com/a/61849772/6470891).
 
-Code Coverage
--------------
 - Code coverage
   with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting
