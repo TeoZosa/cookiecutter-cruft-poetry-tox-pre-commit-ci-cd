@@ -46,7 +46,7 @@ Table of Contents
 
 <!-- toc -->
 
-- [Initializing a New Project](#initializing-a-new-project)
+- [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
   * [Standardized Developer Workflow Orchestration](#standardized-developer-workflow-orchestration)
@@ -65,18 +65,20 @@ Table of Contents
 
 <!-- tocstop -->
 
-Initializing a New Project
+Creating a New Project
 ===========================
-
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
+
 ```shell script
 cruft create https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
 
 Via [`cookiecutter`](https://github.com/audreyr/cookiecutter):
+
 ```shell script
 cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
+
 Note: **_Cookiecutter_** uses `gh:` as short-hand for `https://github.com/`
 
 Linking an Existing Project
@@ -91,6 +93,7 @@ cruft link https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-c
 ```
 
 Then/else:
+
 ```shell script
 cruft update
 ```
