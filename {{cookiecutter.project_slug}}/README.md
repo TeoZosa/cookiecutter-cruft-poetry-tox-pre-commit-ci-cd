@@ -127,7 +127,7 @@ Development
 Package and Dependencies Installation
 --------------------------------------
 
-Make sure you have Python 3.6+ and [`poetry`](https://python-poetry.org/)
+Make sure you have Python 3.7+ and [`poetry`](https://python-poetry.org/)
 installed and configured.
 
 To install the package and all dev dependencies, run:
