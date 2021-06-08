@@ -5,7 +5,7 @@
 name: Dependabot PR Check
 
 on:  # yamllint disable-line rule:truthy
-  push:
+  pull_request:
     branches:
       - main  # forward-compatibility with new GitHub default branch naming
       - master  # backward-compatibility with old GitHub default branch naming
