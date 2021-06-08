@@ -1,14 +1,18 @@
 """Sphinx configuration."""
 import os
 import pathlib
+import re
 import subprocess  # nosec
 import sys
 from datetime import datetime
-from typing import List
+from typing import List, Match
 
+import emoji
 from dotenv import find_dotenv, load_dotenv
 
 # Load user-specific env vars (e.g. secrets) from a `.env` file
+from sphinx.application import Sphinx
+
 load_dotenv(find_dotenv())
 _project_directory = pathlib.Path(__file__).parent.parent.parent
 
@@ -89,8 +93,31 @@ autodoc_typehints = "description"  # Show typehints as content of function or me
 # `path/to/file:heading` instead of just `heading`
 autosectionlabel_prefix_document = True
 
-# sphinx.ext.apidoc configs
-# Running separately to support Read The Docs builds
+
+def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
+    """Convert emoji shortcodes in HTML files to corresponding emoji characters
+
+    Running separately to support Read The Docs builds.
+    Adapted from: https://bitbucket.org/lbesson/bin/src/master/emojize.py
+    """
+
+    def emojize_match(match: Match):
+        """Convert emoji shortcodes in match to corresponding emoji characters"""
+        return emoji.emojize(match.group(), use_aliases=True, variant="emoji_type")
+
+    def emojize_all(text: str):
+        """Convert all emoji shortcodes in text to corresponding emoji characters"""
+        return re.sub(r":([a-z0-9_-]+):", emojize_match, text)
+
+    if exception is None:
+        for html_file in pathlib.Path(app.outdir).rglob("*.html"):
+            html_file.write_text(emojize_all(html_file.read_text()))
+
+
+def setup(app: Sphinx) -> None:
+    """Connects bespoke post-build function"""
+    app.connect("build-finished", convert_emoji_shortcodes)
+
 
 # sphinxcontrib.confluencebuilder configs
 # user-specific values sourced from a `.env.` file in the root of this directory

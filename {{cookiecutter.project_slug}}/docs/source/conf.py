@@ -1,10 +1,12 @@
 """Sphinx configuration."""
 import os
 import pathlib
+import re
 import sys
 from datetime import datetime
-from typing import List
+from typing import List, Match
 
+import emoji
 import importlib_metadata
 from dotenv import find_dotenv, load_dotenv
 from sphinx.application import Sphinx
@@ -92,7 +94,11 @@ autosectionlabel_prefix_document = True
 
 
 def run_apidoc(_: Sphinx) -> None:
-    """`sphinx.ext.apidoc` configs; running separately to support Read The Docs builds"""
+    """`sphinx.ext.apidoc` configs
+
+    Running separately to support Read The Docs builds.
+    Adapted from: https://bitbucket.org/lbesson/bin/src/master/emojize.py
+    """
     argv = [
         "--ext-autodoc",
         "--ext-intersphinx",
@@ -107,9 +113,30 @@ def run_apidoc(_: Sphinx) -> None:
     apidoc.main(argv)
 
 
+def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
+    """Convert emoji shortcodes in HTML files to corresponding emoji characters
+
+    Running separately to support Read The Docs builds.
+    Adapted from: https://bitbucket.org/lbesson/bin/src/master/emojize.py
+    """
+
+    def emojize_match(match: Match):
+        """Convert emoji shortcodes in match to corresponding emoji characters"""
+        return emoji.emojize(match.group(), use_aliases=True, variant="emoji_type")
+
+    def emojize_all(text: str):
+        """Convert all emoji shortcodes in text to corresponding emoji characters"""
+        return re.sub(r":([a-z0-9_-]+):", emojize_match, text)
+
+    if exception is None:
+        for html_file in pathlib.Path(app.outdir).rglob("*.html"):
+            html_file.write_text(emojize_all(html_file.read_text()))
+
+
 def setup(app: Sphinx) -> None:
     """Connects bespoke `sphinx.ext.apidoc` extension function"""
     app.connect("builder-inited", run_apidoc)
+    app.connect("build-finished", convert_emoji_shortcodes)
 
 
 # sphinxcontrib.confluencebuilder configs

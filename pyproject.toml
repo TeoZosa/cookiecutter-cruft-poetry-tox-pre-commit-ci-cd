@@ -47,6 +47,7 @@ structlog-sentry-logger = "^0.7.3"
 typer = {extras = ["all"], version = "^0.3.2"}
 
 # Documentation
+emoji = { version = "^1.2.0", optional = true}
 myst-parser = { version = "^0.14.0", optional = true}
 pygments = { version = "^2.9.0", optional = true}
 sphinx = { version = "^3.5.3", optional = true}
@@ -83,6 +84,7 @@ darglint = "^1.5.8"
 
 [tool.poetry.extras]
 docs = [
+    "emoji",
     "myst-parser",
     "pygments",
     "sphinx",
