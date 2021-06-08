@@ -39,8 +39,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          # yamllint disable-line rule:braces
-          GITHUB_TOKEN: {{ "${{ secrets.GITHUB_TOKEN }}" }}
           BRANCH: gh-pages
           # yamllint disable-line rule:braces
           FOLDER: {{ "${{ env.BUILD_DIR }}" }}
