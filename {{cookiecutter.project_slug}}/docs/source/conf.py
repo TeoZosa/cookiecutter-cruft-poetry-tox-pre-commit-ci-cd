@@ -77,15 +77,15 @@ html_show_sourcelink = (
 
 # -- Extension configurations ---------------------------------------------------
 
-# sphinx.ext.autosummary configs
+# `sphinx.ext.autosummary` configs
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
-# sphinx.ext.autodoc configs
+# `sphinx.ext.autodoc` configs
 autoclass_content = "both"  # Add __init__ doc (ie. params) to class summaries
 autodoc_inherit_docstrings = True  # If no class summary, inherit base class summary
 autodoc_typehints = "description"  # Show typehints as content of function or method
 
-# myst_parser configs
+# `myst_parser` configs
 # Prefix document path to section labels, to use:
 # `path/to/file:heading` instead of just `heading`
 autosectionlabel_prefix_document = True
