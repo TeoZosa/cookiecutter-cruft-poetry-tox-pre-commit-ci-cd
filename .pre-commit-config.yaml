@@ -12,6 +12,7 @@ repos:
     rev: 21.5b0
     hooks:
       - id: black
+        args: [--config=pyproject.toml]
         exclude: ^{{cookiecutter\.project_slug}}/tests/test_main\.py$
 
   - repo: https://github.com/Yelp/detect-secrets
