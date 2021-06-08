@@ -70,12 +70,14 @@ Creating a New Project
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
 
 ```shell script
+pip install --user cruft # Install `cruft` on your path for easy access
 cruft create https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
 
 Via [`cookiecutter`](https://github.com/audreyr/cookiecutter):
 
 ```shell script
+pip install --user cookiecutter # Install `cookiecutter` on your path for easy access
 cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ```
 
