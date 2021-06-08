@@ -153,7 +153,7 @@ jobs:
         uses: "codecov/codecov-action@v1"
         with:
           file: ./.tox/coverage.xml
-          fail_ci_if_error: true
+          fail_ci_if_error: false
 
   test-performance:
     name: Performance testing for Python {{ "${{ matrix.python-version }}" }}
