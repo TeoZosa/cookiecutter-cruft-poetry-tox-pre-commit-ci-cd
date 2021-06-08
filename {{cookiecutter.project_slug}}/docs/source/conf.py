@@ -90,12 +90,9 @@ autodoc_typehints = "description"  # Show typehints as content of function or me
 # `path/to/file:heading` instead of just `heading`
 autosectionlabel_prefix_document = True
 
-# sphinx.ext.apidoc configs
-# Running separately to support Read The Docs builds
-
 
 def run_apidoc(_: Sphinx) -> None:
-
+    """`sphinx.ext.apidoc` configs; running separately to support Read The Docs builds"""
     argv = [
         "--ext-autodoc",
         "--ext-intersphinx",
@@ -111,6 +108,7 @@ def run_apidoc(_: Sphinx) -> None:
 
 
 def setup(app: Sphinx) -> None:
+    """Connects bespoke `sphinx.ext.apidoc` extension function"""
     app.connect("builder-inited", run_apidoc)
 
 
