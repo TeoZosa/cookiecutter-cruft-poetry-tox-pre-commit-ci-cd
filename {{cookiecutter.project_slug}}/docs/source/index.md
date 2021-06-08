@@ -14,6 +14,7 @@
    Code of Conduct <codeofconduct>
    License <license>
    Changelog <changelog>
+   Service Design and Production Deployment Documentation <production-readiness-checklist>
    Architecture Decision Records <adr>
 ```
 
