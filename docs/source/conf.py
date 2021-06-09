@@ -115,7 +115,7 @@ def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
 
 
 def setup(app: Sphinx) -> None:
-    """Connects bespoke post-build function"""
+    """Connects bespoke emoji shortcode conversion post-build function"""
     app.connect("build-finished", convert_emoji_shortcodes)
 
 
