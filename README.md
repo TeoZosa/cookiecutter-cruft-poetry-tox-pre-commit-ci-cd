@@ -214,7 +214,7 @@ Features
 
 - Automated [Docker](https://www.docker.com/) image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
-- Automated uploads
+- Automated Python package uploads
   to [PyPI](https://pypi.org/)
   and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)[‡](#repo-secret-required)
 - Automated release notes
