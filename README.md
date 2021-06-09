@@ -236,7 +236,8 @@ Features
 ### Logging
 
 - [Structured logging](https://stripe.com/blog/canonical-log-lines)
-  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/) (via [structlog](https://www.structlog.org/en/stable/))
+  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/)
+  (via [structlog](https://www.structlog.org/en/stable/))
   - Granular control flow context logging (via call stack introspection):
     - Namespaced module-specific loggers
     - Function name logging
