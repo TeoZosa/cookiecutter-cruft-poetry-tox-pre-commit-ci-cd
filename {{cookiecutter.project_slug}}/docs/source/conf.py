@@ -8,7 +8,7 @@ from typing import List, Match
 
 import emoji
 import importlib_metadata
-import sphinx.ext
+import sphinx.ext.apidoc
 from dotenv import find_dotenv, load_dotenv
 from sphinx.application import Sphinx
 
