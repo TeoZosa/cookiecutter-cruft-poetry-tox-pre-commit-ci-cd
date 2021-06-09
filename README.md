@@ -271,14 +271,13 @@ Features
 
 - Documentation building
   with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-- Automated emoji shortcode conversion
-  - see [conf.py:116-139](./{{cookiecutter.project_slug}}/docs/source/conf.py#L116-L139)
+- Automated emoji shortcode conversion[§](#read-the-docs-compatibility)
 - CLI reference
   with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
 - Automatic documentation from docstrings
   with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
   - API documentation
-    with [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)
+    with [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)[§](#read-the-docs-compatibility)
   - Support for NumPy and Google style docstrings
     with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
   - Python 3 type annotation extraction
@@ -326,6 +325,10 @@ Features
     DOCKERHUB_USERNAME
     PYPI_TOKEN
     TEST_PYPI_TOKEN
+   </a>
+    <a name="read-the-docs-compatibility">
+        § Custom setup steps in Sphinx configuration file for Read the Docs compatibility
+      (see: <a href="./{{cookiecutter.project_slug}}/docs/source/conf.py#L96-L139">conf.py:96-139</a>)
    </a>
 </sup>
 
