@@ -217,6 +217,8 @@ Features
 - Automated Python package uploads
   to [PyPI](https://pypi.org/)
   and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)[‡](#repo-secret-required)
+- Automated documentation building and hosting
+  with [Read the Docs](https://readthedocs.org/)
 - Automated release notes
   with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates
