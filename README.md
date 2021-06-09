@@ -263,8 +263,6 @@ Features
 
 ### Documentation
 
-- Automated README table of contents generation
-  with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
     - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
@@ -288,6 +286,8 @@ Features
       with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
     - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
       with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
+    - Automated README table of contents generation
+      with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 
 <sup>
     <a name="conditional-rendering">
