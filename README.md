@@ -266,6 +266,7 @@ Features
 - Project documentation:
     - Documentation building
       with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
+    - Emoji shortcode conversion
     - CLI reference
       with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
     - Automatic documentation from docstrings
