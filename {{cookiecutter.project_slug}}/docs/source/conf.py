@@ -1,9 +1,9 @@
 """Sphinx configuration."""
+import datetime
 import os
 import pathlib
 import re
 import sys
-from datetime import datetime
 from typing import List, Match
 
 import emoji
@@ -41,7 +41,9 @@ except importlib_metadata.PackageNotFoundError as err:
 # -- Project information -----------------------------------------------------
 project = project_metadata["Name"]
 author = project_metadata["Author"]
-copyright = f"{datetime.now().year}, {author}"  # pylint: disable=redefined-builtin
+copyright = (
+    f"{datetime.datetime.now().year}, {author}"  # pylint: disable=redefined-builtin
+)
 version = release = project_metadata["Version"]
 
 # -- General configuration ---------------------------------------------------

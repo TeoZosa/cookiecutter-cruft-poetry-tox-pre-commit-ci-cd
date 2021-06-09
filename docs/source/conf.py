@@ -1,10 +1,10 @@
 """Sphinx configuration."""
+import datetime
 import os
 import pathlib
 import re
 import subprocess  # nosec
 import sys
-from datetime import datetime
 from typing import List, Match
 
 import emoji
@@ -43,7 +43,7 @@ def get_version_number() -> str:
 # -- Project information -----------------------------------------------------
 project = "cookiecutter-cruft-poetry-tox-pre-commit-ci-cd"
 author = "Teo Zosa"
-project_copyright = f"{datetime.now().year}, {author}"
+project_copyright = f"{datetime.datetime.now().year}, {author}"
 version = release = get_version_number()
 
 # -- General configuration ---------------------------------------------------
