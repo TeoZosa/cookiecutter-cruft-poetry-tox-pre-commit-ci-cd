@@ -66,7 +66,7 @@ Table of Contents
     + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
   * [:clipboard: Accessibility](#clipboard-accessibility)
     + [Project Documentation](#project-documentation)
-    + [Design Documentation](#design-documentation)
+    + [Design Documentation and Production Deployment Checklists](#design-documentation-and-production-deployment-checklists)
     + [Architecture Documentation](#architecture-documentation)
 - [Legal](#legal)
   * [License](#license)
@@ -289,9 +289,9 @@ Features
 - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
   with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
-### Design Documentation
+### Design Documentation and Production Deployment Checklists
 
-- Production service design and deployment documentation templates
+- Production service design documentation and deployment checklist templates
   with [Mercari's `production-readiness-checklist`](https://github.com/mercari/production-readiness-checklist)
 
 ### Architecture Documentation
