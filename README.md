@@ -297,7 +297,9 @@ Features
 ### Architecture Documentation
 
 - Architecture knowledge management
-  with [Log4brains](https://github.com/thomvaill/log4brains)
+  with [Log4brains](https://github.com/thomvaill/log4brains) to systematically
+  facilitate and record the planning process and context for each of a software system's
+  architectural changes that occur over time and their consequences.
   - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
     for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
 
