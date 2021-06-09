@@ -18,7 +18,7 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 
 ---
 
-> 📝 **Note**  
+> :memo: **Note**  
 > Inspired by the amazing
 > [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
 > from [@cjolowicz](https://github.com/cjolowicz)
@@ -47,20 +47,20 @@ Table of Contents
 - [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
-  * [🚀 Project Standardization and Automation](#-project-standardization-and-automation)
+  * [:rocket: Project Standardization and Automation](#rocket-project-standardization-and-automation)
     + [Developer Workflow Automation](#developer-workflow-automation)
     + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
-  * [🔧 Maintainability](#-maintainability)
+  * [:wrench: Maintainability](#wrench-maintainability)
     + [Type Checking and Data Validation](#type-checking-and-data-validation)
     + [Testing/Coverage](#testingcoverage)
     + [Linting](#linting)
     + [CI/CD](#cicd)
-  * [📉 Observability](#-observability)
+  * [:chart_with_downwards_trend: Observability](#chart_with_downwards_trend-observability)
     + [Logging](#logging)
     + [Error Tracking](#error-tracking)
-  * [🔒 Security](#-security)
+  * [:lock: Security](#lock-security)
     + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
-  * [📋 Accessibility](#-accessibility)
+  * [:clipboard: Accessibility](#clipboard-accessibility)
     + [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
@@ -103,7 +103,7 @@ cruft update
 Features
 ========
 
-🚀 Project Standardization and Automation
+:rocket: Project Standardization and Automation
 -----------------------------------------
 
 ### Developer Workflow Automation
@@ -133,7 +133,7 @@ Features
   environment
 - [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
-🔧 Maintainability
+:wrench: Maintainability
 ------------------
 
 ### Type Checking and Data Validation
@@ -167,7 +167,7 @@ Features
 - [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
   with [mutmut](https://github.com/boxed/mutmut)
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  For a good overview of how property-based testing and mutation testing
 >  work together to improve the value and quality of your tests, see
 >  [this stackoverflow post](https://stackoverflow.com/a/38704078/6470891)
@@ -220,7 +220,7 @@ Features
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
   with [`Semgrep`](https://semgrep.dev/)
 
-📉 Observability
+:chart_with_downwards_trend: Observability
 ----------------
 
 ### Logging
@@ -244,7 +244,7 @@ Features
   - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
     a detailed activation guide
 
-🔒 Security
+:lock: Security
 -----------
 
 ### Static Application Security Testing (SAST)
@@ -254,7 +254,7 @@ Features
 - Python package dependencies vulnerabilities
   with [Safety](https://github.com/pyupio/safety)
 
-📋 Accessibility
+:clipboard: Accessibility
 ----------------
 
 ### Documentation
