@@ -65,7 +65,9 @@ Table of Contents
   * [:lock: Security](#lock-security)
     + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
   * [:clipboard: Accessibility](#clipboard-accessibility)
-    + [Documentation](#documentation)
+    + [Project Documentation](#project-documentation)
+    + [Design Documentation](#design-documentation)
+    + [Architecture Documentation](#architecture-documentation)
 - [Legal](#legal)
   * [License](#license)
 
@@ -263,37 +265,43 @@ Features
 :clipboard: Accessibility
 ----------------
 
-### Documentation
+### Project Documentation
 
-- Project documentation:
-    - Documentation building
-      with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-    - Emoji shortcode conversion
-    - CLI reference
-      with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
-    - Automatic documentation from docstrings
-      with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-      - Support for NumPy and Google style docstrings
-        with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
-      - Python 3 type annotation extraction
-        with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
-      - Docstring summaries
-        with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
-    - Docstring coverage
-      with [interrogate](https://interrogate.readthedocs.io/)
-    - Documentation links to/from source code
-      with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
-    - Automated README table of contents generation
-      with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
-    - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
-      with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
+- Documentation building
+  with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
+- Emoji shortcode conversion
+- CLI reference
+  with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
+- Automatic documentation from docstrings
+  with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+  - Support for NumPy and Google style docstrings
+    with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
+  - Python 3 type annotation extraction
+    with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
+  - Docstring summaries
+    with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
+- Docstring coverage
+  with [interrogate](https://interrogate.readthedocs.io/)
+- Documentation links to/from source code
+  with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
+- Automated README table of contents generation
+  with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+- Publishing to [Confluence](https://www.atlassian.com/software/confluence)
+  with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
+
+### Design Documentation
+
 - Production service design and deployment documentation templates
   with [Mercari's `production-readiness-checklist`](https://github.com/mercari/production-readiness-checklist)
+
+### Architecture Documentation
+
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
   - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
     for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
 
+<br>
 <sup>
     <a name="conditional-rendering">
         * Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
