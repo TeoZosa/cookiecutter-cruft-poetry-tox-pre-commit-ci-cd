@@ -132,9 +132,9 @@ Features
 
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
-- Project-specific Dockerfile[*](#conditional-rendering) that
-  installs production dependencies for a completely reproducible execution
-  environment
+- Project-specific [Docker](https://www.docker.com/) image
+  Dockerfile[*](#conditional-rendering) with production dependencies for a
+  completely reproducible execution environment
 - [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
 
 :wrench: Maintainability
