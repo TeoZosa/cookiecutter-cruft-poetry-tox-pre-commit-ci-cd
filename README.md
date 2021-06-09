@@ -44,6 +44,8 @@ foundation on which you can build your best work!
 
 Table of Contents
 
+<!-- toc -->
+
 - [Creating a New Project](#creating-a-new-project)
 - [Linking an Existing Project](#linking-an-existing-project)
 - [Features](#features)
@@ -64,6 +66,8 @@ Table of Contents
     + [Documentation](#documentation)
 - [Legal](#legal)
   * [License](#license)
+
+<!-- tocstop -->
 
 Creating a New Project
 ===========================
