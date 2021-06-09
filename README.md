@@ -126,7 +126,7 @@ Features
 - Code quality tooling automation and management
   with [pre-commit](https://pre-commit.com/)
 - Continuous integration and deployment
-  with [`GitHub Actions`](https://github.com/features/actions)
+  with [GitHub Actions](https://github.com/features/actions)
 
 ### Conditionally Rendered Python Package/Project Boilerplate
 
