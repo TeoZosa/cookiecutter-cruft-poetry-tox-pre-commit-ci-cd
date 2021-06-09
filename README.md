@@ -21,11 +21,11 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ---
 
 > :memo: **Note**  
-> Inspired by the amazing
-> [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python) project
-> from [@cjolowicz](https://github.com/cjolowicz)
-> based on the fantastic
-> [`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) article series.
+> Originally inspired by [@cjolowicz's](https://github.com/cjolowicz) fantastic
+> [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python)
+> project and eponymous
+> [`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
+> article series.
 
 A robust and extensible (nearly feature-complete), DevSecOps-centric
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for Python
