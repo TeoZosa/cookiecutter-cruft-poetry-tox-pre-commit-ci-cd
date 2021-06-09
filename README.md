@@ -210,7 +210,7 @@ Features
 
 ### CI/CD
 
-- Automated Docker image builds and pushes
+- Automated [Docker](https://www.docker.com/) image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
 - Automated uploads
   to [PyPI](https://pypi.org/)
