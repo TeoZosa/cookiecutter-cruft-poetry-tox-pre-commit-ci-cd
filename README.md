@@ -271,7 +271,8 @@ Features
 
 - Documentation building
   with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
-- Emoji shortcode conversion
+- Automated emoji shortcode conversion
+  - see [conf.py:116-139](./{{cookiecutter.project_slug}}/docs/source/conf.py#L116-L139)
 - CLI reference
   with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
 - Automatic documentation from docstrings
