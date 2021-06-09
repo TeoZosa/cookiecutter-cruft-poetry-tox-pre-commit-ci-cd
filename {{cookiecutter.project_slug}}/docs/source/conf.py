@@ -120,11 +120,11 @@ def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
     Adapted from: https://bitbucket.org/lbesson/bin/src/master/emojize.py
     """
 
-    def emojize_match(match: Match):
+    def emojize_match(match: Match) -> str:
         """Convert emoji shortcodes in match to corresponding emoji characters"""
         return emoji.emojize(match.group(), use_aliases=True, variant="emoji_type")
 
-    def emojize_all(text: str):
+    def emojize_all(text: str) -> str:
         """Convert all emoji shortcodes in text to corresponding emoji characters"""
         return re.sub(r":([a-z0-9_-]+):", emojize_match, text)
 
