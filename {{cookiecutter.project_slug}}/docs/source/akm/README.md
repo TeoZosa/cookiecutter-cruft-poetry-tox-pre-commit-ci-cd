@@ -2,7 +2,7 @@
 
 ADRs are automatically published to our architecture knowledge base:
 
-🔗 **<{{ cookiecutter.adr_documentation_url }}>**
+:link: **<{{ cookiecutter.adr_documentation_url }}>**
 
 Please use this link to browse them.
 

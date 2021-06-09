@@ -2,7 +2,7 @@
 
 # Architecture Knowledge Base
 
-Welcome 👋 to the architecture knowledge base of
+Welcome :wave: to the architecture knowledge base of
 {{cookiecutter.project_slug}}.
 Here you will find the Architecture Decision Records (ADRs) of the project.
 
@@ -24,10 +24,10 @@ just by reading its decision log in chronological order.
 
 Maintaining this documentation aims at:
 
-- 🚀 Improving and accelerating the onboarding of a new team member
-- 🔭 Avoiding blind acceptance or reversal of a past decision
+- :rocket: Improving and accelerating the onboarding of a new team member
+- :telescope: Avoiding blind acceptance or reversal of a past decision
   - See [Michael Nygard's famous article on ADRs](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html)
-- 🤝 Formalizing the decision process of the team
+- :handshake: Formalizing the decision process of the team
 
 ## Usage
 
@@ -37,7 +37,7 @@ The typical workflow of an ADR:
 
 The decision process is entirely collaborative and backed by pull requests.
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  The architecture knowledge base is updated automatically
 >  on each push to the project's `master` branch;
 >  the developers manage this documentation directly
@@ -46,7 +46,7 @@ The decision process is entirely collaborative and backed by pull requests.
 >  throughout the software development lifecycle
 >  and downstream CI/CD pipelines.
 
-> 🔥 **Tip**  
+> :fire: **Tip**  
 >  You can browse the ADRs via the left menu or the search bar of the ADL.
 
 ## More information

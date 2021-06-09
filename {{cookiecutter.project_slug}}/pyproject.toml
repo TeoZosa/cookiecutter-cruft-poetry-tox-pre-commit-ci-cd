@@ -49,6 +49,7 @@ matplotlib = "^3.4.2"
 {%- endif %}
 
 # Documentation
+emoji = { version = "^1.2.0", optional = true}
 myst-parser = { version = "^0.14.0", optional = true}
 pygments = { version = "^2.8.1", optional = true}
 sphinx = { version = "^3.5.3", optional = true}
@@ -101,6 +102,7 @@ nodeenv = "^1.5.0" # ADR documentation Node dependency
 
 [tool.poetry.extras]
 docs = [
+    "emoji", # Render emoji shortcodes (https://sphinxemojicodes.readthedocs.io/en/stable/)
     "myst-parser",
     "pygments",
     "sphinx",

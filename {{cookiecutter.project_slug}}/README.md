@@ -64,7 +64,7 @@ import {{cookiecutter.package_name}}
 ```
 {%- endif %}
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  All following commands are relative to the project root directory and assume
 > `make` is installed.
 
@@ -97,7 +97,7 @@ dependencies on `127.0.0.1:8888`.
 You can then navigate to the Jupyter notebook URL displayed on your console
 {%- endif %}.
 
-> 🔥 **Tip**  
+> :fire: **Tip**  
 >  If you prefer to build and run the container locally, run:
 >  ```shell script
 >  make deploy-{{ PROJECT_TYPE }}-docker-container-local
@@ -115,12 +115,12 @@ poetry shell # Activate the project's virtual environment
 Development
 ===========
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  For convenience, many of the below processes are abstracted away
 >  and encapsulated in single [Make](https://www.gnu.org/software/make/) targets.
 
 
-> 🔥 **Tip**  
+> :fire: **Tip**  
 >  Invoking `make` without any arguments will display
 >  auto-generated documentation on available commands.
 
@@ -135,7 +135,7 @@ To install the package and all dev dependencies, run:
 make provision-environment
 ```
 
-> 🔥 **Tip**  
+> :fire: **Tip**  
 >  Invoking the above without `poetry` installed will emit a
 >  helpful error message letting you know how you can install poetry.
 
@@ -179,7 +179,7 @@ Run [mutation tests](https://opensource.com/article/20/7/mutmut-python) to valid
 make test-mutations
 ```
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  Test time scales with the complexity of the codebase. Results are cached
 >  in `.mutmut-cache`, so once you get past the initial [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(recommender_systems)),
 >  subsequent mutation test runs will be much faster; new mutations will only
@@ -197,7 +197,7 @@ To invoke the analyses and auto-formatting over all version-controlled files, ru
 make lint
 ```
 
-> 🚨 **Danger**  
+> :rotating_light: **Danger**  
 >  CI will fail if either testing or code quality fail,
 >  so it is recommended to automatically run the above locally
 >  prior to every commit that is pushed.
@@ -211,7 +211,7 @@ files), run:
 make install-pre-commit-hooks
 ```
 
-> ⚠️ Warning  
+> :warning:️ Warning  
 >  This will prevent commits if any single pre-commit hook fails
 >  (unless it is allowed to fail)
 >  or a file is modified by an auto-formatting job;
@@ -224,7 +224,7 @@ Documentation
 make docs-clean docs-html
 ```
 
-> 📝 **Note**  
+> :memo: **Note**  
 >  For faster feedback loops, this will attempt to automatically open the newly
 >  built documentation static HTML in your browser.
 
