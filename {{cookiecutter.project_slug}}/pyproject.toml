@@ -59,6 +59,7 @@ sphinx-rtd-theme = { version = "^0.5.1", optional = true}
 sphinxcontrib-apidoc = { version = "^0.3.0", optional = true}
 sphinxcontrib-confluencebuilder = { version = "^1.3.0", optional = true}
 typer-cli = { version = "^0.0.11", optional = true}
+types-emoji = { version = "^1.2.1", optional = true}
 
 [tool.poetry.dev-dependencies]
 # Standardized Developer Workflow Orchestration
@@ -102,7 +103,7 @@ nodeenv = "^1.5.0" # ADR documentation Node dependency
 
 [tool.poetry.extras]
 docs = [
-    "emoji", # Render emoji shortcodes (https://sphinxemojicodes.readthedocs.io/en/stable/)
+    "emoji", # Render emoji shortcodes
     "myst-parser",
     "pygments",
     "sphinx",
@@ -112,6 +113,7 @@ docs = [
     "sphinxcontrib-apidoc",
     "sphinxcontrib-confluencebuilder",
     "typer-cli",
+    "types-emoji",
 ]
 
 
