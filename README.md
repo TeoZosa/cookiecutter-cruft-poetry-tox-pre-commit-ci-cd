@@ -277,6 +277,8 @@ Features
   with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
 - Automatic documentation from docstrings
   with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+  - API documentation
+    with [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)
   - Support for NumPy and Google style docstrings
     with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
   - Python 3 type annotation extraction
