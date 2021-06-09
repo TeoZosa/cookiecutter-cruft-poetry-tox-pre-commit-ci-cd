@@ -284,6 +284,8 @@ Features
       with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
     - Automated README table of contents generation
       with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+- Production service design and deployment documentation templates
+  with [Mercari's `production-readiness-checklist`](https://github.com/mercari/production-readiness-checklist)
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains)
   - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
