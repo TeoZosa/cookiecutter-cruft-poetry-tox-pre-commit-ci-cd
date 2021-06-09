@@ -8,9 +8,9 @@ from typing import List, Match
 
 import emoji
 import importlib_metadata
+import sphinx.ext
 from dotenv import find_dotenv, load_dotenv
 from sphinx.application import Sphinx
-from sphinx.ext import apidoc
 
 # Load user-specific env vars (e.g. secrets) from a `.env` file
 load_dotenv(find_dotenv())
@@ -110,7 +110,7 @@ def run_apidoc(_: Sphinx) -> None:
         str(pathlib.Path(__file__).parent / "ref/api"),
         str(_project_directory / "{{cookiecutter.package_name}}"),
     ]
-    apidoc.main(argv)
+    sphinx.ext.apidoc.main(argv)
 
 
 def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
