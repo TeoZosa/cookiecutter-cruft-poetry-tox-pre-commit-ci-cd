@@ -281,10 +281,10 @@ Features
       with [interrogate](https://interrogate.readthedocs.io/)
     - Documentation links to/from source code
       with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
-    - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
-      with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
     - Automated README table of contents generation
       with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+    - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
+      with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 - Production service design and deployment documentation templates
   with [Mercari's `production-readiness-checklist`](https://github.com/mercari/production-readiness-checklist)
 - Architecture knowledge management
