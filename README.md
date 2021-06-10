@@ -236,8 +236,8 @@ Features
 ### Logging
 
 - [Structured logging](https://stripe.com/blog/canonical-log-lines)
-  with [structlog-sentry-logger](https://structlog-sentry-logger.readthedocs.io/en/latest/)
-  (via [structlog](https://www.structlog.org/en/stable/))
+  with [`structlog-sentry-logger`](https://github.com/TeoZosa/structlog-sentry-logger)
+  (via [`structlog`](https://www.structlog.org/en/stable/))
   - Granular control flow context logging (via call stack introspection):
     - Namespaced module-specific loggers
     - Function name logging
@@ -246,7 +246,7 @@ Features
     - Development: Colorized human-readable logs, with JSON logs saved
       locally for retrospective analysis
   - [Optional] Exception logging to Sentry with
-    [structlog-sentry](https://www.structlog.org/en/stable/)
+    [`structlog-sentry`](https://github.com/kiwicom/structlog-sentry)
 
 ### Error Tracking
 
