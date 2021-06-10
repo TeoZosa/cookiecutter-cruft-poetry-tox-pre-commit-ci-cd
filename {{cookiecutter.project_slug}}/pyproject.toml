@@ -143,7 +143,6 @@ skip_covered = true
 [tool.cruft]
 skip = [
     ".env",
-    "README.md",
     "{{cookiecutter.package_name}}/__init__.py",
     "docs/source/.env",
     "docs/source/ref/dev/"
