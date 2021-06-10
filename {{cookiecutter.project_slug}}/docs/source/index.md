@@ -8,8 +8,8 @@
 
    readme
    usage
-   API Reference <ref/api/modules>
-   Developer Reference <ref/dev/modules>
+   API Reference <autoapi/{{cookiecutter.package_name}}/index>
+   {% if cookiecutter.project_type == 'package' -%} Developer Reference <autoapi/{{cookiecutter.package_name}}/PATH_TO_HIDDEN_MODULES/index> {%- endif %}
    contributing
    Code of Conduct <codeofconduct>
    License <license>

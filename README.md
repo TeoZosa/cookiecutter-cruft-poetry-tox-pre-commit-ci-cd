@@ -275,16 +275,9 @@ Features
 - Automated emoji shortcode conversion[§](#read-the-docs-compatibility)
 - CLI reference
   with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
-- Automatic documentation from docstrings
-  with [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-  - API documentation
-    with [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)[§](#read-the-docs-compatibility)
-  - Support for NumPy and Google style docstrings
-    with [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)
-  - Python 3 type annotation extraction
-    with [sphinx_autodoc_typehints](https://pypi.org/project/sphinx-autodoc-typehints/)
-  - Docstring summaries
-    with [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
+- Rich automatic documentation from type annotations and docstrings (NumPy, Google,
+  etc.)
+  with [sphinx-autoapi](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)
 - Docstring coverage
   with [interrogate](https://interrogate.readthedocs.io/)
 - Documentation links to/from source code
@@ -329,7 +322,7 @@ Features
    </a>
     <a name="read-the-docs-compatibility">
         § Custom setup steps in Sphinx configuration file for Read the Docs compatibility
-      (see: <a href="https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/blob/master/{{cookiecutter.project_slug}}/docs/source/conf.py#L98-L141">conf.py:98-141</a>)
+      (see: <a href="https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/blob/master/{{cookiecutter.project_slug}}/docs/source/conf.py#L109-L129">conf.py:109-129</a>)
    </a>
 </sup>
 
