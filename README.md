@@ -277,8 +277,6 @@ Features
   - Rich automatic documentation from type annotations and docstrings (NumPy, Google,
     etc.)
     with [sphinx-autoapi](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)
-  - Documentation links to/from source code
-    with [viewcode](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
   - Automated emoji shortcode conversion[§](#read-the-docs-compatibility)
 - Docstring coverage
   with [interrogate](https://interrogate.readthedocs.io/)
