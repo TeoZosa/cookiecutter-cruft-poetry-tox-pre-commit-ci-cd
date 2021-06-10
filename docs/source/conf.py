@@ -49,23 +49,13 @@ version = release = get_version_number()
 # -- General configuration ---------------------------------------------------
 extensions = [
     "myst_parser",  # MyST .md parsing (https://myst-parser.readthedocs.io/en/latest/index.html)
-    "sphinx.ext.autodoc",  # Include documentation from docstrings (https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-    "sphinx.ext.autosummary",  # Generate autodoc summaries (https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
     "sphinx.ext.intersphinx",  # Link to other projects’ documentation (https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
-    "sphinx.ext.viewcode",  # Add documentation links to/from source code (https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
-    "sphinx.ext.autosectionlabel",  # Allow reference sections using its title (https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html)
-    "sphinx.ext.napoleon",  # Support for NumPy and Google style docstrings (https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
-    "sphinx_autodoc_typehints",  # Python 3 type annotation extraction (as opposed to manually specifying them in your docstrings) (https://pypi.org/project/sphinx-autodoc-typehints/)
     "sphinx_rtd_theme",  # Sphinx theme used on Read The Docs (https://github.com/readthedocs/sphinx_rtd_theme)
     "sphinxcontrib.confluencebuilder",  # Build Confluence supported format files (e.g. storage format) and optionally publish them to a Confluence instance (https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
-# Note: `custom-class-template.rst` & `custom-module-template.rst`
-#   for sphinx.ext.autosummary extension `recursive` option
-#   see: https://github.com/JamesALeedham/Sphinx-Autosummary-Recursion
-
 
 # List of patterns, relative to source directory, that match files and
 #   directories to ignore when looking for source files.
@@ -79,14 +69,6 @@ html_show_sourcelink = (
 )
 
 # -- Extension configurations ---------------------------------------------------
-
-# sphinx.ext.autosummary configs
-autosummary_generate = True  # Turn on sphinx.ext.autosummary
-
-# sphinx.ext.autodoc configs
-autoclass_content = "both"  # Add __init__ doc (ie. params) to class summaries
-autodoc_inherit_docstrings = True  # If no class summary, inherit base class summary
-autodoc_typehints = "description"  # Show typehints as content of function or method
 
 # myst_parser configs
 # Prefix document path to section labels, to use:
