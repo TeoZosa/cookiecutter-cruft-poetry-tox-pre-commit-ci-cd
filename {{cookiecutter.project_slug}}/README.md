@@ -40,16 +40,16 @@ Table of Contents
 <!-- toc -->
 
 {%- if cookiecutter.project_type == 'package' %}
-Installation
-============
+:tada: Installation
+===================
 You can install {{cookiecutter.friendly_name}} via [pip](https://pip.pypa.io/):
  ```shell script
 pip install {{cookiecutter.project_slug}}
 ```
 {%- endif %}
 
-Usage
-=====
+:rocket: Usage
+==============
 - TODO
     - High-level usage overview
 ------------
@@ -112,8 +112,8 @@ poetry shell # Activate the project's virtual environment
 {% if PROJECT_TYPE == 'jupyter' -%} jupyter notebook # Launch the Jupyter server {%- endif %}
 ```
 
-Development
-===========
+:wrench: Development
+====================
 
 > :memo: **Note**  
 >  For convenience, many of the below processes are abstracted away
@@ -228,18 +228,18 @@ make docs-clean docs-html
 >  For faster feedback loops, this will attempt to automatically open the newly
 >  built documentation static HTML in your browser.
 
-Summary
-=======
+:clipboard: Summary
+===================
 - TODO
 
-Further Reading
-===============
+:books: Further Reading
+=======================
 - TODO
 
 ---
 
-Legal
-=====
+:page_facing_up: Legal
+======================
 
 License
 -------
