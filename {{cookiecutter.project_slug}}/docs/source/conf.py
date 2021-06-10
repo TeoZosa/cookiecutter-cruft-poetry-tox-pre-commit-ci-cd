@@ -53,7 +53,6 @@ extensions = [
     "sphinx.ext.intersphinx",  # Link to other projects’ documentation (https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
     "sphinx.ext.viewcode",  # Add documentation links to/from source code (https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
     "sphinx.ext.autosectionlabel",  # Allow reference sections using its title (https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html)
-    "sphinx_icontract",  # Include icontracts of classes and functions in the documentation
     "sphinx_rtd_theme",  # Sphinx theme used on Read The Docs (https://github.com/readthedocs/sphinx_rtd_theme)
     "sphinxcontrib.confluencebuilder",  # Build Confluence supported format files (e.g. storage format) and optionally publish them to a Confluence instance (https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 ]
