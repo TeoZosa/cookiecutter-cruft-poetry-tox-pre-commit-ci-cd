@@ -147,11 +147,12 @@ Features
 ### Type Checking and Data Validation
 
 - Static type-checking
-  with [mypy](http://mypy-lang.org/)[†](#jupyter-compatibility-via-nbqa)
+  with [Mypy](http://mypy-lang.org)[†](#jupyter-compatibility-via-nbqa)
 - Run-time type-checking
-  with [typeguard](https://github.com/agronholm/typeguard)
+  with [Typeguard](https://github.com/agronholm/typeguard)
   - See the
-    [typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
+    [Typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?
+    highlight=@typechecked#using-the-decorator)
     for usage overview
 - [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
   (precondition, postcondition, and invariant enforcement)
@@ -162,13 +163,13 @@ Features
 ### Testing/Coverage
 
 - Testing
-  with [pytest](https://docs.pytest.org/en/latest/)
+  with [`pytest`](https://docs.pytest.org/en/latest/)
 - Doctests
-  with [xdoctest](https://xdoctest.readthedocs.io/)[†](#jupyter-compatibility-via-nbqa)
+  with [`xdoctest`](https://xdoctest.readthedocs.io)[†](#jupyter-compatibility-via-nbqa)
 - [Performance testing](https://en.wikipedia.org/wiki/Software_performance_testing)
-  with [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
+  with [`pytest-benchmark`](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
-  with [hypothesis](https://github.com/HypothesisWorks/hypothesis)
+  with [Hypothesis](https://github.com/HypothesisWorks/hypothesis)
     - [Design-by-contract](#type-checking-and-data-validation) integration
       (i.e. to intelligently constrain the input space defined by the search strategy)
       via [icontract-hypothesis](https://github.com/mristin/icontract-hypothesis)
@@ -197,18 +198,18 @@ Features
     - [Black](https://github.com/psf/black)[†](#jupyter-compatibility-via-nbqa)
     - [isort](https://github.com/timothycrosley/isort)[†](#jupyter-compatibility-via-nbqa)
     - [shfmt](https://github.com/mvdan/sh)
-    - [pretty-format-json](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
-    - (trim) [trailing-whitespace](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
-    - [end-of-file-fixer](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
+    - [`pretty-format-json`](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
+    - (trim) [`trailing-whitespace`](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
+    - [`end-of-file-fixer`](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
 - Unsanitary commits:
   - Secrets
-    with [detect-secrets](https://github.com/Yelp/detect-secrets)
+    with [`detect-secrets`](https://github.com/Yelp/detect-secrets)
   - Debugger imports and py37+ `breakpoint()` calls
-    with [debug-statements](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
+    with [`debug-statements`](https://github.com/pre-commit/pre-commit-hooks#debug-statements)
   - Large files
-    with [check-added-large-files](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
+    with [`check-added-large-files`](https://github.com/pre-commit/pre-commit-hooks#check-added-large-files)
   - Invalid Python files
-    with [check-ast](https://github.com/pre-commit/pre-commit-hooks#check-ast)
+    with [`check-ast`](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
 ### CI/CD
 
@@ -220,15 +221,15 @@ Features
 - Automated documentation building and hosting
   with [Read the Docs](https://readthedocs.org/)
 - Automated release notes
-  with [`Release Drafter`](https://github.com/release-drafter/release-drafter)
+  with [Release Drafter](https://github.com/release-drafter/release-drafter)
 - Automated dependency updates
-  with [`Dependabot`](https://dependabot.com/)
-  - Automated  [`Dependabot`](https://dependabot.com/) PR merging
+  with [Dependabot](https://dependabot.com/)
+  - Automated [Dependabot](https://dependabot.com/) PR merging
     with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[‡](#repo-secret-required)
 - Project issue labels management
-  with [`GitHub Labeler`](https://github.com/marketplace/actions/github-labeler)
+  with [GitHub Labeler](https://github.com/marketplace/actions/github-labeler)
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
-  with [`Semgrep`](https://semgrep.dev/)
+  with [Semgrep](https://semgrep.dev/)
 
 :chart_with_downwards_trend: Observability
 ----------------
@@ -252,7 +253,7 @@ Features
 
 - [Optional] Exception monitoring
   with [Sentry](https://sentry.io/welcome/)
-  - see: the cookiecutter's [.env]({{cookiecutter.project_slug}}/.env) file for
+  - see: the cookiecutter's [`.env`]({{cookiecutter.project_slug}}/.env) file for
     a detailed activation guide
 
 :lock: Security
@@ -276,12 +277,12 @@ Features
     with the [typer-cli documentation generator](https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli)
   - Rich automatic documentation from type annotations and docstrings (NumPy, Google,
     etc.)
-    with [sphinx-autoapi](https://github.com/readthedocs/sphinx-autoapi)
+    with [`sphinx-autoapi`](https://github.com/readthedocs/sphinx-autoapi)
   - Automated emoji shortcode conversion[§](#read-the-docs-compatibility)
 - Docstring coverage
-  with [interrogate](https://interrogate.readthedocs.io/)
+  with [`interrogate`](https://interrogate.readthedocs.io/)
 - Automated README table of contents generation
-  with [markdown-toc](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
+  with [`markdown-toc`](https://github.com/Lucas-C/pre-commit-hooks-nodejs)
 - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
   with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
