@@ -24,7 +24,7 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 > Originally inspired by [@cjolowicz's](https://github.com/cjolowicz) fantastic
 > [`cookiecutter-hypermodern-python`](https://github.com/cjolowicz/cookiecutter-hypermodern-python)
 > project and eponymous
-> [`Hypermodern Python`](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
+> [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 > article series.
 
 A robust and extensible (nearly feature-complete), DevSecOps-centric
