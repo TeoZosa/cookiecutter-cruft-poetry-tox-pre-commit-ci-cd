@@ -17,9 +17,3 @@
    Service Design and Production Deployment Documentation <production-readiness-checklist>
    Architecture Decision Records <adr>
 ```
-
-```{eval-rst}
-.. role:: bash(code)
-   :language: bash
-   :class: highlight
-```

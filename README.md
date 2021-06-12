@@ -321,8 +321,10 @@ Features
    </a>
     <a name="read-the-docs-compatibility">
         § Custom setup steps in Sphinx configuration file for Read the Docs compatibility
-      (see: <a href="https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/blob/master/{{cookiecutter.project_slug}}/docs/source/conf.py#L109-L129">conf.py:109-129</a>)
-   </a>
+      (see: <a href="https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/blob/master/{{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139">
+            conf.py:117-139
+            </a>
+      ) </a>
 </sup>
 
 Legal
