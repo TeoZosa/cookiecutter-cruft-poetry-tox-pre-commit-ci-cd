@@ -151,8 +151,7 @@ Features
 - Run-time type-checking
   with [Typeguard](https://github.com/agronholm/typeguard)
   - See the
-    [Typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?
-    highlight=@typechecked#using-the-decorator)
+    [Typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
     for usage overview
 - [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
   (precondition, postcondition, and invariant enforcement)
