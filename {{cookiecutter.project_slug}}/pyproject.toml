@@ -141,7 +141,6 @@ skip = [
     ".env",
     "{{cookiecutter.package_name}}/__init__.py",
     "docs/source/.env",
-    "docs/source/ref/dev/"
 ]
 
 [tool.flakehell]
