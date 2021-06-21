@@ -462,7 +462,7 @@ zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tz
 
 [[package]]
 name = "icontract"
-version = "2.5.2"
+version = "2.5.3"
 description = "Provide design-by-contract with informative violation messages."
 category = "dev"
 optional = false
@@ -470,6 +470,7 @@ python-versions = "*"
 
 [package.dependencies]
 asttokens = ">=2,<3"
+typing_extensions = "*"
 
 [package.extras]
 dev = ["mypy (==0.812)", "pylint (==2.3.1)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
@@ -1874,7 +1875,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "20dc7062297bb783749a71c344468facd2b4301ad4dfe21a1ca71da17afe2118"
+content-hash = "26f5bc00bc6e66a556cf1aa1dc38e52279699c4c9a6b1d181010bacf04a7a8c8"
 
 [metadata.files]
 alabaster = [
@@ -2150,7 +2151,7 @@ hypothesis = [
     {file = "hypothesis-6.14.0.tar.gz", hash = "sha256:9bdee01ae260329b16117e9b0229a839b4a77747a985922653f595bd2a6a541a"},
 ]
 icontract = [
-    {file = "icontract-2.5.2.tar.gz", hash = "sha256:34c347c449c62a636c2960f7d2481a70764aae9a005b0c68fe3b98de025acced"},
+    {file = "icontract-2.5.3.tar.gz", hash = "sha256:b790101c8cc0d9df0105d852a645373c4d90d5049391b6e54db32a0acb4bccd7"},
 ]
 identify = [
     {file = "identify-2.2.10-py2.py3-none-any.whl", hash = "sha256:18d0c531ee3dbc112fa6181f34faa179de3f57ea57ae2899754f16a7e0ff6421"},
