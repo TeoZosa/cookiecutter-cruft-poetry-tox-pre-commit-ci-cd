@@ -172,6 +172,18 @@ pycodestyle = ["+*",
 {%- endif %}
 ]
 
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = false
+fail-under = 0 # adjust `fail-under` value as quality standards permit
+whitelist-regex = []
+color = true
+
 [tool.isort]
 profile = "black"
 atomic = true
