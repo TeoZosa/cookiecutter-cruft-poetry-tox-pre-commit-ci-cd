@@ -31,12 +31,12 @@ python = "^3.7"
 
 # Project-Specific
 importlib-metadata = "^2.1.1"
-python-dotenv = "^0.17.1"
+python-dotenv = "^0.18.0"
 typer = {extras = ["all"], version = "^0.3.2"}
 
 # Monitoring and Observability
 sentry-sdk = "^1.1.0"
-structlog-sentry-logger = "^0.8.0"
+structlog-sentry-logger = "^0.8.1"
 
 # Type Checking and Data Validation
 icontract = "^2.5.1" # Design-by-contract support
@@ -64,11 +64,11 @@ types-emoji = { version = "^1.2.1", optional = true} # PEP 561 compliant stub pa
 cruft = "^2.6.0" # Automated Cookiecutter template synchronization
 
 # Type Checking and Data Validation
-mypy = "^0.902" # Static type checker
+mypy = "^0.910" # Static type checker
 
 # Testing
 {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
-nbqa = "^0.12.0"
+nbqa = "^0.13.0"
 {%- endif %}
 pytest = "^6.2.1"
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
