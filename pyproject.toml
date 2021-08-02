@@ -68,7 +68,7 @@ pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.3.0"
 icontract = "^2.5.3"
 xdoctest = {extras = ["all"], version = "^0.15.5"}
-tox = "^3.24.0"
+tox = "^3.24.1"
 # Code formatter
 # see: https://black.readthedocs.io/en/stable/editor_integration.html
 black = "^21.7b0"
