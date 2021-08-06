@@ -98,7 +98,7 @@ repos:
     hooks:
       - id: yamllint
         # yamllint disable-line rule:line-length
-        exclude: ^{{cookiecutter\.project_slug}}/\.github/workflows/(auto-merge-dependabot|ci|release)\.yml$
+        exclude: ^{{cookiecutter\.project_slug}}/\.github/workflows/(auto-merge-dependabot|ci|release|publish_benchmarks|publish_log4brains)\.yml$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
