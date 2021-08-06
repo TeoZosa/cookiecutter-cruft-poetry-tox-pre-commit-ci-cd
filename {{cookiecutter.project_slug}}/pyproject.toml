@@ -73,6 +73,13 @@ nbqa = "^0.13.0"
 pytest = "^6.2.1"
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
 pytest-cov = "^2.12.1"
+# Fixes:
+#   ```
+#   Coverage 6.0b1 starts to use a modern hash algorithm (sha256) when
+#   fingerprinting for high-security environments.
+#   ```
+# Temporary fix until official 6.0 version is released included and in `pytest-cov`;
+coverage = {version = "^6.0b1", allow-prereleases = true}
 pytest-emoji = "^0.2.0"
 pytest-mock = "^3.6.0"
 pytest-sugar = "^0.9.4"
