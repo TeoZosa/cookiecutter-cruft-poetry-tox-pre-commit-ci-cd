@@ -155,7 +155,7 @@ bump-commit-and-push-project-version-number-%:
 .PHONY: build
 ## Build project package(s)
 build:
-	poetry run tox -e package
+	tox -e package
 #{%- endif %}
 
 #{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
