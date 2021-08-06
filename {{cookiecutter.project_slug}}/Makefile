@@ -151,6 +151,13 @@ bump-commit-and-push-project-version-number-%:
 		git push \
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
 
+#{%- if cookiecutter.project_type == 'package' %}
+.PHONY: build
+## Build project package(s)
+build:
+	$(MAKE) tox-package
+#{%- endif %}
+
 #{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
 .PHONY: deploy-{{ PROJECT_TYPE }}-docker-container-local
 ## Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies

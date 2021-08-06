@@ -66,9 +66,14 @@ jobs:
           poetry version "${DEV_VERSION}"
       {%- if cookiecutter.project_type == 'package' %}
       # PyPI/TestPyPI package upload ----------------------
+      - name: Install Tox
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
       - name: Build package
         run: |
-          poetry build --ansi
+          make build
 
       - name: Publish package on PyPI
         if: steps.check-version.outputs.tag
