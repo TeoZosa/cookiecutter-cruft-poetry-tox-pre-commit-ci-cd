@@ -151,6 +151,16 @@ make provision-environment
 > Invoking the above without `poetry` installed will emit a
 > helpful error message letting you know how you can install Poetry.
 
+Python Module to C-Extension Compilation
+----------------------------------------
+
+{%- if cookiecutter.project_type == 'package' %}
+The projects's [build.py](./build.py) file specifies which modules to package.
+{%- endif %}
+
+For manual per-module compilation, see:
+[Mypyc Documentation: Getting started - Compiling and running](https://mypyc.readthedocs.io/en/latest/getting_started.html#compiling-and-running)
+
 Docker Container Image Building/Deployment Orchestration
 --------------------------------------------------------
 
