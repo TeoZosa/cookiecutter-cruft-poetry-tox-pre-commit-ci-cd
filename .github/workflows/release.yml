@@ -10,7 +10,6 @@ on:  # yamllint disable-line rule:truthy
 jobs:
 
   # Shared tag & version number info ----------------------
-
   get-tag-xor-dev-version:
     name: Get tags and version numbers
     runs-on: ubuntu-latest
@@ -67,8 +66,8 @@ jobs:
           poetry version "${DEV_VERSION}" &&
           echo "::set-output name=version::${DEV_VERSION}"
 
-  # Release notes publication ----------------------
 
+  # Release notes publication ----------------------
   publish-release-notes:
     name: Publish release notes
     runs-on: ubuntu-latest

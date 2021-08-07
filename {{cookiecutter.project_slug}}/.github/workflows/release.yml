@@ -16,7 +16,6 @@ on:  # yamllint disable-line rule:truthy
 jobs:
 
   # Shared tag & version number info ----------------------
-
   get-tag-xor-dev-version:
     name: Get tags and version numbers
     runs-on: ubuntu-latest
@@ -72,6 +71,7 @@ jobs:
           DEV_VERSION="${VERSION}.dev.$(date +%s)" &&
           poetry version "${DEV_VERSION}" &&
           echo "::set-output name=version::${DEV_VERSION}"
+
 
   {%- if cookiecutter.project_type == 'package' %}
   # Package build ----------------------
@@ -182,7 +182,6 @@ jobs:
           repository_url: https://test.pypi.org/legacy/
 
   # Install Verification ----------------------
-
   verify-user-install:
     strategy:
       matrix:
@@ -225,7 +224,7 @@ jobs:
           {{cookiecutter.project_slug}} --help
           {{cookiecutter.project_slug}} --version
         shell: bash
-      {%- endif %}
+  {%- endif %}
 
   # Docker image build and upload ----------------------
   docker-image-build-and-upload:
@@ -281,7 +280,6 @@ jobs:
         run: echo {{ "${{ steps.docker_build.outputs.digest }}" }}
 
   # Release notes publication ----------------------
-
   publish-release-notes:
     name: Publish release notes
     runs-on: ubuntu-latest
