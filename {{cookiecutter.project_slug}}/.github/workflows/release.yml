@@ -191,8 +191,6 @@ jobs:
     needs: pypi-package-upload
 
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v2.3.3
 
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
