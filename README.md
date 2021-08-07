@@ -150,7 +150,7 @@ Features
 
 - Python module to C-extension compilation (enabled by standard Python type hints)
   with [Mypyc](https://mypyc.readthedocs.io/en/latest/index.html)
-  - Automatically configured for Python Package builds (see the template's
+  - Automatically configured for Python package builds (see the template's
     [build.py](./{{cookiecutter.project_slug}}/build.py) file)
 
 > :warning:️ Warning  
