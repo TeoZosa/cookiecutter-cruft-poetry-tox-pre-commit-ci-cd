@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-cruft-poetry-tox-pre-commit-ci-cd"
-version = "0.3.0"
+version = "0.4.0"
 description = "SonoSim CorSAIR-standardized Python project creation and synchronization"
 authors = ["Teo Zosa <teo@sonosim.com>"]
 license = "Apache-2.0"
