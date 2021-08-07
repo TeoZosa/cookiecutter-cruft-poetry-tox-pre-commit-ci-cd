@@ -116,7 +116,7 @@ jobs:
         id: use-dev-version-for-testing
         if: "needs.get-tag-xor-dev-version.outputs.dev-version"
         run: |
-          VERSION="${{ needs.get-tag-xor-dev-version.outputs.dev-version }}"
+          VERSION={{ "${{ needs.get-tag-xor-dev-version.outputs.dev-version }}" }}
           poetry version "${VERSION}"
           echo "::set-output name=is_testing::true"
 
@@ -257,7 +257,7 @@ jobs:
         id: use-dev-version-for-testing
         if: "needs.get-tag-xor-dev-version.outputs.dev-version"
         run: |
-          VERSION="${{ needs.get-tag-xor-dev-version.outputs.dev-version }}"
+          VERSION={{ "${{ needs.get-tag-xor-dev-version.outputs.dev-version }}" }}
           poetry version "${VERSION}"
 
       # yamllint disable rule:line-length
