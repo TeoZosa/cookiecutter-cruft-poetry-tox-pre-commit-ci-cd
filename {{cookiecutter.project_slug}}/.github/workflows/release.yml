@@ -237,6 +237,21 @@ jobs:
         with:
           ref: {{ "${{ github.event.workflow_run.head_branch }}" }}
 
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: "3.9"
+
+      - name: Upgrade pip
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip --version
+
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+
       # Docker build/push job ----------------------
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
