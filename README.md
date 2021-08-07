@@ -48,35 +48,35 @@ Table of Contents
 
 <!-- toc -->
 
-- [Creating a New Project](#creating-a-new-project)
-- [Linking an Existing Project](#linking-an-existing-project)
-- [Features](#features)
+- [:tada: Creating a New Project](#tada-creating-a-new-project)
+- [:link: Linking an Existing Project](#link-linking-an-existing-project)
+- [:sparkles: Features](#sparkles-features)
   * [:rocket: Project Standardization and Automation](#rocket-project-standardization-and-automation)
-    + [Developer Workflow Automation](#developer-workflow-automation)
-    + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
+    + [:hammer: Developer Workflow Automation](#hammer-developer-workflow-automation)
+    + [:seedling: Conditionally Rendered Python Package/Project Boilerplate](#seedling-conditionally-rendered-python-packageproject-boilerplate)
   * [:zap: Performance](#zap-performance)
-    + [C-Extension Compilation](#c-extension-compilation)
+    + [:package: C-Extension Compilation](#package-c-extension-compilation)
   * [:wrench: Maintainability](#wrench-maintainability)
-    + [Type Checking and Data Validation](#type-checking-and-data-validation)
-    + [Testing/Coverage](#testingcoverage)
-    + [Linting](#linting)
-    + [CI/CD](#cicd)
+    + [:label: Type Checking and Data Validation](#label-type-checking-and-data-validation)
+    + [:white_check_mark: Testing/Coverage](#white_check_mark-testingcoverage)
+    + [:rotating_light: Linting](#rotating_light-linting)
+    + [:construction_worker: CI/CD](#construction_worker-cicd)
   * [:chart_with_downwards_trend: Observability](#chart_with_downwards_trend-observability)
-    + [Logging](#logging)
-    + [Error Tracking](#error-tracking)
+    + [:loud_sound: Logging](#loud_sound-logging)
+    + [:goal_net: Error Tracking](#goal_net-error-tracking)
   * [:lock: Security](#lock-security)
-    + [Static Application Security Testing (SAST)](#static-application-security-testing-sast)
+    + [:lock_with_ink_pen: Static Application Security Testing (SAST)](#lock_with_ink_pen-static-application-security-testing-sast)
   * [:clipboard: Accessibility](#clipboard-accessibility)
-    + [Project Documentation](#project-documentation)
-    + [Design Documentation and Production Deployment Checklists](#design-documentation-and-production-deployment-checklists)
-    + [Architecture Documentation](#architecture-documentation)
-- [Legal](#legal)
-  * [License](#license)
+    + [:memo: Project Documentation](#memo-project-documentation)
+    + [:ballot_box_with_check: Design Documentation and Production Deployment Checklists](#ballot_box_with_check-design-documentation-and-production-deployment-checklists)
+    + [:card_file_box: Architecture Documentation](#card_file_box-architecture-documentation)
+- [:judge: Legal](#judge-legal)
+  * [:page_facing_up: License](#page_facing_up-license)
 
 <!-- tocstop -->
 
-Creating a New Project
-===========================
+:tada: Creating a New Project
+=============================
 Via [`cruft`](https://cruft.github.io/cruft/) (recommended):
 
 ```shell script
@@ -93,8 +93,8 @@ cookiecutter gh:TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 
 Note: **_Cookiecutter_** uses `gh:` as short-hand for `https://github.com/`
 
-Linking an Existing Project
-===========================
+:link: Linking an Existing Project
+==================================
 If the project was originally installed via
 [`cookiecutter`](https://github.com/audreyr/cookiecutter), you must first use
 [`cruft`](https://cruft.github.io/cruft/) to link the project with the original
@@ -110,13 +110,13 @@ Then/else:
 cruft update
 ```
 
-Features
-========
+:sparkles: Features
+===================
 
 :rocket: Project Standardization and Automation
------------------------------------------
+-----------------------------------------------
 
-### Developer Workflow Automation
+### :hammer: Developer Workflow Automation
 
 - Python packaging and dependency management
   with [Poetry](https://python-poetry.org/)
@@ -134,7 +134,7 @@ Features
 - Continuous integration and deployment
   with [GitHub Actions](https://github.com/features/actions)
 
-### Conditionally Rendered Python Package/Project Boilerplate
+### :seedling: Conditionally Rendered Python Package/Project Boilerplate
 
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
@@ -146,7 +146,7 @@ Features
 :zap: Performance
 -----------------
 
-### C-Extension Compilation
+### :package: C-Extension Compilation
 
 - Python module to C-extension compilation (enabled by standard Python type hints)
   with [Mypyc](https://mypyc.readthedocs.io/en/latest/index.html)
@@ -161,7 +161,7 @@ Features
 :wrench: Maintainability
 ------------------
 
-### Type Checking and Data Validation
+### :label: Type Checking and Data Validation
 
 - Static type-checking
   with [Mypy](http://mypy-lang.org)[†](#jupyter-compatibility-via-nbqa)
@@ -176,7 +176,7 @@ Features
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
-### Testing/Coverage
+### :white_check_mark: Testing/Coverage
 
 - Testing
   with [`pytest`](https://docs.pytest.org/en/latest/)
@@ -204,7 +204,7 @@ Features
 - Coverage reporting
   with [Codecov](https://codecov.io/)
 
-### Linting
+### :rotating_light: Linting
 
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
@@ -227,7 +227,7 @@ Features
   - Invalid Python files
     with [`check-ast`](https://github.com/pre-commit/pre-commit-hooks#check-ast)
 
-### CI/CD
+### :construction_worker: CI/CD
 
 - Automated [Docker](https://www.docker.com/) image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
@@ -250,7 +250,7 @@ Features
 :chart_with_downwards_trend: Observability
 ----------------
 
-### Logging
+### :loud_sound: Logging
 
 - [Structured logging](https://stripe.com/blog/canonical-log-lines)
   with [`structlog-sentry-logger`](https://github.com/TeoZosa/structlog-sentry-logger)
@@ -265,7 +265,7 @@ Features
   - [Optional] Exception logging to Sentry with
     [`structlog-sentry`](https://github.com/kiwicom/structlog-sentry)
 
-### Error Tracking
+### :goal_net: Error Tracking
 
 - [Optional] Exception monitoring
   with [Sentry](https://sentry.io/welcome/)
@@ -275,7 +275,7 @@ Features
 :lock: Security
 -----------
 
-### Static Application Security Testing (SAST)
+### :lock_with_ink_pen: Static Application Security Testing (SAST)
 
 - Code vulnerabilities
   with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
@@ -285,7 +285,7 @@ Features
 :clipboard: Accessibility
 ----------------
 
-### Project Documentation
+### :memo: Project Documentation
 
 - Documentation building
   with [Sphinx](https://www.sphinx-doc.org/en/master/index.html)
@@ -302,12 +302,12 @@ Features
 - Publishing to [Confluence](https://www.atlassian.com/software/confluence)
   with [Atlassian Confluence Builder for Sphinx](https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 
-### Design Documentation and Production Deployment Checklists
+### :ballot_box_with_check: Design Documentation and Production Deployment Checklists
 
 - Production service design documentation and deployment checklist templates
   with [Mercari's `production-readiness-checklist`](https://github.com/mercari/production-readiness-checklist)
 
-### Architecture Documentation
+### :card_file_box: Architecture Documentation
 
 - Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains) to systematically
@@ -343,11 +343,11 @@ Features
       ) </a>
 </sup>
 
-Legal
-=====
+:judge: Legal
+=============
 
-License
--------
+:page_facing_up: License
+------------------------
 
 cookiecutter-cruft-poetry-tox-pre-commit-ci-cd is licensed under the Apache License, Version 2.0. See
 [LICENSE](./LICENSE) for the full license text.
