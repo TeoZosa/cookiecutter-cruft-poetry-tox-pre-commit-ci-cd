@@ -126,7 +126,6 @@ jobs:
           VERSION=$(make get-project-version-number)
           echo "::set-output name=version::${VERSION}"
 
-      # PyPI/TestPyPI package upload ----------------------
       - name: Build package
         run: |
           make build
