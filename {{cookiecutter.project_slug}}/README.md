@@ -79,7 +79,7 @@ import {{cookiecutter.package_name}}
 
 {% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
 
-Running The {{ 'Notebook' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
+Running The {{ 'Notebooks' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
 --------------------
 
 {%- if PROJECT_TYPE == 'jupyter' %}
