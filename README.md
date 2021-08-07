@@ -53,7 +53,7 @@ Table of Contents
 - [:sparkles: Features](#sparkles-features)
   * [:rocket: Project Standardization and Automation](#rocket-project-standardization-and-automation)
     + [:hammer: Developer Workflow Automation](#hammer-developer-workflow-automation)
-    + [:seedling: Conditionally Rendered Python Package/Project Boilerplate](#seedling-conditionally-rendered-python-packageproject-boilerplate)
+    + [:seedling: Conditionally Rendered Python Package or Project Boilerplate](#seedling-conditionally-rendered-python-package-or-project-boilerplate)
   * [:zap: Performance](#zap-performance)
     + [:package: C-Extension Compilation](#package-c-extension-compilation)
   * [:wrench: Maintainability](#wrench-maintainability)
@@ -134,7 +134,7 @@ cruft update
 - Continuous integration and deployment
   with [GitHub Actions](https://github.com/features/actions)
 
-### :seedling: Conditionally Rendered Python Package/Project Boilerplate
+### :seedling: Conditionally Rendered Python Package or Project Boilerplate
 
 - Command-line interface
   with [Typer](https://typer.tiangolo.com/)
