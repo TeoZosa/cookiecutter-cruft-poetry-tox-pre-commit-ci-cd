@@ -108,6 +108,16 @@ jobs:
       # yamllint enable rule:line-length
       {%- endif %}
 
+  # Docker image build and upload ----------------------
+  docker-image-build-and-upload:
+    name: Docker image build and upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2.3.3
+        with:
+          ref: {{ "${{ github.event.workflow_run.head_branch }}" }}
+
       # Docker build/push job ----------------------
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
