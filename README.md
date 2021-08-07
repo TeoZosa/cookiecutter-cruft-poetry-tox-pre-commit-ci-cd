@@ -54,6 +54,8 @@ Table of Contents
   * [:rocket: Project Standardization and Automation](#rocket-project-standardization-and-automation)
     + [Developer Workflow Automation](#developer-workflow-automation)
     + [Conditionally Rendered Python Package/Project Boilerplate](#conditionally-rendered-python-packageproject-boilerplate)
+  * [:zap: Performance](#zap-performance)
+    + [C-Extension Compilation](#c-extension-compilation)
   * [:wrench: Maintainability](#wrench-maintainability)
     + [Type Checking and Data Validation](#type-checking-and-data-validation)
     + [Testing/Coverage](#testingcoverage)
@@ -140,6 +142,21 @@ Features
   Dockerfile[*](#conditional-rendering) with production dependencies for a
   completely reproducible execution environment
 - [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
+
+:zap: Performance
+-----------------
+
+### C-Extension Compilation
+
+- Python module to C-extension compilation (enabled by standard Python type hints)
+  with [Mypyc](https://mypyc.readthedocs.io/en/latest/index.html)
+  - Automatically configured for Python Package builds (see the template's
+    [build.py](./{{cookiecutter.project_slug}}/build.py) file)
+
+> :warning:️ Warning  
+> Mypyc is currently alpha software. It’s only recommended for production use cases
+> with careful testing, and if you are willing to contribute fixes or to work around
+> issues you will encounter.
 
 :wrench: Maintainability
 ------------------
