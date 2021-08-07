@@ -79,15 +79,15 @@ import {{cookiecutter.package_name}}
 
 {% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
 
-Running The {{ 'Notebooks' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
---------------------
+:children_crossing: Running The {{ 'Notebooks' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
+----------------------------------------
 
 {%- if PROJECT_TYPE == 'jupyter' %}
 To facilitate your interacting with notebooks with the minimal amount of
 friction, here are two suggested options, in order of simplicity:
 {%- endif %}
 
-### 1. Docker Container {{ PROJECT_TYPE.title() }} Environment (recommended)
+### :one: Docker Container {{ PROJECT_TYPE.title() }} Environment (recommended)
 
 Run:
 
@@ -114,7 +114,7 @@ You can then navigate to the Jupyter notebook URL displayed on your console
 >  make deploy-{{ PROJECT_TYPE }}-docker-container-local
 >  ```
 
-### 2. Locally via Poetry (development workflow)
+### :two: Locally via Poetry (development workflow)
 
 Run:
 
@@ -135,8 +135,8 @@ encapsulated in single [Make](https://www.gnu.org/software/make/) targets.
 > Invoking `make` without any arguments will display
 > auto-generated documentation on available commands.
 
-Package and Dependencies Installation
---------------------------------------
+:building_construction: Package and Dependencies Installation
+-------------------------------------------------------------
 
 Make sure you have Python 3.7+ and [`poetry`](https://python-poetry.org/)
 installed and configured.
@@ -151,8 +151,8 @@ make provision-environment
 > Invoking the above without `poetry` installed will emit a
 > helpful error message letting you know how you can install Poetry.
 
-Python Module to C-Extension Compilation
-----------------------------------------
+:package: Python Module to C-Extension Compilation
+--------------------------------------------------
 
 {%- if cookiecutter.project_type == 'package' %}
 The projects's [build.py](./build.py) file specifies which modules to package.
@@ -161,8 +161,8 @@ The projects's [build.py](./build.py) file specifies which modules to package.
 For manual per-module compilation, see:
 [Mypyc Documentation: Getting started - Compiling and running](https://mypyc.readthedocs.io/en/latest/getting_started.html#compiling-and-running)
 
-Docker Container Image Building/Deployment Orchestration
---------------------------------------------------------
+:whale: Docker Container Image Building/Deployment Orchestration
+----------------------------------------------------------------
 
 The following set of `make` targets orchestrate the project's container image build and
 deploy steps:
@@ -183,8 +183,8 @@ be necessary when updating non-Python environment dependencies (Python dependenc
 updates are automatically reflected in new image builds via the `pyproject.toml`
 and `poetry.lock` files).
 
-Testing
-------------
+:white_check_mark: Testing
+--------------------------
 
 We use [`tox`](https://tox.readthedocs.io/en/latest/)
 and [`pytest`](https://pytest.readthedocs.io/) for our test automation and testing
@@ -209,8 +209,8 @@ make test-mutations
 > subsequent mutation test runs will be much faster; new mutations will only
 > be applied to modified code paths.
 
-Code Quality
-------------
+:rotating_light: Code Quality
+-----------------------------
 
 We use [`pre-commit`](https://pre-commit.com/) for our static analysis automation and
 management framework.
@@ -226,7 +226,7 @@ make lint
 > so it is recommended to automatically run the above locally
 > prior to every commit that is pushed.
 
-### Automate via Git Pre-Commit Hooks
+### :arrows_counterclockwise: Automate via Git Pre-Commit Hooks
 
 To automatically run code quality validation on every commit (over to-be-committed
 files), run:
@@ -241,8 +241,8 @@ make install-pre-commit-hooks
 > or a file is modified by an auto-formatting job;
 > in the latter case, you may simply repeat the commit and it should pass.
 
-Documentation
---------------
+:memo: Documentation
+--------------------
 
 ```shell script
 make docs-clean docs-html
@@ -264,18 +264,18 @@ make docs-clean docs-html
 
 ---
 
-:page_facing_up: Legal
-======================
+:judge: Legal
+=============
 
-License
--------
+:page_facing_up: License
+------------------------
 
 {{cookiecutter.project_name}} is licensed under the Apache License, Version 2.0.
 See [LICENSE](./LICENSE) for the full license text.
 
 
-Credits
--------
+:busts_in_silhouette: Credits
+-----------------------------
 
 This project was generated from
 [`@TeoZosa`'s](https://github.com/TeoZosa)
