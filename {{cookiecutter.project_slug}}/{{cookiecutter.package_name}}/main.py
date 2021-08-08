@@ -8,8 +8,8 @@ import typeguard
 import typer
 from dotenv import find_dotenv, load_dotenv
 
-__version__ = importlib_metadata.metadata("{{cookiecutter.project_slug}}")["Version"]
-app = typer.Typer()
+app = typer.Typer(name="{{cookiecutter.project_slug}}")
+__version__ = importlib_metadata.metadata(app.info.name)["Version"]
 
 # see `.env` for requisite environment variables
 load_dotenv(find_dotenv())
@@ -23,7 +23,7 @@ def version_callback(
 ) -> None:  # pylint: disable=unsubscriptable-object
     """Provides a version option for the CLI"""
     if value:
-        typer.echo(f"{{cookiecutter.project_slug}} Version: {__version__}")
+        typer.echo(f"{app.info.name.title()} CLI version: {__version__}")
         raise typer.Exit()
 
 
