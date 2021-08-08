@@ -42,9 +42,8 @@ def main(
 ) -> None:
     """{{cookiecutter.friendly_name}}."""
     LOGGER.info(
-        "For `structlog_sentry_logger` usage documentation, see: "
-        "`Structlog-Sentry-Logger`_"
-        "_`Structlog-Sentry-Logger`: https://github.com/TeoZosa/structlog-sentry-logger"
+        "Default application logging via structlog-sentry-logger",
+        project_url="https://github.com/TeoZosa/structlog-sentry-logger",
     )
 
 
