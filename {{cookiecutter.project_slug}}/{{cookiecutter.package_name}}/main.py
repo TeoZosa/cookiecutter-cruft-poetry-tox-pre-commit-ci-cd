@@ -45,6 +45,20 @@ def main(
     ),
 ) -> None:
     """{{cookiecutter.friendly_name}}."""
+    friendly_project_name = app.info.name.replace("-", " ").title()
+    feature_table = rich.table.Table("Features", title=friendly_project_name)
+    feature_table.add_row("CLI application via [link=https://typer.tiangolo.com]Typer")
+    feature_table.add_row(
+        "Structured logging via "
+        "[link=https://structlog-sentry-logger.readthedocs.io/en/latest/]structlog-sentry-logger"
+    )
+    feature_table.add_row("...")
+    feature_table.add_row(
+        "For more details, see "
+        "[link=https://cookiecutter-cruft-poetry-tox-pre-commit-ci-cd.readthedocs.io/en/latest/]cookiecutter-cruft-poetry-tox-pre-commit-ci-cd"
+    )
+    console.print(feature_table)
+
     LOGGER.info(
         "Default application logging via structlog-sentry-logger",
         project_url="https://github.com/TeoZosa/structlog-sentry-logger",
