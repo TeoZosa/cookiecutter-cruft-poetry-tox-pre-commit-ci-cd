@@ -27,7 +27,10 @@ def version_callback(
 ) -> None:  # pylint: disable=unsubscriptable-object
     """Provides a version option for the CLI"""
     if value:
-        console.print(f"{app.info.name.title()} CLI version: {__version__}")
+        console.print(
+            f"{app.info.name.title()} "  # type: ignore[union-attr]
+            f"CLI version: {__version__}"
+        )
         raise typer.Exit()
 
 
@@ -45,7 +48,7 @@ def main(
     ),
 ) -> None:
     """{{cookiecutter.friendly_name}}."""
-    friendly_project_name = app.info.name.replace("-", " ").title()
+    friendly_project_name = app.info.name.replace("-", " ").title()  # type: ignore[union-attr]
     feature_table = rich.table.Table("Features", title=friendly_project_name)
     feature_table.add_row("CLI application via [link=https://typer.tiangolo.com]Typer")
     feature_table.add_row(
