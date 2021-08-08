@@ -45,7 +45,3 @@ def main(
         "Default application logging via structlog-sentry-logger",
         project_url="https://github.com/TeoZosa/structlog-sentry-logger",
     )
-
-
-if __name__ == "__main__":
-    app(prog_name="{{cookiecutter.project_slug}}")  # pragma: no cover
