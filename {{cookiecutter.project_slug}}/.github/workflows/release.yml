@@ -228,6 +228,7 @@ jobs:
         run: |
           {{cookiecutter.project_slug}} --help
           {{cookiecutter.project_slug}} --version
+          {{cookiecutter.project_slug}}
         shell: bash
   {%- endif %}
 
