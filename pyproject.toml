@@ -58,6 +58,9 @@ sphinxcontrib-confluencebuilder = { version = "^1.5.0", optional = true}
 types-emoji = { version = "^1.2.4", optional = true}
 
 [tool.poetry.dev-dependencies]
+# Type Checking and Data Validation
+mypy = "^0.910" # Static type checker
+
 # Testing
 pytest = "^6.2.4"
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
@@ -76,15 +79,14 @@ pytest-xdist = "^2.3.0"
 icontract = "^2.5.3"
 xdoctest = {extras = ["all"], version = "^0.15.6"}
 tox = "^3.24.0"
-# Code formatter
-# see: https://black.readthedocs.io/en/stable/editor_integration.html
-black = "^21.7b0"
-# Linters
+
+# Linting
+## Code formatting
+black = "^21.7b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
+## Code quality
 flakehell = "^0.9.0"
 pylint = "^2.9.6"
-# Static type checker
-mypy = "^0.910"
-# Linting & formatting orchestrator
+## Automation and management
 pre-commit = "^2.12.1"
 
 # Documentation
@@ -132,7 +134,7 @@ pycodestyle = ["+*",
 
 [tool.isort]
 profile = "black"
-atomic = "true"
+atomic = true
 combine_as_imports = true
 
 [tool.pylint.basic]
@@ -156,7 +158,7 @@ ignore-imports = "yes"
 
 [tool.pytest.ini_options]
 addopts = ["-rfsxX", "-l", "--tb=short", "--strict-markers", "-vv", "--emoji", "--xdoctest"]
-xfail_strict = "true"
+xfail_strict = true
 testpaths = ["tests",]
 norecursedirs = [".*", "*.egg", "build", "dist",]
 
