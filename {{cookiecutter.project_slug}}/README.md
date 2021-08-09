@@ -22,18 +22,18 @@
 
 ---
 
-Overview
---------
+:teacher: Overview
+------------------
 
 - TODO
 
-Features
---------
+:sparkles: Features
+-------------------
 
 - TODO
 
-Requirements
-------------
+:information_source: Requirements
+---------------------------------
 
 - TODO
 
