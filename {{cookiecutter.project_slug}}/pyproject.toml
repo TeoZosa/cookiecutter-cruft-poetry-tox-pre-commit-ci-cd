@@ -46,8 +46,7 @@ structlog-sentry-logger = "^0.8.1"
 # Type Checking and Data Validation
 icontract = "^2.5.1" # Design-by-contract support
 typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
-
-{%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+{% if cookiecutter.jupyter_notebook_support == 'yes' %}
 # Jupyter Notebook
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
