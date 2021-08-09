@@ -45,7 +45,7 @@ structlog-sentry-logger = "^0.8.1"
 
 # Type Checking and Data Validation
 icontract = "^2.5.1" # Design-by-contract support
-typeguard = "^2.10.0" # Runtime type checker
+typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
 
 {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
 # Jupyter Notebook
@@ -69,7 +69,7 @@ types-emoji = { version = "^1.2.1", optional = true} # PEP 561 compliant stub pa
 cruft = "^2.6.0" # Automated Cookiecutter template synchronization
 
 # Type Checking and Data Validation
-mypy = "^0.910" # Static type checker
+mypy = "^0.910" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
 {%- if cookiecutter.jupyter_notebook_support == 'yes' %}
