@@ -223,10 +223,6 @@ stop-container:
 	- docker stop $(PROJECT_NAME)
 	- docker rm $(PROJECT_NAME)
 
-ifeq (${CI}, true)
-export TOX_PARALLEL_NO_SPINNER=1
-endif
-
 .PHONY: tox-%
 ## Run specified tox testenvs
 tox-%: clean update-dependencies generate-requirements
@@ -235,6 +231,9 @@ tox-%: clean update-dependencies generate-requirements
 
 .PHONY: test
 ## Test via tox in poetry env
+ifeq (${CI}, true)
+test: export TOX_PARALLEL_NO_SPINNER=1
+endif
 test: clean update-dependencies generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
