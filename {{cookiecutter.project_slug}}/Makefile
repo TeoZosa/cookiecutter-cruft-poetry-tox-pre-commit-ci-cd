@@ -7,6 +7,7 @@ endef
 # CONFIGURATIONS                                                                #
 #################################################################################
 
+NUM_PROCS:=$(shell nproc --all)
 MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
@@ -126,7 +127,7 @@ provision-environment: _validate_poetry_installation
 	poetry update --lock -v
 	poetry install --extras docs -v
 	# Install node ADR management library
-	poetry run nodeenv --python-virtualenv --jobs=8
+	poetry run nodeenv --python-virtualenv --jobs=$(NUM_PROCS)
 	poetry run npm install -g --no-package-lock --no-save log4brains
 
 .PHONY: install-pre-commit-hooks
