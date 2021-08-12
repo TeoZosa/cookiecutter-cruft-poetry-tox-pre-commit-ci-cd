@@ -54,7 +54,7 @@ repos:
         # see: https://stackoverflow.com/a/59745587
         verbose: true
         entry: bash -c '.tox/precommit/bin/mypy "$@" || true' --
-        args: [--cache-dir=/dev/null, --config-file=tox.ini]
+        args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         types: [python]
 
   - repo: local
