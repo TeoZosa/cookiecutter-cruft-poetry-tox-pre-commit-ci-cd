@@ -63,6 +63,25 @@ validate_req_env_vars:
 	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
+.PHONY: _validate_poetry_installation
+_validate_poetry_installation:
+ifeq ($(shell command -v poetry),)
+	@echo "poetry could not be found!"
+	@echo "Please install poetry!"
+	@echo "Ex.: 'curl -sSL \
+	https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py  | python - \
+	&& source $$HOME/.local/env'"
+	@echo "see:"
+	@echo "- https://python-poetry.org/docs/#installation"
+	@echo "Note: 'pyenv' recommended for Python version management"
+	@echo "see:"
+	@echo "- https://github.com/pyenv/pyenv"
+	@echo "- https://python-poetry.org/docs/managing-environments/"
+	false
+else
+	@echo "Using $(shell poetry --version) in $(shell which poetry)"
+endif
+
 .PHONY: strong-version-tag
 strong-version-tag: get-make-var-TAG
 
@@ -103,27 +122,12 @@ clean:
 
 .PHONY: provision-environment
 ## Set up Python virtual environment with installed project dependencies
-provision-environment:
-ifeq ($(shell command -v poetry),)
-	@echo "poetry could not be found!"
-	@echo "Please install poetry!"
-	@echo "Ex.: 'curl -sSL \
-	https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py  | python - \
-	&& source $$HOME/.local/env'"
-	@echo "see:"
-	@echo "- https://python-poetry.org/docs/#installation"
-	@echo "Note: 'pyenv' recommended for Python version management"
-	@echo "see:"
-	@echo "- https://github.com/pyenv/pyenv"
-	@echo "- https://python-poetry.org/docs/managing-environments/"
-	false
-else
+provision-environment: _validate_poetry_installation
 	poetry update --lock -v
 	poetry install --extras docs -v
 	# Install node ADR management library
 	poetry run nodeenv --python-virtualenv --jobs=8
 	poetry run npm install -g --no-package-lock --no-save log4brains
-endif
 
 .PHONY: install-pre-commit-hooks
 ## Install git pre-commit hooks locally
