@@ -76,7 +76,7 @@ pytest-emoji = "^0.2.0"
 pytest-mock = "^3.6.1"
 pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.3.0"
-icontract = "^2.5.3"
+icontract = "^2.5.4"
 xdoctest = {extras = ["all"], version = "^0.15.6"}
 tox = "^3.24.0"
 

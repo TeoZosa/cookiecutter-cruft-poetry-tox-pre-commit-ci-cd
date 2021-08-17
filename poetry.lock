@@ -486,7 +486,7 @@ zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tz
 
 [[package]]
 name = "icontract"
-version = "2.5.3"
+version = "2.5.4"
 description = "Provide design-by-contract with informative violation messages."
 category = "dev"
 optional = false
@@ -497,7 +497,7 @@ asttokens = ">=2,<3"
 typing_extensions = "*"
 
 [package.extras]
-dev = ["mypy (==0.812)", "pylint (==2.3.1)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
+dev = ["mypy (==0.910)", "pylint (==2.9.6)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
 
 [[package]]
 name = "identify"
@@ -1928,7 +1928,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "a7a38945ad9295756d6aed304727353b7d7440d72063620279a8d230142ddc03"
+content-hash = "754f7da8194f110ed1f00f376e5b43558990137b1a440413f59d8bee0f29544b"
 
 [metadata.files]
 alabaster = [
@@ -2239,7 +2239,7 @@ hypothesis = [
     {file = "hypothesis-6.14.8.tar.gz", hash = "sha256:cb80e06ca44992b08d2889734b740e67c8b41337315bbd6dba2ef43ca816cfe3"},
 ]
 icontract = [
-    {file = "icontract-2.5.3.tar.gz", hash = "sha256:b790101c8cc0d9df0105d852a645373c4d90d5049391b6e54db32a0acb4bccd7"},
+    {file = "icontract-2.5.4.tar.gz", hash = "sha256:e195cd35b2ab4ab1710c733368f009b676a26b1ab9c2c2191403c80c8df1db35"},
 ]
 identify = [
     {file = "identify-2.2.13-py2.py3-none-any.whl", hash = "sha256:7199679b5be13a6b40e6e19ea473e789b11b4e3b60986499b1f589ffb03c217c"},
