@@ -45,7 +45,6 @@ repos:
     rev: 1.4.0
     hooks:
       - id: interrogate
-        # adjust `fail-under` value as quality standards permit
         args: [-vv, --config=pyproject.toml]
 
   - repo: https://github.com/timothycrosley/isort
