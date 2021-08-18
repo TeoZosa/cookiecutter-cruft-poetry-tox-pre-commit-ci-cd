@@ -157,9 +157,9 @@ bump-commit-and-push-project-version-number-%:
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
 
 #{%- if cookiecutter.project_type == 'package' %}
-.PHONY: build
+.PHONY: package
 ## Build project package(s)
-build:
+package:
 	tox -e package
 #{%- endif %}
 

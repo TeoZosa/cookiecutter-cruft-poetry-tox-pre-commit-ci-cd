@@ -135,7 +135,7 @@ jobs:
 
       - name: Build package
         run: |
-          make build
+          make package
 
       - name: Store the binary wheel
         uses: actions/upload-artifact@v2.2.4
