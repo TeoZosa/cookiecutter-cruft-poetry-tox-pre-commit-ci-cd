@@ -135,11 +135,6 @@ provision-environment: _validate_poetry_installation
 install-pre-commit-hooks:
 	poetry run pre-commit install
 
-.PHONY: get-project-version-number
-## Echo project's canonical version number
-get-project-version-number:
-	@poetry version --short
-
 .PHONY: bump-commit-and-push-project-version-number-%
 ##  Bumps the version of the project, writes the new version back to
 ##  pyproject.toml if a valid bump rule is provided, commits it to VCS, and pushes it to the remote repository.
@@ -155,6 +150,11 @@ bump-commit-and-push-project-version-number-%:
 		git commit $(VERSION_NUM_FILE) -m "$${COMMIT_MSG}" && \
 		git push \
 	|| git checkout HEAD -- $(VERSION_NUM_FILE) # Rollback `VERSION_NUM_FILE` file on failure
+
+.PHONY: get-project-version-number
+## Echo project's canonical version number
+get-project-version-number:
+	@poetry version --short
 
 #{%- if cookiecutter.project_type == 'package' %}
 .PHONY: package
