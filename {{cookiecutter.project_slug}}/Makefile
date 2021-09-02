@@ -165,7 +165,7 @@ package:
 	tox -e package
 #{%- endif %}
 
-#{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+#{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_project == 'yes' else 'project' %}
 .PHONY: deploy-{{ PROJECT_TYPE }}-docker-container-local
 ## Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
 deploy-{{ PROJECT_TYPE }}-docker-container-local: build-container deploy-container

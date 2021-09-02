@@ -77,7 +77,7 @@ docs/_build
 # Local log files
 .logs/
 
-{% if cookiecutter.jupyter_notebook_support == 'yes' %}
+{% if cookiecutter.jupyter_notebook_project == 'yes' %}
 # Jupyter
 **/*.ipynb_checkpoints/
 {%- endif %}

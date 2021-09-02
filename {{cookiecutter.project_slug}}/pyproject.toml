@@ -40,7 +40,7 @@ structlog-sentry-logger = "^0.9.0"
 # Type Checking and Data Validation
 icontract = "^2.5.3" # Design-by-contract support
 typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
-{% if cookiecutter.jupyter_notebook_support == 'yes' %}
+{% if cookiecutter.pure_jupyter_notebook_project == 'yes' %}
 # Jupyter Notebook
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
@@ -71,7 +71,7 @@ cruft = "^2.6.0" # Automated Cookiecutter template synchronization
 mypy = "^0.910" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
-{%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
 nbqa = "^1.1.0"
 {%- endif %}
 pytest = "^6.2.4"
@@ -178,7 +178,7 @@ pycodestyle = ["+*",
     "-E203", # Whitespace before ":"
     "-E501", # Line too long (82 > 78 characters)
     "-W503",  # Line break occurred before a binary operator <- this is now considered best practice by PEP 8
-{%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
     # Ignore errors resulting from Jupyter notebook to Python module portability formatting
     "-E265", # block comment should start with '# '
     # Ignore errors resulting from Jupyter notebook-style programming
@@ -225,7 +225,7 @@ disable = [
   "line-too-long",
   "bad-continuation",
   "c-extension-no-member",
-{%- if cookiecutter.jupyter_notebook_support == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
   # Ignore errors resulting from Jupyter notebook-style programming
   "invalid-name",
   "redefined-outer-name",
