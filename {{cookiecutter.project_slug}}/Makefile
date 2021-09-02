@@ -245,18 +245,22 @@ test: clean update-dependencies generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
 
+#{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 .PHONY: test-%-benchmark
 test-%-benchmark:
 	$(MAKE) tox-$*-benchmark
+#{%- endif %}
 
 .PHONY: test-%
 test-%:
 	$(MAKE) tox-$*,coverage
 
+#{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 .PHONY: test-mutations
 ## Test against mutated code to validate test suite robustness
 test-mutations:
 	$(MAKE) tox-mutmut
+#{%- endif %}
 
 .PHONY: lint
 ## Run full static analysis suite for local development

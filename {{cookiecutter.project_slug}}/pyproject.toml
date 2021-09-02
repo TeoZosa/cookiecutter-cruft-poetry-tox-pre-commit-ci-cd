@@ -23,9 +23,11 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 [tool.poetry.build]
 script = "build.py"
 generate-setup-file = false
+{%- endif %}
 
 [tool.poetry.urls]
 Changelog = "{{ cookiecutter.project_repository_url }}/releases"
@@ -36,14 +38,14 @@ python = "^3.7"
 # Monitoring and Observability
 sentry-sdk = "^1.1.0"
 structlog-sentry-logger = "^0.9.0"
-
-# Type Checking and Data Validation
-icontract = "^2.5.3" # Design-by-contract support
-typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
-{% if cookiecutter.pure_jupyter_notebook_project == 'yes' %}
+{% if cookiecutter.jupyter_notebook_project != 'no' %}
 # Jupyter Notebook
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
+{%- else %}
+# Type Checking and Data Validation
+icontract = "^2.5.3" # Design-by-contract support
+typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
 {%- endif %}
 
 # Documentation
@@ -71,11 +73,13 @@ cruft = "^2.6.0" # Automated Cookiecutter template synchronization
 mypy = "^0.910" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
-{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project != 'no' %}
 nbqa = "^1.1.0"
 {%- endif %}
 pytest = "^6.2.4"
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
+{%- endif %}
 pytest-cov = "^2.12.1"
 # Fixes:
 #   ```
@@ -88,9 +92,12 @@ pytest-emoji = "^0.2.0"
 pytest-mock = "^3.6.1"
 pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.3.0"
+{%- if jupyter_notebook_project != 'yes' %}
 hypothesis = "^6.10.1"
 icontract-hypothesis = "^1.1.0"
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 mutmut = "^2.2.0"
+{%- endif %}
 xdoctest = {extras = ["all"], version = "^0.15.6"}
 tox = "^3.24.0"
 tox-wheel = "^0.6.0"
@@ -126,9 +133,10 @@ docs = [
     "types-emoji",
 ]
 
-
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 [tool.poetry.scripts]
 "{{cookiecutter.project_slug}}" = "{{cookiecutter.package_name}}.main:app"
+{%- endif %}
 
 #################################################################################
 # Tooling configs                                                               #
@@ -178,7 +186,7 @@ pycodestyle = ["+*",
     "-E203", # Whitespace before ":"
     "-E501", # Line too long (82 > 78 characters)
     "-W503",  # Line break occurred before a binary operator <- this is now considered best practice by PEP 8
-{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project != 'no' %}
     # Ignore errors resulting from Jupyter notebook to Python module portability formatting
     "-E265", # block comment should start with '# '
     # Ignore errors resulting from Jupyter notebook-style programming
@@ -225,7 +233,7 @@ disable = [
   "line-too-long",
   "bad-continuation",
   "c-extension-no-member",
-{%- if cookiecutter.jupyter_notebook_project == 'yes' %}
+{%- if cookiecutter.jupyter_notebook_project != 'no' %}
   # Ignore errors resulting from Jupyter notebook-style programming
   "invalid-name",
   "redefined-outer-name",
@@ -247,5 +255,5 @@ testpaths = ["tests",]
 norecursedirs = [".*", "*.egg", "build", "dist",]
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "mypy"]
+requires = ["poetry-core>=1.0.0", {%- if cookiecutter.jupyter_notebook_project != 'yes' %} "mypy"{% endif %}]
 build-backend = "poetry.core.masonry.api"

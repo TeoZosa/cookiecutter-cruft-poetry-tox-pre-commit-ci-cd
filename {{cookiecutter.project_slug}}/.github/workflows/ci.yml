@@ -161,6 +161,7 @@ jobs:
           file: ./.tox/coverage.xml
           fail_ci_if_error: true
 
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
   # Performance testing jobs ------------------------
   test-performance:
     name: Performance testing for Python {{ "${{ matrix.python-version }}" }}
@@ -238,3 +239,4 @@ jobs:
       - name: Run mutation testing
         run: |
           make test-mutations
+{%- endif %}
