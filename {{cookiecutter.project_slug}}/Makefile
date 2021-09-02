@@ -290,15 +290,15 @@ pre-commit-%:
 docs-%:
 	$(MAKE) $* -C docs
 
-.PHONY: docs-adl-preview
-## Launch live preview of ADR documentation
-docs-adl-preview:
-	poetry run log4brains preview
-
 .PHONY: test-docs
 ## Test documentation format/syntax
 test-docs:
 	poetry run tox -e docs
+
+.PHONY: docs-adl-preview
+## Launch live preview of ADR documentation
+docs-adl-preview:
+	poetry run log4brains preview
 
 #################################################################################
 # Self Documenting Commands                                                     #
