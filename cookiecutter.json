@@ -7,6 +7,7 @@
   "email": "teo@sonosim.com",
   "project_type": ["project", "package"],
   "jupyter_notebook_support": ["no", "yes"],
+  "adr_documentation_support": ["no", "yes"],
   "remote_vcs_host": ["github", "gitlab"],
   "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
   "remote_vcs_username": "TeoZosa",

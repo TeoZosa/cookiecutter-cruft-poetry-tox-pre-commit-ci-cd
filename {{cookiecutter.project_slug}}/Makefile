@@ -126,9 +126,11 @@ clean:
 provision-environment: _validate_poetry_installation
 	poetry update --lock -v
 	poetry install --extras docs -v
+#{%- if cookiecutter.adr_documentation_support == 'yes' %}
 	# Install node ADR management library
 	poetry run nodeenv --python-virtualenv --jobs=$(NUM_PROCS)
 	poetry run npm install -g --no-package-lock --no-save log4brains
+#{%- endif %}
 
 .PHONY: install-pre-commit-hooks
 ## Install git pre-commit hooks locally
@@ -290,15 +292,17 @@ pre-commit-%:
 docs-%:
 	$(MAKE) $* -C docs
 
-.PHONY: docs-adl-preview
-## Launch live preview of ADR documentation
-docs-adl-preview:
-	poetry run log4brains preview
-
 .PHONY: test-docs
 ## Test documentation format/syntax
 test-docs:
 	poetry run tox -e docs
+
+#{%- if cookiecutter.adr_documentation_support == 'yes' %}
+.PHONY: docs-adl-preview
+## Launch live preview of ADR documentation
+docs-adl-preview:
+	poetry run log4brains preview
+#{%- endif %}
 
 #################################################################################
 # Self Documenting Commands                                                     #

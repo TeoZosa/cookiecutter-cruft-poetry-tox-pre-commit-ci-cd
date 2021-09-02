@@ -109,7 +109,9 @@ tox-gh-actions = "^2.6.0"
 
 # Documentation
 darglint = "^1.5.8"
+{%- if cookiecutter.adr_documentation_support == 'yes' %}
 nodeenv = "^1.5.0" # ADR documentation Node dependency
+{%- endif %}
 
 [tool.poetry.extras]
 docs = [
