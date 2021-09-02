@@ -15,5 +15,5 @@
    License <license>
    Changelog <changelog>
    Service Design and Production Deployment Documentation <production-readiness-checklist>
-   Architecture Decision Records <adr>
+   {% if cookiecutter.adr_documentation_support == 'yes' -%} Architecture Decision Records <adr> {%- endif %}
 ```
