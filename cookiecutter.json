@@ -6,6 +6,7 @@
   "author": "Teo Zosa",
   "email": "teo@sonosim.com",
   "project_type": ["project", "package"],
+  "project_boilerplate_type": ["cli", "none"],
   "jupyter_notebook_project": ["no", "yes", "hybrid"],
   "adr_documentation_support": ["no", "yes"],
   "remote_vcs_host": ["github", "gitlab"],
