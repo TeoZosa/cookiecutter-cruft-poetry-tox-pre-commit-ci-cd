@@ -42,7 +42,7 @@ structlog-sentry-logger = "^0.9.0"
 # Jupyter Notebook
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
-{%- else %}
+{%- elif cookiecutter.project_boilerplate_type == 'cli' %}
 # Type Checking and Data Validation
 icontract = "^2.5.3" # Design-by-contract support
 typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
@@ -50,20 +50,27 @@ typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions 
 
 # Documentation
 emoji = { version = "^1.4.2", optional = true}
+{%- if cookiecutter.project_boilerplate_type != 'cli' %}
+importlib-metadata = { version = "^4.6.3", optional = true}
+{%- endif %}
 myst-parser = { version = "^0.15.1", optional = true}
 pygments = { version = "^2.9.0", optional = true}
 sphinx = { version = "^4.1.2", optional = true}
 sphinx-autoapi = { version = "^1.8.1", optional = true}
 sphinx-rtd-theme = { version = "^0.5.1", optional = true}
 sphinxcontrib-confluencebuilder = { version = "^1.5.0", optional = true}
+{%- if cookiecutter.project_boilerplate_type == 'cli' %}
 typer-cli = { version = "^0.0.12", optional = true}
+{%- endif %}
 types-emoji = { version = "^1.2.4", optional = true} # PEP 561 compliant stub package for mypy
 
 # Project-Specific
-importlib-metadata = "^4.6.3"
 python-dotenv = "^0.19.0"
+{%- if cookiecutter.project_boilerplate_type == 'cli' %}
+importlib-metadata = "^4.6.3"
 rich = "^10.6.0"
 typer = {extras = ["all"], version = "^0.3.2"}
+{%- endif %}
 
 [tool.poetry.dev-dependencies]
 # Standardized Developer Workflow Orchestration
@@ -92,9 +99,10 @@ pytest-emoji = "^0.2.0"
 pytest-mock = "^3.6.1"
 pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.3.0"
-{%- if jupyter_notebook_project != 'yes' %}
+{%- if cookiecutter.project_boilerplate_type == 'cli' %}
 hypothesis = "^6.10.1"
 icontract-hypothesis = "^1.1.0"
+{%- endif %}
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 mutmut = "^2.2.0"
 {%- endif %}
@@ -123,17 +131,22 @@ nodeenv = "^1.5.0" # ADR documentation Node dependency
 [tool.poetry.extras]
 docs = [
     "emoji", # Render emoji shortcodes
+{%- if cookiecutter.project_boilerplate_type != 'cli' %}
+    "importlib-metadata",
+{%- endif %}
     "myst-parser",
     "pygments",
     "sphinx",
     "sphinx-autoapi",
     "sphinx-rtd-theme",
     "sphinxcontrib-confluencebuilder",
+{%- if cookiecutter.project_boilerplate_type == 'cli' %}
     "typer-cli",
+{%- endif %}
     "types-emoji",
 ]
 
-{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
+{%- if cookiecutter.project_boilerplate_type != 'none' %}
 [tool.poetry.scripts]
 "{{cookiecutter.project_slug}}" = "{{cookiecutter.package_name}}.main:app"
 {%- endif %}
