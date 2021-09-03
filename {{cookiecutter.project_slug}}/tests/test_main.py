@@ -74,7 +74,7 @@ class TestVersionCallbackPropertyBasedTesting:
     @staticmethod
     @given(value=st.none() | st.booleans())
     def test_input_value_generated_from_user_defined_strategy(
-        value: Optional[bool]
+        value: Optional[bool],
     ) -> None:
         _test_version_callback(value)
 
@@ -83,7 +83,7 @@ class TestVersionCallbackDesignByContract:
     @staticmethod
     @given(value=st.none() | st.booleans())
     def test_input_value_generated_from_user_defined_strategy_is_constrained_by_icontract_preconditions(
-        value: Optional[bool]
+        value: Optional[bool],
     ) -> None:
         assume_version_callback_precondition = (
             icontract_hypothesis.make_assume_preconditions(version_callback)
