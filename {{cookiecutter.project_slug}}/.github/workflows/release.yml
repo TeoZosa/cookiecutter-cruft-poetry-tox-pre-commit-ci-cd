@@ -308,7 +308,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - get-tag-xor-dev-version
-      {% if cookiecutter.project_type == 'package' -%} - verify-user-install {%- endif %}
+    {%- if cookiecutter.project_type == 'package' %}
+      - verify-user-install
+    {%- endif %}
       - docker-image-build-and-upload
     steps:
       - name: Check out the repository
