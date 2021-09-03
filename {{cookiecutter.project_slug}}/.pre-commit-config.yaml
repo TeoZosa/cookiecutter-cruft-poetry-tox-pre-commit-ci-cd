@@ -30,7 +30,7 @@ repos:
     hooks:
       - id: detect-secrets
         exclude: ^(poetry\.lock|\.cruft\.json)$
-        # {%- if cookiecutter.jupyter_notebook_project == 'yes' %}
+        # {%- if cookiecutter.jupyter_notebook_project != 'no' %}
         exclude_types: [jupyter]
         # {%- endif %}
 
@@ -68,7 +68,7 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         types: [python]
 
-  # {%- if cookiecutter.jupyter_notebook_project == 'yes' %}
+  # {%- if cookiecutter.jupyter_notebook_project != 'no' %}
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 0.12.0
     hooks:
