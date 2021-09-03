@@ -7,7 +7,7 @@
   "email": "teo@sonosim.com",
   "project_type": ["project", "package"],
   "project_boilerplate_type": ["cli", "none"],
-  "jupyter_notebook_project": ["no", "yes", "hybrid"],
+  "jupyter_notebook_project": ["hybrid", "yes", "no"],
   "adr_documentation_support": ["no", "yes"],
   "remote_vcs_host": ["github", "gitlab"],
   "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
