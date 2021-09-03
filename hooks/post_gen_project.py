@@ -2,6 +2,7 @@ import os
 import shutil
 
 REMOVE_PATHS = [
+    "{% if cookiecutter.adr_documentation_support == 'no' %} .log4brains.yml {% endif %}",
     "{% if cookiecutter.adr_documentation_support == 'no' %} docs/source/akm {% endif %}",
     "{% if cookiecutter.adr_documentation_support == 'no' %} docs/source/adr.md {% endif %}",
     "{% if cookiecutter.adr_documentation_support == 'no' %} .github/workflows/publish_log4brains.yml {% endif %}",
