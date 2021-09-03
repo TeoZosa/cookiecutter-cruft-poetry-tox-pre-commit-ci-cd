@@ -9,7 +9,7 @@ repos:
   # For IDE-integration outside of the pre-commit hook,
   # see: https://black.readthedocs.io/en/stable/editor_integration.html
   - repo: https://github.com/ambv/black
-    rev: 21.5b0
+    rev: 21.8b0
     hooks:
       - id: black
         args: [--config=pyproject.toml]
@@ -32,7 +32,7 @@ repos:
         entry: bash -c 'flakehell lint "$@" || true' --
 
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.8.0
+    rev: 5.9.3
     hooks:
       - id: isort
 
@@ -77,7 +77,7 @@ repos:
       - id: script-must-not-have-extension
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.14.0
+    rev: v2.25.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
@@ -94,14 +94,14 @@ repos:
         types: [shell]
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.26.1
+    rev: v1.26.3
     hooks:
       - id: yamllint
         # yamllint disable-line rule:line-length
         exclude: ^{{cookiecutter\.project_slug}}/\.github/workflows/(auto-merge-dependabot|ci|release|publish_benchmarks|publish_log4brains)\.yml$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
     hooks:
       - id: check-added-large-files  # Ignored for git-lfs files
         args: [--maxkb=100000]  # 100MB
