@@ -223,6 +223,7 @@ jobs:
           PACKAGE_VERSION: {{ "${{ needs.pypi-packages-upload.outputs.package-version }}" }}
         shell: bash
       # yamllint enable rule:line-length
+  {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 
       - name: Run basic commands
         run: |
@@ -230,6 +231,7 @@ jobs:
           {{cookiecutter.project_slug}} --version
           {{cookiecutter.project_slug}}
         shell: bash
+  {%- endif %}
   {%- endif %}
 
   # Docker image build and upload ----------------------
@@ -306,7 +308,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - get-tag-xor-dev-version
-      {% if cookiecutter.project_type == 'package' -%} - verify-user-install {%- endif %}
+    {%- if cookiecutter.project_type == 'package' %}
+      - verify-user-install
+    {%- endif %}
       - docker-image-build-and-upload
     steps:
       - name: Check out the repository

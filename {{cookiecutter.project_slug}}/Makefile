@@ -165,7 +165,7 @@ package:
 	tox -e package
 #{%- endif %}
 
-#{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+#{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_project == 'yes' else 'project' %}
 .PHONY: deploy-{{ PROJECT_TYPE }}-docker-container-local
 ## Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
 deploy-{{ PROJECT_TYPE }}-docker-container-local: build-container deploy-container
@@ -245,18 +245,20 @@ test: clean update-dependencies generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
 
-.PHONY: test-%-benchmark
-test-%-benchmark:
-	$(MAKE) tox-$*-benchmark
-
 .PHONY: test-%
 test-%:
 	$(MAKE) tox-$*,coverage
+
+#{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
+.PHONY: test-%-benchmark
+test-%-benchmark:
+	$(MAKE) tox-$*-benchmark
 
 .PHONY: test-mutations
 ## Test against mutated code to validate test suite robustness
 test-mutations:
 	$(MAKE) tox-mutmut
+#{%- endif %}
 
 .PHONY: lint
 ## Run full static analysis suite for local development

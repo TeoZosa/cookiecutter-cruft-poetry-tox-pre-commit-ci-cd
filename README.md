@@ -136,7 +136,7 @@ cruft update
 
 ### :seedling: Conditionally Rendered Python Package or Project Boilerplate
 
-- Command-line interface
+- [Optional] Command-line interface boilerplate
   with [Typer](https://typer.tiangolo.com/)
 - Project-specific [Docker](https://www.docker.com/) image
   Dockerfile[*](#conditional-rendering) with production dependencies for a
