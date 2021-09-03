@@ -77,7 +77,7 @@ import {{cookiecutter.package_name}}
 > All following commands are relative to the project root directory and assume
 > `make` is installed.
 
-{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_support == 'yes' else 'project' %}
+{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_project == 'yes' else 'project' %}
 
 :children_crossing: Running The {{ 'Notebooks' if PROJECT_TYPE == 'jupyter' else PROJECT_TYPE.title() }}
 ----------------------------------------
