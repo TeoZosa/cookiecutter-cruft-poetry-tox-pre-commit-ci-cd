@@ -74,13 +74,13 @@ repos:
     hooks:
       - id: nbqa-black
         args: [--nbqa-mutate]
-        additional_dependencies: [black==21.6b0]
+        additional_dependencies: [black==21.8b0]
       - id: nbqa-isort
         args: [--nbqa-mutate]
-        additional_dependencies: [isort==5.8.0]
+        additional_dependencies: [isort==5.9.3]
       - id: nbqa-pyupgrade
         args: [--nbqa-mutate]
-        additional_dependencies: [pyupgrade==v2.19.4]
+        additional_dependencies: [pyupgrade==v2.25.0]
 
   - repo: local
     hooks:
