@@ -193,7 +193,7 @@ cruft update
 - [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
   with [mutmut](https://github.com/boxed/mutmut)
 
-> :memo: **Note**  
+> :information_source: **Info**  
 >  For a good overview of how property-based testing and mutation testing
 >  work together to improve the value and quality of your tests, see
 >  [this stackoverflow post](https://stackoverflow.com/a/38704078/6470891)
