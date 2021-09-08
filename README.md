@@ -310,7 +310,7 @@ cruft update
 
 ### :card_file_box: Architecture Documentation
 
-- Architecture knowledge management
+- [Optional] Architecture knowledge management
   with [Log4brains](https://github.com/thomvaill/log4brains) to systematically
   facilitate and record the planning process and context for each of a software system's
   architectural changes that occur over time and their consequences.
