@@ -122,6 +122,7 @@ cruft update
   with [Poetry](https://python-poetry.org/)
 - Project workflow orchestration
   with [Make](https://www.gnu.org/software/make/)
+  as an [interface shim](https://en.wikipedia.org/wiki/Shim_(computing))
     - Self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile); just type
       `make` on the command line to display auto-generated documentation on available
       targets
