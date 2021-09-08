@@ -230,16 +230,16 @@ cruft update
 
 ### :construction_worker: CI/CD
 
-- Automated [Docker](https://www.docker.com/) image builds and pushes
+- [Docker](https://www.docker.com/) image builds and pushes
   to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
-- Automated Python package uploads
+- Python package uploads
   to [PyPI](https://pypi.org/)
   and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)[‡](#repo-secret-required)
-- Automated documentation building and hosting
+- Documentation building and hosting
   with [Read the Docs](https://readthedocs.org/)
-- Automated release notes
+- Release notes (PR-based) drafting and publishing
   with [Release Drafter](https://github.com/release-drafter/release-drafter)
-- Automated dependency updates
+- Dependency updates
   with [Dependabot](https://dependabot.com/)
   - Automated [Dependabot](https://dependabot.com/) PR merging
     with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[‡](#repo-secret-required)
