@@ -177,6 +177,17 @@ cruft update
   - See [the test benchmarks](./tests/test_icontract_benchmark.py)
     for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
+> :fire: **Tip**  
+>  Precondition enforcement (i.e., function-specific input validation) also helps
+> eliminate the _hidden argument requirements_ implicit knowledge violation:
+>
+>  "_Hidden argument requirements_ occur when a method signature implies a wider range of
+>  valid inputs than the method actually accepts. For example, accepting an int while
+>  only allowing numbers 1 to 10 is a hidden constraint." [1]
+>  
+>  [1] C. Riccomini and D. Ryaboy, The Missing README: A Guide for the New Software
+>  Engineer, Paperback. No Starch Press, 2021.
+
 ### :white_check_mark: Testing/Coverage
 
 - Testing
