@@ -270,8 +270,8 @@ cruft update
 
 - [Optional] Exception monitoring
   with [Sentry](https://sentry.io/welcome/)
-  - see: the cookiecutter's [`.env`]({{cookiecutter.project_slug}}/.env) file for
-    a detailed activation guide
+  - see: the [cookiecutter's `.env` file]({{cookiecutter.project_slug}}/.env)
+    for a detailed activation guide
 
 :lock: Security
 -----------
