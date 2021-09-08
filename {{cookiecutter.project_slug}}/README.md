@@ -73,7 +73,7 @@ import {{cookiecutter.package_name}}
 ```
 {%- endif %}
 
-> :memo: **Note**  
+> :fire: **Tip**  
 > All following commands are relative to the project root directory and assume
 > `make` is installed.
 
@@ -203,7 +203,7 @@ suite robustness (Optional):
 make test-mutations
 ```
 
-> :memo: **Note**  
+> :information_source: **Technical Details**  
 > Test time scales with the complexity of the codebase. Results are cached
 > in `.mutmut-cache`, so once you get past the initial [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(recommender_systems)),
 > subsequent mutation test runs will be much faster; new mutations will only
@@ -248,7 +248,7 @@ make install-pre-commit-hooks
 make docs-clean docs-html
 ```
 
-> :memo: **Note**  
+> :fire: **Tip**  
 > For faster feedback loops, this will attempt to automatically open the newly
 > built documentation static HTML in your browser.
 

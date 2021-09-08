@@ -37,7 +37,7 @@ The typical workflow of an ADR:
 
 The decision process is entirely collaborative and backed by pull requests.
 
-> :memo: **Note**  
+> :information_source: **Technical Details**  
 >  The architecture knowledge base is updated automatically
 >  on each push to the project's `master` branch;
 >  the developers manage this documentation directly
