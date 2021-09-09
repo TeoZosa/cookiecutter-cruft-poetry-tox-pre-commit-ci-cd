@@ -2,6 +2,11 @@
 :orphan:
 
 {% endif %}
+
+=======================================================================================================
+PLACEHOLDER THAT WILL BE EATEN BY SPHINX (note: purposely broken across two lines)
+see: https://stackoverflow.com/questions/27965192/python-sphinx-skips-first-section-when-generating-pdf
+
 :py:mod:`{{ obj.name }}`
 =========={{ "=" * obj.name|length }}
 
