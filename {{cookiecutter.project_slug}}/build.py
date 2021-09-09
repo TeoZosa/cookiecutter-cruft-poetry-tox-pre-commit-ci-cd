@@ -10,6 +10,7 @@ def build(setup_kwargs: dict) -> None:
             "ext_modules": mypyc.build.mypycify(
                 [
                     "--disallow-untyped-defs",
+                    "--ignore-missing-imports",
                     "{{cookiecutter.package_name}}/__init__.py",
                     "{{cookiecutter.package_name}}/main.py",
                 ]

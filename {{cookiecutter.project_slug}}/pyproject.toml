@@ -26,7 +26,7 @@ classifiers = [
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 [tool.poetry.build]
 script = "build.py"
-generate-setup-file = false
+generate-setup-file = true
 {%- endif %}
 
 [tool.poetry.urls]
@@ -273,5 +273,5 @@ testpaths = ["tests",]
 norecursedirs = [".*", "*.egg", "build", "dist",]
 
 [build-system]
-requires = ["poetry-core>=1.0.0", {%- if cookiecutter.jupyter_notebook_project != 'yes' %} "mypy"{% endif %}]
+requires = ["poetry-core>=1.0.0", {%- if cookiecutter.jupyter_notebook_project != 'yes' %} "mypy", "setuptools"{% endif %}]
 build-backend = "poetry.core.masonry.api"
