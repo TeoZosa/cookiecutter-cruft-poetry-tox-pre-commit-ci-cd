@@ -15,9 +15,7 @@ on:  # yamllint disable-line rule:truthy
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
   META_PROJECT_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
-  # yamllint disable-line rule:line-length
   COOKIECUTTER_PROJECT_INSTANCE: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance
-  # yamllint disable-line rule:line-length
   PROJECT_INSTANCE_REPO: TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance
   PIP_CONSTRAINTS_FILE: .github/workflows/constraints.txt
 
@@ -76,7 +74,6 @@ jobs:
               "adr_documentation_support": "yes"
             }
 
-      # yamllint disable-line rule:line-length
       - name: Run README ToC generator and auto-formatting pre-commit hooks on ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
         working-directory: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
         run: |
@@ -124,5 +121,4 @@ jobs:
             "${COOKIECUTTER_PROJECT_INSTANCE_GIT_URL}" \
             HEAD:"${GITHUB_REF##*/}"
         env:
-          # yamllint disable-line rule:line-length
           COOKIECUTTER_PROJECT_INSTANCE_GIT_URL: "https://${{ env.GITHUB_ACTOR }}:${{ env.GITHUB_TOKEN }}@github.com/${{ env.PROJECT_INSTANCE_REPO }}.git"

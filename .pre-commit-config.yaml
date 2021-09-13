@@ -41,7 +41,6 @@ repos:
     hooks:
       - id: markdown-toc
         args: [--maxdepth=3, -i]
-        # yamllint disable-line rule:line-length
         exclude: ^(docs/source/.*)|({{cookiecutter\.project_slug}}/(README\.md|docs/source/.*))$
 
   - repo: local
@@ -97,7 +96,6 @@ repos:
     rev: v1.26.3
     hooks:
       - id: yamllint
-        # yamllint disable-line rule:line-length
         args: ['-d {extends: default, rules: {line-length: {max: 120, level: warning}}}']
         exclude: ^{{cookiecutter\.project_slug}}/\.github/workflows/(auto-merge-dependabot|ci|release|publish_benchmarks|publish_log4brains)\.yml$
 
