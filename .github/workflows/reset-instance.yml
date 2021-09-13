@@ -69,6 +69,7 @@ jobs:
         env:
           extra_context: |
             {
+              "remote_vcs_username": "TeoZosa",
               "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}",
               "project_type": "package",
               "jupyter_notebook_project": "hybrid",
