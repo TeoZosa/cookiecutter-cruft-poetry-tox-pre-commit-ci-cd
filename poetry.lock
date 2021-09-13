@@ -1665,19 +1665,8 @@ docs = ["furo", "sphinx", "sphinx-toolbox", "twisted"]
 tests = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest-asyncio", "pytest-randomly", "pytest (>=6.0)", "simplejson"]
 
 [[package]]
-name = "structlog-sentry"
-version = "1.4.0"
-description = "Sentry integration for structlog"
-category = "main"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[package.dependencies]
-sentry-sdk = "*"
-
-[[package]]
 name = "structlog-sentry-logger"
-version = "0.9.0"
+version = "0.9.1"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
@@ -1687,13 +1676,12 @@ python-versions = ">=3.7,<4.0"
 colorama = ">=0.4.3,<0.5.0"
 gitpython = ">=3.1.7,<4.0.0"
 orjson = ">=3.4.0,<4.0.0"
-python-dotenv = ">=0.17,<0.20"
+python-dotenv = ">=0.19.0,<0.20.0"
 sentry-sdk = ">0.17.0"
 structlog = ">=21.1.0,<22.0.0"
-structlog-sentry = ">=1.2.2,<2.0.0"
 
 [package.extras]
-docs = ["emoji (>=1.2.0,<2.0.0)", "importlib-metadata (>=4.2.0,<5.0.0)", "myst-parser (>=0.15.0,<0.16.0)", "pygments (>=2.8.1,<3.0.0)", "sphinx (>=4.0.2,<5.0.0)", "sphinx-autoapi (>=1.8.1,<2.0.0)", "sphinx-rtd-theme (>=0.5.1,<0.6.0)", "sphinxcontrib-confluencebuilder (>=1.3.0,<2.0.0)", "types-emoji (>=1.2.1,<2.0.0)"]
+docs = ["emoji (>=1.4.2,<2.0.0)", "importlib-metadata (>=4.6.3,<5.0.0)", "myst-parser (>=0.15.0,<0.16.0)", "pygments (>=2.9.0,<3.0.0)", "sphinx (>=4.1.2,<5.0.0)", "sphinx-autoapi (>=1.8.1,<2.0.0)", "sphinx-rtd-theme (>=0.5.1,<0.6.0)", "sphinxcontrib-confluencebuilder (>=1.5.0,<2.0.0)", "types-emoji (>=1.2.4,<2.0.0)"]
 
 [[package]]
 name = "termcolor"
@@ -1920,7 +1908,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "99cc2f03e599486f39c7e30f9cfedd2b19dab65158ec7646a77f551ae5258e5c"
+content-hash = "af0b17a455bda67b7ff8f7c51d782f3d3f2f84f06b501b47ed4d7b15e8ec2eb6"
 
 [metadata.files]
 alabaster = [
@@ -2847,21 +2835,17 @@ structlog = [
     {file = "structlog-21.1.0-py2.py3-none-any.whl", hash = "sha256:62f06fc0ee32fb8580f0715eea66cb87271eb7efb0eaf9af6b639cba8981de47"},
     {file = "structlog-21.1.0.tar.gz", hash = "sha256:d9d2d890532e8db83c6977a2a676fb1889922ff0c26ad4dc0ecac26f9fafbc57"},
 ]
-structlog-sentry = [
-    {file = "structlog-sentry-1.4.0.tar.gz", hash = "sha256:5fc6cfab71b858d71433e68cc5af79a396e72015003931507e340b3687ebb0a8"},
-    {file = "structlog_sentry-1.4.0-py3-none-any.whl", hash = "sha256:04627538e13bb0719a8806353279d40c1d1afb3eb2053817820754b9a08814a7"},
-]
 structlog-sentry-logger = [
-    {file = "structlog-sentry-logger-0.9.0.tar.gz", hash = "sha256:b19e08e0141ec02abccccfed79802e8a343f89c7470bb402db76914961bfc0ee"},
-    {file = "structlog_sentry_logger-0.9.0-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:c98f5e738e2217e6714bac73928126c3c7fb76fc0d27cac60c37479ee9a86a0d"},
-    {file = "structlog_sentry_logger-0.9.0-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:a329d57a888924bb74ddf41b5adebea00eebf6508a2d25417ffadc5f0cf32bdf"},
-    {file = "structlog_sentry_logger-0.9.0-cp37-cp37m-win_amd64.whl", hash = "sha256:b28de6dc16c0ccfb06f5d5990be25743b80356e2f3e16e011cde009cfe3389f5"},
-    {file = "structlog_sentry_logger-0.9.0-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:49adb0aa5a4f7c8fb6f8140c12b8e7aaf42e5a74f2424542fb132bc4148fe9e4"},
-    {file = "structlog_sentry_logger-0.9.0-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:e9fe7c63202365c07e6a98b63a15f815198680f08e64155f6be68183f2962d5e"},
-    {file = "structlog_sentry_logger-0.9.0-cp38-cp38-win_amd64.whl", hash = "sha256:9780fc34796a0855229156459a972b3115ccdca7df0a4f5cf6976b41d293746e"},
-    {file = "structlog_sentry_logger-0.9.0-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:4260c236b8de0bb4530d62c0d993b92017fb16d23f3205dd245b3613b8482bcb"},
-    {file = "structlog_sentry_logger-0.9.0-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:c70698e5e8d17fa8f3921f6876d8ec325960379ded6f9cd5660e6ea3be7fe470"},
-    {file = "structlog_sentry_logger-0.9.0-cp39-cp39-win_amd64.whl", hash = "sha256:e060b008afcdd918a4d079f07c7de39f99ea670c95673d3af3d69c20d38517bf"},
+    {file = "structlog-sentry-logger-0.9.1.tar.gz", hash = "sha256:fbeaa4048a5ac5a25349e5700f8b5e55739fc9861aced33fc24f4049382acc38"},
+    {file = "structlog_sentry_logger-0.9.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:9ffdf4a836d16d922276cb10a13d49e5243e4026df2bc0d763dac2177548aa5a"},
+    {file = "structlog_sentry_logger-0.9.1-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:bf49340c555a74ad4eaa0f8538343cdc2034255fb70142ef7d8ed031f26123e5"},
+    {file = "structlog_sentry_logger-0.9.1-cp37-cp37m-win_amd64.whl", hash = "sha256:fdebc396458daf60ad6dca124d1dcea969c960661b82e873411dc419ce8a7b89"},
+    {file = "structlog_sentry_logger-0.9.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:bf0565bf489f05d6f617a6021283e1b1c42bfee916fc8d52d556d208c440560d"},
+    {file = "structlog_sentry_logger-0.9.1-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:aa0fbb582d0b57c939f4a93f56f76db392c63cf584ac64a22364a36e8f172948"},
+    {file = "structlog_sentry_logger-0.9.1-cp38-cp38-win_amd64.whl", hash = "sha256:7907bccab2786d60eb0d531d0395cc86ba7da578f080bbedbf338eab6e7130db"},
+    {file = "structlog_sentry_logger-0.9.1-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:3d5b8708e9bb49e17e84bec0df829dbc2c0e7097cfc1aa8db75fe876a42e2c3c"},
+    {file = "structlog_sentry_logger-0.9.1-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:73172f20454344295ab58ab3e5bf70e8b4c5d7a9224e8156bfa30163c3d4514f"},
+    {file = "structlog_sentry_logger-0.9.1-cp39-cp39-win_amd64.whl", hash = "sha256:537f4f84bfbd7bc528307dbf89c03fae04d2c781f1c439efa2f16f0cfdbc3131"},
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
