@@ -101,7 +101,6 @@ repos:
         name: nbqa-mypy
         description: "Run tox env `mypy` on a Jupyter Notebook"
         entry: .tox/precommit/bin/nbqa mypy
-        # yamllint disable-line rule:line-length
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         language: system
         types: [jupyter]
@@ -109,7 +108,6 @@ repos:
   # Note: submit docs for this to nbqa?
   # ex. https://nbqa.readthedocs.io/en/latest/pre-commit.html
   # referencing:
-  # yamllint disable-line rule:line-length
   #   [Remove pylint config E0401 and make pylint a local pre-commit hook #229](https://github.com/nbQA-dev/nbQA/pull/229/files)
 
   # E0401: import-error

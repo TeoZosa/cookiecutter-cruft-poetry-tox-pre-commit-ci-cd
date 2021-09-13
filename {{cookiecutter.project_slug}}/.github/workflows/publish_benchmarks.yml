@@ -47,7 +47,6 @@ jobs:
         run: |
           make provision-environment
 
-      # yamllint disable rule:line-length
       - name: Run benchmarks for {{ "${{ matrix.python-version }}" }}
         id: performance-testing
         run: |
@@ -60,13 +59,11 @@ jobs:
           BENCHMARK_FILE_PREFIX=".benchmarks/${envname}/${BENCHMARK_FILE_TAG}" && \
           echo "::set-output name=tox_envname::${envname}" && \
           echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE_PREFIX}.json"
-      # yamllint enable rule:line-length
 
       - name: Reset Poetry lockfile for Checkout
         run: |
           git checkout poetry.lock || echo "Skipping step"
 
-      # yamllint disable rule:line-length
       - name: Store benchmark result
         uses: TeoZosa/github-action-benchmark@v1.8.2
         with:
@@ -78,4 +75,3 @@ jobs:
           github-token: {{ "${{ secrets.GITHUB_TOKEN }}" }}
           # Push and deploy GitHub pages branch automatically
           auto-push: true
-      # yamllint enable rule:line-length
