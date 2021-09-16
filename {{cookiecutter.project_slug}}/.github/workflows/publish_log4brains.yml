@@ -13,6 +13,7 @@ on:  # yamllint disable-line rule:truthy
 
 env:
   BUILD_DIR: .log4brains/out
+  BENCHMARKS_DIR: dev
 
 jobs:
   build-and-publish:
@@ -41,3 +42,5 @@ jobs:
           branch: gh-pages
           # yamllint disable-line rule:braces
           folder: {{ "${{ env.BUILD_DIR }}" }}
+          # yamllint disable-line rule:braces
+          clean-exclude: {{ "${{ env.BENCHMARKS_DIR }}" }}
