@@ -38,6 +38,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          BRANCH: gh-pages
+          branch: gh-pages
           # yamllint disable-line rule:braces
-          FOLDER: {{ "${{ env.BUILD_DIR }}" }}
+          folder: {{ "${{ env.BUILD_DIR }}" }}
