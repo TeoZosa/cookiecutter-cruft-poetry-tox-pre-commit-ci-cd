@@ -69,6 +69,7 @@ jobs:
             {
               "remote_vcs_username": "TeoZosa",
               "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}",
+              "email": "action@github.com",
               "project_type": "package",
               "jupyter_notebook_project": "hybrid",
               "adr_documentation_support": "yes",
