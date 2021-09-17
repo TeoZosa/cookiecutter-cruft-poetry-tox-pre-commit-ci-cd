@@ -71,7 +71,8 @@ jobs:
               "project_name": "${{ env.COOKIECUTTER_PROJECT_INSTANCE }}",
               "project_type": "package",
               "jupyter_notebook_project": "hybrid",
-              "adr_documentation_support": "yes"
+              "adr_documentation_support": "yes",
+              "container_registry_namespace": "teozosa"
             }
 
       - name: Run README ToC generator and auto-formatting pre-commit hooks on ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
