@@ -476,7 +476,7 @@ zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tz
 
 [[package]]
 name = "icontract"
-version = "2.5.4"
+version = "2.5.5"
 description = "Provide design-by-contract with informative violation messages."
 category = "dev"
 optional = false
@@ -487,7 +487,7 @@ asttokens = ">=2,<3"
 typing_extensions = "*"
 
 [package.extras]
-dev = ["mypy (==0.910)", "pylint (==2.9.6)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
+dev = ["mypy (==0.910)", "pylint (==2.9.6)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "numpy (>=1,<2)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
 
 [[package]]
 name = "identify"
@@ -1911,7 +1911,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "71b34e0fce75511b8602cb41776d65b20336235511d025f368d588a1e82e78de"
+content-hash = "b81dbcfb6f3b6e469d97bce1a38282340a8f3e2d6d7f09c745dcb413a994dc85"
 
 [metadata.files]
 alabaster = [
@@ -2216,7 +2216,7 @@ hypothesis = [
     {file = "hypothesis-6.23.0.tar.gz", hash = "sha256:232e824b68809b6d4872fafc8eef37e6587148b0aa469a5eae626f46e21b58d9"},
 ]
 icontract = [
-    {file = "icontract-2.5.4.tar.gz", hash = "sha256:e195cd35b2ab4ab1710c733368f009b676a26b1ab9c2c2191403c80c8df1db35"},
+    {file = "icontract-2.5.5.tar.gz", hash = "sha256:409fdc796fa6fc97bad45d7470076a4679d77e7dabcb289d9b65f1f52723ef0b"},
 ]
 identify = [
     {file = "identify-2.2.13-py2.py3-none-any.whl", hash = "sha256:7199679b5be13a6b40e6e19ea473e789b11b4e3b60986499b1f589ffb03c217c"},
