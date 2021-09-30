@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1632922078347,
+  "lastUpdate": 1633020757110,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -1798,6 +1798,68 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 1.9806387462296352e-7",
             "extra": "mean: 227.40613343616133 nsec\nrounds: 156250"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "erinzosa@ucla.edu",
+            "name": "Teo Zosa"
+          },
+          "committer": {
+            "email": "erinzosa@ucla.edu",
+            "name": "Teo Zosa"
+          },
+          "id": "b57953f9e5948be30f95b244459d5b08a63fd5a6",
+          "message": ":cookie: :rotating_light: Fix `pylint` error: `unspecified-encoding`\n\nError log:\n```\npylint...............................................................................Failed\n- hook id: pylint\n- duration: 9.72s\n- exit code: 4\n\n************* Module conf\ndocs/source/conf.py:60:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)\n```",
+          "timestamp": "2021-09-30T16:47:23Z",
+          "tree_id": "27accc8a86b8385c90e0beb92c248f10f1fc39b8"
+        },
+        "date": 1633020755369,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 14402.614176939001,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000010047738157722989",
+            "extra": "mean: 69.43183978372258 usec\nrounds: 7028"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 4995182.602214724,
+            "unit": "iter/sec",
+            "range": "stddev: 4.588779824480395e-8",
+            "extra": "mean: 200.19288174920288 nsec\nrounds: 185186"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 13436.759192263795,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000012967326116458006",
+            "extra": "mean: 74.42270756595454 usec\nrounds: 9226"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 149456.2358980134,
+            "unit": "iter/sec",
+            "range": "stddev: 9.336304120878384e-7",
+            "extra": "mean: 6.690921887544287 usec\nrounds: 32786"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 15106.346042443583,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000009580527150367115",
+            "extra": "mean: 66.19734495624206 usec\nrounds: 13680"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 5003558.761694374,
+            "unit": "iter/sec",
+            "range": "stddev: 2.6535463416441698e-8",
+            "extra": "mean: 199.85775077854535 nsec\nrounds: 181819"
           }
         ]
       }
