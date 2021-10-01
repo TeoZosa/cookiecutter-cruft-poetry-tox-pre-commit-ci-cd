@@ -65,15 +65,16 @@ jobs:
           max_attempts: 3
           shell: bash
           command: |
-            TOX_COMPATIBLE_VERSION=$(\
-              echo "${{ matrix.python-version }}" \
-              | tr -d '.')
-            envname="py${TOX_COMPATIBLE_VERSION}-benchmark" && \
-            make "test-${envname}" && \
-            BENCHMARK_FILE_TAG=$(make strong-version-tag) && \
-            BENCHMARK_FILE_PREFIX=".benchmarks/${envname}/${BENCHMARK_FILE_TAG}" && \
-            echo "::set-output name=tox_envname::${envname}" && \
-            echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE_PREFIX}.json"
+            TOX_COMPATIBLE_VERSION=$(echo ${{ matrix.python-version }} | tr -d '.')
+            TOX_TESTENV="py${TOX_COMPATIBLE_VERSION}-benchmark-${{ matrix.library-type }}"
+            make "tox-${TOX_TESTENV}"
+
+            BENCHMARK_FILE=$(find .benchmarks -maxdepth 2 -type f -name "*.json" | tail -n 1)
+            echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE}"
+
+            ENV_DIR_NAME=$(basename "${BENCHMARK_FILE%/*}" | tr '-' '/')
+            NAMESPACED_TARGET_OUTPUT_DIR="${ENV_DIR_NAME}/${{ matrix.library-type }}"
+            echo "::set-output name=target_output_dir::${NAMESPACED_TARGET_OUTPUT_DIR}"
 
       - name: Reset Poetry lockfile for Checkout
         run: |
@@ -84,9 +85,8 @@ jobs:
         if: github.event.workflow_run.head_branch == 'master'
         with:
           tool: 'pytest'
-          benchmark-data-dir-path: dev/${{ steps.performance-testing.outputs.tox_envname }}
+          benchmark-data-dir-path: dev/bench/${{ steps.performance-testing.outputs.target_output_dir }}
           output-file-path: ${{ steps.performance-testing.outputs.benchmark_file_path }}
-          # Personal access token to deploy GitHub Pages branch
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # Push and deploy GitHub pages branch automatically
           auto-push: true
