@@ -20,6 +20,7 @@ SHELL := bash
 #################################################################################
 
 REGISTRY_NAMESPACE = {{cookiecutter.container_registry_namespace}}
+SRC_DIR := {{cookiecutter.package_name}}
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME := $(shell basename $(PROJECT_DIR))
 DOCKER_REPOSITORY = $(REGISTRY_NAMESPACE)/$(PROJECT_NAME)
@@ -193,13 +194,13 @@ deploy-container: validate_req_env_vars stop-container
 		export INTERACTIVE_SESSION_ARGS="--interactive --tty --entrypoint bash"; \
 	fi && \
 	if [ "$(BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER)" != false ]; then \
-		export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/{{cookiecutter.package_name}},target=/app/{{cookiecutter.package_name}}"; \
+		export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/$(SRC_DIR),target=/app/$(SRC_DIR)"; \
 	fi && \
 	docker run \
  	  --name $(PROJECT_NAME) {% if PROJECT_TYPE == 'jupyter'-%} --publish $(PORT):8888 {%- endif %} \
  	  $${INTERACTIVE_SESSION_ARGS} \
  	  $${BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS} \
- 	  -w /app/{{cookiecutter.package_name}} \
+ 	  -w /app/$(SRC_DIR) \
  	  $(LATEST_IMG)
 	$(MAKE) stop-container
 
