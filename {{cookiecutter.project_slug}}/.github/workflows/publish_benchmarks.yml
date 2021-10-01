@@ -50,16 +50,21 @@ jobs:
 
       - name: Run benchmarks for {{ "${{ matrix.python-version }}" }}
         id: performance-testing
-        run: |
-          TOX_COMPATIBLE_VERSION=$(\
-            echo {{ "${{ matrix.python-version }}" }} \
-            | tr -d '.')
-          envname="py${TOX_COMPATIBLE_VERSION}-benchmark" && \
-          make "test-${envname}" && \
-          BENCHMARK_FILE_TAG=$(make strong-version-tag) && \
-          BENCHMARK_FILE_PREFIX=".benchmarks/${envname}/${BENCHMARK_FILE_TAG}" && \
-          echo "::set-output name=tox_envname::${envname}" && \
-          echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE_PREFIX}.json"
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          shell: bash
+          command: |
+            TOX_COMPATIBLE_VERSION=$(\
+              echo {{ "${{ matrix.python-version }}" }} \
+              | tr -d '.')
+            envname="py${TOX_COMPATIBLE_VERSION}-benchmark" && \
+            make "test-${envname}" && \
+            BENCHMARK_FILE_TAG=$(make strong-version-tag) && \
+            BENCHMARK_FILE_PREFIX=".benchmarks/${envname}/${BENCHMARK_FILE_TAG}" && \
+            echo "::set-output name=tox_envname::${envname}" && \
+            echo "::set-output name=benchmark_file_path::${BENCHMARK_FILE_PREFIX}.json"
 
       - name: Reset Poetry lockfile for Checkout
         run: |
