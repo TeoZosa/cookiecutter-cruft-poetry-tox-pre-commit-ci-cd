@@ -13,12 +13,15 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build-and-publish-benchmarks:
-    name: Performance testing for Python {{ "${{ matrix.python-version }}" }}
-    runs-on: "ubuntu-latest"
-
     strategy:
       matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
         python-version: ["3.7", "3.8", "3.9"]
+        library-type: ["pure_python", "c_library"]
+
+
+    name: Performance testing for Python {{ "${{ matrix.python-version }}" }}  ({{ "${{ matrix.os }}" }})  [{{ "${{ matrix.library-type }}" }}]
+    runs-on: {{ "${{ matrix.os }}" }}
 
     steps:
       - name: Check out the repository
