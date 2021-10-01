@@ -258,6 +258,7 @@ test: update-dependencies generate-requirements
 	$(MAKE) clean-requirements
 
 .PHONY: test-%
+## Run Python version-specific tests (e.g., `make test-py39`)
 test-%:
 	$(MAKE) tox-$*,coverage
 
