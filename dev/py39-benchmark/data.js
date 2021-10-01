@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633120996894,
+  "lastUpdate": 1633121071471,
   "repoUrl": "https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd",
   "entries": {
     "Benchmark": [
@@ -2232,6 +2232,68 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.10984306406841e-7",
             "extra": "mean: 283.76216758004307 nsec\nrounds: 196079"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "erinzosa@ucla.edu",
+            "name": "Teo Zosa"
+          },
+          "committer": {
+            "email": "erinzosa@ucla.edu",
+            "name": "Teo Zosa"
+          },
+          "id": "dcdf132661ef0f76d6bd75e57acf90cf21edc092",
+          "message": ":bug: Preempt premature brace expansion by the shell\n\nIf multiple commands are passed via brace syntax, quoting the string\nallows direct evaluation by tox as opposed to generating multiple envs\nin the call to tox. For example,\n`poetry run tox -e py3{8,9} -- $ (POSARGS)`\nbecomes\n`poetry run tox -e py38 py39 -- $(POSARGS)`\nwhereas\n`poetry run tox -e \"py3{8,9}\" -- $(POSARGS)`\npasses \"py3{8,9}\" directly to tox.\n\nNote: to activate this behavior via the `tox-%` make target, users would\nhave to also invoke it with quotes, e.g., `make tox-\"py3{8,9}\"`.\n- If a user were to enter `make tox-py3{8,9}`, this would become\n`make tox-py38 tox-py39\"`, which, while this would still work, leads to\ndifferent semantics as separate make targets are actually invoked.\n\nsee: https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html",
+          "timestamp": "2021-10-01T20:30:57Z",
+          "tree_id": "f583f750f0c086d482763c88e2ae6981a5fbe527"
+        },
+        "date": 1633121068972,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[simulated computation]",
+            "value": 15075.520070443268,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00002013447804574719",
+            "extra": "mean: 66.3327033049147 usec\nrounds: 12346"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_baseline[no simulated computation]",
+            "value": 4887447.199916664,
+            "unit": "iter/sec",
+            "range": "stddev: 3.7698825296741e-7",
+            "extra": "mean: 204.60579093645728 nsec\nrounds: 185186"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[simulated computation]",
+            "value": 12522.27468127435,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00006148792866037605",
+            "extra": "mean: 79.85769562261618 usec\nrounds: 7310"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_on[no simulated computation]",
+            "value": 144109.02546086736,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000007870164176064297",
+            "extra": "mean: 6.939190635714547 usec\nrounds: 47394"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[simulated computation]",
+            "value": 14705.979574709812,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000025061594606655094",
+            "extra": "mean: 67.99955044951385 usec\nrounds: 8117"
+          },
+          {
+            "name": "tests/test_icontract_benchmark.py::TestDesignByContractPerformance::test_icontract_contract_off[no simulated computation]",
+            "value": 4832717.3876318885,
+            "unit": "iter/sec",
+            "range": "stddev: 4.984244194617551e-7",
+            "extra": "mean: 206.9229213693211 nsec\nrounds: 196079"
           }
         ]
       }
