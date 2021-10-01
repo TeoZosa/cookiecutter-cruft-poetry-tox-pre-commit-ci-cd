@@ -245,7 +245,7 @@ stop-container:
 .PHONY: tox-%
 ## Run specified tox testenvs
 tox-%: update-dependencies generate-requirements
-	poetry run tox -e $* -- $(POSARGS)
+	poetry run tox -e "$*" -- $(POSARGS)
 	$(MAKE) clean-requirements
 
 .PHONY: test
