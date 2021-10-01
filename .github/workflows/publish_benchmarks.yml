@@ -81,6 +81,7 @@ jobs:
 
       - name: Store benchmark result
         uses: TeoZosa/github-action-benchmark@v1.8.2
+        if: github.event.workflow_run.head_branch == 'master'
         with:
           tool: 'pytest'
           benchmark-data-dir-path: dev/${{ steps.performance-testing.outputs.tox_envname }}
