@@ -271,9 +271,15 @@ test-%:
 	$(MAKE) tox-$*,coverage
 
 #{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
-.PHONY: test-%-benchmark
-test-%-benchmark:
-	$(MAKE) tox-$*-benchmark
+.PHONY: performance-benchmarks
+## Run performance benchmark tests
+performance-benchmarks:
+	$(MAKE) performance-benchmarks-"{pure_python,c_library}"
+
+.PHONY: performance-benchmarks-%
+# Run library-specific (viz. Python or C) performance benchmark tests
+performance-benchmarks-%:
+	$(MAKE) tox-"py3{7,8,9}-benchmark-$*"
 
 # Mutation testing modifies the code in small ways that should produce incorrect semantics
 # If a test suite is sufficiently strong, this "mutated" code should caught by the suite,
