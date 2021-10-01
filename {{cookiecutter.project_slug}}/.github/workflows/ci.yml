@@ -42,9 +42,10 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
 
       - name: Install Go for pre-commit hook (shfmt)
         run: |
@@ -91,9 +92,10 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
 
       - name: Run dependency security vulnerability analysis
         run: |
@@ -152,9 +154,11 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox & Tox GH Actions Plugin
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox tox-gh-actions
+          tox --version
+
 
       - name: Run tox targets for {{ "${{ matrix.python-version }}" }}
         run: |
@@ -242,10 +246,10 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
-
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
       - name: Run mutation testing
         run: |
           make test-mutations
