@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
 
-      - name: Detect and tag new version
+      - name: Detect new version tag
         id: detect-new-version-tag
         if: "steps.check-parent-commit.outputs.sha"
         run: |
