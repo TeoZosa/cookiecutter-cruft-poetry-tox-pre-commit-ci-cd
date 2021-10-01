@@ -252,7 +252,7 @@ stop-container:
 
 .PHONY: tox-%
 ## Run specified tox testenvs
-tox-%: update-dependencies generate-requirements
+tox-%: generate-requirements
 	poetry run tox -e "$*" -- $(POSARGS)
 	$(MAKE) clean-requirements
 
@@ -261,7 +261,7 @@ tox-%: update-dependencies generate-requirements
 ifeq (${CI}, true)
 test: export TOX_PARALLEL_NO_SPINNER=1
 endif
-test: update-dependencies generate-requirements
+test: generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
 
