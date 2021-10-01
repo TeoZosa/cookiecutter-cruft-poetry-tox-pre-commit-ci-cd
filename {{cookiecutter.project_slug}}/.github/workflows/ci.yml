@@ -16,6 +16,10 @@ jobs:
 
   # Quality jobs ----------------------
   code-quality:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
     name: Code Quality
     runs-on: "ubuntu-latest"
     steps:
@@ -25,7 +29,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: "3.9"
+          python-version: {{ "${{ matrix.python-version }}" }}
 
       - name: Install Poetry
         run: |
@@ -38,9 +42,19 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
 
       - name: Install Go for pre-commit hook (shfmt)
         run: |
@@ -61,6 +75,10 @@ jobs:
 
   # Security jobs ----------------------
   dependency-security-vulnerability-analysis:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
     name: Dependency Security Vulnerability Analysis
     runs-on: "ubuntu-latest"
     steps:
@@ -70,7 +88,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: "3.9"
+          python-version: {{ "${{ matrix.python-version }}" }}
 
       - name: Install Poetry
         run: |
@@ -83,9 +101,19 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
 
       - name: Run dependency security vulnerability analysis
         run: |
@@ -114,7 +142,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: ["ubuntu-latest", "macos-latest"]
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
         python-version: ["3.7", "3.8", "3.9"]
 
     name: Python {{ "${{ matrix.python-version }}" }} ({{ "${{ matrix.os }}" }})
@@ -144,14 +172,30 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox & Tox GH Actions Plugin
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox tox-gh-actions
+          tox --version
+
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
 
       - name: Run tox targets for {{ "${{ matrix.python-version }}" }}
-        run: |
-          git fetch origin master:refs/remotes/origin/master
-          make test
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          shell: bash
+          command: |
+            git fetch origin master:refs/remotes/origin/master
+            make test
 
       - name: Upload coverage to Codecov
         if: "contains(matrix.os, env.USING_COVERAGE_OS) &&
@@ -161,16 +205,14 @@ jobs:
           file: ./.tox/coverage.xml
           fail_ci_if_error: true
 
-{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
-  # Performance testing jobs ------------------------
-  test-performance:
-    name: Performance testing for Python {{ "${{ matrix.python-version }}" }}
-    runs-on: "ubuntu-latest"
-
+  # Documentation build testing jobs ------------------------
+  test-documentation-building:
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9"]
+        python-version: ["3.9"]
 
+    name: Documentation build testing
+    runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2.3.3
@@ -191,22 +233,34 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
+      - name: Load cached venv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .venv
+          key: venv-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
       - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
-          make provision-environment
+          make install-dependencies
 
-      - name: Run benchmarks for {{ "${{ matrix.python-version }}" }}
-        id: performance-testing
+      - name: Install project
         run: |
-          TOX_COMPATIBLE_VERSION=$(\
-            echo {{ "${{ matrix.python-version }}" }} \
-            | tr -d '.')
-          envname="py${TOX_COMPATIBLE_VERSION}-benchmark" && \
-          make "test-${envname}"
+          make install-project
 
+      - name: Build Documentation
+        run: |
+          make docs-html
 
+{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
   # Mutation testing jobs ------------------------
   test-mutations:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
     name: Mutation testing
     runs-on: "ubuntu-latest"
 
@@ -219,7 +273,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: "3.9"
+          python-version: {{ "${{ matrix.python-version }}" }}
 
       - name: Install Poetry
         run: |
@@ -232,9 +286,18 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
 
       - name: Run mutation testing
         run: |

@@ -16,6 +16,10 @@ jobs:
 
   # Quality jobs ----------------------
   code-quality:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
     name: Code Quality
     runs-on: "ubuntu-latest"
     steps:
@@ -25,7 +29,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: "3.9"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
         run: |
@@ -38,9 +42,18 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-CPython${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: Install Go for pre-commit hook (shfmt)
         run: |
@@ -61,6 +74,10 @@ jobs:
 
   # Security jobs ----------------------
   dependency-security-vulnerability-analysis:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
     name: Dependency Security Vulnerability Analysis
     runs-on: "ubuntu-latest"
     steps:
@@ -70,7 +87,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: "3.9"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
         run: |
@@ -83,14 +100,22 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry config --list
 
-      - name: Install dependencies
+      - name: Install Tox
         run: |
-          make provision-environment
+          pip install --constraint=.github/workflows/constraints.txt tox
+          tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-CPython${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: Run dependency security vulnerability analysis
         run: |
           make scan-dependencies
-
 
   # Code quality AND security job ----------------------
   semgrep:
@@ -100,8 +125,61 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2.3.3
 
+      - name: Disable Git LFS
+        run: |
+          rm .git/hooks/post-checkout || true
+
       - name: Run Semgrep
         id: semgrep
         uses: returntocorp/semgrep-action@v1
         with:
           config: r/python
+
+  # Documentation build testing jobs ------------------------
+  test-documentation-building:
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
+    name: Documentation build testing
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2.3.3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+
+      - name: Configure Poetry
+        run: |
+          poetry config cache-dir "${GITHUB_WORKSPACE}/.cache/pypoetry"
+          poetry config virtualenvs.in-project true
+          poetry config --list
+
+      - name: Load cached venv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .venv
+          key: venv-${{ runner.os }}-CPython${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: |
+          make install-dependencies
+
+      - name: Install project
+        run: |
+          make install-project
+
+      - name: Build Documentation
+        run: |
+          make docs-html

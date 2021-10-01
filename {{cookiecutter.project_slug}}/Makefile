@@ -91,14 +91,29 @@ else
 endif
 
 .PHONY: update-dependencies
-## Install Python dependencies,
-## updating packages in `poetry.lock` with any newer versions specified in
-## `pyproject.toml`, and install {{cookiecutter.project_slug}} source code
+## Update and install Python dependencies,
+## updating packages in `poetry.lock` with any newer versions
+## that adhere to `pyproject.toml` version range constraints
 update-dependencies:
 	poetry update --lock
 ifneq (${CI}, true)
-	poetry install --extras docs
+	$(MAKE) install-dependencies
 endif
+
+.PHONY: install-dependencies
+## Install Python dependencies specified in `poetry.lock`
+install-dependencies:
+	poetry install --no-interaction --no-root --extras docs -vv
+#{%- if cookiecutter.adr_documentation_support == 'yes' %}
+	# Install node ADR management library
+	poetry run nodeenv --python-virtualenv --jobs=$(NUM_PROCS)
+	poetry run npm install -g --no-package-lock --no-save log4brains
+#{%- endif %}
+
+.PHONY: install-project
+## Install {} source code (in editable mode)
+install-project:
+	poetry install --no-interaction -vv
 	$(MAKE) clean
 
 .PHONY: generate-requirements
@@ -127,15 +142,8 @@ clean:
 #################################################################################
 
 .PHONY: provision-environment
-## Set up Python virtual environment with installed project dependencies
-provision-environment: _validate_poetry_installation
-	poetry update --lock -v
-	poetry install --extras docs -v
-#{%- if cookiecutter.adr_documentation_support == 'yes' %}
-	# Install node ADR management library
-	poetry run nodeenv --python-virtualenv --jobs=$(NUM_PROCS)
-	poetry run npm install -g --no-package-lock --no-save log4brains
-#{%- endif %}
+## Set up a Python virtual environment with installed project dependencies
+provision-environment: _validate_poetry_installation install-dependencies install-project
 
 .PHONY: install-pre-commit-hooks
 ## Install git pre-commit hooks locally
@@ -244,16 +252,16 @@ stop-container:
 
 .PHONY: tox-%
 ## Run specified tox testenvs
-tox-%: update-dependencies generate-requirements
+tox-%: generate-requirements
 	poetry run tox -e "$*" -- $(POSARGS)
 	$(MAKE) clean-requirements
 
 .PHONY: test
-## Test via tox in poetry env
 ifeq (${CI}, true)
 test: export TOX_PARALLEL_NO_SPINNER=1
 endif
-test: update-dependencies generate-requirements
+## Run pre-defined test suite via tox
+test: generate-requirements
 	poetry run tox --parallel
 	$(MAKE) clean-requirements
 

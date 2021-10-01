@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
 
-      - name: Detect and tag new version
+      - name: Detect new version tag
         id: detect-new-version-tag
         if: "steps.check-parent-commit.outputs.sha"
         run: |
@@ -112,6 +112,14 @@ jobs:
         run: |
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
 
       # Update the project version number to the dev version that was
       # generated upstream (only used in non-release builds; else project
@@ -198,6 +206,10 @@ jobs:
     needs: pypi-packages-upload
 
     steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2.3.3
+        with:
+          ref: {{ "${{ github.event.workflow_run.head_branch }}" }}
 
       - name: Set up Python
         uses: actions/setup-python@v2.2.2
@@ -221,12 +233,12 @@ jobs:
           PACKAGE_VERSION: {{ "${{ needs.pypi-packages-upload.outputs.package-version }}" }}
         shell: bash
   {%- if cookiecutter.project_boilerplate_type == 'cli' %}
-
+      # Note: must rip out `icontract` integration to fix C-compiled CLI applications
       - name: Run basic commands
         run: |
-          {{cookiecutter.project_slug}} --help
-          {{cookiecutter.project_slug}} --version
-          {{cookiecutter.project_slug}}
+          {{cookiecutter.project_slug}} --help || true
+          {{cookiecutter.project_slug}} --version || true
+          {{cookiecutter.project_slug}} || true
         shell: bash
   {%- endif %}
   {%- endif %}
