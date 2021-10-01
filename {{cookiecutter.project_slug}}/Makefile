@@ -267,7 +267,7 @@ test-%-benchmark:
 	$(MAKE) tox-$*-benchmark
 
 .PHONY: test-mutations
-## Test against mutated code to validate test suite robustness
+## Run mutation testing to validate test suite robustness
 test-mutations:
 	$(MAKE) tox-mutmut
 #{%- endif %}
