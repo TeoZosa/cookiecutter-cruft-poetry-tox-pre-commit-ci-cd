@@ -48,6 +48,15 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
 
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
+
       - name: Run benchmarks for {{ "${{ matrix.python-version }}" }}
         id: performance-testing
         uses: nick-invision/retry@v2

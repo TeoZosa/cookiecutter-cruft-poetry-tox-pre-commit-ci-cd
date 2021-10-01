@@ -47,6 +47,15 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
 
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
+
       - name: Install Go for pre-commit hook (shfmt)
         run: |
           GO_TAR=go1.16.linux-amd64.tar.gz && \
@@ -96,6 +105,15 @@ jobs:
         run: |
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
 
       - name: Run dependency security vulnerability analysis
         run: |
@@ -160,6 +178,15 @@ jobs:
           tox --version
 
 
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
+
       - name: Run tox targets for {{ "${{ matrix.python-version }}" }}
         uses: nick-invision/retry@v2
         with:
@@ -205,6 +232,14 @@ jobs:
           poetry config cache-dir "${GITHUB_WORKSPACE}/.cache/pypoetry"
           poetry config virtualenvs.in-project true
           poetry config --list
+
+      - name: Load cached venv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .venv
+          key: venv-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
 
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
@@ -255,6 +290,15 @@ jobs:
         run: |
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
+
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
       - name: Run mutation testing
         run: |
           make test-mutations

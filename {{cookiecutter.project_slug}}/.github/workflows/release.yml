@@ -113,6 +113,14 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt tox
           tox --version
 
+      - name: Load cached tox testenv(s) (if they exist)
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-{{ "${{ github.workflow }}" }}-{{ "${{ github.job }}" }}-{{ "${{ runner.os }}" }}-CPython{{ "${{ matrix.python-version }}" }}-{{ "${{ hashFiles('**/poetry.lock') }}" }}
+
       # Update the project version number to the dev version that was
       # generated upstream (only used in non-release builds; else project
       # already set to the correct version number)
