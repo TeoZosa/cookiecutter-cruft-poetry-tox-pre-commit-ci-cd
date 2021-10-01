@@ -266,6 +266,9 @@ test-%:
 test-%-benchmark:
 	$(MAKE) tox-$*-benchmark
 
+# Mutation testing modifies the code in small ways that should produce incorrect semantics
+# If a test suite is sufficiently strong, this "mutated" code should caught by the suite,
+# thus causing tests to fail.
 .PHONY: test-mutations
 ## Run mutation testing to validate test suite robustness
 test-mutations:
