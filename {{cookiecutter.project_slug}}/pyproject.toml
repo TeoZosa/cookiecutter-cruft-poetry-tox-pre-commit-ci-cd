@@ -51,6 +51,9 @@ typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions 
 {%- endif %}
 
 # Documentation
+# Specifying documentation dependencies as optional dependencies
+# as a hack until Poetry version >= 1.2 when dependency groups are supported
+# see: python-poetry/poetry#1644
 emoji = { version = "^1.4.2", optional = true}
 {%- if cookiecutter.project_boilerplate_type != 'cli' %}
 importlib-metadata = { version = "^4.6.3", optional = true}
@@ -133,6 +136,9 @@ darglint = "^1.5.8"
 nodeenv = "^1.5.0" # ADR documentation Node dependency
 {%- endif %}
 
+# Specifying documentation dependencies as optional dependencies
+# as a hack until Poetry version >= 1.2 when dependency groups are supported
+# see: python-poetry/poetry#1644
 [tool.poetry.extras]
 docs = [
     "emoji", # Render emoji shortcodes
