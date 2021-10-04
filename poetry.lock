@@ -1669,7 +1669,7 @@ tests = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest-asyncio", "pytest
 
 [[package]]
 name = "structlog-sentry-logger"
-version = "0.11.0"
+version = "0.11.1"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
@@ -1911,7 +1911,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0ee6159898c0ba62ecf75fc80360656c05b5ccd6592c3ef4583b63a52ba67a04"
+content-hash = "ea8671c996f6c7e747f55de641d7de89d45619cb95d2fc1478655b6b063ab0cd"
 
 [metadata.files]
 alabaster = [
@@ -2839,16 +2839,17 @@ structlog = [
     {file = "structlog-21.1.0.tar.gz", hash = "sha256:d9d2d890532e8db83c6977a2a676fb1889922ff0c26ad4dc0ecac26f9fafbc57"},
 ]
 structlog-sentry-logger = [
-    {file = "structlog-sentry-logger-0.11.0.tar.gz", hash = "sha256:039257ca93349d3155fc730a8e34c81d28164d009fbe256235e5b1485d8a0a5f"},
-    {file = "structlog_sentry_logger-0.11.0-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:8aed877f616bbf182d4b4c74139157abd46daf6b37441e3c0f9a7663735d0398"},
-    {file = "structlog_sentry_logger-0.11.0-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:77776d93dbf0f35f2aa45a26e21fb4053a4dd461f85a3e1d19b4499b1f12dd29"},
-    {file = "structlog_sentry_logger-0.11.0-cp37-cp37m-win_amd64.whl", hash = "sha256:0ab4e2a4a14072b347c030f1407437c6988fbbf6c0d19b1cfeb13337f5887cb8"},
-    {file = "structlog_sentry_logger-0.11.0-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:b6f926006f3eba7a107d79f1e08ed7d7996d30c0c6b8ec50b8a7f1f02c5f73d8"},
-    {file = "structlog_sentry_logger-0.11.0-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:1880f7c7c86ca5b3484a2eb3ef12d75f6763ace2a623a124bfd9d89de4cf59cb"},
-    {file = "structlog_sentry_logger-0.11.0-cp38-cp38-win_amd64.whl", hash = "sha256:1297db6dd97f64509b4ebb07fc3e83e5c676bf63ffd24c279fb5eb7f12321923"},
-    {file = "structlog_sentry_logger-0.11.0-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:e50de91f08d6e2e2ff3d3b9e63ced6c454fb669a13352d716429e38cc85428b1"},
-    {file = "structlog_sentry_logger-0.11.0-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:ae27d697f1c6da7e2965316d3374514c010d86e743a7607845f69277c7ccbd69"},
-    {file = "structlog_sentry_logger-0.11.0-cp39-cp39-win_amd64.whl", hash = "sha256:a78f50192f02cf7bb6cbdd4ffd1909b807c2f00cc9603c91ce294a313719f613"},
+    {file = "structlog-sentry-logger-0.11.1.tar.gz", hash = "sha256:522ade350166597e53820b4ee2568db600057eba2826bfa448e035f010b3db77"},
+    {file = "structlog_sentry_logger-0.11.1-cp37-cp37m-macosx_10_16_x86_64.whl", hash = "sha256:de6e54dc23f397455d812ec76f39b349717153816b351ae6cd96b5caa899821e"},
+    {file = "structlog_sentry_logger-0.11.1-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:120e91f7e623c243c4630c30cbe9cfe28d15e211905fad8e69e180b66888fabd"},
+    {file = "structlog_sentry_logger-0.11.1-cp37-cp37m-win_amd64.whl", hash = "sha256:fb3d0436e5d59042e5e1771a33141e38a2c2df252787a25a8abb0f241bc251c8"},
+    {file = "structlog_sentry_logger-0.11.1-cp38-cp38-macosx_10_16_x86_64.whl", hash = "sha256:449af60fd4fca0f0a01a846fb0e838fbbd12423e6d315e4e0b5c2f5ed44bd81c"},
+    {file = "structlog_sentry_logger-0.11.1-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:dcaef34763e5c0be4b4114320ab684c0bbd06d2347e625573c1fa5353c50d782"},
+    {file = "structlog_sentry_logger-0.11.1-cp38-cp38-win_amd64.whl", hash = "sha256:cade95c2f1f714c57d4610d80c472a84ce26281d52dbb04b83770d575b25eb3f"},
+    {file = "structlog_sentry_logger-0.11.1-cp39-cp39-macosx_10_16_x86_64.whl", hash = "sha256:ac8fc9731777228069465940b8a2c9b9479c950a58dd799e5793a28e98b5193e"},
+    {file = "structlog_sentry_logger-0.11.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:52b3a1d2d6664b4e93bf67e5c7ac9eac5c8cccb1cde2218842953680d4cf055a"},
+    {file = "structlog_sentry_logger-0.11.1-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:0bac79db5f46d66b69791323257b4baf15d55910793758be1e317e9d8d9eb1b6"},
+    {file = "structlog_sentry_logger-0.11.1-cp39-cp39-win_amd64.whl", hash = "sha256:91439ebb0b60027f1fab9c4187932288f0f45aa446c138c8265b81b71a74f5b6"},
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
