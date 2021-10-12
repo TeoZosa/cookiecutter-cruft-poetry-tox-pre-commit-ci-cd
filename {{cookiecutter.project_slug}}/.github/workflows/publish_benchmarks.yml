@@ -19,7 +19,6 @@ jobs:
         python-version: ["3.7", "3.8", "3.9"]
         library-type: ["pure_python", "c_library"]
 
-
     name: Performance testing for Python {{ "${{ matrix.python-version }}" }}  ({{ "${{ matrix.os }}" }})  [{{ "${{ matrix.library-type }}" }}]
     runs-on: {{ "${{ matrix.os }}" }}
 
