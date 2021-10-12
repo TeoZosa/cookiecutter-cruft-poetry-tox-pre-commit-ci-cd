@@ -84,8 +84,7 @@ tox = "^3.24.4"
 ## Code formatting
 black = "^21.9b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
-flakehell = "^0.9.0"
-flake8 = "^3.9.0"
+flakehell = {git="https://github.com/KPLauritzen/flakehell", rev ="d644612"}
 pylint = "^2.11.1"
 ## Automation and management
 pre-commit = "^2.15.0"

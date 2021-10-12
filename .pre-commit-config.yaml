@@ -21,19 +21,15 @@ repos:
       - id: detect-secrets
         exclude: poetry.lock
 
-  - repo: local
+  - repo: https://github.com/KPLauritzen/flakehell
+    rev: d644612
     hooks:
       - id: flakehell
-        name: flakehell
-        language: system
-        types: ["file", "text"]
-        files: \.(ipynb|md|py|rst|yaml|yml)$
         # False-positives from cookiecutter Jinja2 template syntax =>
         # print output but always succeed.
         # see: https://stackoverflow.com/a/59745587
         verbose: true
         entry: bash -c 'flakehell lint "$@" || true' --
-        require_serial: True
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.9.3
