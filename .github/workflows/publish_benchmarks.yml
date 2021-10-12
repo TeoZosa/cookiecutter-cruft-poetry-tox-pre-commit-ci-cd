@@ -76,7 +76,6 @@ jobs:
             NAMESPACED_TARGET_OUTPUT_DIR="${ENV_DIR_NAME}/${{ matrix.library-type }}"
             echo "::set-output name=target_output_dir::${NAMESPACED_TARGET_OUTPUT_DIR}"
 
-
       - name: Store the environment-specific benchmarks
         uses: actions/upload-artifact@v2.2.4
         with:
