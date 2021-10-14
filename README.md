@@ -140,9 +140,9 @@ cruft update
 - [Optional] Command-line interface boilerplate
   with [Typer](https://typer.tiangolo.com/)
 - Project-specific [Docker](https://www.docker.com/) image
-  Dockerfile[*](#conditional-rendering) with production dependencies for a
+  Dockerfile[^1] with production dependencies for a
   completely reproducible execution environment
-- [Optional] [Jupyter](https://jupyter.org/) support[*](#conditional-rendering)
+- [Optional] [Jupyter](https://jupyter.org/) support[^1]
 
 :zap: Performance
 -----------------
@@ -165,7 +165,7 @@ cruft update
 ### :label: Type Checking and Data Validation
 
 - Static type-checking
-  with [Mypy](http://mypy-lang.org)[†](#jupyter-compatibility-via-nbqa)
+  with [Mypy](http://mypy-lang.org)[^2]
 - Run-time type-checking
   with [Typeguard](https://github.com/agronholm/typeguard)
   - See the
@@ -193,7 +193,7 @@ cruft update
 - Testing
   with [`pytest`](https://docs.pytest.org/en/latest/)
 - Doctests
-  with [`xdoctest`](https://xdoctest.readthedocs.io)[†](#jupyter-compatibility-via-nbqa)
+  with [`xdoctest`](https://xdoctest.readthedocs.io)[^2]
 - [Performance testing](https://en.wikipedia.org/wiki/Software_performance_testing)
   with [`pytest-benchmark`](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
@@ -220,11 +220,11 @@ cruft update
 
 - Code quality:
     - [FlakeHell](https://github.com/life4/flakehell)
-    - [Pylint](https://www.pylint.org/)[†](#jupyter-compatibility-via-nbqa)
-    - [pyupgrade](https://github.com/asottile/pyupgrade)[†](#jupyter-compatibility-via-nbqa)
+    - [Pylint](https://www.pylint.org/)[^2]
+    - [pyupgrade](https://github.com/asottile/pyupgrade)[^2]
 - Code formatting:
-    - [Black](https://github.com/psf/black)[†](#jupyter-compatibility-via-nbqa)
-    - [isort](https://github.com/timothycrosley/isort)[†](#jupyter-compatibility-via-nbqa)
+    - [Black](https://github.com/psf/black)[^2]
+    - [isort](https://github.com/timothycrosley/isort)[^2]
     - [shfmt](https://github.com/mvdan/sh)
     - [`pretty-format-json`](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [`trailing-whitespace`](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
@@ -242,10 +242,10 @@ cruft update
 ### :construction_worker: CI/CD
 
 - [Docker](https://www.docker.com/) image builds and pushes
-  to [Docker Hub](https://hub.docker.com/)[‡](#repo-secret-required)
+  to [Docker Hub](https://hub.docker.com/)[^3]
 - Python package uploads
   to [PyPI](https://pypi.org/)
-  and [TestPyPI](https://test.pypi.org/)[*](#conditional-rendering)[‡](#repo-secret-required)
+  and [TestPyPI](https://test.pypi.org/)[^1][^3]
 - Documentation building and hosting
   with [Read the Docs](https://readthedocs.org/)
 - Release notes (PR-based) drafting and publishing
@@ -253,7 +253,7 @@ cruft update
 - Dependency updates
   with [Dependabot](https://dependabot.com/)
   - Automated [Dependabot](https://dependabot.com/) PR merging
-    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[‡](#repo-secret-required)
+    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[^3]
 - Project issue labels management
   with [GitHub Labeler](https://github.com/marketplace/actions/github-labeler)
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
@@ -290,7 +290,7 @@ cruft update
 ### :lock_with_ink_pen: Static Application Security Testing (SAST)
 
 - Code vulnerabilities
-  with [Bandit](https://github.com/PyCQA/bandit)[†](#jupyter-compatibility-via-nbqa)
+  with [Bandit](https://github.com/PyCQA/bandit)[^2]
 - Python package dependencies vulnerabilities
   with [Safety](https://github.com/pyupio/safety)
 
@@ -306,7 +306,7 @@ cruft update
   - Rich automatic documentation from type annotations and docstrings (NumPy, Google,
     etc.)
     with [`sphinx-autoapi`](https://github.com/readthedocs/sphinx-autoapi)
-  - Automated emoji shortcode conversion[§](#read-the-docs-compatibility)
+  - Automated emoji shortcode conversion[^4]
 - Docstring coverage
   with [`interrogate`](https://interrogate.readthedocs.io/)
 - Automated README table of contents generation
@@ -328,32 +328,18 @@ cruft update
   - See: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
     for an overview on [Architecture Decision Records (ADR)](https://github.com/joelparkerhenderson/architecture_decision_record)
 
-<br>
-<sup>
-    <a name="conditional-rendering">
-        * Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
-    </a>
-    <br>
-    <a name="jupyter-compatibility-via-nbqa">
-        † Jupyter notebook compatibility via <a href="https://github.com/nbQA-dev/nbQA">nbQA</a>
-    </a>
-    <br>
-    <a name="repo-secret-required">
-        ‡ Requires definitions of one or more of the below repository secrets:
+[^1]: Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
 
-    AUTO_MERGE_DEPENDABOT_TOKEN
-    DOCKERHUB_TOKEN
-    DOCKERHUB_USERNAME
-    PYPI_TOKEN
-    TEST_PYPI_TOKEN
-   </a>
-    <a name="read-the-docs-compatibility">
-        § Custom setup steps in Sphinx configuration file for Read the Docs compatibility
-      (see: <a href="https://github.com/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/blob/master/{{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139">
-            conf.py:117-139
-            </a>
-      ) </a>
-</sup>
+[^2]: Jupyter notebook compatibility via [nbQA](https://github.com/nbQA-dev/nbQA)
+
+[^3]: Requires definitions of one or more of the below repository secrets:
+  AUTO_MERGE_DEPENDABOT_TOKEN
+  DOCKERHUB_TOKEN
+  DOCKERHUB_USERNAME
+  PYPI_TOKEN
+  TEST_PYPI_TOKEN
+
+[^4]: Custom setup steps in Sphinx configuration file for Read the Docs compatibility (see: [conf.py:117-139]({{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139))
 
 :judge: Legal
 =============
