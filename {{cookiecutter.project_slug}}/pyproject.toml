@@ -37,7 +37,7 @@ python = "^3.7"
 
 # Monitoring and Observability
 sentry-sdk = "^1.1.0"
-structlog-sentry-logger = "^0.11.0"
+structlog-sentry-logger = "^0.12.2"
 
 {%- if cookiecutter.jupyter_notebook_project != 'no' %}
 # Jupyter Notebook
@@ -54,7 +54,7 @@ typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions 
 # Specifying documentation dependencies as optional dependencies
 # as a hack until Poetry version >= 1.2 when dependency groups are supported
 # see: python-poetry/poetry#1644
-emoji = { version = "^1.4.2", optional = true}
+emoji = { version = "^1.6.1", optional = true}
 {%- if cookiecutter.project_boilerplate_type != 'cli' %}
 importlib-metadata = { version = "^4.6.3", optional = true}
 {%- endif %}
@@ -91,7 +91,7 @@ mypy = "^0.910" # Static type checker (includes Mypyc Python module to C-Extensi
 {%- if cookiecutter.jupyter_notebook_project != 'no' %}
 nbqa = "^1.1.0"
 {%- endif %}
-pytest = "^6.2.4"
+pytest = "^6.2.5"
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
 {%- endif %}
@@ -99,7 +99,7 @@ pytest-cov = "^3.0.0"
 pytest-emoji = "^0.2.0"
 pytest-mock = "^3.6.1"
 pytest-sugar = "^0.9.4"
-pytest-xdist = "^2.3.0"
+pytest-xdist = "^2.4.0"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 hypothesis = "^6.10.1"
 icontract-hypothesis = "^1.1.0"
@@ -107,21 +107,21 @@ icontract-hypothesis = "^1.1.0"
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 mutmut = "^2.2.0"
 {%- endif %}
-xdoctest = {extras = ["all"], version = "^0.15.6"}
-tox = "^3.24.0"
+xdoctest = {extras = ["all"], version = "^0.15.10"}
+tox = "^3.24.4"
 tox-wheel = "^0.6.0"
 
 # Linting
 ## Code formatting
-black = "^21.8b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
+black = "^21.9b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
 flakehell = "^0.9.0"
-pylint = "^2.9.6"
+pylint = "^2.11.1"
 ## Automation and management
-pre-commit = "^2.12.1"
+pre-commit = "^2.15.0"
 
 # CI/CD
-tox-gh-actions = "^2.6.0"
+tox-gh-actions = "^2.8.1"
 
 # Documentation
 darglint = "^1.5.8"
