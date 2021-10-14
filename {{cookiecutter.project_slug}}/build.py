@@ -13,10 +13,9 @@ def build(setup_kwargs: dict) -> None:
             pathlib.Path(__file__).resolve().parent / "{{cookiecutter.package_name}}"
         ).rglob("*.py")
     ]
-    paths = ext_modules
 
     setup_kwargs.update(
         {
-            "ext_modules": mypyc.build.mypycify(paths),
+            "ext_modules": mypyc.build.mypycify(ext_modules),
         }
     )
