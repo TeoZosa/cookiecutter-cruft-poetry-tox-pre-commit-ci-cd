@@ -13,8 +13,4 @@ def build(setup_kwargs: dict) -> None:
         for file in (project_dir / "{{cookiecutter.package_name}}").rglob("*.py")
     ]
 
-    setup_kwargs.update(
-        {
-            "ext_modules": mypyc.build.mypycify(ext_modules),
-        }
-    )
+    setup_kwargs.update({"ext_modules": mypyc.build.mypycify(ext_modules)})
