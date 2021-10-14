@@ -178,6 +178,7 @@ skip_covered = true
 [tool.cruft]
 skip = [
     ".env",
+    ".python-version",
     "{{cookiecutter.package_name}}/__init__.py",
     "docs/source/.env",
 ]
