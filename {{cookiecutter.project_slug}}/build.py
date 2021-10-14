@@ -7,11 +7,10 @@ def build(setup_kwargs: dict) -> None:
     """
     This function is mandatory in order to build the extensions.
     """
+    project_dir = pathlib.Path(__file__).resolve().parent
     ext_modules = [
         str(file)
-        for file in (
-            pathlib.Path(__file__).resolve().parent / "{{cookiecutter.package_name}}"
-        ).rglob("*.py")
+        for file in (project_dir / "{{cookiecutter.package_name}}").rglob("*.py")
     ]
 
     setup_kwargs.update(
