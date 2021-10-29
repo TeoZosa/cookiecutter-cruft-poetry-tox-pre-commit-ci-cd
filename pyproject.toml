@@ -83,7 +83,7 @@ pylint = "^2.11.1"
 pre-commit = "^2.15.0"
 
 # Documentation
-darglint = "^1.5.8"
+darglint = "^1.8.1"
 
 [tool.poetry.extras]
 docs = [
