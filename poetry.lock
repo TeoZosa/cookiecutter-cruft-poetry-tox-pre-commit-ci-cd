@@ -1803,7 +1803,7 @@ doc = ["mkdocs (>=1.1.2,<2.0.0)", "mkdocs-material (>=5.4.0,<6.0.0)", "markdown-
 
 [[package]]
 name = "types-emoji"
-version = "1.2.5"
+version = "1.2.6"
 description = "Typing stubs for emoji"
 category = "main"
 optional = true
@@ -1923,7 +1923,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "18dc84b098afc5e2b9f3cb9809d5db6f8c58919a80f80c74f4dd50884e82f662"
+content-hash = "033d4945d5d99a15df8236ef0c1a962cb9d938033ae94adefa649a4d726e63d1"
 
 [metadata.files]
 alabaster = [
@@ -2946,8 +2946,8 @@ typer = [
     {file = "typer-0.3.2.tar.gz", hash = "sha256:5455d750122cff96745b0dec87368f56d023725a7ebc9d2e54dd23dc86816303"},
 ]
 types-emoji = [
-    {file = "types-emoji-1.2.5.tar.gz", hash = "sha256:b61d6a8ef8d34590086e586eb78471ea440544cef5903d149848940625feb11e"},
-    {file = "types_emoji-1.2.5-py3-none-any.whl", hash = "sha256:f619d1b912cccceb6999edc48f837c3b69fc32e7e06940e410c0747afc4e55e7"},
+    {file = "types-emoji-1.2.6.tar.gz", hash = "sha256:184113c4fbfaaba90d08aae03f11a23c21074cf1852cb0d010cbe5d926b02895"},
+    {file = "types_emoji-1.2.6-py3-none-any.whl", hash = "sha256:2e7fcf2ede905bc7c9e9b66fe8668ebc41be272800b1ec2823f80c84958dfde5"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.10.0.2-py2-none-any.whl", hash = "sha256:d8226d10bc02a29bcc81df19a26e56a9647f8b0a6d4a83924139f4a8b01f17b7"},
