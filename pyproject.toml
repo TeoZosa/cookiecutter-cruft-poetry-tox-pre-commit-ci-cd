@@ -43,7 +43,7 @@ cruft = "^2.9.0"
 hypothesis = "^6.23.1"
 python-dotenv = "^0.19.0"
 importlib-metadata = "^4.8.1"
-structlog-sentry-logger = "^0.12.2"
+structlog-sentry-logger = "^0.15.0"
 typer = {extras = ["all"], version = "^0.3.2"}
 
 # Documentation
