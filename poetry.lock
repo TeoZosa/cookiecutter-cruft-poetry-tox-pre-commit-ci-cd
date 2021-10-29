@@ -242,6 +242,17 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "commonmark"
+version = "0.9.1"
+description = "Python parser for the CommonMark Markdown spec"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
+
+[[package]]
 name = "cookiecutter"
 version = "1.7.3"
 description = "A command-line utility that creates projects from project templates, e.g. creating a Python package project from a Python package project template."
@@ -1426,6 +1437,22 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
+name = "rich"
+version = "10.12.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+category = "main"
+optional = false
+python-versions = ">=3.6.2,<4.0.0"
+
+[package.dependencies]
+colorama = ">=0.4.0,<0.5.0"
+commonmark = ">=0.9.0,<0.10.0"
+pygments = ">=2.6.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
+
+[[package]]
 name = "scikit-build"
 version = "0.12.0"
 description = "Improved build system generator for Python C/C++/Fortran/Cython extensions"
@@ -1681,7 +1708,7 @@ tests = ["coverage", "freezegun (>=0.2.8)", "pretend", "pytest-asyncio", "pytest
 
 [[package]]
 name = "structlog-sentry-logger"
-version = "0.12.2"
+version = "0.15.0"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
@@ -1692,11 +1719,12 @@ colorama = ">=0.4.3,<0.5.0"
 gitpython = ">=3.1.7,<4.0.0"
 orjson = ">=3.6.4,<4.0.0"
 python-dotenv = ">=0.19.0,<0.20.0"
+rich = ">=10.12.0,<11.0.0"
 sentry-sdk = ">0.17.0"
 structlog = ">=21.1.0,<22.0.0"
 
 [package.extras]
-docs = ["emoji (>=1.4.2,<2.0.0)", "importlib-metadata (>=4.6.3,<5.0.0)", "myst-parser (>=0.15.0,<0.16.0)", "pygments (>=2.9.0,<3.0.0)", "sphinx (>=4.1.2,<5.0.0)", "sphinx-autoapi (>=1.8.1,<2.0.0)", "sphinx-rtd-theme (>=0.5.1,<1.1.0)", "sphinxcontrib-confluencebuilder (>=1.5.0,<2.0.0)", "types-emoji (>=1.2.4,<2.0.0)"]
+docs = ["emoji (>=1.6.1,<2.0.0)", "importlib-metadata (>=4.6.3,<5.0.0)", "myst-parser (>=0.15.0,<0.16.0)", "pygments (>=2.9.0,<3.0.0)", "sphinx (>=4.1.2,<5.0.0)", "sphinx-autoapi (>=1.8.1,<2.0.0)", "sphinx-rtd-theme (>=0.5.1,<1.1.0)", "sphinxcontrib-confluencebuilder (>=1.5.0,<2.0.0)", "types-emoji (>=1.2.4,<2.0.0)"]
 
 [[package]]
 name = "termcolor"
@@ -1923,7 +1951,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "033d4945d5d99a15df8236ef0c1a962cb9d938033ae94adefa649a4d726e63d1"
+content-hash = "d7dcfddc5a3f04896de74f17700315c2e90742b432dcb33a6a0554638cf47554"
 
 [metadata.files]
 alabaster = [
@@ -2071,6 +2099,10 @@ codecov = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+commonmark = [
+    {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
+    {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
 ]
 cookiecutter = [
     {file = "cookiecutter-1.7.3-py2.py3-none-any.whl", hash = "sha256:f8671531fa96ab14339d0c59b4f662a4f12a2ecacd94a0f70a3500843da588e2"},
@@ -2783,6 +2815,10 @@ requests = [
     {file = "requests-2.26.0-py2.py3-none-any.whl", hash = "sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24"},
     {file = "requests-2.26.0.tar.gz", hash = "sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"},
 ]
+rich = [
+    {file = "rich-10.12.0-py3-none-any.whl", hash = "sha256:c30d6808d1cd3defd56a7bd2d587d13e53b5f55de6cf587f035bcbb56bc3f37b"},
+    {file = "rich-10.12.0.tar.gz", hash = "sha256:83fb3eff778beec3c55201455c17cccde1ccdf66d5b4dade8ef28f56b50c4bd4"},
+]
 scikit-build = [
     {file = "scikit-build-0.12.0.tar.gz", hash = "sha256:f851382c469bcd9a8c98b1878bcfdd13b68556279d2fd9a329be41956ae5a7fe"},
     {file = "scikit_build-0.12.0-py2.py3-none-any.whl", hash = "sha256:60784b9c02b06ad263c673988ebb6faa269a2acc261bc4233a7cf7655c0213e0"},
@@ -2860,16 +2896,16 @@ structlog = [
     {file = "structlog-21.2.0.tar.gz", hash = "sha256:7ac42b565e1295712313f91edbcb64e0840a9037d888c8954f11fa6c43270e99"},
 ]
 structlog-sentry-logger = [
-    {file = "structlog-sentry-logger-0.12.2.tar.gz", hash = "sha256:3ca5876bf49fe379f0e602ec472334d464d5377f97b3ff387828fc0e526874c0"},
-    {file = "structlog_sentry_logger-0.12.2-cp37-cp37m-macosx_10_16_x86_64.whl", hash = "sha256:c74f9a4d6ec7125b611ffc6287291fe5f386e9b0feee776d622b4ee820d047a5"},
-    {file = "structlog_sentry_logger-0.12.2-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:763ca454c857c4a23c5b2ed4cd9078da4aa264f7d3bbf1c3a7539970df0e2308"},
-    {file = "structlog_sentry_logger-0.12.2-cp37-cp37m-win_amd64.whl", hash = "sha256:b39a9a12e87f2c503640958550e3dff8ea773ffea34c6a23e09de9cf65c35813"},
-    {file = "structlog_sentry_logger-0.12.2-cp38-cp38-macosx_10_16_x86_64.whl", hash = "sha256:a03602094423c563c6de169fa538b35af03c323f5504edae9057e6c5bbff4adc"},
-    {file = "structlog_sentry_logger-0.12.2-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:798c6386bb379dadace2c54b336e267e5aef724be9be74b0173f69945296c62c"},
-    {file = "structlog_sentry_logger-0.12.2-cp38-cp38-win_amd64.whl", hash = "sha256:f5f959a526bd6cf3b16eaa37b99e23ef0c0bff83216ee010011eb59943be90ba"},
-    {file = "structlog_sentry_logger-0.12.2-cp39-cp39-macosx_10_16_x86_64.whl", hash = "sha256:b6416a96dc42bb958805ffd927ee8050ca774083996ec6a531196677a8f30194"},
-    {file = "structlog_sentry_logger-0.12.2-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:316385f3246b65d9a9b852c083a1dd2aa580ca9d627619179d4144e0b957b391"},
-    {file = "structlog_sentry_logger-0.12.2-cp39-cp39-win_amd64.whl", hash = "sha256:28e078e785c2fbb5672cd62c538fb514693a3d6e2e16e9ed2f30b8c2ce71c59c"},
+    {file = "structlog-sentry-logger-0.15.0.tar.gz", hash = "sha256:711dace032d97e69dc1c90088608816cea95d4d55f3b7f53eb89c196d43db2ab"},
+    {file = "structlog_sentry_logger-0.15.0-cp37-cp37m-macosx_10_16_x86_64.whl", hash = "sha256:9f4ce773bd20001b4c86d2b3b71c16d0f6ad18a6e6c21c1e694dc3a86bba130c"},
+    {file = "structlog_sentry_logger-0.15.0-cp37-cp37m-manylinux_2_31_x86_64.whl", hash = "sha256:ea895b0b22a74410a6a164bed54836ac7fb0b11c4e017ab7886c454c4a395eb9"},
+    {file = "structlog_sentry_logger-0.15.0-cp37-cp37m-win_amd64.whl", hash = "sha256:a675c86a9622008cd290bdd1c034d2a897e956f9cecb790aceb17f6be97b04c1"},
+    {file = "structlog_sentry_logger-0.15.0-cp38-cp38-macosx_10_16_x86_64.whl", hash = "sha256:0d2d14dda27bd9fcf1ae35e1981fdcd2d4526991702fcc20dec16828ae599070"},
+    {file = "structlog_sentry_logger-0.15.0-cp38-cp38-manylinux_2_31_x86_64.whl", hash = "sha256:9354e10c3c7a07cf7cbb5ea8b02c3f2fdf38aa4cb7ec76d4895956e0c19ba816"},
+    {file = "structlog_sentry_logger-0.15.0-cp38-cp38-win_amd64.whl", hash = "sha256:28efc734bd523e67ee60d5c139bf3d7003c0e518f76fed03adde01aa2536d952"},
+    {file = "structlog_sentry_logger-0.15.0-cp39-cp39-macosx_10_16_x86_64.whl", hash = "sha256:a74ec383676ec67fa27d981c18251e3c9b681c7d163e7d22dbb5f1cc7f25fe6d"},
+    {file = "structlog_sentry_logger-0.15.0-cp39-cp39-manylinux_2_31_x86_64.whl", hash = "sha256:d31c0f8657ce5fe2cbb171d874a625f987f4f35118c07a2b9d65d44bd427802c"},
+    {file = "structlog_sentry_logger-0.15.0-cp39-cp39-win_amd64.whl", hash = "sha256:cfdea428b0200f3ee1c231866b35d74028f36ec20debb36f981bd81bdc80ab24"},
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
