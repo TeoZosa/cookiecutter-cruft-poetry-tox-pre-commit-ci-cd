@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
@@ -109,7 +109,7 @@ jobs:
       PY_COLORS: 1
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
