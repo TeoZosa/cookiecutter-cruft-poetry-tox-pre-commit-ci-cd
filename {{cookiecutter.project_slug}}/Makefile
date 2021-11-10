@@ -66,13 +66,13 @@ __check_defined = \
 	$(if $(value $1),, \
 	  $(error Undefined $1$(if $2, ($2))))
 
-.PHONY: validate_req_env_vars
-validate_req_env_vars:
+.PHONY: validate-req-env-vars
+validate-req-env-vars:
 	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
-.PHONY: _validate_poetry_installation
-_validate_poetry_installation:
+.PHONY: _validate-poetry-installation
+_validate-poetry-installation:
 ifeq ($(shell command -v poetry),)
 	@echo "poetry could not be found!"
 	@echo "Please install poetry!"
@@ -143,7 +143,7 @@ clean:
 
 .PHONY: provision-environment
 ## Set up a Python virtual environment with installed project dependencies
-provision-environment: _validate_poetry_installation install-dependencies install-project
+provision-environment: _validate-poetry-installation install-dependencies install-project
 
 .PHONY: install-pre-commit-hooks
 ## Install git pre-commit hooks locally
@@ -201,7 +201,7 @@ deploy-container: IS_INTERACTIVE_SESSION ?= false
 # If you want to validate that a set of pre-defined env vars are specified
 # prior to container launch, list them in the REQ_ENV_VARS array
 deploy-container: REQ_ENV_VARS := BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER IS_INTERACTIVE_SESSION {% if PROJECT_TYPE == 'jupyter' -%} PORT {%- endif %}
-deploy-container: validate_req_env_vars stop-container
+deploy-container: validate-req-env-vars stop-container
 	{%- if PROJECT_TYPE == 'jupyter' %}
 	@echo "Launching Jupyter Notebook on port $(PORT)" {% else %}
 	@echo "Launching $(PROJECT_NAME) container"
