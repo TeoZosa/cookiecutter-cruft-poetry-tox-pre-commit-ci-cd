@@ -66,8 +66,8 @@ __check_defined = \
 	$(if $(value $1),, \
 	  $(error Undefined $1$(if $2, ($2))))
 
-.PHONY: validate-req-env-vars
-validate-req-env-vars:
+.PHONY: _validate-req-env-vars
+_validate-req-env-vars:
 	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
@@ -201,7 +201,7 @@ deploy-container: IS_INTERACTIVE_SESSION ?= false
 # If you want to validate that a set of pre-defined env vars are specified
 # prior to container launch, list them in the REQ_ENV_VARS array
 deploy-container: REQ_ENV_VARS := BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER IS_INTERACTIVE_SESSION {% if PROJECT_TYPE == 'jupyter' -%} PORT {%- endif %}
-deploy-container: validate-req-env-vars stop-container
+deploy-container: _validate-req-env-vars stop-container
 	{%- if PROJECT_TYPE == 'jupyter' %}
 	@echo "Launching Jupyter Notebook on port $(PORT)" {% else %}
 	@echo "Launching $(PROJECT_NAME) container"
