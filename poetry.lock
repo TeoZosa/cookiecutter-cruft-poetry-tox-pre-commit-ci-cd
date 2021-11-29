@@ -493,7 +493,7 @@ zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tz
 
 [[package]]
 name = "icontract"
-version = "2.5.5"
+version = "2.6.0"
 description = "Provide design-by-contract with informative violation messages."
 category = "dev"
 optional = false
@@ -504,7 +504,7 @@ asttokens = ">=2,<3"
 typing_extensions = "*"
 
 [package.extras]
-dev = ["mypy (==0.910)", "pylint (==2.9.6)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=2.1.1,<3)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "numpy (>=1,<2)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
+dev = ["mypy (==0.910)", "pylint (==2.9.6)", "yapf (==0.20.2)", "tox (>=3.0.0)", "pydocstyle (>=6.1.1,<7)", "coverage (>=4.5.1,<5)", "docutils (>=0.14,<1)", "pygments (>=2.2.0,<3)", "dpcontracts (==0.6.0)", "tabulate (>=0.8.7,<1)", "py-cpuinfo (>=5.0.0,<6)", "typeguard (>=2,<3)", "astor (==0.8.1)", "numpy (>=1,<2)", "deal (==4.1.0)", "asyncstdlib (==3.9.1)"]
 
 [[package]]
 name = "identify"
@@ -1942,7 +1942,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "52a5f06f78e2942bba87f76b00596fb3f2549c849b23c283875b8579c98ae056"
+content-hash = "190a840c586ae57a6250012ce9e9a1c9c579088d0d7cc96b2308dd72430629f8"
 
 [metadata.files]
 alabaster = [
@@ -2232,7 +2232,7 @@ hypothesis = [
     {file = "hypothesis-6.27.2.tar.gz", hash = "sha256:c4943d159f299a96b1c23277c4bcf0759a757888b67a6d73e9c70d853024aa15"},
 ]
 icontract = [
-    {file = "icontract-2.5.5.tar.gz", hash = "sha256:409fdc796fa6fc97bad45d7470076a4679d77e7dabcb289d9b65f1f52723ef0b"},
+    {file = "icontract-2.6.0.tar.gz", hash = "sha256:1ef9332ab4ca10f4da0370cec3743b88e10f8aac3cfcb9bc528008e1b2f09fae"},
 ]
 identify = [
     {file = "identify-2.3.0-py2.py3-none-any.whl", hash = "sha256:d1e82c83d063571bb88087676f81261a4eae913c492dafde184067c584bc7c05"},
