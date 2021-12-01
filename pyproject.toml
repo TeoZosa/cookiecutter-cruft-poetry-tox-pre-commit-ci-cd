@@ -80,7 +80,7 @@ black = "^21.11b1" # see: https://black.readthedocs.io/en/stable/editor_integrat
 flakehell = {git="https://github.com/KPLauritzen/flakehell", rev ="d644612"}
 pylint = "^2.12.1"
 ## Automation and management
-pre-commit = "^2.15.0"
+pre-commit = "^2.16.0"
 
 # Documentation
 darglint = "^1.8.1"
