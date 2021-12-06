@@ -78,7 +78,7 @@ tox = "^3.24.4"
 black = "^21.11b1" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
 flakehell = {git="https://github.com/KPLauritzen/flakehell", rev ="d644612"}
-pylint = "^2.12.1"
+pylint = "^2.12.2"
 ## Automation and management
 pre-commit = "^2.16.0"
 
