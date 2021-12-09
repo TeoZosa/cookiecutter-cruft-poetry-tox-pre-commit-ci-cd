@@ -465,7 +465,7 @@ typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.10\"
 
 [[package]]
 name = "hypothesis"
-version = "6.30.1"
+version = "6.31.0"
 description = "A library for property-based testing"
 category = "main"
 optional = false
@@ -480,7 +480,7 @@ all = ["black (>=19.10b0)", "click (>=7.0)", "django (>=2.2)", "dpcontracts (>=0
 cli = ["click (>=7.0)", "black (>=19.10b0)", "rich (>=9.0.0)"]
 codemods = ["libcst (>=0.3.16)"]
 dateutil = ["python-dateutil (>=1.4)"]
-django = ["pytz (>=2014.1)", "django (>=2.2)"]
+django = ["django (>=2.2)"]
 dpcontracts = ["dpcontracts (>=0.4)"]
 ghostwriter = ["black (>=19.10b0)"]
 lark = ["lark-parser (>=0.6.5)"]
@@ -1942,7 +1942,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d159e34c6ab149925f6e74575c4a8bb5b1fbe7ed1364b4a0fa2a088498a4de24"
+content-hash = "913b96c5f8c54093f741fbad4d11af38c9e0a9d48dc0f6ef7cf5f4a7020c3542"
 
 [metadata.files]
 alabaster = [
@@ -2228,8 +2228,8 @@ gitpython = [
     {file = "GitPython-3.1.24.tar.gz", hash = "sha256:df83fdf5e684fef7c6ee2c02fc68a5ceb7e7e759d08b694088d0cacb4eba59e5"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.30.1-py3-none-any.whl", hash = "sha256:adb42a52bc3c1300d0a0a221870ce5c264bee2e54b0473de6767c3ae02649b5f"},
-    {file = "hypothesis-6.30.1.tar.gz", hash = "sha256:25e0e581f999281ff765aba3c3f1e3ce289e82a1ff1b9de2c5082b37113aa448"},
+    {file = "hypothesis-6.31.0-py3-none-any.whl", hash = "sha256:20b55b628cb772c754a119c0ad572e84de06a5b94cfc79134f0a4ee70516c3ce"},
+    {file = "hypothesis-6.31.0.tar.gz", hash = "sha256:cc2e8757b5ef12fca27bf254dd53c449db074b1963243c4ee6f2b984aa02815e"},
 ]
 icontract = [
     {file = "icontract-2.6.0.tar.gz", hash = "sha256:1ef9332ab4ca10f4da0370cec3743b88e10f8aac3cfcb9bc528008e1b2f09fae"},
