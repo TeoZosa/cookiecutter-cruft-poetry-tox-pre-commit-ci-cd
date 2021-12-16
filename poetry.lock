@@ -838,7 +838,7 @@ python-versions = "*"
 
 [[package]]
 name = "myst-parser"
-version = "0.16.0"
+version = "0.16.1"
 description = "An extended commonmark compliant parser, with bridges to docutils & sphinx."
 category = "main"
 optional = true
@@ -1942,7 +1942,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b8ad957f874e4a376bc1f06b44129bb1c474b4035256ef9ecb43f816ff088aac"
+content-hash = "e34fab96bcd4c537ab7c28b02c1ccde959e76ad58b6bc7f9c966831ba9e3dfbd"
 
 [metadata.files]
 alabaster = [
@@ -2443,8 +2443,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 myst-parser = [
-    {file = "myst-parser-0.16.0.tar.gz", hash = "sha256:be31e426d9f0698dbac879bb9a41afe555fa9c4a9e659a82887a1e1e195c9f92"},
-    {file = "myst_parser-0.16.0-py3-none-any.whl", hash = "sha256:80fe8ed6dea7c8566699c9bbc36c36ead3cbdb63e9121f71e8b86f56d6afd8c3"},
+    {file = "myst-parser-0.16.1.tar.gz", hash = "sha256:a6473b9735c8c74959b49b36550725464f4aecc4481340c9a5f9153829191f83"},
+    {file = "myst_parser-0.16.1-py3-none-any.whl", hash = "sha256:617a90ceda2162ebf81cd13ad17d879bd4f49e7fb5c4f177bb905272555a2268"},
 ]
 nbclient = [
     {file = "nbclient-0.5.4-py3-none-any.whl", hash = "sha256:95a300c6fbe73721736cf13972a46d8d666f78794b832866ed7197a504269e11"},
