@@ -124,6 +124,18 @@ poetry shell # Activate the project's virtual environment
 {% if PROJECT_TYPE == 'jupyter' -%} jupyter notebook # Launch the Jupyter server {%- endif %}
 ```
 
+:clipboard: Summary
+===================
+
+- TODO
+
+:books: Further Reading
+=======================
+
+- TODO
+
+---
+
 :wrench: Development
 ====================
 
@@ -251,18 +263,6 @@ make docs-clean docs-html
 > :fire: **Tip**  
 > For faster feedback loops, this will attempt to automatically open the newly
 > built documentation static HTML in your browser.
-
-:clipboard: Summary
-===================
-
-- TODO
-
-:books: Further Reading
-=======================
-
-- TODO
-
----
 
 :judge: Legal
 =============
