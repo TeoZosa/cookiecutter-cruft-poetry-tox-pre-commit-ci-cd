@@ -75,7 +75,7 @@ tox = "^3.24.5"
 
 # Linting
 ## Code formatting
-black = "^21.11b1" # see: https://black.readthedocs.io/en/stable/editor_integration.html
+black = "^21.12b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
 flakehell = {git="https://github.com/KPLauritzen/flakehell", rev ="d644612"}
 pylint = "^2.12.2"
