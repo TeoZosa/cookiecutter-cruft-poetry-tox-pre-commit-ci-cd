@@ -34,10 +34,10 @@ repos:
         exclude_types: [jupyter]
         # {%- endif %}
 
-  - repo: https://github.com/flakehell/flakehell
-    rev: v.0.8.0
+  - repo: https://github.com/flakeheaven/flakeheaven
+    rev: 0.11.0
     hooks:
-      - id: flakehell
+      - id: flakeheaven
         exclude_types: [jupyter]
 
   # Docstring coverage tool
