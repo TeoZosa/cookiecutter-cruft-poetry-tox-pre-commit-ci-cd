@@ -21,10 +21,10 @@ repos:
       - id: detect-secrets
         exclude: poetry.lock
 
-  - repo: https://github.com/KPLauritzen/flakehell
-    rev: d644612
+  - repo: https://github.com/flakeheaven/flakeheaven
+    rev: 0.11.0
     hooks:
-      - id: flakehell
+      - id: flakeheaven
         # False-positives from cookiecutter Jinja2 template syntax =>
         # print output but always succeed.
         # see: https://stackoverflow.com/a/59745587
@@ -85,7 +85,7 @@ repos:
     hooks:
       - id: shfmt
         name: shfmt
-        minimum_pre_commit_version: 2.4.0
+        minimum_pre_commit_version: 2.17.0
         language: golang
         additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.1.2]
         entry: shfmt
