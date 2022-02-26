@@ -21,10 +21,10 @@ repos:
       - id: detect-secrets
         exclude: poetry.lock
 
-  - repo: https://github.com/KPLauritzen/flakehell
-    rev: d644612
+  - repo: https://github.com/flakeheaven/flakeheaven
+    rev: 0.11.0
     hooks:
-      - id: flakehell
+      - id: flakeheaven
         # False-positives from cookiecutter Jinja2 template syntax =>
         # print output but always succeed.
         # see: https://stackoverflow.com/a/59745587

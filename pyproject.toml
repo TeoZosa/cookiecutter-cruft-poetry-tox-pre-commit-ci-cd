@@ -77,7 +77,7 @@ tox = "^3.24.5"
 ## Code formatting
 black = "^21.12b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
-flakehell = {git="https://github.com/KPLauritzen/flakehell", rev ="d644612"}
+flakeheaven = "^0.11.0"
 pylint = "^2.12.2"
 ## Automation and management
 pre-commit = "^2.16.0"
@@ -102,18 +102,16 @@ docs = [
 # Tooling configs                                                               #
 #################################################################################
 
-[tool.flakehell]
+[tool.flakeheaven]
 # specify any flake8 options
 exclude = [".*"] # Ignore dotfiles
 # make output nice
 format = "grouped"
 # show line of source code in output
 show_source = true
-# temporary fix for flake8 version 3.9.1 compatibility
-extended_default_ignore=[]  # see https://github.com/flakehell/flakehell/issues/10
 
 # list of plugins and rules for them
-[tool.flakehell.plugins]
+[tool.flakeheaven.plugins]
 # cyclomatic complexity (https://github.com/PyCQA/mccabe)
 mccabe = ["+*"]
 # include everything in pyflakes except F401
