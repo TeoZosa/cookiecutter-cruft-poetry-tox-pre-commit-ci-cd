@@ -1980,7 +1980,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6224f081a8f435ad9d0754000384b957f595f05a52ddea7789dd32f0cf49dd48"
+content-hash = "f8f7d19f5bc60b5b57e958059b851d7f05f490483226e840943cd9cac5fc5c3a"
 
 [metadata.files]
 alabaster = [
