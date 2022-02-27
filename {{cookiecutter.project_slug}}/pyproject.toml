@@ -64,9 +64,6 @@ sphinx = { version = "^4.4.0", optional = true}
 sphinx-autoapi = { version = "^1.8.4", optional = true}
 sphinx-rtd-theme = { version = "^1.0.0", optional = true}
 sphinxcontrib-confluencebuilder = { version = "^1.7.1", optional = true}
-{%- if cookiecutter.project_boilerplate_type == 'cli' %}
-typer-cli = { version = "^0.0.12", optional = true}
-{%- endif %}
 types-emoji = { version = "^1.2.7", optional = true} # PEP 561 compliant stub package for mypy
 
 # Project-Specific
@@ -74,7 +71,7 @@ python-dotenv = "^0.19.2"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 importlib-metadata = "^4.11.1"
 rich = "^11.2.0"
-typer = {extras = ["all"], version = "^0.3.2"}
+typer = {extras = ["all"], version = "^0.4.0"}
 {%- else %}
 numpy = "^1.22.2"
 pandas = "^1.4.1"
@@ -143,9 +140,6 @@ docs = [
     "sphinx-autoapi",
     "sphinx-rtd-theme",
     "sphinxcontrib-confluencebuilder",
-{%- if cookiecutter.project_boilerplate_type == 'cli' %}
-    "typer-cli",
-{%- endif %}
     "types-emoji",
 ]
 
