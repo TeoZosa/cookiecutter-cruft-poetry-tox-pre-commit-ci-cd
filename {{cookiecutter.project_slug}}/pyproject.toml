@@ -36,48 +36,48 @@ Changelog = "{{ cookiecutter.project_repository_url }}/releases"
 python = "^3.7"
 
 # Monitoring and Observability
-sentry-sdk = "^1.1.0"
-structlog-sentry-logger = "^0.15.0"
+sentry-sdk = "^1.5.6"
+structlog-sentry-logger = "^0.17.3"
 
 {%- if cookiecutter.jupyter_notebook_project != 'no' %}
 # Jupyter Notebook
 jupyter = "^1.0.0"
-matplotlib = "^3.4.2"
+matplotlib = "^3.5.1"
 {%- endif %}
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 # Type Checking and Data Validation
-icontract = "^2.5.3" # Design-by-contract support
-typeguard = "^2.10.0" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
+icontract = "^2.6.1" # Design-by-contract support
+typeguard = "^2.13.3" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
 {%- endif %}
 
 # Documentation
 # Specifying documentation dependencies as optional dependencies
 # as a hack until Poetry version >= 1.2 when dependency groups are supported
 # see: python-poetry/poetry#1644
-emoji = { version = "^1.6.1", optional = true}
+emoji = { version = "^1.6.3", optional = true}
 {%- if cookiecutter.project_boilerplate_type != 'cli' %}
-importlib-metadata = { version = "^4.6.3", optional = true}
+importlib-metadata = { version = "^4.11.1", optional = true}
 {%- endif %}
-myst-parser = { version = "^0.15.1", optional = true}
-pygments = { version = "^2.9.0", optional = true}
-sphinx = { version = "^4.1.2", optional = true}
-sphinx-autoapi = { version = "^1.8.1", optional = true}
-sphinx-rtd-theme = { version = "^0.5.1", optional = true}
-sphinxcontrib-confluencebuilder = { version = "^1.5.0", optional = true}
+myst-parser = { version = "^0.17.0", optional = true}
+pygments = { version = "^2.11.2", optional = true}
+sphinx = { version = "^4.4.0", optional = true}
+sphinx-autoapi = { version = "^1.8.4", optional = true}
+sphinx-rtd-theme = { version = "^1.0.0", optional = true}
+sphinxcontrib-confluencebuilder = { version = "^1.7.1", optional = true}
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 typer-cli = { version = "^0.0.12", optional = true}
 {%- endif %}
-types-emoji = { version = "^1.2.4", optional = true} # PEP 561 compliant stub package for mypy
+types-emoji = { version = "^1.2.7", optional = true} # PEP 561 compliant stub package for mypy
 
 # Project-Specific
-python-dotenv = "^0.19.0"
+python-dotenv = "^0.19.2"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
-importlib-metadata = "^4.6.3"
-rich = "^10.6.0"
+importlib-metadata = "^4.11.1"
+rich = "^11.2.0"
 typer = {extras = ["all"], version = "^0.3.2"}
 {%- else %}
-numpy = "^1.21.2"
-pandas = "^1.3.2"
+numpy = "^1.22.2"
+pandas = "^1.4.1"
 {%- endif %}
 
 [tool.poetry.dev-dependencies]
@@ -85,47 +85,47 @@ pandas = "^1.3.2"
 cruft = "^2.6.0" # Automated Cookiecutter template synchronization
 
 # Type Checking and Data Validation
-mypy = "^0.910" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
+mypy = "^0.931" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
 {%- if cookiecutter.jupyter_notebook_project != 'no' %}
-nbqa = "^1.1.0"
+nbqa = "^1.2.3"
 {%- endif %}
-pytest = "^6.2.5"
+pytest = "^7.0.1"
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
 {%- endif %}
 pytest-cov = "^3.0.0"
 pytest-emoji = "^0.2.0"
-pytest-mock = "^3.6.1"
+pytest-mock = "^3.7.0"
 pytest-sugar = "^0.9.4"
-pytest-xdist = "^2.4.0"
+pytest-xdist = "^2.5.0"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
-hypothesis = "^6.10.1"
-icontract-hypothesis = "^1.1.0"
+hypothesis = "^6.38.0"
+icontract-hypothesis = "^1.1.7"
 {%- endif %}
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
-mutmut = "^2.2.0"
+mutmut = "^2.4.0"
 {%- endif %}
 xdoctest = {extras = ["all"], version = "^0.15.10"}
-tox = "^3.24.4"
-tox-wheel = "^0.6.0"
+tox = "^3.24.5"
+tox-wheel = "^0.7.0"
 
 # Linting
 ## Code formatting
-black = "^21.9b0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
+black = "^22.1.0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Code quality
-pylint = "^2.11.1"
+pylint = "^2.12.2"
 ## Automation and management
 pre-commit = "^2.17.0"
 
 # CI/CD
-tox-gh-actions = "^2.8.1"
+tox-gh-actions = "^2.9.1"
 
 # Documentation
-darglint = "^1.5.8"
+darglint = "^1.8.1"
 {%- if cookiecutter.adr_documentation_support == 'yes' %}
-nodeenv = "^1.5.0" # ADR documentation Node dependency
+nodeenv = "^1.6.0" # ADR documentation Node dependency
 {%- endif %}
 
 # Specifying documentation dependencies as optional dependencies
