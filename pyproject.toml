@@ -62,7 +62,7 @@ types-emoji = { version = "^1.2.7", optional = true}
 mypy = "^0.931" # Static type checker
 
 # Testing
-pytest = "^6.2.5"
+pytest = "^7.0.1"
 pytest-benchmark = {extras = ["histogram"], version = "^3.4.1"}
 pytest-cov = "^3.0.0"
 pytest-emoji = "^0.2.0"
