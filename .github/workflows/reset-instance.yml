@@ -24,13 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out ${{ env.COOKIECUTTER_META_PROJECT }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
           path: ${{ env.COOKIECUTTER_META_PROJECT }}
 
       - name: Check out ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
           repository: ${{ env.PROJECT_INSTANCE_REPO }}
