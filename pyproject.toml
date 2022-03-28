@@ -59,7 +59,7 @@ types-emoji = { version = "^1.2.7", optional = true}
 
 [tool.poetry.dev-dependencies]
 # Type Checking and Data Validation
-mypy = "^0.941" # Static type checker
+mypy = "^0.942" # Static type checker
 
 # Testing
 pytest = "^7.1.1"
