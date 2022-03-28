@@ -70,7 +70,7 @@ pytest-mock = "^3.6.1"
 pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.5.0"
 icontract = "^2.6.0"
-xdoctest = {extras = ["all"], version = "^0.15.10"}
+xdoctest = {extras = ["all"], version = "^1.0.0"}
 tox = "^3.24.5"
 
 # Linting
