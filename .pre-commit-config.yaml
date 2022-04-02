@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.0
+    rev: 1.7.4
     hooks:
       - id: bandit
         exclude: tests/.*$
@@ -16,7 +16,7 @@ repos:
         exclude: ^{{cookiecutter\.project_slug}}/tests/test_main\.py$
 
   - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.1.0
+    rev: v1.2.0
     hooks:
       - id: detect-secrets
         exclude: poetry.lock
@@ -32,12 +32,12 @@ repos:
         entry: bash -c 'flakehell lint "$@" || true' --
 
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.9.3
+    rev: 5.10.1
     hooks:
       - id: isort
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
-    rev: v1.1.1
+    rev: v1.1.2
     hooks:
       - id: markdown-toc
         args: [--maxdepth=3, -i]
@@ -70,13 +70,13 @@ repos:
         types: [python]
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
+    rev: 2.1.6
     hooks:
       - id: script-must-have-extension
       - id: script-must-not-have-extension
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.29.0
+    rev: v2.31.1
     hooks:
       - id: pyupgrade
         args: [--py38-plus]
@@ -100,7 +100,7 @@ repos:
         exclude: ^{{cookiecutter\.project_slug}}/\.github/workflows/(auto-merge-dependabot|ci|release|publish_benchmarks|publish_log4brains)\.yml$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: check-added-large-files  # Ignored for git-lfs files
         args: [--maxkb=100000]  # 100MB
