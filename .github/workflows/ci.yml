@@ -18,7 +18,7 @@ jobs:
   code-quality:
     strategy:
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.10"]
 
     name: Code Quality
     runs-on: "ubuntu-latest"
@@ -76,7 +76,7 @@ jobs:
   dependency-security-vulnerability-analysis:
     strategy:
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.10"]
 
     name: Dependency Security Vulnerability Analysis
     runs-on: "ubuntu-latest"
@@ -139,7 +139,7 @@ jobs:
   test-documentation-building:
     strategy:
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.10"]
 
     name: Documentation build testing
     runs-on: "ubuntu-latest"
