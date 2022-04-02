@@ -15,7 +15,6 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: Implementation :: CPython",
@@ -33,7 +32,7 @@ generate-setup-file = true
 Changelog = "{{ cookiecutter.project_repository_url }}/releases"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 
 # Monitoring and Observability
 sentry-sdk = "^1.5.6"
@@ -73,7 +72,7 @@ importlib-metadata = "^4.11.1"
 rich = "^11.2.0"
 typer = {extras = ["all"], version = "^0.4.0"}
 {%- else %}
-numpy = "^1.22.2"
+numpy = "^1.22.3"
 pandas = "^1.4.1"
 {%- endif %}
 
