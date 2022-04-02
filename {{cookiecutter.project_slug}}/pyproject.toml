@@ -32,7 +32,7 @@ generate-setup-file = true
 Changelog = "{{ cookiecutter.project_repository_url }}/releases"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8,<3.11"
 
 # Monitoring and Observability
 sentry-sdk = "^1.5.6"
