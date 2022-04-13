@@ -1026,7 +1026,7 @@ test = ["pytest", "pytest-cov", "html5lib", "cython", "typed-ast"]
 
 [[package]]
 name = "sphinx-autodoc-typehints"
-version = "1.18.0"
+version = "1.18.1"
 description = "Type hints (PEP 484) support for the Sphinx autodoc extension"
 category = "main"
 optional = true
@@ -1346,7 +1346,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8,<3.11"
-content-hash = "c627fbd7ad3f2848add67a839b21abee7b5b57324b8c3fd31a6e866d63ee71d3"
+content-hash = "2455c9385e1e7772e016809b468819986d1d9a8c95ce0c056d4f2e186a90bf35"
 
 [metadata.files]
 alabaster = [
@@ -1893,8 +1893,8 @@ sphinx = [
     {file = "Sphinx-4.5.0.tar.gz", hash = "sha256:7bf8ca9637a4ee15af412d1a1d9689fec70523a68ca9bb9127c2f3eeb344e2e6"},
 ]
 sphinx-autodoc-typehints = [
-    {file = "sphinx_autodoc_typehints-1.18.0-py3-none-any.whl", hash = "sha256:539c71a3cf387dec0890923cc024b2f3906f5b02ee8f1c9640a49424802f00aa"},
-    {file = "sphinx_autodoc_typehints-1.18.0.tar.gz", hash = "sha256:685e175e39be81312deb9780e7d76150deb7c3c803afd42346b6149e75e56e21"},
+    {file = "sphinx_autodoc_typehints-1.18.1-py3-none-any.whl", hash = "sha256:f8f5bb7c13a9a71537dc2be2eb3b9e28a9711e2454df63587005eacf6fbac453"},
+    {file = "sphinx_autodoc_typehints-1.18.1.tar.gz", hash = "sha256:07631c5f0c6641e5ba27143494aefc657e029bed3982138d659250e617f6f929"},
 ]
 sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-1.0.0-py2.py3-none-any.whl", hash = "sha256:4d35a56f4508cfee4c4fb604373ede6feae2a306731d533f409ef5c3496fdbd8"},
