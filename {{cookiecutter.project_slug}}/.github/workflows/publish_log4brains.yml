@@ -1,15 +1,13 @@
 ---
 name: Publish ADR Documentation via Log4brains
+
 on:  # yamllint disable-line rule:truthy
-  workflow_run:
-    workflows:
-      # Upstream workflow runs on pushes to main/master and always completes;
-      # needed because Dependabot-initiated pushes to master do not have access
-      # to repository secrets on which this workflow relies.
-      # see: dependabot/dependabot-core/issues/3253
-      - Dependabot Trunk Push Check
-    types:
-      - completed
+  push:
+    branches:
+      - main  # forward-compatibility with new GitHub default branch naming
+      - master  # backward-compatibility with old GitHub default branch naming
+  workflow_dispatch:
+  pull_request:
 
 env:
   BUILD_DIR: .log4brains/out
@@ -18,11 +16,15 @@ env:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+      pages: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
         with:
-          ref: {{ "${{ github.event.workflow_run.head_branch }}" }}
           persist-credentials: false  # required by JamesIves/github-pages-deploy-action
           fetch-depth: 0  # required by Log4brains to work correctly (needs the whole Git history)
       - name: Install Node
