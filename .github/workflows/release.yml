@@ -20,7 +20,6 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 2
 
       - name: Set up Python
@@ -72,11 +71,13 @@ jobs:
     name: Publish release notes
     runs-on: ubuntu-latest
     needs: get-tag-xor-dev-version
+    permissions:
+      pull-requests: write
+      contents: write
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
 
       - name: Publish the release notes
         uses: release-drafter/release-drafter@v5.21.0
