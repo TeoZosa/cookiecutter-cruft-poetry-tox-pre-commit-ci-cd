@@ -60,7 +60,7 @@ jobs:
             https://github.com/"${META_PROJECT_REPO}" \
             --overwrite-if-exists \
             --no-input \
-            --checkout="${GITHUB_REF##*/}" \
+            --checkout="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
             --extra-context="${extra_context}"
         env:
           extra_context: |
@@ -119,6 +119,6 @@ jobs:
             -C "${COOKIECUTTER_PROJECT_INSTANCE}" \
             push --force \
             "${COOKIECUTTER_PROJECT_INSTANCE_GIT_URL}" \
-            HEAD:"${GITHUB_REF##*/}"
+            HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
         env:
           COOKIECUTTER_PROJECT_INSTANCE_GIT_URL: "https://${{ env.GITHUB_ACTOR }}:${{ env.GITHUB_TOKEN }}@github.com/${{ env.PROJECT_INSTANCE_REPO }}.git"
