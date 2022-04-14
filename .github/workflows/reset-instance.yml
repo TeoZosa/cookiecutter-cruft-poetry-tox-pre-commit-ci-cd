@@ -119,7 +119,7 @@ jobs:
         run: |
           git \
             -C "${COOKIECUTTER_PROJECT_INSTANCE}" \
-            push \
+            push --force \
             "${COOKIECUTTER_PROJECT_INSTANCE_GIT_URL}" \
             HEAD:"${GITHUB_REF##*/}"
         env:
