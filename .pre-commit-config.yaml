@@ -29,7 +29,7 @@ repos:
         # print output but always succeed.
         # see: https://stackoverflow.com/a/59745587
         verbose: true
-        entry: bash -c 'flakehell lint "$@" || true' --
+        entry: bash -c 'flakeheaven lint "$@" || true' --
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
