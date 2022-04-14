@@ -219,7 +219,7 @@ cruft update
 ### :rotating_light: Linting
 
 - Code quality:
-    - [FlakeHell](https://github.com/life4/flakehell)
+    - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
     - [Pylint](https://www.pylint.org/)[^2]
     - [pyupgrade](https://github.com/asottile/pyupgrade)[^2]
 - Code formatting:
