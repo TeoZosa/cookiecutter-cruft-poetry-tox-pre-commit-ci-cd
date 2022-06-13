@@ -272,6 +272,17 @@ python-versions = "*"
 dev = ["pytest", "coverage", "coveralls"]
 
 [[package]]
+name = "exceptiongroup"
+version = "1.0.0rc8"
+description = "Backport of PEP 654 (exception groups)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+test = ["pytest (>=6)"]
+
+[[package]]
 name = "execnet"
 version = "1.9.0"
 description = "execnet: rapid multi-Python deployment"
@@ -318,7 +329,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.47.0"
+version = "6.47.2"
 description = "A library for property-based testing"
 category = "main"
 optional = false
@@ -326,6 +337,7 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 attrs = ">=19.2.0"
+exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11.0b1\""}
 sortedcontainers = ">=2.1.0,<3.0.0"
 
 [package.extras]
@@ -1356,7 +1368,7 @@ docs = ["emoji", "myst-parser", "pygments", "sphinx", "sphinx-autodoc-typehints"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8,<3.11"
-content-hash = "e95ba56ef3eed463d2efc02a8b1a4cc541cc0a7beae3b6caa698b833dedc9ae6"
+content-hash = "59b48a206305097b483808de0f551bc177a66121b263dfe4610840872331e456"
 
 [metadata.files]
 alabaster = [
@@ -1514,6 +1526,10 @@ docutils = [
 emoji = [
     {file = "emoji-1.7.0.tar.gz", hash = "sha256:65c54533ea3c78f30d0729288998715f418d7467de89ec258a31c0ce8660a1d1"},
 ]
+exceptiongroup = [
+    {file = "exceptiongroup-1.0.0rc8-py3-none-any.whl", hash = "sha256:ab0a968e1ef769e55d9a596f4a89f7be9ffedbc9fdefdb77cc68cf5c33ce1035"},
+    {file = "exceptiongroup-1.0.0rc8.tar.gz", hash = "sha256:6990c24f06b8d33c8065cfe43e5e8a4bfa384e0358be036af9cc60b6321bd11a"},
+]
 execnet = [
     {file = "execnet-1.9.0-py2.py3-none-any.whl", hash = "sha256:a295f7cc774947aac58dde7fdc85f4aa00c42adf5d8f5468fc630c1acf30a142"},
     {file = "execnet-1.9.0.tar.gz", hash = "sha256:8f694f3ba9cc92cab508b152dcfe322153975c29bda272e2fd7f3f00f36e47c5"},
@@ -1531,8 +1547,8 @@ gitpython = [
     {file = "GitPython-3.1.27.tar.gz", hash = "sha256:1c885ce809e8ba2d88a29befeb385fcea06338d3640712b59ca623c220bb5704"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.47.0-py3-none-any.whl", hash = "sha256:76a7d16f78b5691db34ef87fa677d020dd86189f6b748adf801088743b66c889"},
-    {file = "hypothesis-6.47.0.tar.gz", hash = "sha256:dd88c57f45032fc3d84596e426d8e3d67f88eda2d8a2d96a5697def036a7e0c7"},
+    {file = "hypothesis-6.47.2-py3-none-any.whl", hash = "sha256:d6a7bb1b695edc57388b86960138d23aeddcb95192cff49755e280e3296558c9"},
+    {file = "hypothesis-6.47.2.tar.gz", hash = "sha256:9c01a225eada7d74d38430e3e91e659e3a892fbc2b15f7b051779ded6ab73ee7"},
 ]
 icontract = [
     {file = "icontract-2.6.1.tar.gz", hash = "sha256:dacfc55009993058cd17576faa291ab76b6f39d80ec9d1e524778cd79da11857"},
