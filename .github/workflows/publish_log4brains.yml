@@ -37,7 +37,7 @@ jobs:
             --out "${BUILD_DIR}/adl" && \
           touch "${BUILD_DIR}/.nojekyll" || true
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@v4.3.4
         with:
           branch: gh-pages
           folder: ${{ env.BUILD_DIR }}
