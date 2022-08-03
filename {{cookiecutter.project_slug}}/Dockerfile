@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-FROM python:3.10.5-slim@sha256:ca78039cbd3772addb9179953bbf8fe71b50d4824b192e901d312720f5902b22
+FROM python:3.11.0b5-slim@sha256:4a4b00fb6167ced9d3b788efa80743d5bfe2c98e3c4717764d8a3bad7fe89d36
 
 LABEL maintainer="{{cookiecutter.author}} <{{cookiecutter.email}}>"
 ENV LANG C.UTF-8
