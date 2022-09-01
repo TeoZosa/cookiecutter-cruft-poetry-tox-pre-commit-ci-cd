@@ -78,7 +78,7 @@ black = "^22.3.0" # see: https://black.readthedocs.io/en/stable/editor_integrati
 ## Code quality
 pylint = "^2.14.2"
 ## Automation and management
-pre-commit = "^2.19.0"
+pre-commit = "^2.20.0"
 
 # Documentation
 darglint = "^1.8.1"
