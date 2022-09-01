@@ -49,22 +49,6 @@ icontract = "^2.6.1" # Design-by-contract support
 typeguard = "^2.13.3" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
 {%- endif %}
 
-# Documentation
-# Specifying documentation dependencies as optional dependencies
-# as a hack until Poetry version >= 1.2 when dependency groups are supported
-# see: python-poetry/poetry#1644
-emoji = { version = "^1.6.3", optional = true}
-{%- if cookiecutter.project_boilerplate_type != 'cli' %}
-importlib-metadata = { version = "^4.11.1", optional = true}
-{%- endif %}
-myst-parser = { version = "^0.17.0", optional = true}
-pygments = { version = "^2.11.2", optional = true}
-sphinx = { version = "^4.4.0", optional = true}
-sphinx-autoapi = { version = "^1.8.4", optional = true}
-sphinx-rtd-theme = { version = "^1.0.0", optional = true}
-sphinxcontrib-confluencebuilder = { version = "^1.7.1", optional = true}
-types-emoji = { version = "^1.2.7", optional = true} # PEP 561 compliant stub package for mypy
-
 # Project-Specific
 python-dotenv = "^0.19.2"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
@@ -124,23 +108,21 @@ darglint = "^1.8.1"
 nodeenv = "^1.6.0" # ADR documentation Node dependency
 {%- endif %}
 
-# Specifying documentation dependencies as optional dependencies
-# as a hack until Poetry version >= 1.2 when dependency groups are supported
-# see: python-poetry/poetry#1644
-[tool.poetry.extras]
-docs = [
-    "emoji", # Render emoji shortcodes
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+emoji = "^1.6.3"
 {%- if cookiecutter.project_boilerplate_type != 'cli' %}
-    "importlib-metadata",
+importlib-metadata = "^4.11.1"
 {%- endif %}
-    "myst-parser",
-    "pygments",
-    "sphinx",
-    "sphinx-autoapi",
-    "sphinx-rtd-theme",
-    "sphinxcontrib-confluencebuilder",
-    "types-emoji",
-]
+myst-parser = "^0.17.0"
+pygments = "^2.11.2"
+sphinx = "^4.4.0"
+sphinx-autoapi = "^1.8.4"
+sphinx-rtd-theme = "^1.0.0"
+sphinxcontrib-confluencebuilder = "^1.7.1"
+types-emoji = "^1.2.7" # PEP 561 compliant stub package for mypy
 
 {%- if cookiecutter.project_boilerplate_type != 'none' %}
 [tool.poetry.scripts]
