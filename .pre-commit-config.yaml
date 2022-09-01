@@ -22,7 +22,7 @@ repos:
         exclude: poetry.lock
 
   - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 0.11.0
+    rev: 3.0.0
     hooks:
       - id: flakeheaven
         # False-positives from cookiecutter Jinja2 template syntax =>
