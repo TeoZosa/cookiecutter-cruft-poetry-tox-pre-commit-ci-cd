@@ -1,4 +1,4 @@
 cruft==2.11.1
-pip==22.1.2
+pip==22.2.2
 poetry==1.1.13
 pre-commit==2.20.0
