@@ -35,7 +35,7 @@ repos:
         # {%- endif %}
 
   - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 0.11.0
+    rev: 3.0.0
     hooks:
       - id: flakeheaven
         exclude_types: [jupyter]
