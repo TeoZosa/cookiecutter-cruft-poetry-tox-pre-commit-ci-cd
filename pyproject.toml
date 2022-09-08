@@ -59,7 +59,7 @@ pytest-sugar = "^0.9.5"
 pytest-xdist = "^2.5.0"
 icontract = "^2.6.2"
 xdoctest = "^1.1.0"
-tox = "^3.25.1"
+tox = "^3.26.0"
 
 # Linting
 ## Code formatting
