@@ -49,7 +49,7 @@ version = release = project_metadata["Version"]
 extensions = [
     "autoapi.extension",  # Include documentation from docstrings (https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
     "myst_parser",  # MyST .md parsing (https://myst-parser.readthedocs.io/en/latest/index.html)
-    "sphinx.ext.autodoc",  # Deferred to by `autoapi.extension` for type hints (via `autodoc_typehints` config) and sphinx_icontract for contract auto-documentation
+    "sphinx.ext.autodoc",  # Deferred to by `autoapi.extension` for type hints (via `autodoc_typehints` config)
     "sphinx.ext.intersphinx",  # Link to other projects’ documentation (https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
     "sphinx.ext.viewcode",  # Add documentation links to/from source code (https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html)
     "sphinx.ext.autosectionlabel",  # Allow reference sections using its title (https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html)

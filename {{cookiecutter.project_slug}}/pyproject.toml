@@ -45,7 +45,6 @@ matplotlib = "^3.5.1"
 {%- endif %}
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 # Type Checking and Data Validation
-icontract = "^2.6.1" # Design-by-contract support
 typeguard = "^2.13.3" # Runtime type checker; Note: Mypyc-compiled C-extensions also perform runtime type checking.
 {%- endif %}
 
@@ -82,7 +81,6 @@ pytest-sugar = "^0.9.4"
 pytest-xdist = "^2.5.0"
 {%- if cookiecutter.project_boilerplate_type == 'cli' %}
 hypothesis = "^6.38.0"
-icontract-hypothesis = "^1.1.7"
 {%- endif %}
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 mutmut = "^2.4.0"
