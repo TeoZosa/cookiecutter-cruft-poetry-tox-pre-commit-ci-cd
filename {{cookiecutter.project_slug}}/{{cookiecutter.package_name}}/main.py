@@ -1,7 +1,6 @@
 """Command-line interface."""
 from typing import Optional
 
-import icontract
 import importlib_metadata
 import rich.console
 import rich.table
@@ -21,7 +20,6 @@ LOGGER = structlog_sentry_logger.get_logger()
 
 
 @typeguard.typechecked()
-@icontract.require(lambda value: value is None or value is True)
 def version_callback(
     value: Optional[bool],
 ) -> None:  # pylint: disable=unsubscriptable-object
