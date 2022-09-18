@@ -2,15 +2,12 @@
 name: Reset Instance
 
 on:  # yamllint disable-line rule:truthy
-  workflow_run:
-    workflows:
-      # Upstream workflow runs on pushes to main/master and always completes;
-      # needed because Dependabot-initiated pushes to master do not have access
-      # to repository secrets on which this workflow relies.
-      # see: dependabot/dependabot-core/issues/3253
-      - Dependabot Trunk Push Check
-    types:
-      - completed
+  push:
+    branches:
+      - main  # forward-compatibility with new GitHub default branch naming
+      - master  # backward-compatibility with old GitHub default branch naming
+  workflow_dispatch:
+  pull_request:
 
 env:
   COOKIECUTTER_META_PROJECT: cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
@@ -22,17 +19,18 @@ env:
 jobs:
   instance:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
     steps:
       - name: Check out ${{ env.COOKIECUTTER_META_PROJECT }}
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
           path: ${{ env.COOKIECUTTER_META_PROJECT }}
 
       - name: Check out ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
           repository: ${{ env.PROJECT_INSTANCE_REPO }}
           path: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
           token: ${{ secrets.X_GITHUB_TOKEN }}
@@ -62,7 +60,7 @@ jobs:
             https://github.com/"${META_PROJECT_REPO}" \
             --overwrite-if-exists \
             --no-input \
-            --checkout="${GITHUB_REF##*/}" \
+            --checkout="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
             --extra-context="${extra_context}"
         env:
           extra_context: |
@@ -121,6 +119,6 @@ jobs:
             -C "${COOKIECUTTER_PROJECT_INSTANCE}" \
             push --force \
             "${COOKIECUTTER_PROJECT_INSTANCE_GIT_URL}" \
-            HEAD:"${GITHUB_REF##*/}"
+            HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
         env:
           COOKIECUTTER_PROJECT_INSTANCE_GIT_URL: "https://${{ env.GITHUB_ACTOR }}:${{ env.GITHUB_TOKEN }}@github.com/${{ env.PROJECT_INSTANCE_REPO }}.git"
