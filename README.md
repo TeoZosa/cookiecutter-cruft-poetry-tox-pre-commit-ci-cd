@@ -171,11 +171,6 @@ cruft update
   - See the
     [Typeguard user guide](https://typeguard.readthedocs.io/en/latest/userguide.html?highlight=@typechecked#using-the-decorator)
     for usage overview
-- [Design-by-contract](https://en.wikipedia.org/wiki/Design_by_contract) support
-  (precondition, postcondition, and invariant enforcement)
-  with [icontract](https://github.com/Parquery/icontract)
-  - See [the test benchmarks](./tests/test_icontract_benchmark.py)
-    for [example performance overhead measurements](https://teozosa.github.io/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd/dev/py39-benchmark/)
 
 > :fire: **Tip**  
 >  Precondition enforcement (i.e., function-specific input validation) also helps
@@ -198,9 +193,6 @@ cruft update
   with [`pytest-benchmark`](https://pytest-benchmark.readthedocs.io/en/stable/index.html)
 - [Property-based testing](https://hypothesis.works/articles/what-is-property-based-testing/)
   with [Hypothesis](https://github.com/HypothesisWorks/hypothesis)
-    - [Design-by-contract](#type-checking-and-data-validation) integration
-      (i.e. to intelligently constrain the input space defined by the search strategy)
-      via [icontract-hypothesis](https://github.com/mristin/icontract-hypothesis)
 - [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing)
   with [mutmut](https://github.com/boxed/mutmut)
 
