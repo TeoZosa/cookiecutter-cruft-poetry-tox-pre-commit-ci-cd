@@ -55,7 +55,7 @@ importlib-metadata = "^4.11.1"
 rich = "^12.5.1"
 typer = {extras = ["all"], version = ">=0.4,<0.7"}
 #{%- else %}
-numpy = "^1.22.3"
+numpy = "^1.23.3"
 pandas = "^1.4.1"
 #{%- endif %}
 
