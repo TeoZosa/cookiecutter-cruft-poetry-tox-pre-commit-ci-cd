@@ -64,7 +64,7 @@ pandas = "^1.4.1"
 cruft = "^2.11.1" # Automated Cookiecutter template synchronization
 
 # Type Checking and Data Validation
-mypy = "^0.931" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
+mypy = "^0.971" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
 #{%- if cookiecutter.jupyter_notebook_project != 'no' %}
