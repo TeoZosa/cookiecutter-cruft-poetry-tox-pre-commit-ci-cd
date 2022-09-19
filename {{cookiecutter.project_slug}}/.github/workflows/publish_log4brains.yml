@@ -39,7 +39,7 @@ jobs:
             --out "${BUILD_DIR}/adl"
           touch "${BUILD_DIR}/.nojekyll"
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: gh-pages
           # yamllint disable-line rule:braces
