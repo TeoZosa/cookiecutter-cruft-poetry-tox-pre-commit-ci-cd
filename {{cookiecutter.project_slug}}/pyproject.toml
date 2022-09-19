@@ -49,14 +49,14 @@ typeguard = "^2.13.3" # Runtime type checker; Note: Mypyc-compiled C-extensions 
 #{%- endif %}
 
 # Project-Specific
-python-dotenv = "^0.19.2"
+python-dotenv = ">=0.19.2,<0.22.0"
 #{%- if cookiecutter.project_boilerplate_type == 'cli' %}
 importlib-metadata = "^4.11.1"
-rich = "^11.2.0"
-typer = {extras = ["all"], version = "^0.4.0"}
+rich = "^12.5.1"
+typer = {extras = ["all"], version = ">=0.4,<0.7"}
 #{%- else %}
-numpy = "^1.22.3"
-pandas = "^1.4.1"
+numpy = "^1.23.3"
+pandas = "^1.5.0"
 #{%- endif %}
 
 [tool.poetry.dev-dependencies]
@@ -64,7 +64,7 @@ pandas = "^1.4.1"
 cruft = "^2.11.1" # Automated Cookiecutter template synchronization
 
 # Type Checking and Data Validation
-mypy = "^0.931" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
+mypy = "^0.971" # Static type checker (includes Mypyc Python module to C-Extension compiler, enabled by standard Python type annotations)
 
 # Testing
 #{%- if cookiecutter.jupyter_notebook_project != 'no' %}
@@ -85,7 +85,7 @@ hypothesis = "^6.38.0"
 #{%- if cookiecutter.jupyter_notebook_project != 'yes' %}
 mutmut = "^2.4.0"
 #{%- endif %}
-xdoctest = {extras = ["all"], version = "^0.15.10"}
+xdoctest = {extras = ["all"], version = "^1.1.0"}
 tox = "^3.24.5"
 tox-wheel = "^0.7.0"
 
