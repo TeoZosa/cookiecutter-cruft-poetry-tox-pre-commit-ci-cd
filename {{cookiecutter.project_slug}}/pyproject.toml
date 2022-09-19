@@ -52,7 +52,7 @@ typeguard = "^2.13.3" # Runtime type checker; Note: Mypyc-compiled C-extensions 
 python-dotenv = "^0.19.2"
 #{%- if cookiecutter.project_boilerplate_type == 'cli' %}
 importlib-metadata = "^4.11.1"
-rich = "^11.2.0"
+rich = "^12.5.1"
 typer = {extras = ["all"], version = "^0.4.0"}
 #{%- else %}
 numpy = "^1.22.3"
