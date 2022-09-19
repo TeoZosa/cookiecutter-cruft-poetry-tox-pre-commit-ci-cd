@@ -62,9 +62,20 @@ updates:
       - "dependencies"
       - "python"
     open-pull-requests-limit: 99
-  # Github Actions
+  # Github Actions: configuration workflows
   - package-ecosystem: github-actions
-    directory: "/{{cookiecutter.project_slug}}"
+    directory: "/{{cookiecutter.project_slug}}/.github"
+    schedule:
+      interval: daily
+      time: "06:00"
+      timezone: "America/Los_Angeles"
+    labels:
+      - "dependencies"
+      - "github_actions"
+    open-pull-requests-limit: 99
+  # Github Actions: primary workflows
+  - package-ecosystem: github-actions
+    directory: "/{{cookiecutter.project_slug}}/.github/workflows"
     schedule:
       interval: daily
       time: "06:00"
