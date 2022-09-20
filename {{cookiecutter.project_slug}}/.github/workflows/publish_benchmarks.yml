@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           # yamllint disable-line rule:braces
           python-version: {{ "${{ matrix.python-version }}" }}
@@ -52,7 +52,7 @@ jobs:
 
       - name: Load cached tox testenv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .tox
@@ -79,7 +79,7 @@ jobs:
             echo "::set-output name=target_output_dir::${NAMESPACED_TARGET_OUTPUT_DIR}"
 
       - name: Store the environment-specific benchmarks
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: benchmark-data-files
           path: .benchmarks
@@ -112,10 +112,10 @@ jobs:
       PY_COLORS: 1
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: "3.9"
 
@@ -129,7 +129,7 @@ jobs:
           pip install pytest-benchmark[histogram]
 
       - name: Download the benchmarks
-        uses: actions/download-artifact@v2.0.10
+        uses: actions/download-artifact@v3.0.0
         with:
           name: benchmark-data-files
           path: .benchmarks

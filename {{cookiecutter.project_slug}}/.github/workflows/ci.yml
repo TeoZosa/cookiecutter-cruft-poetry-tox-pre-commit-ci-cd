@@ -24,10 +24,10 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
 
@@ -49,7 +49,7 @@ jobs:
 
       - name: Load cached tox testenv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .tox
@@ -83,10 +83,10 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
 
@@ -108,7 +108,7 @@ jobs:
 
       - name: Load cached tox testenv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .tox
@@ -126,7 +126,7 @@ jobs:
     name: Semgrep
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Disable Git LFS
         run: |
@@ -154,10 +154,10 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
 
@@ -180,7 +180,7 @@ jobs:
 
       - name: Load cached tox testenv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .tox
@@ -200,7 +200,7 @@ jobs:
       - name: Upload coverage to Codecov
         if: "contains(matrix.os, env.USING_COVERAGE_OS) &&
              contains(matrix.python-version, env.USING_COVERAGE_PY_VER)"
-        uses: "codecov/codecov-action@v2.1.0"
+        uses: "codecov/codecov-action@v3.1.0"
         with:
           file: ./.tox/coverage.xml
           fail_ci_if_error: true
@@ -215,10 +215,10 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
 
@@ -235,7 +235,7 @@ jobs:
 
       - name: Load cached venv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .venv
@@ -266,12 +266,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3.0.2
         with:
           lfs: true
 
       - name: Set up Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
 
@@ -293,7 +293,7 @@ jobs:
 
       - name: Load cached tox testenv(s) (if they exist)
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             .tox
