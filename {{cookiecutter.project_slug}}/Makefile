@@ -46,14 +46,12 @@ include .makefile/help.mk
 #################################################################################
 
 .PHONY: strong-version-tag
-strong-version-tag: get-make-var-TAG
+strong-version-tag:
+	@echo $(TAG)
 
 .PHONY: strong-version-tag-dateless
-strong-version-tag-dateless: get-make-var-GIT_VERSION
-
-.PHONY: get-make-var-%
-get-make-var-%:
-	@echo $($*)
+strong-version-tag-dateless:
+	@echo $(GIT_VERSION)
 
 #################################################################################
 # COMMANDS                                                                      #
