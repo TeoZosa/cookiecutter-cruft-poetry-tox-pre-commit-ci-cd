@@ -20,11 +20,9 @@ SHELL := bash
 # GLOBALS                                                                       #
 #################################################################################
 
-REGISTRY_NAMESPACE = {{cookiecutter.container_registry_namespace}}
 SRC_DIR := {{cookiecutter.package_name}}
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME := $(shell basename $(PROJECT_DIR))
-DOCKER_REPOSITORY = $(REGISTRY_NAMESPACE)/$(PROJECT_NAME)
 
 # List any changed files (excluding submodules)
 CHANGED_FILES := $(shell git diff --name-only)
@@ -36,9 +34,6 @@ diff_checksum := $(shell git diff | shasum -a 256 | cut -c -6)
 GIT_VERSION := $(shell git describe --tags --long --always --dirty)-$(diff_checksum)
 endif
 TAG := $(shell date +v%Y%m%d)-$(GIT_VERSION)
-
-IMG := $(DOCKER_REPOSITORY):$(TAG)
-LATEST_IMG := $(DOCKER_REPOSITORY):latest
 
 # Commands' help text generation
 # When users invoke `make help` at the command line, any `##` prefixed lines that
@@ -59,24 +54,6 @@ strong-version-tag-dateless: get-make-var-GIT_VERSION
 .PHONY: get-make-var-%
 get-make-var-%:
 	@echo $($*)
-
-# Check that given variables are set and all have non-empty values,
-# die with an error otherwise.
-#
-# Params:
-#   1. Variable name(s) to test.
-#   2. (optional) Error message to print.
-check_defined = \
-	$(strip $(foreach 1,$1, \
-		$(call __check_defined,$1,$(strip $(value 2)))))
-__check_defined = \
-	$(if $(value $1),, \
-	  $(error Undefined $1$(if $2, ($2))))
-
-.PHONY: _validate-req-env-vars
-_validate-req-env-vars:
-	$(call check_defined, REQ_ENV_VARS, Error: Required list of env vars to validate as defined not set!)
-	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Error: Required env var not set!))
 
 .PHONY: _validate-poetry-installation
 _validate-poetry-installation:
@@ -147,6 +124,7 @@ clean:
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
+include .makefile/docker.mk # Docker orchestration commands
 
 .PHONY: provision-environment
 ## Set up a Python virtual environment with installed project dependencies
@@ -191,71 +169,6 @@ bump-commit-and-push-project-version-number-%:
 package:
 	tox -e package
 #{%- endif %}
-
-#{% set PROJECT_TYPE = 'jupyter' if cookiecutter.jupyter_notebook_project == 'yes' else 'project' %}
-.PHONY: deploy-{{ PROJECT_TYPE }}-docker-container-local
-## Deploy locally-built dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
-deploy-{{ PROJECT_TYPE }}-docker-container-local: build-container deploy-container
-
-.PHONY: deploy-{{ PROJECT_TYPE }}-docker-container
-## Deploy downloaded dockerized {{ PROJECT_TYPE }} environment with preloaded dependencies
-deploy-{{ PROJECT_TYPE }}-docker-container: pull-container deploy-container
-
-.PHONY: deploy-container
-deploy-container: BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER ?= false
-deploy-container: IS_INTERACTIVE_SESSION ?= false
-{% if PROJECT_TYPE == 'jupyter' -%} deploy-container: PORT?=8888 {%- endif %}
-# If you want to validate that a set of pre-defined env vars are specified
-# prior to container launch, list them in the REQ_ENV_VARS array
-deploy-container: REQ_ENV_VARS := BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER IS_INTERACTIVE_SESSION {% if PROJECT_TYPE == 'jupyter' -%} PORT {%- endif %}
-deploy-container: _validate-req-env-vars stop-container
-	{%- if PROJECT_TYPE == 'jupyter' %}
-	@echo "Launching Jupyter Notebook on port $(PORT)" {% else %}
-	@echo "Launching $(PROJECT_NAME) container"
-	{%- endif %}
-	@if [ "$(IS_INTERACTIVE_SESSION)" != false ]; then \
-		export INTERACTIVE_SESSION_ARGS="--interactive --tty --entrypoint bash"; \
-	fi && \
-	if [ "$(BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER)" != false ]; then \
-		export BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS="--mount type=bind,source=$$(pwd)/$(SRC_DIR),target=/app/$(SRC_DIR)"; \
-	fi && \
-	docker run \
- 	  --name $(PROJECT_NAME) {% if PROJECT_TYPE == 'jupyter'-%} --publish $(PORT):8888 {%- endif %} \
- 	  $${INTERACTIVE_SESSION_ARGS} \
- 	  $${BIND_MOUNT_APPLICATION_DIR_ON_CONTAINER_ARGS} \
- 	  -w /app/$(SRC_DIR) \
- 	  $(LATEST_IMG)
-	$(MAKE) stop-container
-
-.PHONY: pull-container
-pull-container:
-## Pull {{cookiecutter.project_slug}} container
-pull-container:
-	- docker pull $(LATEST_IMG)
-
-.PHONY: push-container
-push-container:
-## Push {{cookiecutter.project_slug}} container
-push-container: build-container
-	docker push $(IMG)
-	docker push $(LATEST_IMG)
-
-.PHONY: build-container
-build-container: export DOCKER_BUILDKIT=1
-## Build {{cookiecutter.project_slug}} container
-build-container:
-	docker build --tag $(IMG) .
-	@echo Built $(IMG)
-	@if ! [ "$(TAG)" = latest ]; then \
-		docker tag $(IMG) $(LATEST_IMG) && \
-		echo Built $(LATEST_IMG); \
-	fi
-
-.PHONY: stop-container
-## Stop container forcefully (i.e., when keyboard interrupts are disabled)
-stop-container:
-	- docker stop $(PROJECT_NAME)
-	- docker rm $(PROJECT_NAME)
 
 .PHONY: tox-%
 ## Run specified tox testenvs
