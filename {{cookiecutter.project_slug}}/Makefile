@@ -24,20 +24,16 @@ SRC_DIR := {{cookiecutter.package_name}}
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME := $(shell basename $(PROJECT_DIR))
 
+#################################################################################
+# COMMANDS                                                                      #
+#################################################################################
+
 # Commands' help text generation
 # When users invoke `make help` at the command line, any `##` prefixed lines that
 # immediately precede a rule will render as that rule's help text
 include .makefile/help.mk
 .DEFAULT_GOAL := help # alias `make` to `make help`
 
-#################################################################################
-# HELPER TARGETS                                                                #
-#################################################################################
-
-
-#################################################################################
-# COMMANDS                                                                      #
-#################################################################################
 include .makefile/docker.mk # Docker orchestration commands
 include .makefile/docs.mk # Documentation building commands
 include .makefile/project_orchestration.mk # Project/virtual environment orchestration commands
