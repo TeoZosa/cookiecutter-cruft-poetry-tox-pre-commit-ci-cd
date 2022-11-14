@@ -7,6 +7,14 @@ DOCKER_REPOSITORY = $(REGISTRY_NAMESPACE)/$(PROJECT_NAME)
 IMG := $(DOCKER_REPOSITORY):$(TAG)
 LATEST_IMG := $(DOCKER_REPOSITORY):latest
 
+.PHONY: get-docker-img-strong-version-tag
+get-docker-img-strong-version-tag:
+	@echo $(IMG)
+
+.PHONY: get-docker-img-latest-tag
+get-docker-img-latest-tag:
+	@echo $(LATEST_IMG)
+
 #################################################################################
 # HELPER TARGETS                                                                #
 #################################################################################
