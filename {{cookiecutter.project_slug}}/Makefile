@@ -2,6 +2,7 @@ define DESCRIPTION
 Code quality (testing, linting/auto-formatting, etc.) and local execution
 orchestration for $(PROJECT_NAME).
 endef
+export DESCRIPTION
 
 #################################################################################
 # CONFIGURATIONS                                                                #
@@ -359,7 +360,6 @@ docs-adl-preview:
 # 	* print line
 # Separate expressions are necessary because labels cannot be delimited by
 # semicolon; see <http://stackoverflow.com/a/11799865/1968>
-export DESCRIPTION
 .PHONY: help
 help:
 ifdef DESCRIPTION
