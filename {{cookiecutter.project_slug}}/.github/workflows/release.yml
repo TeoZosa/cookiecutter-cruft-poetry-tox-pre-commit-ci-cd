@@ -281,8 +281,8 @@ jobs:
       - name: Get container image metadata
         id: container-image-metadata
         run: |
-          CI_TAGGED_IMG=$(echo -n $(make get-make-var-IMG get-project-version-number) | tr ' ' '-')
-          CANONICAL_TAGGED_IMGS=$(echo -n $(make get-make-var-IMG get-make-var-LATEST_IMG) | tr ' ' ',')
+          CI_TAGGED_IMG=$(echo -n $(make get-docker-img-strong-version-tag get-project-version-number) | tr ' ' '-')
+          CANONICAL_TAGGED_IMGS=$(echo -n $(make get-docker-img-strong-version-tag get-docker-img-latest-tag) | tr ' ' ',')
           echo "::set-output name=tagged_images::${CI_TAGGED_IMG},${CANONICAL_TAGGED_IMGS}"
 
       - name: Build and push container image
