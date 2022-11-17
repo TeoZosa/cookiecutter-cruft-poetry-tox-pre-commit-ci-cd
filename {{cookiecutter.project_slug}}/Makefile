@@ -34,8 +34,10 @@ PROJECT_NAME := $(shell basename $(PROJECT_DIR))
 include .makefile/help.mk
 .DEFAULT_GOAL := help # alias `make` to `make help`
 
+# Note: must come before other includes
+include .makefile/version_tags.mk # "Strong" version tag for both packages & Docker image tags
+
 include .makefile/docker.mk # Docker orchestration commands
 include .makefile/docs.mk # Documentation building commands
 include .makefile/project_orchestration.mk # Project/virtual environment orchestration commands
 include .makefile/test.mk # Application testing + code quality and security scanning commands
-include .makefile/version_tags.mk # "Strong" version tag for both packages & Docker image tags
