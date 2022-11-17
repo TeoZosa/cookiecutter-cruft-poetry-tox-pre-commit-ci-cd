@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.2.0
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - name: Upgrade pip
         run: |
@@ -74,7 +74,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
 
     name: Package build
     runs-on: {{ "${{ matrix.os }}" }}
@@ -157,7 +157,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.2.0
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - name: Upgrade pip
         run: |
@@ -190,7 +190,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
 
     name: Verify package install as user
     runs-on: {{ "${{ matrix.os }}" }}
@@ -243,7 +243,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.2.0
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - name: Upgrade pip
         run: |
