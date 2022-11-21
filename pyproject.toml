@@ -82,7 +82,6 @@ sphinx = "^5.1.1"
 sphinx-autodoc-typehints = "^1.19.1"
 sphinx-rtd-theme = "^1.0.0"
 sphinxcontrib-apidoc = "^0.3.0"
-sphinxcontrib-confluencebuilder = "^1.9.0"
 types-emoji = "^1.7.1"
 
 #################################################################################
