@@ -9,13 +9,12 @@
   "project_boilerplate_type": ["cli", "none"],
   "jupyter_notebook_project": ["hybrid", "yes", "no"],
   "adr_documentation_support": ["no", "yes"],
-  "remote_vcs_host": ["github", "gitlab"],
-  "remote_vcs_url": "https://{{ cookiecutter.remote_vcs_host }}.com",
+  "remote_vcs_url": "https://github.com",
   "remote_vcs_username": "VCS_USERNAME",
   "container_registry_namespace": "DOCKER_OR_OTHER_HOST_REGISTRY_NAMESPACE",
   "project_repository_url": "{{cookiecutter.remote_vcs_url}}/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}",
-  "documentation_url": "https://{{ cookiecutter.project_slug }}.readthedocs.io",
-  "adr_documentation_url": "https://{{ cookiecutter.remote_vcs_username }}.{{ cookiecutter.remote_vcs_host }}.io/{{ cookiecutter.project_slug }}/adl/",
+  "documentation_url": "https://github.readthedocs.io",
+  "adr_documentation_url": "https://{{ cookiecutter.remote_vcs_username }}.github.io/{{ cookiecutter.project_slug }}/adl/",
   "version": "0.0.0",
   "_copy_without_render": [
     "docs/source/_templates/*"
