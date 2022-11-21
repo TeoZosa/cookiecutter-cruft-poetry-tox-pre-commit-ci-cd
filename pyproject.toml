@@ -45,7 +45,7 @@ importlib-metadata = "^5.0.0"
 structlog-sentry-logger = "^0.17.5"
 typer = {extras = ["all"], version = "^0.6.1"}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 # Type Checking and Data Validation
 mypy = "^0.991" # Static type checker
 
