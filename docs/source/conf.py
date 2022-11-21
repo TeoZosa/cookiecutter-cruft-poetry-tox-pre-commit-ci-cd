@@ -1,6 +1,5 @@
 """Sphinx configuration."""
 import datetime
-import os
 import pathlib
 import re
 import subprocess  # nosec
@@ -8,12 +7,10 @@ import sys
 from typing import List, Match
 
 import emoji
-from dotenv import find_dotenv, load_dotenv
 
 # Load user-specific env vars (e.g. secrets) from a `.env` file
 from sphinx.application import Sphinx
 
-load_dotenv(find_dotenv())
 _project_directory = pathlib.Path(__file__).parent.parent.parent
 
 
@@ -51,7 +48,6 @@ extensions = [
     "myst_parser",  # MyST .md parsing (https://myst-parser.readthedocs.io/en/latest/index.html)
     "sphinx.ext.intersphinx",  # Link to other projects’ documentation (https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
     "sphinx_rtd_theme",  # Sphinx theme used on Read The Docs (https://github.com/readthedocs/sphinx_rtd_theme)
-    "sphinxcontrib.confluencebuilder",  # Build Confluence supported format files (e.g. storage format) and optionally publish them to a Confluence instance (https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/)
 ]
 
 rst_prolog = pathlib.Path("global.rst").read_text(encoding="utf-8")
@@ -107,17 +103,6 @@ def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
 def setup(app: Sphinx) -> None:
     """Connects bespoke emoji shortcode conversion post-build function"""
     app.connect("build-finished", convert_emoji_shortcodes)
-
-
-# sphinxcontrib.confluencebuilder configs
-# user-specific values sourced from a `.env.` file in the root of this directory
-confluence_publish = True
-confluence_space_name = os.environ.get("confluence_space_name")
-confluence_parent_page = os.environ.get("confluence_parent_page")
-confluence_page_hierarchy = True
-confluence_server_url = os.environ.get("confluence_server_url")
-confluence_server_user = os.environ.get("confluence_server_user")
-confluence_server_pass = os.environ.get("confluence_server_pass")
 
 
 # -- External mapping --------------------------------------------------------
