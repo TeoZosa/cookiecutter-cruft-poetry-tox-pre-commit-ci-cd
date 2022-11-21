@@ -59,7 +59,7 @@ numpy = "^1.23.3"
 pandas = "^1.5.0"
 #{%- endif %}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 # Standardized Developer Workflow Orchestration
 cruft = "^2.11.1" # Automated Cookiecutter template synchronization
 

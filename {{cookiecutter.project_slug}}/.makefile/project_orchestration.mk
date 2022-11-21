@@ -33,7 +33,7 @@ endif
 .PHONY: install-dependencies
 ## Install Python dependencies specified in `poetry.lock`
 install-dependencies:
-	poetry install --no-interaction --no-root --with docs -vv
+	poetry install --no-interaction --no-root --with dev,docs -vv
 #{%- if cookiecutter.adr_documentation_support == 'yes' %}
 	# Install node ADR management library
 	poetry run nodeenv --python-virtualenv --jobs=$(NUM_PROCS)
