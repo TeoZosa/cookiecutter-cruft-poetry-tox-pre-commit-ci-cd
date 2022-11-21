@@ -43,7 +43,7 @@ install-dependencies:
 .PHONY: install-project
 ## Install {} source code (in editable mode)
 install-project:
-	poetry install --no-interaction -vv
+	poetry install --only-root --no-interaction -vv
 	$(MAKE) clean
 
 .PHONY: clean
