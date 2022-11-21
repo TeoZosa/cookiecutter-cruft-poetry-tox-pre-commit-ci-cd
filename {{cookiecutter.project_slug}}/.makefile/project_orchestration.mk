@@ -20,6 +20,21 @@ else
 	@echo "Using $(shell poetry --version) in $(shell which poetry)"
 endif
 
+.PHONY: update-pyproject-deps-to-latest
+# Based on: https://github.com/python-poetry/poetry/issues/461#issuecomment-920663114
+## Updates all dependencies in `pyproject.toml` to their latest versions
+update-pyproject-deps-to-latest: MAIN_DEPS_EXPORT_FILE:=main_deps.txt
+update-pyproject-deps-to-latest: DEV_DEPS_EXPORT_FILE:=dev_deps.txt
+update-pyproject-deps-to-latest: DOCS_DEPS_EXPORT_FILE:=docs_deps.txt
+update-pyproject-deps-to-latest:
+	poetry show --outdated --tree --only main | grep -v -e "[├,│,└].*" | cut -d " " -f 1 | sed 's/$$/\@latest/g' > $(MAIN_DEPS_EXPORT_FILE)
+	poetry show --outdated --tree --only dev | grep -v -e "[├,│,└].*" | cut -d " " -f 1 | sed 's/$$/\@latest/g' > $(DEV_DEPS_EXPORT_FILE)
+	poetry show --outdated --tree --only docs | grep -v -e "[├,│,└].*" | cut -d " " -f 1 | sed 's/$$/\@latest/g' > $(DOCS_DEPS_EXPORT_FILE)
+	cat $(MAIN_DEPS_EXPORT_FILE) | xargs poetry add -vvv --group=main
+	cat $(DEV_DEPS_EXPORT_FILE) | xargs poetry add -vvv --group=dev
+	cat $(DOCS_DEPS_EXPORT_FILE) | xargs poetry add -vvv --group=docs
+	rm $(MAIN_DEPS_EXPORT_FILE) $(DEV_DEPS_EXPORT_FILE) $(DOCS_DEPS_EXPORT_FILE)
+
 .PHONY: update-dependencies
 ## Update and install Python dependencies,
 ## updating packages in `poetry.lock` with any newer versions
