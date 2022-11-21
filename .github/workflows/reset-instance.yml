@@ -35,10 +35,10 @@ jobs:
           path: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
           token: ${{ secrets.X_GITHUB_TOKEN }}
 
-      - name: Set up Python 3.9
+      - name: Set up Python
         uses: actions/setup-python@v4.3.0
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - name: Install cruft
         working-directory: ${{ env.COOKIECUTTER_META_PROJECT }}
