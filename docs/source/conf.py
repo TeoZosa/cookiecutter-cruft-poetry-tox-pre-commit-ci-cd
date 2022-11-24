@@ -78,6 +78,7 @@ html_show_sourcelink = (
 # Prefix document path to section labels, to use:
 # `path/to/file:heading` instead of just `heading`
 autosectionlabel_prefix_document = True
+myst_heading_anchors = 3
 
 
 def convert_emoji_shortcodes(app: Sphinx, exception: Exception) -> None:
