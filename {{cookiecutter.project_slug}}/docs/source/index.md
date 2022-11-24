@@ -7,7 +7,6 @@
    :maxdepth: 1
 
    readme
-   {% if cookiecutter.project_boilerplate_type == 'cli' -%} usage {%- endif %}
    API Reference <autoapi/{{cookiecutter.package_name}}/index>
    {% if cookiecutter.project_type == 'package' -%} Developer Reference <autoapi/{{cookiecutter.package_name}}/PATH_TO_HIDDEN_MODULES/index> {%- endif %}
    contributing
