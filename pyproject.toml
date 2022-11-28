@@ -41,7 +41,7 @@ python = "^3.8,<3.12"
 cruft = "^2.11.1"
 
 # Project cookiecutter dependencies
-hypothesis = "^6.58.0"
+hypothesis = "^6.58.1"
 python-dotenv = "^0.21.0"
 importlib-metadata = "^5.1.0"
 structlog-sentry-logger = "^0.18.0"
