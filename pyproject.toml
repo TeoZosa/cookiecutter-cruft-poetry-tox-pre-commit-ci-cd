@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-cruft-poetry-tox-pre-commit-ci-cd"
-version = "0.4.0"
+version = "0.5.0"
 description = "Standardized Python project creation and synchronization"
 authors = ["Teo Zosa <erinzosa@ucla.edu>"]
 license = "Apache-2.0"
