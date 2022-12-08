@@ -182,4 +182,5 @@ jobs:
 
       - name: Build Documentation
         run: |
-          make docs-html
+          make docs-html \
+            LAUNCH_DOCS_PREVIEW=false
