@@ -252,7 +252,8 @@ jobs:
 
       - name: Build Documentation
         run: |
-          make docs-html
+          make docs-html \
+            LAUNCH_DOCS_PREVIEW=false
 
 {%- if cookiecutter.jupyter_notebook_project != 'yes' %}
   # Mutation testing jobs ------------------------
