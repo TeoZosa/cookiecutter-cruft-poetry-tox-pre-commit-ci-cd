@@ -143,6 +143,16 @@ repos:
     rev: v3.5.1-2
     hooks:
       - id: shfmt # native (requires Go to build)
+        args:
+          # Formatting options based on Google's shell style guidelines
+          # see:
+          # - https://www.mankier.com/1/shfmt#Examples
+          # - https://www.mankier.com/1/shfmt#Options
+          - --binary-next-line
+          - --case-indent
+          - --indent=2
+          - --write
+        types: [shell]
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.28.0
