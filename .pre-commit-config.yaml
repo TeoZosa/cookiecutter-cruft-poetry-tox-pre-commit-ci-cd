@@ -36,6 +36,7 @@ repos:
     hooks:
       - id: hadolint-docker
         name: hadolint
+        args: [--ignore=DL4003]
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
