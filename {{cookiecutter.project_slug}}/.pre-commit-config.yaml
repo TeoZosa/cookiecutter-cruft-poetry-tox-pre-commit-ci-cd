@@ -40,6 +40,12 @@ repos:
       - id: flakeheaven
         exclude_types: [jupyter]
 
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+        name: hadolint
+
   # Docstring coverage tool
   - repo: https://github.com/econchick/interrogate
     rev: 1.5.0
