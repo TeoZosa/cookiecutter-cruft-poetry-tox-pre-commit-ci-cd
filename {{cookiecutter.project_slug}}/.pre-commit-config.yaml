@@ -139,6 +139,14 @@ repos:
       - id: pyupgrade
         args: [--py38-plus]
 
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.8.0
+    hooks:
+      - id: shellcheck
+        args:
+          - --external-sources
+        types: [shell]
+
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.5.1-2
     hooks:
