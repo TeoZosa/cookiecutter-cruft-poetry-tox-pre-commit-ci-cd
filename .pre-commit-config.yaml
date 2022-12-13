@@ -31,6 +31,13 @@ repos:
         verbose: true
         entry: bash -c 'flakeheaven lint "$@" || true' --
 
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+        name: hadolint
+        args: [--ignore=DL4003]
+
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
     hooks:
