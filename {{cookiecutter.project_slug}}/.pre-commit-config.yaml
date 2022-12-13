@@ -150,7 +150,7 @@ repos:
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.5.1-2
     hooks:
-      - id: shfmt # native (requires Go to build)
+      - id: shfmt-docker # Docker image (requires Docker to run)
         args:
           # Formatting options based on Google's shell style guidelines
           # see:
