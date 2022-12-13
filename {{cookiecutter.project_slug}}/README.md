@@ -3,6 +3,7 @@
 {%- if 'github' in cookiecutter.remote_vcs_url %}
 ![CI]({{ cookiecutter.project_repository_url }}/workflows/CI/badge.svg)
 ![codecov](https://codecov.io/gh/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg?token=3HF21UWY82)
+[![Documentation Status](https://readthedocs.org/projects/{{cookiecutter.project_slug}}/badge/?version=latest)](https://{{cookiecutter.project_slug}}.readthedocs.io/en/latest/?badge=latest)
 ![License](https://img.shields.io/github/license/{{cookiecutter.remote_vcs_username}}/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}?style=plastic)
 ![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_slug}}?color=informational&style=plastic)
