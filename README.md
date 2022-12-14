@@ -215,11 +215,11 @@ cruft update
     - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
     - [`hadolint`](https://github.com/hadolint/hadolint)
     - [Pylint](https://github.com/PyCQA/pylint)[^2]
-    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
 - Code formatting:
     - [Black](https://github.com/psf/black)[^2]
     - [isort](https://github.com/timothycrosley/isort)[^2]
+    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
     - [`shfmt`](https://github.com/mvdan/sh)
       - Configured by default to align with [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
     - [`pretty-format-json`](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
