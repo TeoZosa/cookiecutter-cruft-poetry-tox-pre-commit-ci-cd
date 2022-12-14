@@ -177,10 +177,11 @@ https://user-images.githubusercontent.com/13070236/207501188-98af2617-14f1-4b02-
     for usage overview
 
 > :fire: **Tip**  
->  Precondition enforcement (i.e., function-specific input validation) also helps
-> eliminate the _hidden argument requirements_ implicit knowledge violation:
+> Complementary to type-checking, function-specific input validation is another useful
+> technique. This helps eliminate an _implicit knowledge violation_ from
+> **_hidden argument requirements_**:
 >
->  "_Hidden argument requirements_ occur when a method signature implies a wider range of
+>  "**_Hidden argument requirements_** occur when a method signature implies a wider range of
 >  valid inputs than the method actually accepts. For example, accepting an int while
 >  only allowing numbers 1 to 10 is a hidden constraint." [1]
 >  
