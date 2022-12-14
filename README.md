@@ -223,9 +223,9 @@ cruft update
     - [`shfmt`](https://github.com/mvdan/sh)
       - Configured by default to align with [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 - General file formatting:
+    - [`end-of-file-fixer`](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
     - [`pretty-format-json`](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [`trailing-whitespace`](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
-    - [`end-of-file-fixer`](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
 - Unsanitary commits:
   - Secrets
     with [`detect-secrets`](https://github.com/Yelp/detect-secrets)
