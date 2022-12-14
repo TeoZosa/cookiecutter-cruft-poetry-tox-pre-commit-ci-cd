@@ -215,6 +215,7 @@ cruft update
     - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
     - [Pylint](https://www.pylint.org/)[^2]
     - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
+    - [ShellCheck](https://github.com/koalaman/shellcheck)
 - Code formatting:
     - [Black](https://github.com/psf/black)[^2]
     - [isort](https://github.com/timothycrosley/isort)[^2]
