@@ -40,7 +40,7 @@ jobs:
       - name: Check if there is a parent commit
         id: check-parent-commit
         run: |
-          echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
+          echo "sha=$(git rev-parse --verify --quiet HEAD^)" >> $GITHUB_OUTPUT
 
       - name: Detect and tag new version
         id: detect-new-version-tag
@@ -52,7 +52,7 @@ jobs:
           git checkout "${BRANCH_NAME}"
           CURRENT_COMMIT_VER=$(make get-project-version-number)
           if [[ "${PARENT_COMMIT_VER}" != "${CURRENT_COMMIT_VER}" ]]; then
-            echo "::set-output name=tag::${CURRENT_COMMIT_VER}"
+            echo "tag=${CURRENT_COMMIT_VER}" >> $GITHUB_OUTPUT
           fi
 
       - name: Bump version for developmental release
@@ -63,7 +63,7 @@ jobs:
           VERSION=$(make get-project-version-number) &&
           DEV_VERSION="${VERSION}.dev.$(date +%s)" &&
           poetry version "${DEV_VERSION}" &&
-          echo "::set-output name=version::${DEV_VERSION}"
+          echo "version=${DEV_VERSION}" >> $GITHUB_OUTPUT
 
 
   # Release notes publication ----------------------
