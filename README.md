@@ -214,11 +214,11 @@ cruft update
 - Code quality:
     - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
     - [Pylint](https://www.pylint.org/)[^2]
-    - [pyupgrade](https://github.com/asottile/pyupgrade)[^2]
+    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
 - Code formatting:
     - [Black](https://github.com/psf/black)[^2]
     - [isort](https://github.com/timothycrosley/isort)[^2]
-    - [shfmt](https://github.com/mvdan/sh)
+    - [`shfmt`](https://github.com/mvdan/sh)
     - [`pretty-format-json`](https://github.com/pre-commit/pre-commit-hooks#pretty-format-json)
     - (trim) [`trailing-whitespace`](https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace)
     - [`end-of-file-fixer`](https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer)
