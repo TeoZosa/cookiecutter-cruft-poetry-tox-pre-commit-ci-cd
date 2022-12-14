@@ -95,6 +95,11 @@ updates:
       - "dependencies"
       - "python"
     open-pull-requests-limit: 99
+    ignore:
+      - dependency-name: "tox"
+        # For tox, ignore all updates for version 4
+        # until https://github.com/ymyzk/tox-gh-actions/issues/59 is closed
+        versions: ["4.x"]
   # Project dependencies
   - package-ecosystem: pip
     directory: "/{{cookiecutter.project_slug}}"
