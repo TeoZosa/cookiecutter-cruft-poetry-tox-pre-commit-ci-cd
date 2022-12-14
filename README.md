@@ -213,7 +213,7 @@ cruft update
 
 - Code quality:
     - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
-    - [Pylint](https://www.pylint.org/)[^2]
+    - [Pylint](https://github.com/PyCQA/pylint)[^2]
     - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
 - Code formatting:
