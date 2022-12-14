@@ -126,7 +126,10 @@ cruft update
   as an [interface shim](https://en.wikipedia.org/wiki/Shim_(computing))
     - Self-documenting [Makefile](./{{cookiecutter.project_slug}}/Makefile); just type
       `make` on the command line to display auto-generated documentation on available
-      targets
+      targets:
+
+https://user-images.githubusercontent.com/13070236/207501188-98af2617-14f1-4b02-8c14-bac86598e25b.mov
+
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
 - Test automation
