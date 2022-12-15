@@ -128,7 +128,10 @@ cruft update
       `make` on the command line to display auto-generated documentation on available
       targets:
 
-https://user-images.githubusercontent.com/13070236/207501188-98af2617-14f1-4b02-8c14-bac86598e25b.mov
+<video width="720" height="540"
+src="https://user-images.githubusercontent.com/13070236/207501188-98af2617-14f1-4b02-8c14-bac86598e25b.mov"
+type="video/mp4"
+controls autoplay loop></video>
 
 - Automated Cookiecutter template synchronization
   with [cruft](https://cruft.github.io/cruft/)
