@@ -25,19 +25,14 @@ def version_callback(
 ) -> None:  # pylint: disable=unsubscriptable-object
     """Provides a version option for the CLI"""
     if value:
-        console.print(
-            f"{app.info.name.title()} "  # type: ignore[union-attr]
-            f"CLI version: {__version__}"
-        )
+        console.print(f"{app.info.name.title()} " f"CLI version: {__version__}")  # type: ignore[union-attr]
         raise typer.Exit()
 
 
 @typeguard.typechecked()
 @app.command()
 def main(
-    version: Optional[  # pylint: disable=unsubscriptable-object,unused-argument
-        bool
-    ] = typer.Option(
+    version: Optional[bool] = typer.Option(  # pylint: disable=unsubscriptable-object,unused-argument
         None,
         "--version",
         callback=version_callback,
