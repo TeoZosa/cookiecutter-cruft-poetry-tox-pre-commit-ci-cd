@@ -68,9 +68,7 @@ exclude_patterns: List[str] = [
 
 # Sphinx configs
 html_theme = "sphinx_rtd_theme"
-html_show_sourcelink = (
-    False  # Remove 'view source code' from top of page (for html, not python)
-)
+html_show_sourcelink = False  # Remove 'view source code' from top of page (for html, not python)
 
 # -- Extension configurations ---------------------------------------------------
 

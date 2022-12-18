@@ -87,8 +87,10 @@ sphinxcontrib-apidoc = "^0.3.0"
 types-emoji = "^1.7.1"
 
 #################################################################################
-# Tooling configs                                                               #
+# Tooling configs                                                                #
 #################################################################################
+[tool.black]
+line-length = 120
 
 [tool.flakeheaven]
 # specify any flake8 options
