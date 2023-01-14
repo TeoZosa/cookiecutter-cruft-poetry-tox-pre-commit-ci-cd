@@ -79,11 +79,8 @@ repos:
     rev: 1.5.3
     hooks:
       - id: nbqa-black
-        additional_dependencies: [black==22.10.0]
       - id: nbqa-isort
-        additional_dependencies: [isort==5.10.1]
       - id: nbqa-pyupgrade
-        additional_dependencies: [pyupgrade==v3.2.2]
 
   - repo: local
     hooks:
