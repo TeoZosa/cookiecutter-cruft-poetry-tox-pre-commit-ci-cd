@@ -34,12 +34,6 @@ repos:
         exclude_types: [jupyter]
         # {%- endif %}
 
-  - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 3.2.1
-    hooks:
-      - id: flakeheaven
-        exclude_types: [jupyter]
-
   - repo: https://github.com/hadolint/hadolint
     rev: v2.12.0
     hooks:
