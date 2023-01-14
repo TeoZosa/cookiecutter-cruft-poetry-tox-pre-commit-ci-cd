@@ -90,14 +90,6 @@ types-emoji = "^1.7.1"
 [tool.black]
 line-length = 120
 
-[tool.flakeheaven]
-# specify any flake8 options
-exclude = [".*"] # Ignore dotfiles
-# make output nice
-format = "grouped"
-# show line of source code in output
-show_source = true
-
 [mypy]
 ignore_missing_imports = true
 pretty = true

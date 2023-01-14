@@ -21,16 +21,6 @@ repos:
       - id: detect-secrets
         exclude: poetry.lock
 
-  - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 3.0.0
-    hooks:
-      - id: flakeheaven
-        # False-positives from cookiecutter Jinja2 template syntax =>
-        # print output but always succeed.
-        # see: https://stackoverflow.com/a/59745587
-        verbose: true
-        entry: bash -c 'flakeheaven lint "$@" || true' --
-
   - repo: https://github.com/hadolint/hadolint
     rev: v2.12.0
     hooks:
