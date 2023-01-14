@@ -38,11 +38,6 @@ repos:
         name: hadolint
         args: [--ignore=DL4003]
 
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.10.1
-    hooks:
-      - id: isort
-
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
     rev: v1.1.2
     hooks:
