@@ -88,6 +88,16 @@ repos:
       - id: pyupgrade
         args: [--py38-plus]
 
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.220
+    hooks:
+      - id: ruff
+        # False-positives from cookiecutter Jinja2 template syntax =>
+        # print output but always succeed.
+        # see: https://stackoverflow.com/a/59745587
+        verbose: true
+        entry: bash -c 'ruff "$@" || true' --
+
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.8.0
     hooks:
