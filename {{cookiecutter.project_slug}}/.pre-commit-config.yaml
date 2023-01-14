@@ -142,6 +142,11 @@ repos:
       - id: pyupgrade
         args: [--py38-plus]
 
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.220
+    hooks:
+      - id: ruff
+
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.8.0
     hooks:
