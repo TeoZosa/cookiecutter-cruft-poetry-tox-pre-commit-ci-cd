@@ -94,8 +94,6 @@ tox-wheel = "^1.0.0"
 # Linting
 ## Code formatting
 black = "^22.10.0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
-## Code quality
-pylint = "^2.15.6"
 ## Automation and management
 pre-commit = "^2.20.0"
 
@@ -208,19 +206,9 @@ show_column_numbers = true
 show_error_context = true
 show_error_codes = true
 
-[tool.pylint.basic]
-good-names-rgxs = ["^Test_.*$"]
-
+#{%- if cookiecutter.jupyter_notebook_project != 'no' %}
 [tool.pylint.messages_control]
 disable = [
-  # Explicitly document only as needed
-  "missing-module-docstring",
-  "missing-class-docstring",
-  "missing-function-docstring",
-  # Black & Flake8 purview
-  "line-too-long",
-  "c-extension-no-member",
-#{%- if cookiecutter.jupyter_notebook_project != 'no' %}
   # Ignore errors resulting from Jupyter notebook-style programming
   "invalid-name",
   "redefined-outer-name",
@@ -228,12 +216,8 @@ disable = [
   "ungrouped-imports",
   "wrong-import-order",
   "wrong-import-position",
-#{%- endif %}
 ]
-
-[tool.pylint.similarities]
-# Ignore imports when computing similarities.
-ignore-imports = "yes"
+#{%- endif %}
 
 [tool.pytest.ini_options]
 addopts = ["-rfsxX", "-l", "--tb=short", "--strict-markers", "-vv", "--emoji", "--xdoctest"]
@@ -249,6 +233,7 @@ line-length = 120
 
 select = [
     "I", # isort
+    "PLC", "PLE", "PLR", "PLW", # Pylint
 ]
 
 ignore = [
