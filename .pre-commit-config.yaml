@@ -58,19 +58,6 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         types: [python]
 
-  - repo: local
-    hooks:
-      - id: pylint
-        name: pylint
-        language: system
-        # False-positives from cookiecutter Jinja2 template syntax =>
-        # print output but always succeed.
-        # see: https://stackoverflow.com/a/59745587
-        verbose: true
-        entry: bash -c '.tox/precommit/bin/pylint "$@" || true' --
-        args: [--rcfile=pyproject.toml]
-        types: [python]
-
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:
