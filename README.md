@@ -246,10 +246,10 @@ controls autoplay loop></video>
 ### :construction_worker: CI/CD
 
 - [Docker](https://www.docker.com/) image builds and pushes
-  to [Docker Hub](https://hub.docker.com/)[^3]
+  to [Docker Hub](https://hub.docker.com/)[^4]
 - Python package uploads
   to [PyPI](https://pypi.org/)
-  and [TestPyPI](https://test.pypi.org/)[^1][^3]
+  and [TestPyPI](https://test.pypi.org/)[^1][^4]
 - Documentation building and hosting
   with [Read the Docs](https://readthedocs.org/)
 - Release notes (PR-based) drafting and publishing
@@ -257,7 +257,7 @@ controls autoplay loop></video>
 - Dependency updates
   with [Dependabot](https://dependabot.com/)
   - Automated [Dependabot](https://dependabot.com/) PR merging
-    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[^3]
+    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[^4]
 - Project issue labels management
   with [GitHub Labeler](https://github.com/marketplace/actions/github-labeler)
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
@@ -308,7 +308,7 @@ controls autoplay loop></video>
   - Rich automatic documentation from type annotations and docstrings (NumPy, Google,
     etc.)
     with [`sphinx-autoapi`](https://github.com/readthedocs/sphinx-autoapi)
-  - Automated emoji shortcode conversion[^4]
+  - Automated emoji shortcode conversion[^5]
 - Docstring coverage
   with [`interrogate`](https://interrogate.readthedocs.io/)
 - Automated README table of contents generation
@@ -334,14 +334,14 @@ controls autoplay loop></video>
 
 [^2]: Jupyter notebook compatibility via [nbQA](https://github.com/nbQA-dev/nbQA)
 
-[^3]: Requires definitions of one or more of the below repository secrets:
+[^4]: Requires definitions of one or more of the below repository secrets:
   AUTO_MERGE_DEPENDABOT_TOKEN
   DOCKERHUB_TOKEN
   DOCKERHUB_USERNAME
   PYPI_TOKEN
   TEST_PYPI_TOKEN
 
-[^4]: Custom setup steps in Sphinx configuration file for Read the Docs compatibility (see: [conf.py:117-139]({{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139))
+[^5]: Custom setup steps in Sphinx configuration file for Read the Docs compatibility (see: [conf.py:117-139]({{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139))
 
 :judge: Legal
 =============
