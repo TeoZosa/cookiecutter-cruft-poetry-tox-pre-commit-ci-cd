@@ -219,6 +219,11 @@ controls autoplay loop></video>
 ### :rotating_light: Linting
 
 - Code quality:
+    - [Ruff](https://github.com/charliermarsh/ruff)
+      - A blazing-fast (10x-100x faster) replacement for
+        [Pylint](https://github.com/PyCQA/pylint),
+        [Flake8](https://github.com/PyCQA/flake8) (including major plugins),
+        and more under a single, common interface
     - [`hadolint`](https://github.com/hadolint/hadolint)
     - [Pylint](https://github.com/PyCQA/pylint)[^2]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
