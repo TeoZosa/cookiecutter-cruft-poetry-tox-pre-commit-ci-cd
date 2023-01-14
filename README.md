@@ -8,6 +8,7 @@ cookiecutter-cruft-poetry-tox-pre-commit-ci-cd
 ![License](https://img.shields.io/github/license/TeoZosa/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd?style=plastic)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cookiecutter-cruft-poetry-tox-pre-commit-ci-cd-instance?style=plastic)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json)](https://github.com/charliermarsh/ruff)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![powered by semgrep](https://img.shields.io/badge/powered%20by-semgrep-1B2F3D?labelColor=lightgrey&link=https://semgrep.dev/&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAABmJLR0QA/gD+AP+cH+QUAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH5AYMEy0l8dkqrQAAAvFJREFUKBUB5gIZ/QEAAP8BAAAAAAMG6AD9+hn/GzA//wD//wAAAAD+AAAAAgABAQDl0MEBAwbmAf36GQAAAAAAAQEC9QH//gv/Gi1GFQEC+OoAAAAAAAAAAAABAQAA//8AAAAAAAAAAAD//ggX5tO66gID9AEBFSRxAgYLzRQAAADpAAAAAP7+/gDl0cMPAAAA+wAAAPkbLz39AgICAAAAAAAAAAAs+vU12AEbLz4bAAAA5P8AAAAA//4A5NDDEwEBAO///wABAQEAAP//ABwcMD7hAQEBAAAAAAAAAAAaAgAAAOAAAAAAAQEBAOXRwxUAAADw//8AAgAAAAD//wAAAAAA5OXRwhcAAQEAAAAAAAAAAOICAAAABP3+/gDjzsAT//8A7gAAAAEAAAD+AAAA/wAAAAAAAAAA//8A7ePOwA/+/v4AAAAABAIAAAAAAAAAAAAAAO8AAAABAAAAAAAAAAIAAAABAAAAAAAAAAgAAAD/AAAA8wAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA8AAAAEAAAA/gAAAP8AAAADAAAA/gAAAP8AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA7wAAAPsAAAARAAAABAAAAP4AAAAAAAAAAgAAABYAAAAAAAAAAAIAAAD8AwICAB0yQP78/v4GAAAA/wAAAPAAAAD9AAAA/wAAAPr9//8aHTJA6AICAgAAAAD8AgAAADIAAAAAAP//AB4wPvgAAAARAQEA/gEBAP4BAQABAAAAGB0vPeIA//8AAAAAAAAAABAC+vUz1QAAAA8AAAAAAwMDABwwPu3//wAe//8AAv//ABAcMD7lAwMDAAAAAAAAAAAG+vU0+QEBAvUB//4L/xotRhUBAvjqAAAAAAAAAAAAAQEAAP//AAAAAAAAAAAA//4IF+bTuuoCA/QBAQAA/wEAAAAAAwboAP36Gf8bMD//AP//AAAAAP4AAAACAAEBAOXQwQEDBuYB/foZAAAAAAD4I6qbK3+1zQAAAABJRU5ErkJggg==)](https://semgrep.dev/)
 
@@ -219,14 +220,18 @@ controls autoplay loop></video>
 ### :rotating_light: Linting
 
 - Code quality:
-    - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
+    - [Ruff](https://github.com/charliermarsh/ruff)
+      - A blazing-fast (10x-100x faster) replacement for
+        [Pylint](https://github.com/PyCQA/pylint),
+        [Flake8](https://github.com/PyCQA/flake8) (including major plugins),
+        and more under a single, common interface
     - [`hadolint`](https://github.com/hadolint/hadolint)
-    - [Pylint](https://github.com/PyCQA/pylint)[^2]
+    - [Pylint](https://github.com/PyCQA/pylint)[^2][^3]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
 - Code formatting:
     - [Black](https://github.com/psf/black)[^2]
-    - [isort](https://github.com/timothycrosley/isort)[^2]
-    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
+    - [isort](https://github.com/timothycrosley/isort)[^2][^3]
+    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2][^3]
     - [`shfmt`](https://github.com/mvdan/sh)
       - Configured by default to align with [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 - General file formatting:
@@ -246,10 +251,10 @@ controls autoplay loop></video>
 ### :construction_worker: CI/CD
 
 - [Docker](https://www.docker.com/) image builds and pushes
-  to [Docker Hub](https://hub.docker.com/)[^3]
+  to [Docker Hub](https://hub.docker.com/)[^4]
 - Python package uploads
   to [PyPI](https://pypi.org/)
-  and [TestPyPI](https://test.pypi.org/)[^1][^3]
+  and [TestPyPI](https://test.pypi.org/)[^1][^4]
 - Documentation building and hosting
   with [Read the Docs](https://readthedocs.org/)
 - Release notes (PR-based) drafting and publishing
@@ -257,7 +262,7 @@ controls autoplay loop></video>
 - Dependency updates
   with [Dependabot](https://dependabot.com/)
   - Automated [Dependabot](https://dependabot.com/) PR merging
-    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[^3]
+    with the [Dependabot Auto Merge GitHub Action](https://github.com/ahmadnassri/action-dependabot-auto-merge)[^4]
 - Project issue labels management
   with [GitHub Labeler](https://github.com/marketplace/actions/github-labeler)
 - Lightweight polyglot static analysis for code quality enforcement in addition to bug and security vulnerability identification
@@ -308,7 +313,7 @@ controls autoplay loop></video>
   - Rich automatic documentation from type annotations and docstrings (NumPy, Google,
     etc.)
     with [`sphinx-autoapi`](https://github.com/readthedocs/sphinx-autoapi)
-  - Automated emoji shortcode conversion[^4]
+  - Automated emoji shortcode conversion[^5]
 - Docstring coverage
   with [`interrogate`](https://interrogate.readthedocs.io/)
 - Automated README table of contents generation
@@ -334,14 +339,16 @@ controls autoplay loop></video>
 
 [^2]: Jupyter notebook compatibility via [nbQA](https://github.com/nbQA-dev/nbQA)
 
-[^3]: Requires definitions of one or more of the below repository secrets:
+[^3]: Via [`ruff`](https://github.com/charliermarsh/ruff)
+
+[^4]: Requires definitions of one or more of the below repository secrets:
   AUTO_MERGE_DEPENDABOT_TOKEN
   DOCKERHUB_TOKEN
   DOCKERHUB_USERNAME
   PYPI_TOKEN
   TEST_PYPI_TOKEN
 
-[^4]: Custom setup steps in Sphinx configuration file for Read the Docs compatibility (see: [conf.py:117-139]({{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139))
+[^5]: Custom setup steps in Sphinx configuration file for Read the Docs compatibility (see: [conf.py:117-139]({{cookiecutter.project_slug}}/docs/source/conf.py#L117-L139))
 
 :judge: Legal
 =============
