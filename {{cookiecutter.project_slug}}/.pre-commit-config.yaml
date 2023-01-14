@@ -81,7 +81,6 @@ repos:
       - id: nbqa-black
         additional_dependencies: [black==22.10.0]
       - id: nbqa-isort
-        additional_dependencies: [isort==5.10.1]
       - id: nbqa-pyupgrade
 
   - repo: local
