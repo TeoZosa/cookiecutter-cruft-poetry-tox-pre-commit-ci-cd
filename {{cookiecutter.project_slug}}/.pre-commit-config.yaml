@@ -99,21 +99,6 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         language: system
         types: [jupyter]
-
-  # Note: submit docs for this to nbqa?
-  # ex. https://nbqa.readthedocs.io/en/latest/pre-commit.html
-  # referencing:
-  #   [Remove pylint config E0401 and make pylint a local pre-commit hook #229](https://github.com/nbQA-dev/nbQA/pull/229/files)
-
-  # E0401: import-error
-  - repo: local
-    hooks:
-      - id: nbqa-pylint
-        name: nbqa-pylint
-        description: "Run tox env `pylint` on a Jupyter Notebook"
-        entry: .tox/precommit/bin/nbqa pylint
-        language: system
-        types: [jupyter]
   # {%- endif %}
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
