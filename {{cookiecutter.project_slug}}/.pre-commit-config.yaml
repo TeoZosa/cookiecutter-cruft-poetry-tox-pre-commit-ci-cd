@@ -34,12 +34,6 @@ repos:
         exclude_types: [jupyter]
         # {%- endif %}
 
-  - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 3.2.1
-    hooks:
-      - id: flakeheaven
-        exclude_types: [jupyter]
-
   - repo: https://github.com/hadolint/hadolint
     rev: v2.12.0
     hooks:
@@ -52,11 +46,6 @@ repos:
     hooks:
       - id: interrogate
         args: [-vv, --config=pyproject.toml]
-
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.10.1
-    hooks:
-      - id: isort
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
     rev: v1.1.2
@@ -76,11 +65,10 @@ repos:
 
   # {%- if cookiecutter.jupyter_notebook_project != 'no' %}
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.5.3
+    rev: 1.6.1
     hooks:
       - id: nbqa-black
-      - id: nbqa-isort
-      - id: nbqa-pyupgrade
+      - id: nbqa-ruff
 
   - repo: local
     hooks:
@@ -104,31 +92,7 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         language: system
         types: [jupyter]
-
-  # Note: submit docs for this to nbqa?
-  # ex. https://nbqa.readthedocs.io/en/latest/pre-commit.html
-  # referencing:
-  #   [Remove pylint config E0401 and make pylint a local pre-commit hook #229](https://github.com/nbQA-dev/nbQA/pull/229/files)
-
-  # E0401: import-error
-  - repo: local
-    hooks:
-      - id: nbqa-pylint
-        name: nbqa-pylint
-        description: "Run tox env `pylint` on a Jupyter Notebook"
-        entry: .tox/precommit/bin/nbqa pylint
-        language: system
-        types: [jupyter]
   # {%- endif %}
-
-  - repo: local
-    hooks:
-      - id: pylint
-        name: pylint
-        language: system
-        entry: .tox/precommit/bin/pylint
-        args: [--rcfile=pyproject.toml]
-        types: [python]
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
@@ -136,11 +100,10 @@ repos:
       - id: script-must-have-extension
       - id: script-must-not-have-extension
 
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.2.2
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.220
     hooks:
-      - id: pyupgrade
-        args: [--py38-plus]
+      - id: ruff
 
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.8.0

@@ -21,27 +21,12 @@ repos:
       - id: detect-secrets
         exclude: poetry.lock
 
-  - repo: https://github.com/flakeheaven/flakeheaven
-    rev: 3.0.0
-    hooks:
-      - id: flakeheaven
-        # False-positives from cookiecutter Jinja2 template syntax =>
-        # print output but always succeed.
-        # see: https://stackoverflow.com/a/59745587
-        verbose: true
-        entry: bash -c 'flakeheaven lint "$@" || true' --
-
   - repo: https://github.com/hadolint/hadolint
     rev: v2.12.0
     hooks:
       - id: hadolint-docker
         name: hadolint
         args: [--ignore=DL4003]
-
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.10.1
-    hooks:
-      - id: isort
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
     rev: v1.1.2
@@ -63,30 +48,21 @@ repos:
         args: [--cache-dir=/dev/null, --config-file=pyproject.toml]
         types: [python]
 
-  - repo: local
-    hooks:
-      - id: pylint
-        name: pylint
-        language: system
-        # False-positives from cookiecutter Jinja2 template syntax =>
-        # print output but always succeed.
-        # see: https://stackoverflow.com/a/59745587
-        verbose: true
-        entry: bash -c '.tox/precommit/bin/pylint "$@" || true' --
-        args: [--rcfile=pyproject.toml]
-        types: [python]
-
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:
       - id: script-must-have-extension
       - id: script-must-not-have-extension
 
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.38.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.220
     hooks:
-      - id: pyupgrade
-        args: [--py38-plus]
+      - id: ruff
+        # False-positives from cookiecutter Jinja2 template syntax =>
+        # print output but always succeed.
+        # see: https://stackoverflow.com/a/59745587
+        verbose: true
+        entry: bash -c 'ruff "$@" || true' --
 
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.8.0
