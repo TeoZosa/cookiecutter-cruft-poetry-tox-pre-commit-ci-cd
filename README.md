@@ -225,12 +225,12 @@ controls autoplay loop></video>
         [Flake8](https://github.com/PyCQA/flake8) (including major plugins),
         and more under a single, common interface
     - [`hadolint`](https://github.com/hadolint/hadolint)
-    - [Pylint](https://github.com/PyCQA/pylint)[^2]
+    - [Pylint](https://github.com/PyCQA/pylint)[^2][^3]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
 - Code formatting:
     - [Black](https://github.com/psf/black)[^2]
-    - [isort](https://github.com/timothycrosley/isort)[^2]
-    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2]
+    - [isort](https://github.com/timothycrosley/isort)[^2][^3]
+    - [`pyupgrade`](https://github.com/asottile/pyupgrade)[^2][^3]
     - [`shfmt`](https://github.com/mvdan/sh)
       - Configured by default to align with [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 - General file formatting:
@@ -337,6 +337,8 @@ controls autoplay loop></video>
 [^1]: Conditionally rendered based on the configurations specified in the project setup phase to avoid tooling bloat
 
 [^2]: Jupyter notebook compatibility via [nbQA](https://github.com/nbQA-dev/nbQA)
+
+[^3]: Via [`ruff`](https://github.com/charliermarsh/ruff)
 
 [^4]: Requires definitions of one or more of the below repository secrets:
   AUTO_MERGE_DEPENDABOT_TOKEN
