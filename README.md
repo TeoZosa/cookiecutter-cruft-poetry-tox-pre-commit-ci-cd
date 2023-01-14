@@ -219,7 +219,6 @@ controls autoplay loop></video>
 ### :rotating_light: Linting
 
 - Code quality:
-    - [FlakeHeaven](https://github.com/flakeheaven/flakeheaven)
     - [`hadolint`](https://github.com/hadolint/hadolint)
     - [Pylint](https://github.com/PyCQA/pylint)[^2]
     - [ShellCheck](https://github.com/koalaman/shellcheck)
