@@ -58,7 +58,7 @@ rich = "^12.5.1"
 typer = {extras = ["all"], version = ">=0.4,<0.7"}
 #{%- else %}
 numpy = "^1.23.5"
-pandas = "^1.5.0"
+polars = { extras = ["numpy", "pyarrow"], version = "^0.15.15" }
 #{%- endif %}
 
 [tool.poetry.group.dev.dependencies]
