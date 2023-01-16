@@ -1268,40 +1268,6 @@ pygments = ">=2.6.0,<3.0.0"
 jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 
 [[package]]
-name = "sentry-sdk"
-version = "1.5.6"
-description = "Python client for Sentry (https://sentry.io)"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "sentry-sdk-1.5.6.tar.gz", hash = "sha256:ac2a50128409d57655279817aedcb7800cace1f76b266f3dd62055d5afd6e098"},
-    {file = "sentry_sdk-1.5.6-py2.py3-none-any.whl", hash = "sha256:1ab34e3851a34aeb3d1af1a0f77cec73978c4e9698e5210d050e4932953cb241"},
-]
-
-[package.dependencies]
-certifi = "*"
-urllib3 = ">=1.10.0"
-
-[package.extras]
-aiohttp = ["aiohttp (>=3.5)"]
-beam = ["apache-beam (>=2.12)"]
-bottle = ["bottle (>=0.12.13)"]
-celery = ["celery (>=3)"]
-chalice = ["chalice (>=1.16.0)"]
-django = ["django (>=1.8)"]
-falcon = ["falcon (>=1.4)"]
-flask = ["blinker (>=1.1)", "flask (>=0.11)"]
-httpx = ["httpx (>=0.16.0)"]
-pure-eval = ["asttokens", "executing", "pure-eval"]
-pyspark = ["pyspark (>=2.4.4)"]
-quart = ["blinker (>=1.1)", "quart (>=0.16.1)"]
-rq = ["rq (>=0.6)"]
-sanic = ["sanic (>=0.8)"]
-sqlalchemy = ["sqlalchemy (>=1.2)"]
-tornado = ["tornado (>=5)"]
-
-[[package]]
 name = "shellingham"
 version = "1.4.0"
 description = "Tool to Detect Surrounding Shell"
@@ -1565,86 +1531,88 @@ tests = ["coverage[toml]", "freezegun (>=0.2.8)", "pretend", "pytest (>=6.0)", "
 
 [[package]]
 name = "structlog-sentry-logger"
-version = "0.19.1"
+version = "0.20.0"
 description = "Log without the setup via a pre-configured structlog logger with optional Sentry integration"
 category = "main"
 optional = false
 python-versions = ">=3.7,<3.12"
 files = [
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_10_9_arm64.whl", hash = "sha256:f377194b8fba10eb5942f31e9755ce712508cd229e6d5abb62c3f00c65288acf"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:3569252f596c26d436841f3701e1b431593ebdabbde13566b12a0c767672eb01"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:824653be2a4f818d4d5c1e055b629ef0bb4dcb5252180974322350445242cc0d"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:c2ebc6180095f02b4016df56c3da86cef686669d11d47c95abaa92b86ac424b3"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_11_0_universal2.whl", hash = "sha256:848e033ad4048669cbc7d2c3290b223b2d1b40268e30bc1f73d8b6c7702bb66e"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:611848fafa2ad6c4d88b4d24d355420ef49a10bdf4223247ab62cbb17a6a9136"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:138f2ddf8fda2c4a73fd6e4eec1b3f899d2cc574703411768bcce79fefd5bda0"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_12_0_universal2.whl", hash = "sha256:360cad010a59da9ba2d41d915106bfd805ef14dfcc6a46032df8f6935a78fcab"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-macosx_12_0_x86_64.whl", hash = "sha256:ab256803eec822a6e3bb16084e8054058bbe2a2edfdf8c2f6426f3f804e4bf4d"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4bf5f00a032eaab41c2c117ce679954c237dd79472b4b4b5c41b4d782856a18b"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:31a418e27e1a8d24095d61c8e21a7701a0c2d79f4db326b68371caa14c789002"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:dc4780efe255ec7efd2dd8ad37aad6bf85cfb52d2e56b6df5a1028625c763025"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:b57308ada8c8fc71ce638a16bec34a79bca8385689ddc6a4e5cb6222854ddc21"},
-    {file = "structlog_sentry_logger-0.19.1-cp310-cp310-win_amd64.whl", hash = "sha256:f026bec8c00237946dd500322a0c6092ed559e737ba5597a06b28a4ce55229f0"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_10_9_arm64.whl", hash = "sha256:db55fad20ad99c93de9418f8f893ebf2874aea712900b424c2641369d2187c8a"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:a24fc711600364b074b42c790c9654d8a9f36ec1359d93a4e8be57d718fc26b7"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:3b78da6b0b8c63ba8bb0d1b6849af57b1a1b13d7e0493aea5b07641fc6832280"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f166c890a662caba30fa4d09627ca91ae386d84c7b8da3c6116b0903339ec20c"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_11_0_universal2.whl", hash = "sha256:d71ea372ffb442157df6c9d957e4798601b595573cd530d9cc86db7f478666c6"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_11_0_x86_64.whl", hash = "sha256:d3160baf9d6c578e9104e3b61fcbb4f5f3c814eea58946d30c85447a0b0d4b8e"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:90480999d2bcf30165cb0c3dce42304825cca94dfcfdbb29a7300940d49c0b75"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_12_0_universal2.whl", hash = "sha256:42d8b8951fb120e77b4d01cdf860d5f2b7d1379d672ff7973d2c0c3b279668fc"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-macosx_12_0_x86_64.whl", hash = "sha256:cbbe8bd2eedc34b688ef35468e165a1bca4e116c59a0cf8dbc485aa22aa638c4"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:74773b227c266b8f2eb3873cc57006168113a47c3552f9d183ac68d01600ba04"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:801754b286be8ed72a7d2189bfd15c8d3ee46f97144070c47d829a5bd39d22d4"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:628286d9de21e9e016df0778d2c5a3cff3c53e82849b7490a78f136c0ce96f4a"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:739612fc3cb79d553a71296faf890672da06a522bd564754a0bc0320cc99b12b"},
-    {file = "structlog_sentry_logger-0.19.1-cp311-cp311-win_amd64.whl", hash = "sha256:976a2c771026384911bf04d9f671e9219a571fd486fac90367072746a0dd52e7"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:85907ad8796f6fe0540ffa752821b9b22831dc58721071163b76dc98f6234bcd"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-macosx_11_0_x86_64.whl", hash = "sha256:ce6caff0a8d2ab4877a3832852ce53908ccde4aa5fa04774a70874821d0dbd0e"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-macosx_12_0_x86_64.whl", hash = "sha256:043ec86e5b65fc24e3df511bb43d6a3c287067e67c2481d21935deef9ff399e3"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fea4b0678647f7d0b0fdda610f460cce772b8f63f9ad4c83306c37120260fb6a"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c799c5269e2eeaf9b76ffc9cab85c7db78887e162e52be63ed9fc66352cf7226"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-musllinux_1_1_aarch64.whl", hash = "sha256:c3b64e73fa4a5d556117037bdb8869d4efc4e85115f34484919d960547392a40"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:d36173be108357fcd845c9efc8cb62698ddaa29946f0de2f0b7a51dcb61290ea"},
-    {file = "structlog_sentry_logger-0.19.1-cp37-cp37m-win_amd64.whl", hash = "sha256:c7af86a460cd81985c0ceb3db882efcb7e2fc7384c20ea5deab566e44beac065"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_10_9_arm64.whl", hash = "sha256:b115aad19b382093825cbecfa092cab3deb7cd217435f702eb9d8e02546ba978"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:07b1114b4a1492fc91270661a96796faae0b4b2591cd64a1f711eade53244291"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:5eed1ca56560a3c8b8f0daa27c15d24f0008f05c720e3e4eafb8f4e9c03abe0f"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:961d4189959646925e1906fe3173fbd6507a6bd7b263f4e5fa9df882b883fd03"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_11_0_universal2.whl", hash = "sha256:7adbdd02159444eca2732c07da657cbbfd3b47accee84b071b3942ef9960f9b1"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_11_0_x86_64.whl", hash = "sha256:c021b965e94ae1eca65ddbedf46b5c75c6d0b63def2cc6885bf54ed3bebb2407"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_12_0_arm64.whl", hash = "sha256:8b2e129e056e611846a184d4f99051657cd675294928c8a79926dc755e27ed43"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_12_0_universal2.whl", hash = "sha256:36839974735d470512bd3a9c15c9ec1d17c7735176728f06b5dd2675fa12fdde"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-macosx_12_0_x86_64.whl", hash = "sha256:8d0433d5a5c4a85931698e34419c67258695260eca15f2978960e1ef20f0885d"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7fc01511f8fa3f0c5b169014cedc2099db1e603147a25e747458ab14e744a614"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4d59ff89a06cff3350bd49c84f34cb879e71c9856baf283bcaf1a59e11c6c43c"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-musllinux_1_1_aarch64.whl", hash = "sha256:2938a515397472034eb1634fb70176b5e06206e549f2d674fb7b18873ca12250"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:640864cde2e2d9bbf7a0dcf4862a62bdef1715324367575ea0dac3fe16b8e970"},
-    {file = "structlog_sentry_logger-0.19.1-cp38-cp38-win_amd64.whl", hash = "sha256:373aaacbd37be14f05fe1e3bd1e7ba8a79c2d7f345ce0a79ba6fb6a14dea6a2c"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_10_9_arm64.whl", hash = "sha256:7e0af5261139b93a5dec2dc65910a27e9bfc6267c37670d39c442007a6569ee7"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:3ad20d436fee11cdd3847ddabbc7e7bf2d5164036e0d24b0376729e4bfbf6abf"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:5cb6f61b089139a8dc2fe5d28325f65ef310e05ca69802632a46028c04712437"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:9f4a2d1e942f2580917f049a8ec8394e6a13d2615d0faf41a00e331543dd9ddd"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_11_0_universal2.whl", hash = "sha256:04732efeabae0524da420f61a979241b35abbd20056ff6a661fbc43f12140a5c"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:263a33a4b2316ddae84c0466cad170f5e0917e1a3fca650dd140e2c2a3b0c575"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_12_0_arm64.whl", hash = "sha256:fdf7ac2bbdd2215c4b6b3dd2625a5687b9640f50d9395e3a7c7f27902c456bb7"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_12_0_universal2.whl", hash = "sha256:52c2f4f10b1d52b85e701dabd1f69298d2cd7354303245a7c0e31a22707e7e5e"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-macosx_12_0_x86_64.whl", hash = "sha256:0ea9511d1166460d5da611d81c4cace4789484a3d331d9302ef2f17a373df565"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1600483de14a70ec65ac62fb6deb1ca24ff097294d795644ca3435a9ad9119cd"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5912b89bf2130b46771f3a3150baf93ef8bf7eaaa2330a0146376b53372b9d39"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:39215c84008711024ebd5095758d6e163458c83c9a126de5b8fbee69cf2e9e0c"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:5a7122be3acb1271bc82831d5f30e0a83505fab1043310eea3667926f76da43c"},
-    {file = "structlog_sentry_logger-0.19.1-cp39-cp39-win_amd64.whl", hash = "sha256:20afd4058f60e817908d64ae462803dff3151aea85c714500a96de19984f2d76"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_10_9_arm64.whl", hash = "sha256:f90c37ea77e3df8d7d189bd3ba9ae86971e0fc928a285158fbfc88b58bad151f"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:9a08288c833991ce5b7851a30b94d216b46ff036e829c1493568eaee71b51822"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:ffaf803e4eda1a63b77c2f96ec92938df8b12785ce5d4556e673a9e6ec08f8c2"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:df0bdbe5b6f8b145df8c591ebb46cca14af32124e89730e3d104b1b97d675b3e"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_11_0_universal2.whl", hash = "sha256:453147a1c321267ed6173a28b76cc7a7cbf5937674a930e48378dbd250a2b34c"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:4558a435a2a1773f528b88ab64debe0eeed40f2fd7fa7d442aebdfb7e6a3ac62"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:ae691026c9dba539ed55f258e379a0283484c0aba6d68ae30b255d82967058aa"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_12_0_universal2.whl", hash = "sha256:c2cf11a2fbf5727f8ff0dccd2c48acf053191ac584f0a29f1d694b864201f5f7"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-macosx_12_0_x86_64.whl", hash = "sha256:409388f46de4507f56fd11934136e82a8b7bb28fab06b54182bb8984e5f869df"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3287d87479b9dbf872833785884b627d35738557a86650d458df4e9dd089272a"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fafb43d335c1d9839f6c24ab1b0afbe34a7942f5f8a2bfeb18203dd2fdbbcd16"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:6a342cc49c6dc007914c2dbf8195da8c38c499d7b59dadd63da71e039e18a35a"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:8669a075c5a97b93c963b0e6c967c94ed2175bd0116be63bd023379a82939332"},
+    {file = "structlog_sentry_logger-0.20.0-cp310-cp310-win_amd64.whl", hash = "sha256:ada2b9e784b62105b4fb7e84caebdcead11f39df39e23a649a4b5b07154cbabf"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_10_9_arm64.whl", hash = "sha256:38b1e761791fdc8f6cecdb7bc34036abec86ad4b48cf31a7917f6e76a2f882da"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:9512e334ba019a3ed38143c9ca57e7bec63f4487e85a0841dabb2729669bf76c"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:5e313c00ff0118b505cd0ad12d1b716ce87aadfa1f1ab12dfef39e7f9076f435"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:dc6187e3b0e5929453b1f48a3b9f21fd8f338061e77168807937d73b60f914ad"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_11_0_universal2.whl", hash = "sha256:a4ab544a16014391f14f469273d28f3e78587764da5fdd7ce16bcfe3dfc66c17"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_11_0_x86_64.whl", hash = "sha256:2b50c830a66765c94d1fcb4759a890c367e5923cfb3eca5319fab80f119c1d72"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:f0f7dd966b785b67cf732125fae3e0e261f9bf03375728b25a84754e9c96845a"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_12_0_universal2.whl", hash = "sha256:7da34a7134d51ec6d9e5ea3033b8a9957000d83a11defc2fb2065269c2d141ab"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-macosx_12_0_x86_64.whl", hash = "sha256:bc6f27df6d2477a2ada05757fc8fafd5c4cc7dd4488428a8ab136161518b383e"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:30889dc1f13dbd6f20f2524cd4cac539d114b51fda9c41d69a28baa68f05071a"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cc98b90508f96518cad98dabfcb5b4740c0b3e0e33c3405c9262238da67c3d38"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:15e7488bf81e783368a83a3369793d308a98cb6ac4c57c1043819be2ae1e0e5f"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:b1a6ff89de63b4ecbaac57e37dbbb86cea2b0eb1d8cc5a9b303162fc7101ef84"},
+    {file = "structlog_sentry_logger-0.20.0-cp311-cp311-win_amd64.whl", hash = "sha256:dfe35479d65f4b2c4d3dca1a4201f43486f300d83c975fa9fade43cbe3dba1c7"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:e42519ee72e1762e6e2025f2b5d3a9a19c025bde7c2f52ff5b6b891e98f94ad8"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-macosx_11_0_x86_64.whl", hash = "sha256:4535c57c2911c744599d83d19df7ff488aebf842e15c4f3f4776d5deac22c393"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-macosx_12_0_x86_64.whl", hash = "sha256:02263cf3b8ca30fdee7c8e26d1d4d5aadcf295b6b0a795b8ac73f5b101cf51b9"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7602398db2376ba510e4b0541dd81429fc5e73fd24209d32d468f33985ef3978"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f2e89024ce34351089e94eb9179ba8bbdc201a505e505d47d61908b9eda81563"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-musllinux_1_1_aarch64.whl", hash = "sha256:16a73224978f6702dd657c13d7ebd432d8d765f71d3c145729168f743ceb366a"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:08e6d51165049e877b39aeb5d94359b9d5f716eb6d527a043f55607a5835e314"},
+    {file = "structlog_sentry_logger-0.20.0-cp37-cp37m-win_amd64.whl", hash = "sha256:cc3302a5ef47b53732a71170c96fcbecb352f6a2f7639c72a34eb803ae6bd6f0"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_10_9_arm64.whl", hash = "sha256:b3bfe71969a303c48a9ece01b8054098b5ad9c10646f5ec52cae1853990a3e82"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:78062f962d9446f87909d3f5eb84e2c27bf348ecd5826fa055a14e7a46d50cd1"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2d68e0203892315c99b8e2ff99befa6cb65e98bd7b5a9ba015c5a145a08b2136"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:993ddbe0a3aab2162aa1330db9e9284dbf66c0e8023ab6d008d13065296c6421"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_11_0_universal2.whl", hash = "sha256:e7ed48105dd7d5f7a91265345287c02a24ce8101535912a746cb6fa98170c822"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_11_0_x86_64.whl", hash = "sha256:de10b6dc968b281be1952e513f8256d920879592447370e54a3609ed15a399cb"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_12_0_arm64.whl", hash = "sha256:eba384e1c734b0b135851a0a5f3f2948aadde77e1a1cf0e89f8e0a841fecd822"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_12_0_universal2.whl", hash = "sha256:c426a86c2f1934ecccc3a4f9820c2af9a2f23660a0e9978f7d648e6f91d19254"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-macosx_12_0_x86_64.whl", hash = "sha256:14d61502d733c2ab81752fdeedf5106abfebfeb43a2901625d591e239f7c06f4"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:09aa5ef86a784a97a1b170b88823465517d0eae558422f20ed84cdd6d1df0d96"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:07f81cd11567e9dd005ca5dbf7c0d920bb737dfb52fcd36d796f94f3fdf2d52f"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-musllinux_1_1_aarch64.whl", hash = "sha256:1bef7e1f1edb5ede032ec1759fd6b442452aaaa1334d2c4cdb1436c186430886"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:dffed34293c6bffe29d23104f2f40820af4a27bcd491dec2fdb5e5c96872d90e"},
+    {file = "structlog_sentry_logger-0.20.0-cp38-cp38-win_amd64.whl", hash = "sha256:93ebb6b2b9b9108b1414d3eef9870174aa053d6f03e3e6ff6b0ad7f0ebc22b01"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_10_9_arm64.whl", hash = "sha256:083105d8ee20c2eb3b2804fdfff3b22e4f34e1331b57d39362e5eb3285fb3fc9"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:e44927ad022e058f545513af9edfeab5b31c6d1951584fa067016e848396b40c"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:66a35b55227747fad83222408e7d340a4d7d51bb0328646b7f2d4d9721e838b6"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:2f74709bfdf59a250d7d87128eed346515fa24ca129884c1aff4edcd39339eac"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_11_0_universal2.whl", hash = "sha256:5bfb30cccf62b252d256bb18f0df65b53a01301725dc9e0d00e38652ae885526"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:67a5ade7a7089ed85afc17d840d595c94504620c99393cc643744531932040bc"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_12_0_arm64.whl", hash = "sha256:b246120ec685c6d99900dc79252be34e363869e77746b04cb1943a53a351a454"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_12_0_universal2.whl", hash = "sha256:2c95c320555ac772a261e8bff718cb5995dba197f1247357bab194a6531df8e5"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-macosx_12_0_x86_64.whl", hash = "sha256:3d8719aec4ac213f27105913d0469a0cf5c3e7001c189ea9366f50eda5d52e1e"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1a85294b21cc917c110396d492fc2abed301f831bb54ac8e9f82fe1261f12765"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7e5ee5fa2e5b030dfbf3953651ba4c3acfcdc95fb75ae2f63c1646f587126c95"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:d6d76d67602c0b3fde4762d257d182714f8c81c385bd3fe7b5ebcaca87a67965"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:833d637e6fdd8ac16332d645d882b6b270f5c47f5395348cee13dc66bbf508f6"},
+    {file = "structlog_sentry_logger-0.20.0-cp39-cp39-win_amd64.whl", hash = "sha256:6032b3d45722d5c8e4deb3a83847a73b956717db048632c46f7acaa4647363ab"},
 ]
 
 [package.dependencies]
-colorama = ">=0.4.3,<0.5.0"
+colorama = {version = ">=0.4.3,<0.5.0", markers = "platform_system == \"Windows\""}
 gitpython = ">=3.1.7,<4.0.0"
 orjson = ">=3.6.4,<4.0.0"
 python-dotenv = ">=0.19"
-rich = ">=10.12,<13.0"
-sentry-sdk = ">0.17.0"
+rich = ">=10.12,<14.0"
 structlog = ">=21.1,<23.0"
+
+[package.extras]
+sentry = ["sentry-sdk (>0.17.0)"]
 
 [[package]]
 name = "termcolor"
@@ -1851,4 +1819,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "ef62ac67edfbda23ba4cc530cc8061e36bce727f595516c2648942250d405c16"
+content-hash = "258a1b1dd7f14d98188c678cf1197d82897b7ca17ecf7be86cb28cee695c9e69"
