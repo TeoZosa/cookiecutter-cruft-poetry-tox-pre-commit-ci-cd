@@ -66,7 +66,7 @@ tox = "^3.27.1"
 ## Code formatting
 black = "^22.10.0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
 ## Automation and management
-pre-commit = "^2.20.0"
+pre-commit = "^2.21.0"
 
 # Documentation
 darglint = "^1.8.1"
