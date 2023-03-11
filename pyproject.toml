@@ -49,7 +49,7 @@ typer = {extras = ["all"], version = "^0.7.0"}
 
 [tool.poetry.group.dev.dependencies]
 # Type Checking and Data Validation
-mypy = "^0.991" # Static type checker
+mypy = "^1.1" # Static type checker
 
 # Testing
 pytest = "^7.2.2"
