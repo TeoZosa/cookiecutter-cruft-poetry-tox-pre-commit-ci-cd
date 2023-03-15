@@ -75,7 +75,7 @@ darglint = "^1.8.1"
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-emoji = "^1.7.0"
+emoji = "^2.2.0"
 myst-parser = "^1.0.0"
 pygments = "^2.13.0"
 sphinx = "^5.1.1"
