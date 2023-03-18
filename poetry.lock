@@ -376,13 +376,13 @@ files = [
 
 [[package]]
 name = "emoji"
-version = "1.7.0"
+version = "2.2.0"
 description = "Emoji for Python"
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 files = [
-    {file = "emoji-1.7.0.tar.gz", hash = "sha256:65c54533ea3c78f30d0729288998715f418d7467de89ec258a31c0ce8660a1d1"},
+    {file = "emoji-2.2.0.tar.gz", hash = "sha256:a2986c21e4aba6b9870df40ef487a17be863cb7778dcf1c01e25917b7cd210bb"},
 ]
 
 [package.extras]
@@ -1846,4 +1846,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "6a90a2cbf8402ab5a8f9597e42cf58073803dbbbb17e15269ef362e864b71672"
+content-hash = "2ee8f4483b3c42f77dede2c9d57f70b0f01ee172d7540eea2bd4c34bb4118285"
