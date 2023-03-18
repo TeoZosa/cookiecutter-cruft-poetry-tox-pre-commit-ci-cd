@@ -1739,14 +1739,14 @@ test = ["black (>=22.3.0,<23.0.0)", "coverage (>=6.2,<7.0)", "isort (>=5.0.6,<6.
 
 [[package]]
 name = "types-emoji"
-version = "1.7.1"
+version = "2.1.0.2"
 description = "Typing stubs for emoji"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-emoji-1.7.1.tar.gz", hash = "sha256:a4c7ae598a9c2c34339f36d6f2a4cc44c997505ad08ff10787b47313afee88b6"},
-    {file = "types_emoji-1.7.1-py3-none-any.whl", hash = "sha256:06fc3fb5c7bcc4b9db0e9a66284581b8ccc1cc1c5240fefd16276489ed7b0692"},
+    {file = "types-emoji-2.1.0.2.tar.gz", hash = "sha256:16cdb38ef1eff0ceddab3fd74738a713ebc5f1fa4580468dc8b8f3cadc735b1a"},
+    {file = "types_emoji-2.1.0.2-py3-none-any.whl", hash = "sha256:aeea0da9322b2f7c8543aaa5da2a7e3f77f66627aa6b3afa4993dc6c3df1c898"},
 ]
 
 [[package]]
@@ -1846,4 +1846,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "2ee8f4483b3c42f77dede2c9d57f70b0f01ee172d7540eea2bd4c34bb4118285"
+content-hash = "7ab8f2596062ff8ff3d75668af1c151e9ba2aca8536398b7425c4d7a7534b4b7"
