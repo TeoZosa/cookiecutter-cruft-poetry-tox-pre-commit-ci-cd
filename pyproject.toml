@@ -44,7 +44,7 @@ cruft = "^2.12.0"
 hypothesis = "^6.70.1"
 python-dotenv = "^1.0.0"
 importlib-metadata = "^6.1.0"
-structlog-sentry-logger = "^0.20.2"
+structlog-sentry-logger = "^0.21.0"
 typer = {extras = ["all"], version = "^0.7.0"}
 
 [tool.poetry.group.dev.dependencies]
