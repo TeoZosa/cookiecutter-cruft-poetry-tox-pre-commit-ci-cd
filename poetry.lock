@@ -319,14 +319,14 @@ toml = ["tomli"]
 
 [[package]]
 name = "cruft"
-version = "2.12.0"
+version = "2.14.0"
 description = "Allows you to maintain all the necessary cruft for packaging and building projects separate from the code you intentionally write. Built on-top of CookieCutter."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "cruft-2.12.0-py3-none-any.whl", hash = "sha256:29c46b34e518412c905bc41eb9812d122e7f2ca0173b584df85b05929adfc1be"},
-    {file = "cruft-2.12.0.tar.gz", hash = "sha256:57455d33a60684c945d501dcea2b1c57dc0fb200a0090f07c83da1603382cbb1"},
+    {file = "cruft-2.14.0-py3-none-any.whl", hash = "sha256:c3888897f38b91938509b74446e902ba6cd38169138ff2516fb04b0f01e6386f"},
+    {file = "cruft-2.14.0.tar.gz", hash = "sha256:ba3d976de1cad437b6a92239b6ec844ea8547e09de796ef505d320c356c45de5"},
 ]
 
 [package.dependencies]
@@ -1846,4 +1846,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "9c005ffdb069f3d609442675dcbd3d1c23f79d75ce035b675900c0a5ee5166d6"
+content-hash = "43fe93dcc747ca2a9582aba70f468c4ad78d4920c69c2be068c5032fe6a874f1"
