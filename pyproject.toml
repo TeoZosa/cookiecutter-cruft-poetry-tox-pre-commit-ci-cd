@@ -38,7 +38,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.8,<3.12"
 # Project boilerplate synchronizer
-cruft = "^2.14.0"
+cruft = "^2.15.0"
 
 # Project cookiecutter dependencies
 hypothesis = "^6.75.2"
