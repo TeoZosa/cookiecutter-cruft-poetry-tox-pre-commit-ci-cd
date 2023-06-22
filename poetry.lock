@@ -440,13 +440,13 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "hypothesis"
-version = "6.77.0"
+version = "6.79.2"
 description = "A library for property-based testing"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "hypothesis-6.77.0-py3-none-any.whl", hash = "sha256:bfa03bb5c7d8b775378fc795d9251c885cd1be7d8ddf677f3ebd8f3892efc782"},
-    {file = "hypothesis-6.77.0.tar.gz", hash = "sha256:23bfe3743d0c88e61330debca60fc813db2ef83be5777f2baf113d035ac76081"},
+    {file = "hypothesis-6.79.2-py3-none-any.whl", hash = "sha256:564d9860ed5e09b0434b7bafea392b0da8f67131190202c6002e58c2c96b7596"},
+    {file = "hypothesis-6.79.2.tar.gz", hash = "sha256:51fb2259489dc446d3edc04cbc8ebd5848d7d3f238121183bee5449b91f7a8d8"},
 ]
 
 [package.dependencies]
@@ -1733,4 +1733,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "3fe378b513ca9bd5c912c8d182865400e4743b52527bbe9bb5ed6dded0099c16"
+content-hash = "190c7e8f24fa96262bc7600c50a9e8a694116a15f2e5cca5aba547d06c3da87f"
