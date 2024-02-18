@@ -24,12 +24,12 @@ jobs:
 
     steps:
       - name: Check out ${{ env.COOKIECUTTER_META_PROJECT }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ env.COOKIECUTTER_META_PROJECT }}
 
       - name: Check out ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.PROJECT_INSTANCE_REPO }}
           path: ${{ env.COOKIECUTTER_PROJECT_INSTANCE }}
