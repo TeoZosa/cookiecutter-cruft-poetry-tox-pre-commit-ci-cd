@@ -1,4 +1,4 @@
-poetry==1.7.1
+poetry==1.8.0
 
 # Documentation building
 emoji==2.10.1
