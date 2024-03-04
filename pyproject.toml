@@ -52,7 +52,7 @@ typer = {extras = ["all"], version = "^0.9.0"}
 mypy = "^1.8" # Static type checker
 
 # Testing
-pytest = "^8.0.2"
+pytest = "^8.1.0"
 pytest-benchmark = "^3.4.1"
 pytest-cov = "^4.1.0"
 pytest-emoji = "^0.2.0"
