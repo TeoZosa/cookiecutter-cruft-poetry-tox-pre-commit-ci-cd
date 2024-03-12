@@ -444,13 +444,13 @@ test = ["black", "coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock", "mypy", "pre
 
 [[package]]
 name = "hypothesis"
-version = "6.99.2"
+version = "6.99.5"
 description = "A library for property-based testing"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "hypothesis-6.99.2-py3-none-any.whl", hash = "sha256:f277f6ccb074f39d51c7f32ba5a0ff640dba9b71ef69ea1e1e09b6f7c25302f5"},
-    {file = "hypothesis-6.99.2.tar.gz", hash = "sha256:24453b1a86151be83d26e81834e29022b3e3f0fc5d71275cc3d096649a13c53c"},
+    {file = "hypothesis-6.99.5-py3-none-any.whl", hash = "sha256:0ab4968fa4c38ba6d3cd9f54f3d637e3c72fe136bff11373355f2e06416c6a7d"},
+    {file = "hypothesis-6.99.5.tar.gz", hash = "sha256:1f795b71abe46f3919591acf7fc05cbcd9b601b97806d97433e0eb9bdb200861"},
 ]
 
 [package.dependencies]
@@ -1754,4 +1754,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8,<3.12"
-content-hash = "a43578d2c130d402cfd99a159989d901b06e146b50210651e37c35163062034b"
+content-hash = "1568d866ac323de44c9f878127ff225804c05b69c5c6a163ea7a0f2b9e7a47f2"
