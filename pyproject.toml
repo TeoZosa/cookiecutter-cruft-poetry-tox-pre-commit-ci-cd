@@ -60,7 +60,7 @@ pytest-mock = "^3.14.0"
 pytest-sugar = "^1.0.0"
 pytest-xdist = "^3.6.1"
 xdoctest = "^1.1.3"
-tox = "^4.15.0"
+tox = "^4.16.0"
 
 # Linting
 ## Code formatting
