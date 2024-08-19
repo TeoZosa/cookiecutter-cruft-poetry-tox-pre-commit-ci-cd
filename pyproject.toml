@@ -45,7 +45,7 @@ hypothesis = "^6.100.5"
 python-dotenv = "^1.0.1"
 importlib-metadata = "^7.1.0"
 structlog-sentry-logger = "^1.4.0"
-typer = {extras = ["all"], version = "^0.12.3"}
+typer = {extras = ["all"], version = "^0.12.4"}
 
 [tool.poetry.group.dev.dependencies]
 # Type Checking and Data Validation
