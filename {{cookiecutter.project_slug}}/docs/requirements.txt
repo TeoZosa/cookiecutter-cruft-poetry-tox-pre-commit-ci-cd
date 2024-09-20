@@ -1,7 +1,7 @@
 poetry==1.8.2
 
 # Documentation building
-emoji==2.11.1
+emoji==2.13.0
 importlib-metadata==7.1.0
 myst-parser==2.0.0
 pygments==2.18.0
