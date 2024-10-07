@@ -80,7 +80,7 @@ myst-parser = "^2.0.0"
 pygments = "^2.18.0"
 sphinx = "^7.1.2"
 sphinx-autodoc-typehints = "^1.23.4"
-sphinx-rtd-theme = "^2.0.0"
+sphinx-rtd-theme = "^3.0.0"
 sphinxcontrib-apidoc = "^0.5.0"
 types-emoji = "^2.1.0"
 
