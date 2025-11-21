@@ -24,7 +24,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5.1.0
@@ -70,7 +70,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5.1.0
@@ -111,7 +111,7 @@ jobs:
     name: Semgrep
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Disable Git LFS
         run: |
@@ -133,7 +133,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5.1.0
